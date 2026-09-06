@@ -1,76 +1,68 @@
-(function(){
-  const WA='https://wa.me/917457905011?text=Hello%20Tour%20Varanasi%2C%20I%20would%20like%20to%20plan%20a%20journey.';
-  const EMAIL='mailto:tours@tourvaranasi.com';
-  const LOGO='/assets/images/tour-varanasi-logo.png';
+(function () {
+  const WA = 'https://wa.me/917457905011?text=Hello%20Tour%20Varanasi%2C%20I%20would%20like%20to%20plan%20a%20journey.';
+  const EMAIL = 'mailto:tours@tourvaranasi.com';
+  const LOGO = '/assets/images/tour-varanasi-logo.png';
 
-  function bindMenu(root=document){
-    const b=root.querySelector('.menu-btn,.tv-menu-btn');
-    const n=root.querySelector('.navlinks,.tv-navlinks');
-
-    if(b && n && !b.dataset.bound){
-      b.dataset.bound='1';
-
-      b.addEventListener('click',()=>{
-        const open=n.classList.toggle('open');
-        b.setAttribute('aria-expanded',String(open));
-      });
-    }
+  function isHomepage() {
+    const path = (window.location.pathname || '/').replace(/\/+$/, '') || '/';
+    return path === '/' || path === '/index.html';
   }
 
-  function shellAlreadyApproved(){
-    return !!document.querySelector('.top-contact-bar') &&
-           !!document.querySelector('.site-header');
+  function bindMenu(root = document) {
+    const button = root.querySelector('.tv-menu-btn');
+    const nav = root.querySelector('.tv-navlinks');
+
+    if (!button || !nav || button.dataset.bound === '1') return;
+
+    button.dataset.bound = '1';
+
+    button.addEventListener('click', function () {
+      const open = nav.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(open));
+    });
   }
 
-  function buildTop(){
-    const wrap=document.createElement('div');
-    wrap.className='tv-top-contact-bar';
+  function buildTopBar() {
+    const bar = document.createElement('div');
+    bar.className = 'tv-top-contact-bar';
 
-    wrap.innerHTML=`
+    bar.innerHTML = `
       <div class="tv-top-contact-inner">
-
         <span class="tv-top-contact-note">
           Private journeys · locally planned in Varanasi
         </span>
 
         <div class="tv-top-contact-links">
-
-          <a href="${WA}"
-             target="_blank"
-             rel="noopener">
-             +91 74579 05011
+          <a href="${WA}" target="_blank" rel="noopener">
+            +91 74579 05011
           </a>
 
           <a href="${EMAIL}">
-             tours@tourvaranasi.com
+            tours@tourvaranasi.com
           </a>
-
         </div>
       </div>
     `;
 
-    return wrap;
+    return bar;
   }
 
-  function buildHeader(){
+  function buildHeader() {
+    const header = document.createElement('header');
+    header.className = 'tv-site-header';
 
-    const h=document.createElement('header');
-    h.className='tv-site-header';
-
-    h.innerHTML=`
+    header.innerHTML = `
       <nav class="tv-nav-wrap">
 
-        <a class="tv-brand-logo"
-           href="/">
-
-          <img src="${LOGO}"
-               alt="Tour Varanasi">
-
+        <a class="tv-brand-logo" href="/">
+          <img src="${LOGO}" alt="Tour Varanasi">
         </a>
 
-        <button class="tv-menu-btn"
-                aria-label="Open menu"
-                aria-expanded="false">
+        <button
+          class="tv-menu-btn"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
           ☰
         </button>
 
@@ -96,8 +88,7 @@
             Contact
           </a>
 
-          <a class="tv-nav-cta"
-             href="/plan-my-journey/">
+          <a class="tv-nav-cta" href="/plan-my-journey/">
             Plan My Journey
           </a>
 
@@ -106,27 +97,22 @@
       </nav>
     `;
 
-    return h;
+    return header;
   }
 
-  function buildFooter(){
+  function buildFooter() {
+    const footer = document.createElement('footer');
+    footer.className = 'tv-footer';
 
-    const f=document.createElement('footer');
-    f.className='tv-footer';
-
-    f.innerHTML=`
+    footer.innerHTML = `
       <div class="tv-container tv-footer-grid">
 
         <div class="tv-footer-brand">
 
-          <a href="/"
-             class="tv-footer-logo-link">
-
+          <a href="/" class="tv-footer-logo-link">
             <span class="tv-footer-logo-plate">
-              <img src="${LOGO}"
-                   alt="Tour Varanasi">
+              <img src="${LOGO}" alt="Tour Varanasi">
             </span>
-
           </a>
 
           <p>
@@ -139,7 +125,6 @@
 
 
         <div>
-
           <h4>Destinations</h4>
 
           <a href="/tours/">
@@ -157,12 +142,10 @@
           <a href="/journeys-beyond-varanasi/">
             Buddhist Heartlands
           </a>
-
         </div>
 
 
         <div>
-
           <h4>Plan</h4>
 
           <a href="/experiences/">
@@ -184,12 +167,10 @@
           <a href="/blogs/">
             Travel Guide
           </a>
-
         </div>
 
 
         <div>
-
           <h4>Tour Varanasi</h4>
 
           <a href="/about-us/">
@@ -214,9 +195,7 @@
 
           <div class="tv-footer-contact-links">
 
-            <a href="${WA}"
-               target="_blank"
-               rel="noopener">
+            <a href="${WA}" target="_blank" rel="noopener">
               +91 74579 05011 · WhatsApp
             </a>
 
@@ -225,7 +204,6 @@
             </a>
 
           </div>
-
         </div>
 
       </div>
@@ -235,67 +213,57 @@
       </div>
     `;
 
-    return f;
+    return footer;
   }
 
-  function applySharedShell(){
+  function removeOldShell() {
 
-    if(shellAlreadyApproved()){
+    document
+      .querySelectorAll(
+        '.topbar, .top-contact-bar, .tv-top-contact-bar'
+      )
+      .forEach(function (el) {
+        el.remove();
+      });
+
+    document
+      .querySelectorAll(
+        'header.header, header.site-header, header.tv-site-header'
+      )
+      .forEach(function (el) {
+        el.remove();
+      });
+
+    document
+      .querySelectorAll(
+        'footer.footer, footer.site-footer, footer.tv-footer'
+      )
+      .forEach(function (el) {
+        el.remove();
+      });
+  }
+
+  function applySharedShell() {
+
+    if (isHomepage()) {
       bindMenu(document);
       return;
     }
 
-    const oldTop=document.querySelector('.topbar');
+    removeOldShell();
 
-    if(oldTop){
-      oldTop.remove();
-    }
+    const topBar = buildTopBar();
+    const header = buildHeader();
+    const footer = buildFooter();
 
-    const oldHeader=document.querySelector(
-      'header.header, header.site-header'
-    );
-
-    const top=buildTop();
-    const header=buildHeader();
-
-    if(oldHeader){
-
-      oldHeader.parentNode.insertBefore(
-        top,
-        oldHeader
-      );
-
-      oldHeader.replaceWith(header);
-
-    } else {
-
-      document.body.insertBefore(
-        header,
-        document.body.firstChild
-      );
-
-      document.body.insertBefore(
-        top,
-        header
-      );
-    }
-
-    const oldFooter=document.querySelector(
-      'footer.footer, footer.tv-footer'
-    );
-
-    const footer=buildFooter();
-
-    if(oldFooter){
-      oldFooter.replaceWith(footer);
-    } else {
-      document.body.appendChild(footer);
-    }
+    document.body.insertBefore(header, document.body.firstChild);
+    document.body.insertBefore(topBar, header);
+    document.body.appendChild(footer);
 
     bindMenu(document);
   }
 
-  if(document.readyState==='loading'){
+  if (document.readyState === 'loading') {
     document.addEventListener(
       'DOMContentLoaded',
       applySharedShell
