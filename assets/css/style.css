@@ -141,3 +141,307 @@ body{font-size:18px;line-height:1.68}
 
 @media(max-width:900px){.journey-photo-grid{grid-template-columns:1fr 1fr}.journey-photo-grid .wide{grid-column:1/-1}.journey-proof{grid-template-columns:1fr}.journey-proof-photo img{height:390px}.journey-review-grid{grid-template-columns:1fr}.journey-form-wrap>.section{grid-template-columns:1fr}.what-next-grid{grid-template-columns:repeat(2,1fr)}.journey-value-grid{grid-template-columns:1fr}.time-stop{grid-template-columns:150px 1fr}}
 @media(max-width:620px){.journey-hero{min-height:76vh}.journey-hero-copy{padding:95px 20px 48px}.journey-hero-copy h1{font-size:49px}.journey-trust-line{font-size:11px;line-height:1.6}.journey-photo-grid{grid-template-columns:1fr}.journey-photo-grid .wide{grid-column:auto}.journey-photo-grid img,.journey-photo-grid .wide img{height:270px}.journey-proof-photo img{height:320px}.journey-proof-copy blockquote{font-size:25px}.what-next-grid{grid-template-columns:1fr}.time-stop{grid-template-columns:1fr;gap:7px}.time-stop .time{font-size:22px}.one-day-cta-photo img{height:280px}}
+/* === TOUR VARANASI SHARED HEADER + FOOTER === */
+
+.tv-top-contact-bar{
+  background:#111;
+  color:#fff;
+  font-family:Inter,Arial,sans-serif;
+}
+
+.tv-top-contact-inner{
+  max-width:1240px;
+  min-height:34px;
+  margin:0 auto;
+  padding:0 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+}
+
+.tv-top-contact-note{
+  font-size:10px;
+  letter-spacing:.06em;
+  color:rgba(255,255,255,.66);
+}
+
+.tv-top-contact-links{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  white-space:nowrap;
+}
+
+.tv-top-contact-links a{
+  font-size:11px;
+  color:#fff !important;
+  text-decoration:none !important;
+}
+
+.tv-top-contact-links a:hover{
+  color:#e6b05a !important;
+}
+
+
+/* WHITE LOGO + NAVIGATION STRIP */
+
+.tv-site-header{
+  position:sticky;
+  top:0;
+  z-index:80;
+  background:#fffdf9;
+  border-bottom:1px solid #e3ded6;
+}
+
+.tv-nav-wrap{
+  height:76px;
+  max-width:1240px;
+  margin:0 auto;
+  padding:0 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  gap:24px;
+}
+
+.tv-brand-logo{
+  display:flex !important;
+  align-items:center;
+  min-width:190px;
+  text-decoration:none !important;
+}
+
+.tv-brand-logo img{
+  width:190px;
+  height:auto;
+  max-height:50px;
+  object-fit:contain;
+  display:block;
+}
+
+.tv-brand-fallback{
+  display:none;
+}
+
+.tv-navlinks{
+  display:flex;
+  align-items:center;
+  gap:27px;
+}
+
+.tv-navlinks a{
+  font-family:Inter,Arial,sans-serif;
+  font-size:13px;
+  font-weight:500;
+  color:#3f433f !important;
+  text-decoration:none !important;
+  margin:0 !important;
+}
+
+.tv-navlinks a:hover{
+  color:#8d4f3d !important;
+}
+
+.tv-nav-cta{
+  padding:11px 16px !important;
+  border:1px solid #a65f49 !important;
+  color:#8d4f3d !important;
+}
+
+.tv-nav-cta:hover{
+  background:#a65f49 !important;
+  color:#fff !important;
+}
+
+.tv-menu-btn{
+  display:none;
+  border:0;
+  background:transparent;
+  font-size:24px;
+  color:#292c29;
+  cursor:pointer;
+}
+
+
+/* GREEN FOOTER */
+
+.tv-footer{
+  background:#435852;
+  color:#f7f2ea;
+  padding:66px 0 0;
+  font-family:Inter,Arial,sans-serif;
+}
+
+.tv-container{
+  max-width:1180px;
+  margin:0 auto;
+  padding-left:28px;
+  padding-right:28px;
+}
+
+.tv-footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr .8fr .9fr .9fr;
+  gap:54px;
+}
+
+.tv-footer-brand p{
+  font-size:12px;
+  line-height:1.7;
+  color:rgba(255,255,255,.72);
+  max-width:340px;
+  margin:18px 0 0;
+}
+
+.tv-footer h4{
+  font-size:17px;
+  font-weight:600;
+  margin:0 0 16px;
+  color:#fff;
+}
+
+.tv-footer a{
+  display:block;
+  font-size:12px;
+  color:rgba(255,255,255,.76) !important;
+  text-decoration:none !important;
+  margin:0 0 9px;
+}
+
+.tv-footer a:hover{
+  color:#fff !important;
+}
+
+.tv-footer-logo-link{
+  display:inline-flex !important;
+  margin:0 !important;
+}
+
+.tv-footer-logo-plate{
+  display:inline-flex;
+  align-items:center;
+  background:#fff;
+  padding:7px 10px;
+}
+
+.tv-footer-logo-plate img{
+  width:205px;
+  height:auto;
+  max-height:48px;
+  object-fit:contain;
+  display:block;
+}
+
+.tv-footer-contact-links{
+  margin-top:16px;
+}
+
+.tv-footer-contact-links a{
+  font-size:12px;
+  line-height:1.5;
+  color:rgba(255,255,255,.82) !important;
+  margin-bottom:8px;
+}
+
+.tv-footer-bottom{
+  border-top:1px solid rgba(255,255,255,.14);
+  margin-top:44px;
+  padding:18px 28px;
+  text-align:center;
+  font-size:10px;
+  color:rgba(255,255,255,.55);
+}
+
+
+/* MOBILE */
+
+@media(max-width:980px){
+
+  .tv-menu-btn{
+    display:block;
+  }
+
+  .tv-navlinks{
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    right:0;
+    background:#fffdf9;
+    padding:18px 28px 26px;
+    flex-direction:column;
+    align-items:flex-start;
+    border-bottom:1px solid #ddd8cf;
+    gap:14px;
+  }
+
+  .tv-navlinks.open{
+    display:flex;
+  }
+
+  .tv-navlinks a{
+    font-size:15px;
+  }
+
+  .tv-footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+
+@media(max-width:680px){
+
+  .tv-top-contact-inner{
+    min-height:32px;
+    padding:0 20px;
+  }
+
+  .tv-top-contact-note{
+    display:none;
+  }
+
+  .tv-top-contact-links{
+    width:100%;
+    justify-content:flex-end;
+    gap:12px;
+  }
+
+  .tv-top-contact-links a{
+    font-size:9.5px;
+  }
+
+  .tv-nav-wrap{
+    height:68px;
+    padding:0 20px;
+  }
+
+  .tv-navlinks{
+    top:68px;
+  }
+
+  .tv-brand-logo{
+    min-width:145px;
+  }
+
+  .tv-brand-logo img{
+    width:155px;
+    max-height:42px;
+  }
+
+  .tv-footer-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .tv-footer-logo-plate img{
+    width:190px;
+  }
+
+  .tv-container{
+    padding-left:20px;
+    padding-right:20px;
+  }
+}
