@@ -1,6 +1,12 @@
 [build]
   publish = "."
 
+[[redirects]]
+  from = "/tour-varanasi-contact/"
+  to = "/plan-my-journey/"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
