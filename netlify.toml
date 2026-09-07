@@ -16,6 +16,22 @@
     Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
 
 [[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/about-us/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Clear-Site-Data = "\"cache\""
+
+[[headers]]
   for = "/tour-varanasi-logo.png"
   [headers.values]
     Cache-Control = "public, max-age=2592000, stale-while-revalidate=604800"
