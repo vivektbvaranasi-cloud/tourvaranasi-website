@@ -2,7 +2,7 @@
   const WA = 'https://wa.me/917457905011?text=Hello%20Tour%20Varanasi%2C%20I%20would%20like%20to%20plan%20a%20journey.';
   const EMAIL = 'mailto:tours@tourvaranasi.com';
   const LOGO = '/assets/images/tour-varanasi-logo.png';
-  const ABOUT_LOGO = '/assets/images/tour-varanasi-about-logo.png';
+  const ABOUT_LOGO = '/assets/images/tour-varanasi-about-logo.svg';
 
   function currentPath() {
     return (window.location.pathname || '/').replace(/\/+$/, '') || '/';
