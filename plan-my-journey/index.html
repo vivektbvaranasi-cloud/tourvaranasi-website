@@ -1,32 +1,225 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Plan My Journey | Private Travel Planning with Tour Varanasi</title>
+<meta name="description" content="Plan a private journey through Varanasi and beyond. Tell Tour Varanasi your dates, interests and pace; request a complete itinerary or a quote without accommodation."/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://www.tourvaranasi.com/plan-my-journey/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Plan My Journey | Tour Varanasi"/>
+<meta property="og:description" content="A practical private journey built around your dates, pace, interests and the places you want to explore."/>
+<meta property="og:url" content="https://www.tourvaranasi.com/plan-my-journey/"/>
+<meta property="og:image" content="https://www.tourvaranasi.com/assets/images/guest_group_boat.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Plan My Journey | Tour Varanasi"/>
+<meta name="twitter:description" content="Tell us your dates and interests. We will shape a practical private journey, with or without accommodation."/>
+<meta name="twitter:image" content="https://www.tourvaranasi.com/assets/images/guest_group_boat.webp"/>
+<link rel="preload" as="image" href="/assets/images/guest_group_boat.webp"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/assets/css/style.css"/>
+<style>
+.pmj-hero{min-height:72vh;position:relative;display:flex;align-items:flex-end;background:url('/assets/images/guest_group_boat.webp') center 45%/cover no-repeat;color:#fff}
+.pmj-hero:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,27,25,.76),rgba(24,27,25,.34) 54%,rgba(24,27,25,.12)),linear-gradient(0deg,rgba(24,27,25,.54),transparent 65%)}
+.pmj-hero-inner{position:relative;z-index:1;max-width:1180px;width:100%;margin:auto;padding:110px 22px 72px}
+.pmj-hero .eyebrow{color:#ead5b5}.pmj-hero h1{font-family:var(--serif);font-size:clamp(50px,7vw,86px);line-height:.96;font-weight:600;max-width:770px;margin:14px 0 18px}.pmj-hero p{font-size:18px;line-height:1.65;max-width:660px;margin:0 0 28px;color:#f6f1ea}.pmj-hero-actions{display:flex;gap:12px;flex-wrap:wrap}.pmj-hero .btn{border-color:#fff;color:#fff}.pmj-hero .btn.primary{background:#fff;color:#1d211f}.pmj-trust{margin-top:22px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.pmj-contact-strip{background:#efe7dc}.pmj-contact-inner{max-width:1180px;margin:auto;padding:24px 22px;display:flex;justify-content:space-between;gap:30px;align-items:center}.pmj-contact-inner p{margin:0;color:var(--muted);font-size:14px}.pmj-contact-links{display:flex;gap:18px;flex-wrap:wrap}.pmj-contact-links a{color:var(--ink);font-size:13px;text-decoration:none;border-bottom:1px solid var(--brass);padding-bottom:2px}
+.pmj-heading{max-width:770px}.pmj-heading p{color:var(--muted);max-width:720px}.pmj-services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}.pmj-service{border-top:1px solid var(--line);padding:20px 0 4px}.pmj-service h3{font-size:26px;margin:0 0 8px}.pmj-service p{font-size:14px;color:var(--muted);margin:0}
+.pmj-photo-row{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:12px;margin-top:46px}.pmj-photo-row figure{margin:0;min-height:310px;position:relative;overflow:hidden;background:#ddd}.pmj-photo-row img{width:100%;height:100%;min-height:310px;object-fit:cover;display:block}.pmj-photo-row figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 18px 14px;color:#fff;font-size:12px;background:linear-gradient(transparent,rgba(20,23,21,.72))}
+.pmj-nohotel{background:#453f4f;color:#fff}.pmj-nohotel-inner{max-width:1180px;margin:auto;padding:64px 22px;display:grid;grid-template-columns:1fr .9fr;gap:70px;align-items:center}.pmj-nohotel .eyebrow{color:#dfc9a7}.pmj-nohotel h2{font-family:var(--serif);font-size:clamp(38px,5vw,58px);line-height:1.02;margin:10px 0 18px}.pmj-nohotel p{color:#e5dde6;max-width:650px}.pmj-nohotel-services{display:flex;flex-wrap:wrap;gap:9px}.pmj-nohotel-services span{border:1px solid rgba(255,255,255,.28);padding:8px 10px;font-size:11px;letter-spacing:.05em}.pmj-nohotel .btn{margin-top:22px;border-color:#fff;color:#fff}
+.pmj-practical{display:grid;grid-template-columns:.9fr 1.1fr;gap:58px;align-items:center}.pmj-practical img{width:100%;height:470px;object-fit:cover}.pmj-practical h2{margin-top:10px}.pmj-practical p{color:var(--muted)}
+.pmj-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:34px}.pmj-step{border-top:1px solid var(--line);padding-top:18px}.pmj-step span{font-family:var(--serif);font-size:32px;color:var(--brass)}.pmj-step h3{font-size:22px;margin:7px 0 8px}.pmj-step p{font-size:13px;color:var(--muted);margin:0}
+.pmj-form-wrap{background:#efe9e5}.pmj-form-grid{max-width:1180px;margin:auto;padding:78px 22px;display:grid;grid-template-columns:.72fr 1.28fr;gap:58px;align-items:start}.pmj-form-intro h2{font-family:var(--serif);font-size:clamp(40px,5vw,58px);line-height:1.02;margin:10px 0 18px}.pmj-form-intro p{color:#655e64}.pmj-contact-card{margin-top:28px;border-top:1px solid #cfc3c8;padding-top:20px}.pmj-contact-card strong{display:block;margin-bottom:10px}.pmj-contact-card a{display:block;color:#312d32;text-decoration:none;margin:5px 0}.pmj-mini-note{margin-top:28px;padding:18px;background:#fffdf9;border-left:3px solid var(--brass);font-size:13px;color:#625b61}
+.pmj-form fieldset{grid-column:1/-1;border:0;padding:0;margin:2px 0 4px}.pmj-form legend{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6f656d;margin-bottom:7px}.pmj-choice-row{display:flex;gap:10px;flex-wrap:wrap}.pmj-choice{background:#fffdf9;border:1px solid #c9bfc2;padding:10px 12px;display:flex;gap:8px;align-items:center;font-size:13px}.pmj-choice input{width:auto;margin:0}.pmj-checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.pmj-checks label{background:#fffdf9;border:1px solid #c9bfc2;padding:10px 12px;margin:0;text-transform:none;letter-spacing:0;font-size:13px;color:#3d383d;display:flex;align-items:center;gap:8px}.pmj-checks input{width:auto;margin:0}.pmj-hotel-hidden{display:none!important}.form-reassurance{font-size:11px;color:#756d73;margin:9px 0 0}
+.pmj-why{display:grid;grid-template-columns:1fr .92fr;gap:58px;align-items:center}.pmj-why img{width:100%;height:430px;object-fit:cover}.pmj-why p{color:var(--muted)}.pmj-why strong{color:var(--ink)}
+.pmj-closing{min-height:440px;display:flex;align-items:flex-end;position:relative;background:url('/assets/images/guest_joyful_boat.webp') center 50%/cover no-repeat;color:#fff}.pmj-closing:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,27,25,.72),rgba(24,27,25,.2))}.pmj-closing-inner{position:relative;z-index:1;max-width:1180px;width:100%;margin:auto;padding:78px 22px}.pmj-closing h2{font-family:var(--serif);font-size:clamp(42px,6vw,66px);line-height:1;max-width:700px;margin:10px 0 22px}.pmj-closing .eyebrow{color:#ead5b5}.pmj-closing .btn{border-color:#fff;color:#1d211f;background:#fff}
+@media(max-width:900px){.pmj-services{grid-template-columns:repeat(2,1fr)}.pmj-photo-row{grid-template-columns:1fr 1fr}.pmj-photo-row figure:first-child{grid-column:1/-1}.pmj-nohotel-inner,.pmj-practical,.pmj-form-grid,.pmj-why{grid-template-columns:1fr}.pmj-steps{grid-template-columns:repeat(2,1fr)}.pmj-contact-inner{align-items:flex-start;flex-direction:column;gap:10px}}
+@media(max-width:620px){.pmj-hero{min-height:68vh}.pmj-hero-inner{padding:88px 20px 50px}.pmj-hero h1{font-size:50px}.pmj-hero p{font-size:16px}.pmj-trust{line-height:1.7}.pmj-services,.pmj-photo-row,.pmj-steps{grid-template-columns:1fr}.pmj-photo-row figure:first-child{grid-column:auto}.pmj-nohotel-inner{padding:52px 20px;gap:30px}.pmj-practical img,.pmj-why img{height:330px}.pmj-form-grid{padding:58px 20px;gap:34px}.pmj-checks{grid-template-columns:1fr}.pmj-choice-row{flex-direction:column}.pmj-choice{width:100%}.pmj-closing{min-height:390px}.pmj-closing-inner{padding:58px 20px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["TravelAgency","LocalBusiness"],"name":"Tour Varanasi","url":"https://www.tourvaranasi.com","email":"tours@tourvaranasi.com","telephone":"+91-7457905011","address":{"@type":"PostalAddress","streetAddress":"S 19/131, A-S-D, Abhilasha Colony, Varuna Bridge","addressLocality":"Varanasi","postalCode":"221002","addressCountry":"IN"},"areaServed":["Varanasi","Ayodhya","Prayagraj","Lucknow","Bodh Gaya","Khajuraho","Uttar Pradesh","Bihar"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Plan My Journey","url":"https://www.tourvaranasi.com/plan-my-journey/","description":"Plan a private journey through Varanasi and beyond, with or without accommodation."}</script>
+</head>
+<body>
+<div class="topbar"><div class="inner"><a href="mailto:tours@tourvaranasi.com">tours@tourvaranasi.com</a><a href="tel:+917457905011">+91-7457905011</a></div></div>
+<header class="header"><nav aria-label="Primary" class="nav"><a class="brand" href="/"><strong>TOUR VARANASI</strong><span>Private journeys · locally planned</span></a><button aria-expanded="false" aria-label="Open menu" class="menu-btn">☰</button><div class="navlinks"><a href="/journeys-beyond-varanasi/">Destinations</a><a href="/tours/">Tours</a><a href="/experiences/">Experiences</a><a href="/about-us/">About</a><a href="/plan-my-journey/">Contact</a><a class="nav-cta" href="/plan-my-journey/">Plan My Journey</a></div></nav></header>
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Plan My Journey | Tailor-Made Private Travel with Tour Varanasi</title>
-<meta content="Tell Tour Varanasi how you want to experience Varanasi and North India. Our local team will design a private journey around your dates, pace and interests." name="description"/>
-<meta content="index,follow" name="robots"/><link href="https://www.tourvaranasi.com/plan-my-journey/" rel="canonical"/>
-<meta content="website" property="og:type"/><meta content="Plan My Journey | Tour Varanasi" property="og:title"/><meta content="A private journey designed around your pace, interests and dates by a local Varanasi team." property="og:description"/><meta content="https://www.tourvaranasi.com/plan-my-journey/" property="og:url"/><meta content="https://www.tourvaranasi.com/assets/images/guest_group_boat.webp" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/><link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/assets/css/style.css" rel="stylesheet"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":["TravelAgency","LocalBusiness"],"name":"Tour Varanasi","url":"https://www.tourvaranasi.com","email":"tours@tourvaranasi.com","telephone":"+91-7457905011","address":{"@type":"PostalAddress","streetAddress":"S 19/131, A-S-D, Abhilasha Colony, Varuna Bridge","addressLocality":"Varanasi","postalCode":"221002","addressCountry":"IN"},"areaServed":["Varanasi","Ayodhya","Prayagraj","Lucknow","Bodh Gaya","Uttar Pradesh","Bihar"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Plan My Journey","url":"https://www.tourvaranasi.com/plan-my-journey/","description":"Tailor-made private journeys planned by Tour Varanasi."}</script>
-</head><body><div class="topbar"><div class="inner"><a href="mailto:tours@tourvaranasi.com">tours@tourvaranasi.com</a><a href="tel:+917457905011">+91-7457905011</a></div></div><header class="header"><nav aria-label="Primary" class="nav"><a class="brand" href="/"><strong>TOUR VARANASI</strong><span>Private journeys · locally planned</span></a><button aria-expanded="false" aria-label="Open menu" class="menu-btn">☰</button><div class="navlinks"><a href="/tours/">Varanasi Tours</a><a href="/experiences/">Experiences</a><a href="/journeys-beyond-varanasi/">Beyond Varanasi</a><a href="/blogs/">Travel Guide</a><a href="/about-us/">About Us</a><a class="nav-cta" href="/plan-my-journey/">Plan My Journey</a></div></nav></header>
-<section class="journey-hero" style="background-image:url('/assets/images/guest_group_boat.webp')"><div class="journey-hero-overlay"></div><div class="journey-hero-copy"><div class="eyebrow">Private journeys · designed in Varanasi</div><h1>Tell Us How You Want to Experience Varanasi. We’ll Take Care of the Rest.</h1><p>Varanasi rewards travellers who have the right people, timing and local judgement behind them. Tell us what matters to you and we will design a private journey around your pace, dates, hotel and interests.</p><a class="btn primary" href="#journey-form">Start Planning My Journey ↓</a><div class="journey-trust-line">Private travel · Local specialists · Established in Varanasi since 2016 · No obligation to book</div></div></section>
-<section class="section journey-sales-intro"><div class="eyebrow">Why local planning matters</div><h2>Some journeys are better when they are not built from a template.</h2><p class="lede">Temple timings change. Streets close. Boats depend on the river. Ceremonies draw thousands. The best route through Varanasi is often different at 6:00 AM, 2:00 PM and 6:00 PM.</p><div class="journey-photo-grid"><figure class="wide"><img alt="Private sunrise journey on the Ganges in Varanasi" loading="lazy" src="/assets/images/user/dawn-3.JPG"/><figcaption>The river at the right time can change the whole journey.</figcaption></figure><figure><img alt="Guest receiving a traditional blessing during a guided Varanasi experience" loading="lazy" src="/assets/images/user/guest-w15.jpeg"/><figcaption>Local experiences, not just sightseeing stops.</figcaption></figure><figure><img alt="Tour Varanasi team welcoming international guests" loading="lazy" src="/assets/images/user/service-standards-local-welcome.jpeg"/><figcaption>Private moments built around your interests.</figcaption></figure></div></section>
-<section class="section soft"><div class="inner"><div class="eyebrow">Why plan with people who are actually here?</div><div class="journey-value-grid"><article><span>01</span><h3>You are not buying an off-the-shelf itinerary.</h3><p>Whether you have six hours or six days, we plan around the realities of the city: sunrise, temple access, walking, traffic, river conditions, crowds and the amount of energy you want to spend each day.</p></article><article><span>02</span><h3>One local team from arrival to departure.</h3><p>Airport assistance, private vehicle, guide, boat arrangements, temple visits, special experiences and onward journeys to Ayodhya, Prayagraj, Bodh Gaya and beyond can be coordinated through one team.</p></article><article><span>03</span><h3>Designed around you, not a coach schedule.</h3><p>Families with children, solo travellers, mature guests, photographers and spiritually curious travellers all experience Varanasi differently. Your itinerary should reflect that.</p></article></div></div></section>
-<section class="section journey-proof"><div class="journey-proof-photo"><img alt="New Vishwanath Temple and the green BHU campus in Varanasi" loading="lazy" src="/assets/images/user/service-standards-varanasi-overview.jpg"/></div><div class="journey-proof-copy"><div class="eyebrow">Real guest feedback</div><h2>Confidence matters before you arrive.</h2><blockquote>“I booked a three day package as a solo female traveler and they were always super responsive during preparation. I had the same guide and driver for the entire trip which gave me much comfort.”</blockquote><cite>Jennifer Bywaters · NY, USA</cite></div></section>
-<section class="section"><div class="journey-review-grid"><article><div class="stars">★★★★★</div><blockquote>“Our private guide offered extensive knowledge of the religious and historical background. We had amazing views of sunrise and sunset ceremonies along the Ganges and time to roam the backstreets under guidance.”</blockquote><cite>Elizabeth · London, UK</cite></article><article><div class="stars">★★★★★</div><blockquote>“The itinerary was further customised to my needs and the airport pickup and drop-off were organised so I felt well taken care of as a solo traveller.”</blockquote><cite>Melissa Valle with Peter Valle</cite></article><article><div class="stars">★★★★★</div><blockquote>“The guide’s passion for Varanasi history and culture made each guided walk memorable. The driver’s safe and courteous driving made our explorations worry-free.”</blockquote><cite>Walter &amp; Family · UK</cite></article></div></section>
-<section class="journey-form-wrap" id="journey-form"><div class="section"><div class="journey-form-intro"><div class="eyebrow">Your journey starts here</div><h2>Your journey can be just as personal.</h2><p>Tell us a little about your trip. We will come back with ideas built around your dates and pace — not a generic package copied from a list.</p><div class="journey-contact-card"><strong>Prefer to speak first?</strong><a href="https://wa.me/917457905011">WhatsApp +91-7457905011</a><a href="mailto:tours@tourvaranasi.com">tours@tourvaranasi.com</a></div></div><form action="/thank-you/" class="quote-form journey-form" data-netlify="true" method="POST" name="plan-my-journey" netlify-honeypot="company-website">
-<input name="form-name" type="hidden" value="plan-my-journey"/>
-<p class="hp"><label>Do not fill this out <input name="company-website"/></label></p>
-<div><label for="pmj-name">Name</label><input autocomplete="name" id="pmj-name" name="name" required=""/></div>
-<div><label for="pmj-email">Email</label><input autocomplete="email" id="pmj-email" name="email" required="" type="email"/></div>
-<div><label for="pmj-phone">WhatsApp / Phone <span class="optional">Optional</span></label><input autocomplete="tel" id="pmj-phone" name="phone"/></div>
-<div><label for="pmj-country">Country of residence</label><input autocomplete="country-name" id="pmj-country" name="country" required=""/></div>
-<div><label for="pmj-dates">Travel dates</label><input id="pmj-dates" name="travel-dates" placeholder="Approximate dates are fine"/></div>
-<div><label for="pmj-travellers">Number of travellers</label><input id="pmj-travellers" name="travellers" placeholder="e.g. 2 adults"/></div>
-<div class="full"><label for="pmj-route">Places you are considering</label><input id="pmj-route" name="journey-interest" placeholder="e.g. Varanasi + Ayodhya, or Varanasi + Buddhist Circuit"/></div>
-<div class="full"><label for="pmj-hotel">Hotel preference <span class="optional">Optional</span></label><select id="pmj-hotel" name="hotel-preference"><option value="">No preference yet</option><option>Comfortable 4-star</option><option>Luxury / 5-star</option><option>Heritage / character hotel</option><option>Riverfront if practical</option><option>Please advise</option></select></div>
-<div class="full"><label for="pmj-wish">What would make this journey special for you?</label><textarea id="pmj-wish" name="interests" placeholder="Tell us about your interests, preferred pace, celebrations, mobility considerations, food interests or anything you particularly want to experience."></textarea></div>
-<div class="full"><button type="submit">Start Planning My Journey</button><p class="form-reassurance">No obligation to book. We use these details only to prepare and discuss your private journey.</p></div>
-</form></div></section>
-<section class="section"><div class="eyebrow">What happens after you enquire?</div><h2>Simple, personal and without pressure.</h2><div class="what-next-grid"><article><span>01</span><h3>We read your requirements personally</h3><p>Your enquiry is reviewed by the travel team, not turned into an automated package.</p></article><article><span>02</span><h3>We design the journey</h3><p>We consider your dates, interests, hotel location, pace and the practical realities of each place.</p></article><article><span>03</span><h3>You refine it with us</h3><p>Change the route, hotels, experiences or pace until the plan feels right for you.</p></article><article><span>04</span><h3>You decide when comfortable</h3><p>Requesting an itinerary does not oblige you to book.</p></article></div></section>
-<section class="journey-closing" style="background-image:url('/assets/images/guest_joyful_boat.webp')"><div><div class="eyebrow">Travel deeper</div><h2>Come to Varanasi as a visitor. Experience it with people who call it home.</h2><a class="btn primary" href="#journey-form">Plan My Journey</a></div></section>
-<footer class="footer" id="site-footer"><div class="inner"><div><a class="brand" href="/"><strong>TOUR VARANASI</strong><span>Private journeys · locally planned</span></a><p>A Varanasi-based private travel specialist for thoughtful journeys through Varanasi and the cultural, sacred and Buddhist regions around it.</p></div><div><h4>Varanasi</h4><a href="/tours/varanasi-tour-in-one-day/">1 Day Varanasi</a><a href="/tours/varanasi-tour-in-two-days/">2 Days Varanasi</a><a href="/tours/varanasi-tour-in-three-days/">3 Days Varanasi</a><a href="/tours/4-days-varanasi-tour/">4 Days Varanasi</a></div><div><h4>Explore</h4><a href="/experiences/">Experiences</a><a href="/journeys-beyond-varanasi/">Journeys Beyond</a><a href="/about-us/">About Us</a><a href="/service-standards/">Service Standards</a><a href="/reviews/">Guest Reviews</a><a href="/gallery/">Gallery</a><a href="/blogs/">Travel Guide</a></div><div><h4>Contact</h4><p>S 19/131, A-S-D, Abhilasha Colony, Varuna Bridge, Varanasi – 221002, India<br/><br/>+91-7457905011<br/>tours@tourvaranasi.com</p><div class="legal-links"><a href="/legal/">Legal</a><a href="/privacy-policy/">Privacy Policy</a><a href="/sitemap.xml">Sitemap</a></div></div></div><div class="copyright">© 2026 Tour Varanasi. All rights reserved.</div></footer><a aria-label="Contact Tour Varanasi on WhatsApp" class="whatsapp" href="https://wa.me/917457905011" rel="noopener">WhatsApp enquiry</a><script defer="" src="/assets/js/main.js"></script></body></html>
+<main>
+<section class="pmj-hero">
+  <div class="pmj-hero-inner">
+    <div class="eyebrow">Plan a private journey</div>
+    <h1>Let’s plan your journey.</h1>
+    <p>Tell us when you are travelling, who is travelling with you and what you would especially like to experience. We will come back with a practical private itinerary built around your dates, pace, interests and the places you want to explore.</p>
+    <div class="pmj-hero-actions">
+      <a class="btn primary" href="#journey-form">Plan My Journey</a>
+      <a class="btn" href="https://wa.me/917457905011?text=Hello%20Tour%20Varanasi%2C%20I%20would%20like%20help%20planning%20a%20private%20journey." target="_blank" rel="noopener">WhatsApp Us</a>
+    </div>
+    <div class="pmj-trust">Private journeys · Local planning · On-ground support · Established in 2016</div>
+  </div>
+</section>
+
+<div class="pmj-contact-strip">
+  <div class="pmj-contact-inner">
+    <p>You do not need to have everything planned. A few basic details are enough for us to begin.</p>
+    <div class="pmj-contact-links"><a href="tel:+917457905011">+91 74579 05011</a><a href="mailto:tours@tourvaranasi.com">tours@tourvaranasi.com</a></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="pmj-heading">
+    <div class="eyebrow">What we can plan</div>
+    <h2>From a single experience to a complete private journey.</h2>
+    <p>Use us for the complete journey, or only for the services you need. Our role is to make the programme practical, well timed and comfortable on the ground.</p>
+  </div>
+  <div class="pmj-services">
+    <article class="pmj-service"><h3>Private Transport</h3><p>Airport and railway transfers, local sightseeing, intercity travel and multi-day vehicle arrangements.</p></article>
+    <article class="pmj-service"><h3>Private Guides</h3><p>Experienced guides for Varanasi, Ayodhya, Prayagraj, Bodh Gaya and other destinations in your programme.</p></article>
+    <article class="pmj-service"><h3>Local Experiences</h3><p>River experiences, walks, food, crafts, weaving, neighbourhoods and cultural moments that genuinely add depth.</p></article>
+    <article class="pmj-service"><h3>Spiritual Journeys</h3><p>Practical planning for temples, pilgrimage routes and sacred destinations with realistic local timings and access.</p></article>
+    <article class="pmj-service"><h3>Buddhist Journeys</h3><p>Private programmes through Bodh Gaya, Rajgir, Nalanda, Vaishali, Kushinagar, Sravasti and connected sites.</p></article>
+    <article class="pmj-service"><h3>Accommodation</h3><p>Hotels can be included if required, or you can book them independently and use us only for ground services.</p></article>
+  </div>
+  <div class="pmj-photo-row" aria-label="Guests experiencing private journeys with local guides">
+    <figure><img src="/assets/images/guest_market_blessing.webp" alt="Traveller receiving a traditional blessing during a guided local experience" loading="lazy"/><figcaption>Local experiences with people who understand the place.</figcaption></figure>
+    <figure><img src="/assets/images/guest_alley_tasting.webp" alt="Travellers enjoying a guided food experience in the old city" loading="lazy"/><figcaption>Food, neighbourhoods and everyday culture.</figcaption></figure>
+    <figure><img src="/assets/images/guest_sunrise_diya_couple.webp" alt="Travellers taking part in a sunrise river ritual in Varanasi" loading="lazy"/><figcaption>Private moments shaped around your interests.</figcaption></figure>
+  </div>
+</section>
+
+<section class="pmj-nohotel" id="without-accommodation">
+  <div class="pmj-nohotel-inner">
+    <div>
+      <div class="eyebrow">Already booked your hotels?</div>
+      <h2>We can quote without accommodation.</h2>
+      <p>If your hotels are already booked, there is no need to change them. We can prepare a quotation only for the ground services you require.</p>
+      <a class="btn" href="#journey-form" data-no-hotel>Request a Quote Without Accommodation</a>
+    </div>
+    <div class="pmj-nohotel-services" aria-label="Services available without accommodation">
+      <span>Transport</span><span>Guides</span><span>Transfers</span><span>Boats</span><span>Temple Assistance</span><span>Local Experiences</span><span>On-ground Support</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="pmj-practical">
+    <img src="/assets/images/guest_temple_visit.webp" alt="Guest visiting a temple with local guidance" loading="lazy"/>
+    <div>
+      <div class="eyebrow">Practical planning</div>
+      <h2>We prefer to tell you what is workable.</h2>
+      <p>A good itinerary should work on the ground, not only look good on paper. Traffic restrictions, temple procedures, river conditions, local events, drive times and crowd movement can all change how a day should be planned.</p>
+      <p>We therefore prefer realistic programmes rather than simply fitting as many places as possible into an itinerary. If something is impractical or would make the journey unnecessarily rushed, we will tell you and suggest a better alternative.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="inner">
+    <div class="eyebrow">What happens after you contact us?</div>
+    <h2>From enquiry to arrival.</h2>
+    <div class="pmj-steps">
+      <article class="pmj-step"><span>01</span><h3>We understand your trip</h3><p>We review your dates, travellers, interests and practical requirements.</p></article>
+      <article class="pmj-step"><span>02</span><h3>We shape the journey</h3><p>We build a programme around what can realistically be experienced each day.</p></article>
+      <article class="pmj-step"><span>03</span><h3>We prepare the quotation</h3><p>You receive the itinerary with the relevant service and cost details.</p></article>
+      <article class="pmj-step"><span>04</span><h3>We refine it with you</h3><p>The pace, routing, hotels and experiences can be adjusted until it feels right.</p></article>
+      <article class="pmj-step"><span>05</span><h3>We handle the ground</h3><p>Guides, drivers, transfers and local arrangements are coordinated for your arrival.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="pmj-form-wrap" id="journey-form">
+  <div class="pmj-form-grid">
+    <div class="pmj-form-intro">
+      <div class="eyebrow">Tell us about your trip</div>
+      <h2>A few details are enough.</h2>
+      <p>If your dates, flights or hotel plans are not final yet, approximate information is perfectly fine.</p>
+      <div class="pmj-contact-card"><strong>Prefer to speak first?</strong><a href="https://wa.me/917457905011" target="_blank" rel="noopener">WhatsApp +91 74579 05011</a><a href="mailto:tours@tourvaranasi.com">tours@tourvaranasi.com</a></div>
+      <div class="pmj-mini-note"><strong>Not sure where to start?</strong><br/>Send us your dates, number of travellers and the places that interest you. We can suggest the route, number of nights and what is genuinely worth including.</div>
+    </div>
+
+    <form action="/thank-you/" class="quote-form pmj-form" data-netlify="true" method="POST" name="plan-my-journey" netlify-honeypot="company-website">
+      <input name="form-name" type="hidden" value="plan-my-journey"/>
+      <p class="hp"><label>Do not fill this out <input name="company-website"/></label></p>
+      <div><label for="pmj-name">Name</label><input autocomplete="name" id="pmj-name" name="name" required/></div>
+      <div><label for="pmj-email">Email</label><input autocomplete="email" id="pmj-email" name="email" required type="email"/></div>
+      <div><label for="pmj-phone">WhatsApp / Phone <span class="optional">Optional</span></label><input autocomplete="tel" id="pmj-phone" name="phone"/></div>
+      <div><label for="pmj-country">Country of residence</label><input autocomplete="country-name" id="pmj-country" name="country" required/></div>
+      <div><label for="pmj-dates">Travel dates</label><input id="pmj-dates" name="travel-dates" placeholder="Approximate dates are fine"/></div>
+      <div><label for="pmj-travellers">Number of travellers</label><input id="pmj-travellers" name="travellers" placeholder="e.g. 2 adults"/></div>
+      <div class="full"><label for="pmj-route">Where would you like to travel?</label><input id="pmj-route" name="journey-interest" placeholder="e.g. Varanasi + Ayodhya, Buddhist Circuit, or a multi-city journey"/></div>
+
+      <fieldset>
+        <legend>Would you like us to include hotels?</legend>
+        <div class="pmj-choice-row">
+          <label class="pmj-choice"><input type="radio" name="accommodation-required" value="Yes, include accommodation"/> Yes, include accommodation</label>
+          <label class="pmj-choice"><input type="radio" name="accommodation-required" value="No, quote without accommodation" id="pmj-no-hotel"/> No, quote without accommodation</label>
+          <label class="pmj-choice"><input type="radio" name="accommodation-required" value="Not decided yet"/> Not decided yet</label>
+        </div>
+      </fieldset>
+
+      <div class="full pmj-hotel-hidden" id="pmj-hotel-field"><label for="pmj-hotel">Preferred hotel category</label><select id="pmj-hotel" name="hotel-preference"><option value="">Please select</option><option>Comfortable 3-star</option><option>Comfortable 4-star</option><option>Luxury / 5-star</option><option>Heritage / character hotel</option><option>Riverfront where practical</option><option>Please recommend</option></select></div>
+
+      <div class="full"><label for="pmj-pace">Preferred pace</label><select id="pmj-pace" name="preferred-pace"><option value="">Please advise</option><option>Relaxed</option><option>Balanced</option><option>Full sightseeing</option></select></div>
+
+      <fieldset>
+        <legend>What interests you?</legend>
+        <div class="pmj-checks">
+          <label><input type="checkbox" name="interests-list" value="Temples & spirituality"/> Temples &amp; spirituality</label>
+          <label><input type="checkbox" name="interests-list" value="History & heritage"/> History &amp; heritage</label>
+          <label><input type="checkbox" name="interests-list" value="River experiences"/> River experiences</label>
+          <label><input type="checkbox" name="interests-list" value="Local walks & food"/> Local walks &amp; food</label>
+          <label><input type="checkbox" name="interests-list" value="Buddhism"/> Buddhism</label>
+          <label><input type="checkbox" name="interests-list" value="Crafts & local culture"/> Crafts &amp; local culture</label>
+        </div>
+      </fieldset>
+
+      <div class="full"><label for="pmj-wish">Anything particularly important to you?</label><textarea id="pmj-wish" name="special-requirements" placeholder="Tell us about places you do not want to miss, senior citizens, children, mobility considerations or any other requirements."></textarea></div>
+      <div class="full"><button type="submit">Plan My Journey</button><p class="form-reassurance">No obligation to book. We use these details only to prepare and discuss your private journey.</p></div>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="pmj-why">
+    <div>
+      <div class="eyebrow">Why plan with us?</div>
+      <h2>Good journeys begin with good local information.</h2>
+      <p>Tour Varanasi has been planning private journeys since 2016. Varanasi remains our home and deepest area of expertise, while our journeys extend through Ayodhya, Prayagraj, Bodh Gaya, the Buddhist heartlands and other destinations that combine naturally with the region.</p>
+      <p><strong>The objective is simple:</strong> a journey that feels well planned, personal and comfortable without feeling over-scheduled.</p>
+    </div>
+    <img src="/assets/images/guest_riverside_ritual.webp" alt="Travellers taking part in a riverside cultural experience with local support" loading="lazy"/>
+  </div>
+</section>
+
+<section class="pmj-closing">
+  <div class="pmj-closing-inner">
+    <div class="eyebrow">Start here</div>
+    <h2>Tell us what you have in mind.</h2>
+    <a class="btn" href="#journey-form">Start Planning Your Journey</a>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="site-footer"><div class="inner"><div><a class="brand" href="/"><strong>TOUR VARANASI</strong><span>Private journeys · locally planned</span></a><p>A Varanasi-based private travel specialist for thoughtful journeys through Varanasi and the cultural, sacred and Buddhist regions around it.</p></div><div><h4>Varanasi</h4><a href="/tours/varanasi-tour-in-one-day/">1 Day Varanasi</a><a href="/tours/varanasi-tour-in-two-days/">2 Days Varanasi</a><a href="/tours/varanasi-tour-in-three-days/">3 Days Varanasi</a><a href="/tours/4-days-varanasi-tour/">4 Days Varanasi</a></div><div><h4>Explore</h4><a href="/experiences/">Experiences</a><a href="/journeys-beyond-varanasi/">Journeys Beyond</a><a href="/about-us/">About Us</a><a href="/service-standards/">Service Standards</a><a href="/reviews/">Guest Reviews</a><a href="/gallery/">Gallery</a><a href="/blogs/">Travel Guide</a></div><div><h4>Contact</h4><p>S 19/131, A-S-D, Abhilasha Colony, Varuna Bridge, Varanasi – 221002, India<br/><br/>+91-7457905011<br/>tours@tourvaranasi.com</p><div class="legal-links"><a href="/legal/">Legal</a><a href="/privacy-policy/">Privacy Policy</a><a href="/sitemap.xml">Sitemap</a></div></div></div><div class="copyright">© 2026 Tour Varanasi. All rights reserved.</div></footer>
+<a aria-label="Contact Tour Varanasi on WhatsApp" class="whatsapp" href="https://wa.me/917457905011" rel="noopener">WhatsApp enquiry</a>
+<script defer src="/assets/js/main.js"></script>
+<script>
+(function(){
+  var hotelField=document.getElementById('pmj-hotel-field');
+  var radios=document.querySelectorAll('input[name="accommodation-required"]');
+  function syncHotel(){
+    var selected=document.querySelector('input[name="accommodation-required"]:checked');
+    var show=selected && selected.value==='Yes, include accommodation';
+    if(hotelField) hotelField.classList.toggle('pmj-hotel-hidden',!show);
+  }
+  radios.forEach(function(r){r.addEventListener('change',syncHotel);});
+  document.querySelectorAll('[data-no-hotel]').forEach(function(link){
+    link.addEventListener('click',function(){
+      var radio=document.getElementById('pmj-no-hotel');
+      if(radio){radio.checked=true;syncHotel();}
+    });
+  });
+  syncHotel();
+})();
+</script>
+</body>
+</html>
