@@ -1,7 +1,7 @@
 (function () {
   const WA = 'https://wa.me/917457905011?text=Hello%20Tour%20Varanasi%2C%20I%20would%20like%20to%20plan%20a%20journey.';
   const EMAIL = 'mailto:tours@tourvaranasi.com';
-  const LOGO = '/assets/images/tour-varanasi-logo.png';
+  const LOGO = '/assets/images/tour-varanasi-about-logo.svg';
   const ABOUT_LOGO = '/assets/images/tour-varanasi-about-logo.svg';
 
   function currentPath() {
@@ -136,7 +136,7 @@
             About
           </a>
 
-          <a href="/tour-varanasi-contact/">
+          <a href="/plan-my-journey/">
             Contact
           </a>
 
@@ -229,7 +229,7 @@
             About Us
           </a>
 
-          <a href="/tour-varanasi-contact/">
+          <a href="/plan-my-journey/">
             Contact
           </a>
 
