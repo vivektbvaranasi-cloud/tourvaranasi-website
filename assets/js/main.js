@@ -2,10 +2,19 @@
   const WA = 'https://wa.me/917457905011?text=Hello%20Tour%20Varanasi%2C%20I%20would%20like%20to%20plan%20a%20journey.';
   const EMAIL = 'mailto:tours@tourvaranasi.com';
   const LOGO = '/assets/images/tour-varanasi-logo.png';
+  const ABOUT_LOGO = '/assets/images/tour-varanasi-about-logo.png';
+
+  function currentPath() {
+    return (window.location.pathname || '/').replace(/\/+$/, '') || '/';
+  }
 
   function isHomepage() {
-    const path = (window.location.pathname || '/').replace(/\/+$/, '') || '/';
+    const path = currentPath();
     return path === '/' || path === '/index.html';
+  }
+
+  function isAboutPage() {
+    return currentPath() === '/about-us';
   }
 
   function bindMenu(root = document) {
@@ -44,6 +53,26 @@
     });
   }
 
+  function applyAboutHomeHeaderStyles() {
+    if (!isAboutPage() || document.getElementById('tv-about-home-header-styles')) return;
+
+    const style = document.createElement('style');
+    style.id = 'tv-about-home-header-styles';
+    style.textContent = `
+      .tv-site-header{
+        position:sticky;
+        top:0;
+        z-index:50;
+        background:rgba(255,253,249,.96);
+        -webkit-backdrop-filter:blur(10px);
+        backdrop-filter:blur(10px);
+        border-bottom:1px solid rgba(221,216,207,.72);
+      }
+      .tv-nav-wrap{gap:0;}
+    `;
+    document.head.appendChild(style);
+  }
+
   function buildTopBar() {
     const bar = document.createElement('div');
     bar.className = 'tv-top-contact-bar';
@@ -55,7 +84,7 @@
         </span>
 
         <div class="tv-top-contact-links">
-          <a href="${WA}" target="_blank" rel="noopener">
+          <a href="${WA}" target="_blank" rel="noopener" aria-label="WhatsApp Tour Varanasi at +91 74579 05011">
             +91 74579 05011
           </a>
 
@@ -72,12 +101,13 @@
   function buildHeader() {
     const header = document.createElement('header');
     header.className = 'tv-site-header';
+    const logo = isAboutPage() ? ABOUT_LOGO : LOGO;
 
     header.innerHTML = `
-      <nav class="tv-nav-wrap">
+      <nav class="tv-nav-wrap" aria-label="Primary">
 
-        <a class="tv-brand-logo" href="/">
-          <img src="${LOGO}" alt="Tour Varanasi">
+        <a class="tv-brand-logo" href="/" aria-label="Tour Varanasi home">
+          <img src="${logo}" alt="Tour Varanasi">
         </a>
 
         <button
@@ -272,6 +302,7 @@
       return;
     }
 
+    applyAboutHomeHeaderStyles();
     removeOldShell();
 
     const topBar = buildTopBar();
