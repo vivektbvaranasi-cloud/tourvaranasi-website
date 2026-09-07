@@ -1,7 +1,7 @@
 (function () {
   const WA = 'https://wa.me/917457905011?text=Hello%20Tour%20Varanasi%2C%20I%20would%20like%20to%20plan%20a%20journey.';
   const EMAIL = 'mailto:tours@tourvaranasi.com';
-  const LOGO = '/assets/images/tour-varanasi-logo.png';
+  const LOGO = '/tour-varanasi-logo.png';
 
   function isHomepage() {
     const path = (window.location.pathname || '/').replace(/\/+$/, '') || '/';
@@ -9,16 +9,38 @@
   }
 
   function bindMenu(root = document) {
-    const button = root.querySelector('.tv-menu-btn');
-    const nav = root.querySelector('.tv-navlinks');
+    const button = root.querySelector('.tv-menu-btn, .menu-btn');
+    const nav = root.querySelector('.tv-navlinks, .navlinks');
 
     if (!button || !nav || button.dataset.bound === '1') return;
 
     button.dataset.bound = '1';
 
-    button.addEventListener('click', function () {
-      const open = nav.classList.toggle('open');
+    function setOpen(open) {
+      nav.classList.toggle('open', open);
       button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    button.addEventListener('click', function () {
+      setOpen(!nav.classList.contains('open'));
+    });
+
+    nav.addEventListener('click', function (event) {
+      if (event.target.closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && nav.classList.contains('open')) {
+        setOpen(false);
+        button.focus();
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 980 && nav.classList.contains('open')) {
+        setOpen(false);
+      }
     });
   }
 
@@ -52,9 +74,9 @@
     header.className = 'tv-site-header';
 
     header.innerHTML = `
-      <nav class="tv-nav-wrap">
+      <nav class="tv-nav-wrap" aria-label="Primary">
 
-        <a class="tv-brand-logo" href="/">
+        <a class="tv-brand-logo" href="/" aria-label="Tour Varanasi home">
           <img src="${LOGO}" alt="Tour Varanasi">
         </a>
 
@@ -111,7 +133,7 @@
 
           <a href="/" class="tv-footer-logo-link">
             <span class="tv-footer-logo-plate">
-              <img src="${LOGO}" alt="Tour Varanasi">
+              <img src="${LOGO}" alt="Tour Varanasi" loading="lazy" decoding="async">
             </span>
           </a>
 
