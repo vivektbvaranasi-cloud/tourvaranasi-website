@@ -9,16 +9,38 @@
   }
 
   function bindMenu(root = document) {
-    const button = root.querySelector('.tv-menu-btn');
-    const nav = root.querySelector('.tv-navlinks');
+    const button = root.querySelector('.tv-menu-btn, .menu-btn');
+    const nav = root.querySelector('.tv-navlinks, .navlinks');
 
     if (!button || !nav || button.dataset.bound === '1') return;
 
     button.dataset.bound = '1';
 
-    button.addEventListener('click', function () {
-      const open = nav.classList.toggle('open');
+    function setOpen(open) {
+      nav.classList.toggle('open', open);
       button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    button.addEventListener('click', function () {
+      setOpen(!nav.classList.contains('open'));
+    });
+
+    nav.addEventListener('click', function (event) {
+      if (event.target.closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && nav.classList.contains('open')) {
+        setOpen(false);
+        button.focus();
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 980 && nav.classList.contains('open')) {
+        setOpen(false);
+      }
     });
   }
 
