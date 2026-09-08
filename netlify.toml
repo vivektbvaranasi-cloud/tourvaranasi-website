@@ -45,6 +45,12 @@
     Clear-Site-Data = "\"cache\""
 
 [[headers]]
+  for = "/plan-my-journey/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Clear-Site-Data = "\"cache\""
+
+[[headers]]
   for = "/tour-varanasi-logo.png"
   [headers.values]
     Cache-Control = "public, max-age=2592000, stale-while-revalidate=604800"
