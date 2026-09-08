@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="64" viewBox="0 0 260 64" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="72" viewBox="0 0 360 72" role="img" aria-labelledby="title desc">
   <title id="title">Tour Varanasi</title>
-  <desc id="desc">Private journeys, locally planned</desc>
-  <text x="0" y="31" fill="#292c29" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="400" letter-spacing="3.2">TOUR VARANASI</text>
-  <text x="1" y="53" fill="#92734d" font-family="Arial, Helvetica, sans-serif" font-size="8.2" font-weight="500" letter-spacing="2.35">PRIVATE JOURNEYS · LOCALLY PLANNED</text>
+  <desc id="desc">Tour Varanasi wordmark with a small red tilak above the first letter.</desc>
+  <rect x="17.5" y="4" width="4.5" height="11" rx="2.25" fill="#a63d32"/>
+  <text x="0" y="51" fill="#292c29" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="400" letter-spacing="1.2">Tour Varanasi</text>
 </svg>
