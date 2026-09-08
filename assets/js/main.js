@@ -64,7 +64,8 @@
     });
 
     root.querySelectorAll('a').forEach(function (link) {
-      if ((link.textContent || '').trim().toLowerCase() === 'tours@tourvaranasi.com' && !link.getAttribute('href').startsWith('mailto:')) {
+      const href = link.getAttribute('href') || '';
+      if ((link.textContent || '').trim().toLowerCase() === 'tours@tourvaranasi.com' && !href.startsWith('mailto:')) {
         link.href = EMAIL;
       }
     });
