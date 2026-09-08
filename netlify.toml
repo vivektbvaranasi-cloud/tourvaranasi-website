@@ -1,5 +1,5 @@
 [build]
-  command = "node scripts/fetch-pmj-images.mjs"
+  command = "node scripts/fetch-pmj-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs"
   publish = "."
 
 [[redirects]]
