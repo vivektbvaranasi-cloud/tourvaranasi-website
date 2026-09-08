@@ -3,6 +3,7 @@
   const EMAIL = 'mailto:tours@tourvaranasi.com';
   const LOGO = '/assets/images/tour-varanasi-about-logo.svg';
   const ABOUT_LOGO = '/assets/images/tour-varanasi-about-logo.svg';
+  const ABOUT_HERO = '/assets/images/guest_joyful_boat.webp';
 
   function currentPath() {
     return (window.location.pathname || '/').replace(/\/+$/, '') || '/';
@@ -51,6 +52,15 @@
         setOpen(false);
       }
     });
+  }
+
+  function optimizeAboutPage() {
+    if (!isAboutPage()) return;
+
+    const hero = document.querySelector('.page-hero .frame');
+    if (hero) {
+      hero.style.backgroundImage = `url('${ABOUT_HERO}')`;
+    }
   }
 
   function applyAboutHomeHeaderStyles() {
@@ -302,6 +312,7 @@
       return;
     }
 
+    optimizeAboutPage();
     applyAboutHomeHeaderStyles();
     removeOldShell();
 
