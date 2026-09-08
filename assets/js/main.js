@@ -2,6 +2,7 @@
   const WA_BASE = 'https://wa.me/917457905011';
   const WA = WA_BASE + '?text=Hello%20Tour%20Varanasi%2C%20I%20would%20like%20to%20plan%20a%20journey.';
   const EMAIL = 'mailto:tours@tourvaranasi.com';
+  const PMJ = '/plan-my-journey/';
   const LOGO = '/tour-varanasi-logo.png';
   const ABOUT_LOGO = LOGO;
   const ABOUT_HERO = '/assets/images/guest_joyful_boat.webp';
@@ -63,12 +64,58 @@
       link.setAttribute('aria-label', 'WhatsApp Tour Varanasi at +91 74579 05011');
     });
 
+    root.querySelectorAll('a[href="/tour-varanasi-contact/"], a[href="/tour-varanasi-contact"], a[href="/contact/"], a[href="/contact"], a[href="/contact-us/"], a[href="/contact-us"]').forEach(function (link) {
+      link.href = PMJ;
+    });
+
     root.querySelectorAll('a').forEach(function (link) {
       const href = link.getAttribute('href') || '';
       if ((link.textContent || '').trim().toLowerCase() === 'tours@tourvaranasi.com' && !href.startsWith('mailto:')) {
         link.href = EMAIL;
       }
     });
+  }
+
+  function tidyHomepageNavigation() {
+    if (!isHomepage()) return;
+
+    const nav = document.querySelector('.navlinks');
+    if (!nav) return;
+
+    nav.querySelectorAll('a').forEach(function (link) {
+      const text = (link.textContent || '').trim().toLowerCase();
+      if (text === 'contact' || text === 'contact us') {
+        link.remove();
+      }
+    });
+  }
+
+  function ensureHomepageFooterContact() {
+    if (!isHomepage()) return;
+
+    const footer = document.querySelector('footer.footer');
+    if (!footer) return;
+
+    const alreadyThere = Array.from(footer.querySelectorAll('a')).some(function (link) {
+      const text = (link.textContent || '').trim().toLowerCase();
+      return text === 'contact' || text === 'contact us';
+    });
+
+    if (alreadyThere) return;
+
+    const columns = footer.querySelectorAll('.footer-grid > div');
+    const target = columns.length ? columns[columns.length - 1] : footer;
+    const link = document.createElement('a');
+    link.href = PMJ;
+    link.textContent = 'Contact Us';
+    link.setAttribute('data-tv-footer-contact', '1');
+
+    const contactLine = target.querySelector('.contact-line');
+    if (contactLine) {
+      target.insertBefore(link, contactLine);
+    } else {
+      target.appendChild(link);
+    }
   }
 
   function optimizeAboutPage() {
@@ -223,11 +270,7 @@
             About
           </a>
 
-          <a href="/plan-my-journey/">
-            Contact
-          </a>
-
-          <a class="tv-nav-cta" href="/plan-my-journey/">
+          <a class="tv-nav-cta" href="${PMJ}">
             Plan My Journey
           </a>
 
@@ -275,7 +318,7 @@
           <h4>Plan</h4>
 
           <a href="/experiences/">Experiences</a>
-          <a href="/plan-my-journey/">Plan My Journey</a>
+          <a href="${PMJ}">Plan My Journey</a>
           <a href="/service-standards/">Service Standards</a>
           <a href="/reviews/">Guest Reviews</a>
           <a href="/blogs/">Travel Guide</a>
@@ -285,7 +328,7 @@
           <h4>Tour Varanasi</h4>
 
           <a href="/about-us/">About Us</a>
-          <a href="/plan-my-journey/">Contact</a>
+          <a href="${PMJ}">Contact Us</a>
           <a href="/legal/">Legal</a>
           <a href="/privacy-policy/">Privacy Policy</a>
           <a href="/sitemap.xml">Sitemap</a>
@@ -329,6 +372,8 @@
   function applySharedShell() {
     if (isHomepage()) {
       normalizeContactLinks(document);
+      tidyHomepageNavigation();
+      ensureHomepageFooterContact();
       bindMenu(document);
       return;
     }
