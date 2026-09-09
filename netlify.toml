@@ -1,7 +1,10 @@
 # Tour Varanasi production build — content generation + technical validation
 [build]
-  command = "node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs && node scripts/technical-hardening.mjs && node scripts/audit-site.mjs"
+  command = "node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs && node scripts/technical-hardening.mjs && node scripts/cwv-hardening.mjs && node scripts/audit-site.mjs && node scripts/crawl-index-audit.mjs"
   publish = "."
+
+[images]
+  remote_images = ["https://images.unsplash.com/.*", "https://commons.wikimedia.org/.*", "https://upload.wikimedia.org/.*"]
 
 [[redirects]]
   from = "/tour-varanasi-contact/"
@@ -26,30 +29,18 @@
 [[headers]]
   for = "/assets/images/pmj-*.webp"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
     Content-Type = "image/png"
 
 [[headers]]
   for = "/assets/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/assets/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/about-us/*"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-    Clear-Site-Data = "\"cache\""
-
-[[headers]]
-  for = "/plan-my-journey/*"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-    Clear-Site-Data = "\"cache\""
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/tour-varanasi-logo.png"
