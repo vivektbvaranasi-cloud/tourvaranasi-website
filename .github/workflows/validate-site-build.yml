@@ -2,7 +2,7 @@ name: Validate site build
 
 on:
   push:
-    branches: [main, technical/cleanup-2026-09-09]
+    branches: [main, technical/cwv-indexation-2026-09-09]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -23,10 +23,10 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Run production build and technical audit
-        run: node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs && node scripts/technical-hardening.mjs && node scripts/audit-site.mjs
+      - name: Run production build and technical audits
+        run: node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs && node scripts/technical-hardening.mjs && node scripts/cwv-hardening.mjs && node scripts/audit-site.mjs && node scripts/crawl-index-audit.mjs
 
-      - name: Verify travel guide output
+      - name: Verify travel guide and performance output
         shell: bash
         run: |
           set -euo pipefail
@@ -46,4 +46,7 @@ jobs:
           test "$(wc -c < index.html)" -lt 100000
           ! grep -q "data:image/" index.html
           grep -q "/.netlify/images?url=" plan-my-journey/index.html
-          echo "Travel guide and technical verification passed."
+          ! grep -q "@import url('https://fonts.googleapis.com" assets/css/style.css
+          grep -q "fonts.gstatic.com" tours/varanasi-tour-in-two-days/index.html
+          grep -q "fetchpriority=\"high\"" tours/varanasi-tour-in-two-days/index.html
+          echo "Travel guide, CWV and crawl verification passed."
