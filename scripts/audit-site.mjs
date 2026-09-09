@@ -1,5 +1,5 @@
 import { readdir, readFile, stat } from 'node:fs/promises';
-import { join, dirname, relative, sep } from 'node:path';
+import { join, relative, sep } from 'node:path';
 
 const ROOT='.';
 const SITE='https://www.tourvaranasi.com';
@@ -32,7 +32,11 @@ function attrs(tag){
   return map;
 }
 function metas(html){return [...html.matchAll(/<meta\b[^>]*>/gi)].map(m=>attrs(m[0]));}
-function hasMeta(html,type,key){return metas(html).some(a=>(a.get(type)||'').toLowerCase()===key.toLowerCase() && (a.get('content')||'').trim());}
+function metaValue(html,type,key){
+  const a=metas(html).find(x=>(x.get(type)||'').toLowerCase()===key.toLowerCase());
+  return a?.get('content')||'';
+}
+function hasMeta(html,type,key){return Boolean(metaValue(html,type,key).trim());}
 function countMeta(html,type,key){return metas(html).filter(a=>(a.get(type)||'').toLowerCase()===key.toLowerCase()).length;}
 function decodeHtml(value){return value.replaceAll('&amp;','&').replaceAll('&quot;','"').replaceAll('&#39;',"'");}
 function localSourceFromCdn(src){
@@ -68,19 +72,29 @@ const redirectSources=new Set(redirectText.split(/\r?\n/).map(l=>l.trim()).filte
 for(const file of htmlFiles){
   const html=await readFile(file,'utf8');
   const url=pageUrl(file);
+  const isVerification=/^\/google[a-z0-9]+\.html$/i.test(url);
+  if(isVerification) continue;
+
   const is404=url==='/404.html';
+  const robotsContent=metaValue(html,'name','robots').toLowerCase();
+  const isNoindex=robotsContent.includes('noindex');
   const title=(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]||'').trim();
   if(!title) errors.push(`${url}: missing <title>`);
-  if(!/<meta\b[^>]*name=["']viewport["']/i.test(html)) errors.push(`${url}: missing viewport meta`);
-  if(!is404){
+  if(!/<meta\b[^>]*name=["']viewport["']|<meta\b[^>]*content=["'][^"']*width=device-width[^"']*["'][^>]*name=["']viewport["']/i.test(html)) errors.push(`${url}: missing viewport meta`);
+
+  if(is404){
+    if(!isNoindex) errors.push('/404.html: must be noindex');
+  }else if(isNoindex){
+    const canon=[...html.matchAll(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi)];
+    if(canon.length>1) errors.push(`${url}: multiple canonicals on noindex page`);
+  }else{
     for(const [type,key] of [['name','description'],['name','robots'],['property','og:type'],['property','og:title'],['property','og:description'],['property','og:url'],['property','og:image'],['name','twitter:card'],['name','twitter:title'],['name','twitter:description'],['name','twitter:image']]){
       if(!hasMeta(html,type,key)) errors.push(`${url}: missing ${key}`);
     }
     const canon=[...html.matchAll(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi)];
     if(canon.length!==1) errors.push(`${url}: expected 1 canonical, found ${canon.length}`);
-  }else if(!/name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html) && !/content=["'][^"']*noindex[^"']*["'][^>]*name=["']robots["']/i.test(html)){
-    errors.push('/404.html: must be noindex');
   }
+
   for(const [type,key] of [['name','description'],['property','og:title'],['property','og:description'],['property','og:url'],['property','og:image'],['name','twitter:card']]){
     if(countMeta(html,type,key)>1) warnings.push(`${url}: duplicate ${key} metadata`);
   }
