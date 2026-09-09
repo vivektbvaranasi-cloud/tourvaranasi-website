@@ -24,7 +24,7 @@ jobs:
           node-version: '22'
 
       - name: Run production build
-        run: node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs
+        run: node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs
 
       - name: Verify travel guide output
         shell: bash
