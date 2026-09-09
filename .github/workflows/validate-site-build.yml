@@ -1,0 +1,46 @@
+name: Validate site build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run production build
+        run: node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs
+
+      - name: Verify travel guide output
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "24 practical guides" blogs/index.html
+          test -f blogs/post/first-time-in-ayodhya/index.html
+          test -f blogs/post/prayagraj-one-day-guide/index.html
+          test -f blogs/post/mathura-vrindavan-two-days/index.html
+          test -f blogs/post/banke-bihari-vrindavan-temples/index.html
+          test -f blogs/post/agra-one-day/index.html
+          test -f blogs/post/delhi-gateway-sacred-north-india/index.html
+          test -f blogs/post/lucknow-one-day-guide/index.html
+          test -f blogs/post/bodh-gaya-travel-guide/index.html
+          test -f blogs/post/rajgir-nalanda-guide/index.html
+          test -f blogs/post/kushinagar-lumbini-guide/index.html
+          grep -q "first-time-in-ayodhya" sitemap.xml
+          grep -q "kushinagar-lumbini-guide" sitemap.xml
+          echo "Travel guide build verification passed."
