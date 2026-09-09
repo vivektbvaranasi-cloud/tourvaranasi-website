@@ -2,7 +2,7 @@ name: Validate site build
 
 on:
   push:
-    branches: [main]
+    branches: [main, technical/cleanup-2026-09-09]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Run production build
-        run: node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs
+      - name: Run production build and technical audit
+        run: node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs && node scripts/technical-hardening.mjs && node scripts/audit-site.mjs
 
       - name: Verify travel guide output
         shell: bash
@@ -43,4 +43,7 @@ jobs:
           test -f blogs/post/kushinagar-lumbini-guide/index.html
           grep -q "first-time-in-ayodhya" sitemap.xml
           grep -q "kushinagar-lumbini-guide" sitemap.xml
-          echo "Travel guide build verification passed."
+          test "$(wc -c < index.html)" -lt 100000
+          ! grep -q "data:image/" index.html
+          grep -q "/.netlify/images?url=" plan-my-journey/index.html
+          echo "Travel guide and technical verification passed."
