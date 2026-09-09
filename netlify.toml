@@ -1,6 +1,6 @@
 # Tour Varanasi production build — content generation + technical validation
 [build]
-  command = "node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs && node scripts/technical-hardening.mjs && node scripts/cwv-hardening.mjs && node scripts/audit-site.mjs && node scripts/crawl-index-audit.mjs"
+  command = "node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/refine-varanasi-content.mjs && node scripts/inject-nav-state.mjs && node scripts/technical-hardening.mjs && node scripts/cwv-hardening.mjs && node scripts/audit-site.mjs && node scripts/crawl-index-audit.mjs"
   publish = "."
 
 [images]
