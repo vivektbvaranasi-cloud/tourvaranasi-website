@@ -1,3 +1,4 @@
+# Tour Varanasi production build — 24 practical travel guides
 [build]
   command = "node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs"
   publish = "."
