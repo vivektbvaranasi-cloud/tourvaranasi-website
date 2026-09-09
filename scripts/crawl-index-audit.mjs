@@ -50,6 +50,9 @@ function normalize(url){
     return u.href;
   }catch{return '';}
 }
+function normalizePath(path){
+  try{return new URL(normalize(path)).pathname;}catch{return path;}
+}
 async function existsPath(url){
   try{
     const u=new URL(url);
@@ -68,6 +71,17 @@ async function existsPath(url){
   }
 }
 
+const redirects=await readFile('_redirects','utf8');
+const redirectSources=new Set();
+for(const line of redirects.split(/\r?\n/)){
+  const clean=line.trim();
+  if(!clean||clean.startsWith('#')) continue;
+  const parts=clean.split(/\s+/);
+  if(parts.length<2) continue;
+  const status=parts.find(p=>/^30[12378]!?$/.test(p));
+  if(status) redirectSources.add(normalizePath(parts[0]));
+}
+
 const files=await walk();
 const pages=[];
 for(const file of files){
@@ -76,9 +90,10 @@ for(const file of files){
   if(/^\/google[a-z0-9]+\.html$/i.test(path)) continue;
   const robots=meta(html,'robots').toLowerCase();
   const refresh=/<meta\b[^>]*http-equiv=["']refresh["']/i.test(html)||/<meta\b[^>]*content=["'][^"']*url=[^"']*["'][^>]*http-equiv=["']refresh["']/i.test(html);
-  const indexable=path!=='/404.html'&&!robots.includes('noindex')&&!refresh;
+  const redirected=redirectSources.has(normalizePath(path));
+  const indexable=path!=='/404.html'&&!robots.includes('noindex')&&!refresh&&!redirected;
   const canon=normalize(canonical(html)||`${SITE}${path}`);
-  pages.push({file,path,html,indexable,canon});
+  pages.push({file,path,html,indexable,canon,redirected});
 }
 
 const sitemap=await readFile('sitemap.xml','utf8');
@@ -113,7 +128,7 @@ for(const [url,count] of inbound){
   if(count===0) warnings.push(`Orphan candidate: ${url} has no internal links from other indexable pages.`);
 }
 
-console.log(`Crawl/index audit: ${indexable.length} canonical indexable pages; ${sitemapSet.size} sitemap URLs.`);
+console.log(`Crawl/index audit: ${indexable.length} canonical indexable pages; ${sitemapSet.size} sitemap URLs; ${redirectSources.size} redirect sources excluded.`);
 if(warnings.length){
   console.log(`Crawl warnings (${warnings.length}):`);
   for(const w of warnings.slice(0,30)) console.log(`  - ${w}`);
