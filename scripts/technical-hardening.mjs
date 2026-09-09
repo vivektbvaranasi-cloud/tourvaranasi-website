@@ -150,7 +150,11 @@ function hardenHomepage(html) {
 }
 
 function ensureSeo(html, file) {
-  const is404 = sitePath(file) === '/404.html';
+  const path = sitePath(file);
+  if (/^\/google[a-z0-9]+\.html$/i.test(path)) return html;
+
+  const is404 = path === '/404.html';
+  const robots = metaValue(html, 'robots').toLowerCase();
   const title = (html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || '').replace(/<[^>]+>/g, '').trim();
   const description = metaValue(html, 'description') || metaValue(html, 'og:description', 'property');
   const canonical = metaValue(html, 'og:url', 'property') || canonicalFor(file);
@@ -168,11 +172,13 @@ function ensureSeo(html, file) {
     return html;
   }
 
+  if (robots.includes('noindex')) return html;
+
   if (!/<link\b[^>]*\brel=["']canonical["']/i.test(html)) {
     html = ensureHeadTag(html, () => false, `<link rel="canonical" href="${canonicalFor(file)}"/>`);
   }
   html = ensureMeta(html, 'name', 'robots', 'index,follow');
-  html = ensureMeta(html, 'property', 'og:type', sitePath(file).includes('/blogs/') || sitePath(file).includes('/travel-guide/') ? 'article' : 'website');
+  html = ensureMeta(html, 'property', 'og:type', path.includes('/blogs/') || path.includes('/travel-guide/') ? 'article' : 'website');
   html = ensureMeta(html, 'property', 'og:title', ogTitle);
   html = ensureMeta(html, 'property', 'og:description', ogDescription);
   html = ensureMeta(html, 'property', 'og:url', canonical);
