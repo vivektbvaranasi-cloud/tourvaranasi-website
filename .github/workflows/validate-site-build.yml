@@ -2,7 +2,7 @@ name: Validate site build
 
 on:
   push:
-    branches: [main, technical/cwv-indexation-2026-09-09]
+    branches: [main, technical/cwv-indexation-2026-09-09, content/varanasi-practical-refinements-2026-09-09]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
           node-version: '22'
 
       - name: Run production build and technical audits
-        run: node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/inject-nav-state.mjs && node scripts/technical-hardening.mjs && node scripts/cwv-hardening.mjs && node scripts/audit-site.mjs && node scripts/crawl-index-audit.mjs
+        run: node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/refine-varanasi-content.mjs && node scripts/inject-nav-state.mjs && node scripts/technical-hardening.mjs && node scripts/cwv-hardening.mjs && node scripts/audit-site.mjs && node scripts/crawl-index-audit.mjs
 
       - name: Verify travel guide and performance output
         shell: bash
@@ -49,4 +49,11 @@ jobs:
           ! grep -q "@import url('https://fonts.googleapis.com" assets/css/style.css
           grep -q "fonts.gstatic.com" tours/varanasi-tour-in-two-days/index.html
           grep -q "fetchpriority=\"high\"" tours/varanasi-tour-in-two-days/index.html
-          echo "Travel guide, CWV and crawl verification passed."
+          test -f assets/images/user/guest-aarti-balcony-may-2026.webp
+          test -f assets/images/user/guest-sankalp-aarti-may-2026.webp
+          test -f assets/images/user/guest-sunrise-boat-music-may-2026.webp
+          grep -q "we usually prefer a balcony to a boat" blogs/post/ganga-aarti-varanasi-guide/index.html
+          grep -q "Manikarnika Ghat" blogs/post/sunrise-boat-ride-varanasi-guide/index.html
+          grep -q "Kachori Gali" tours/varanasi-tour-in-two-days/index.html
+          grep -q "skip-the-line darshan" tours/varanasi-tour-in-two-days/index.html
+          echo "Travel guide, Varanasi refinements, CWV and crawl verification passed."
