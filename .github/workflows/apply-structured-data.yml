@@ -1,0 +1,72 @@
+name: Apply structured data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/schema-hardening.mjs'
+      - '.github/workflows/apply-structured-data.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply-schema:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Apply page-specific structured data
+        run: node scripts/schema-hardening.mjs
+
+      - name: Validate structured data output
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const skip = new Set(['.git', '.netlify', 'node_modules']);
+          function walk(dir='.') {
+            const out=[];
+            for (const name of fs.readdirSync(dir)) {
+              if (skip.has(name)) continue;
+              const p=path.join(dir,name);
+              const st=fs.statSync(p);
+              if (st.isDirectory()) out.push(...walk(p));
+              else if (st.isFile() && p.endsWith('.html')) out.push(p);
+            }
+            return out;
+          }
+
+          let scripts=0;
+          for (const file of walk()) {
+            const html=fs.readFileSync(file,'utf8');
+            const re=/<script\b[^>]*type=(["'])application\/ld\+json\1[^>]*>([\s\S]*?)<\/script>/gi;
+            for (const m of html.matchAll(re)) {
+              JSON.parse(m[2]);
+              scripts++;
+            }
+          }
+          console.log('Validated JSON-LD blocks:', scripts);
+          if (!scripts) throw new Error('No JSON-LD blocks found after schema generation.');
+          NODE
+
+      - name: Commit generated schema
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No schema changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html'
+          git commit -m "Apply page-specific structured data"
+          git push
