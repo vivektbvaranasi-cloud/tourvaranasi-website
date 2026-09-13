@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/contextual-linking.mjs'
       - 'scripts/internal-linking.mjs'
+      - 'scripts/homepage-related-links.mjs'
       - '.github/workflows/materialize-internal-links.yml'
   workflow_dispatch:
 
@@ -29,6 +30,9 @@ jobs:
 
       - name: Apply related-page links
         run: node scripts/internal-linking.mjs
+
+      - name: Refine homepage planning links
+        run: node scripts/homepage-related-links.mjs
 
       - name: Commit generated HTML
         run: |
