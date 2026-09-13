@@ -1,0 +1,43 @@
+name: Materialize internal links
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/contextual-linking.mjs'
+      - 'scripts/internal-linking.mjs'
+      - '.github/workflows/materialize-internal-links.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Apply contextual links
+        run: node scripts/contextual-linking.mjs
+
+      - name: Apply related-page links
+        run: node scripts/internal-linking.mjs
+
+      - name: Commit generated HTML
+        run: |
+          if git diff --quiet -- '*.html'; then
+            echo "No HTML changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html'
+          git commit -m "Materialize internal links in site HTML"
+          git push
