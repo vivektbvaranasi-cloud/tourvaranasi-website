@@ -1,0 +1,72 @@
+/* Tour Varanasi — softer, high-contrast reading palette */
+:root{
+  --tv-text:#464a46;
+  --tv-heading:#252a27;
+  --tv-secondary:#696d68;
+  --tv-link:#735446;
+}
+
+body{color:var(--tv-text)}
+
+/* Keep titles confident while making long-form copy gentler on the eyes */
+h1,h2,h3,h4,h5,h6,
+.section h2,.section h3,
+.prose h2,.prose h3,
+.itinerary-copy h3,
+.faq-list summary,
+.glance strong,
+.route span,
+.review blockquote{color:var(--tv-heading)}
+
+/* Comfortable reading colour for long-form and itinerary content */
+.prose p,.prose li,
+.section p,
+.editorial .copy p,
+.itinerary-copy p,
+.itinerary-copy .day-sights,
+.time-copy p,
+.feature p,
+.policy-card p,
+.standard-block p,
+.journey-value-grid p,
+.what-next-grid p{color:var(--tv-text)}
+
+/* Secondary information remains clearly readable without competing with body copy */
+.muted,
+.card p,.team-card p,
+.review cite,
+.gallery-item figcaption,
+.comfort-intro p,
+.faq-list details p,
+.itinerary-copy p.muted,
+.trust-grid span,
+.journey-proof-copy cite,.journey-review-grid cite,
+.journey-photo-grid figcaption,
+.legal-note,
+.standards-photo figcaption,
+.standards-triptych figcaption{color:var(--tv-secondary)}
+
+/* Links should be visible but not visually aggressive */
+.prose a:not(.btn),
+.feature a,
+.blog-card a:hover,
+.more-link a,.guide-pillar-link a,.small-guide-link a,
+.tv-related-links a{color:var(--tv-link);text-decoration-color:rgba(115,84,70,.42);text-underline-offset:3px}
+.prose a:not(.btn):hover,.feature a:hover,.tv-related-links a:hover{color:#563d33}
+
+/* Lead copy stays premium and softer than headings */
+.lede{color:#3f443f}
+.note{color:#4d514d}
+
+/* Do not soften text placed over photography or dark surfaces */
+.hero,.hero h1,.hero p,
+.page-hero,.page-hero h1,.page-hero p,
+.journey-hero,.journey-hero h1,.journey-hero p,
+.journey-closing,.journey-closing h2,
+.tv-footer,.tv-footer h4,
+.footer,.footer h4{color:inherit}
+
+@media(max-width:620px){
+  body{line-height:1.72}
+  .prose p,.prose li,.itinerary-copy p{line-height:1.74}
+}
