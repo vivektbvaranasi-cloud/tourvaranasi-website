@@ -1,11 +1,126 @@
 (function () {
   const WA_BASE = 'https://wa.me/917457905011';
-  const WA = WA_BASE + '?text=Hello%20Tour%20Varanasi%2C%20I%20would%20like%20to%20plan%20a%20journey.';
+  const WA_MESSAGE = 'Hello Tour Varanasi, I am planning a private journey to Varanasi. Please help me with an itinerary and quotation.';
+  const WA = WA_BASE + '?text=' + encodeURIComponent(WA_MESSAGE);
   const EMAIL = 'mailto:tours@tourvaranasi.com';
   const PMJ = '/plan-my-journey/';
   const LOGO = '/tour-varanasi-logo.png';
   const ABOUT_LOGO = LOGO;
   const ABOUT_HERO = '/assets/images/guest_joyful_boat.webp';
+
+  function trackEvent(name, params) {
+    const payload = Object.assign({
+      page_path: window.location.pathname || '/',
+      page_title: document.title || ''
+    }, params || {});
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', name, payload);
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: name }, payload));
+    }
+  }
+
+  function whatsappLocation(link) {
+    if (link.closest('.tv-top-contact-bar, .top-contact-bar, .topbar')) return 'top_bar';
+    if (link.closest('.tv-footer, .footer, .site-footer')) return 'footer';
+    if (link.closest('.tv-whatsapp-float')) return 'floating_button';
+    if (link.closest('.hero, .page-hero, .journey-hero')) return 'hero';
+    return 'page_content';
+  }
+
+  function ensureConversionStyles() {
+    if (document.getElementById('tv-conversion-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'tv-conversion-styles';
+    style.textContent = `
+      .tv-whatsapp-float{
+        position:fixed;
+        right:20px;
+        bottom:20px;
+        z-index:95;
+        display:inline-flex;
+        align-items:center;
+        gap:9px;
+        min-height:48px;
+        padding:12px 16px;
+        background:#1f5f4a;
+        color:#fff!important;
+        border:1px solid rgba(255,255,255,.22);
+        text-decoration:none!important;
+        font:600 13px/1.2 'Inter',Arial,sans-serif;
+        letter-spacing:.01em;
+        box-shadow:0 10px 28px rgba(0,0,0,.18);
+        transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+      }
+      .tv-whatsapp-float:hover{
+        transform:translateY(-2px);
+        box-shadow:0 14px 34px rgba(0,0,0,.22);
+        background:#194d3d;
+      }
+      .tv-whatsapp-float svg{width:18px;height:18px;display:block;fill:currentColor}
+      @media(max-width:680px){
+        .tv-whatsapp-float{
+          right:14px;
+          bottom:14px;
+          min-height:46px;
+          padding:11px 14px;
+          font-size:12px;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function ensureFloatingWhatsApp() {
+    if (document.querySelector('.tv-whatsapp-float')) return;
+    const link = document.createElement('a');
+    link.className = 'tv-whatsapp-float';
+    link.href = WA;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.setAttribute('aria-label', 'Chat with Tour Varanasi on WhatsApp');
+    link.innerHTML = `
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.38c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.24-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.17 1.75 2.67 4.24 3.74.59.25 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.3zM16.03 3.2c-7.05 0-12.78 5.71-12.78 12.75 0 2.25.59 4.45 1.71 6.38L3.14 28.8l6.63-1.74a12.8 12.8 0 0 0 6.25 1.59h.01c7.04 0 12.77-5.72 12.77-12.76C28.8 8.86 23.08 3.2 16.03 3.2zm0 23.29h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-3.94 1.03 1.05-3.84-.25-.4a10.55 10.55 0 0 1-1.62-5.62c0-5.83 4.75-10.58 10.59-10.58 5.83 0 10.57 4.75 10.57 10.58 0 5.84-4.74 10.58-10.6 10.58z"/></svg>
+      <span>Chat on WhatsApp</span>
+    `;
+    document.body.appendChild(link);
+  }
+
+  function bindConversionTracking(root = document) {
+    if (root.documentElement && root.documentElement.dataset.tvTrackingBound === '1') return;
+    if (root.documentElement) root.documentElement.dataset.tvTrackingBound = '1';
+
+    root.addEventListener('click', function (event) {
+      const link = event.target.closest('a');
+      if (!link) return;
+      const href = link.getAttribute('href') || '';
+
+      if (href.includes('wa.me/917457905011')) {
+        trackEvent('whatsapp_click', {
+          link_location: whatsappLocation(link),
+          link_text: (link.textContent || '').trim().slice(0, 120)
+        });
+      }
+
+      if (href === '/plan-my-journey/' || href === '/plan-my-journey') {
+        trackEvent('plan_my_journey_click', {
+          link_location: whatsappLocation(link),
+          link_text: (link.textContent || '').trim().slice(0, 120)
+        });
+      }
+    });
+
+    root.addEventListener('submit', function (event) {
+      const form = event.target;
+      if (!(form instanceof HTMLFormElement)) return;
+      const name = form.getAttribute('name') || form.id || 'form';
+      if (name === 'journey-enquiry' || form.closest('.quote-wrap, .journey-form-wrap')) {
+        trackEvent('journey_enquiry_submit', { form_name: name });
+      }
+    });
+  }
 
   function currentPath() {
     return (window.location.pathname || '/').replace(/\/+$/, '') || '/';
@@ -57,7 +172,7 @@
   }
 
   function normalizeContactLinks(root = document) {
-    root.querySelectorAll('a[href^="tel:+917457905011"], a[href^="tel:917457905011"]').forEach(function (link) {
+    root.querySelectorAll('a[href^="tel:+917457905011"], a[href^="tel:917457905011"], a[href*="wa.me/917457905011"]').forEach(function (link) {
       link.href = WA;
       link.target = '_blank';
       link.rel = 'noopener';
@@ -370,11 +485,15 @@
   }
 
   function applySharedShell() {
+    ensureConversionStyles();
+    bindConversionTracking(document);
+
     if (isHomepage()) {
       normalizeContactLinks(document);
       tidyHomepageNavigation();
       ensureHomepageFooterContact();
       bindMenu(document);
+      ensureFloatingWhatsApp();
       return;
     }
 
@@ -394,6 +513,7 @@
 
     normalizeContactLinks(document);
     bindMenu(document);
+    ensureFloatingWhatsApp();
   }
 
   if (document.readyState === 'loading') {
