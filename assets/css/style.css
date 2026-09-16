@@ -498,7 +498,7 @@ body{font-size:18px;line-height:1.68}
 .tv-related-links .feature{
   position:relative;
   min-height:180px;
-  padding:27px 29px 54px!important;
+  padding:27px 29px 29px!important;
   background:#fffdfa;
   border:1px solid #e2dbd2!important;
   border-top:2px solid #b99576!important;
@@ -534,18 +534,6 @@ body{font-size:18px;line-height:1.68}
   line-height:1.65!important;
   color:#65615c!important;
 }
-.tv-related-links .feature:after{
-  content:"Explore";
-  position:absolute;
-  left:29px;
-  bottom:22px;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:#9a7a63;
-}
-
 @media(max-width:620px){
   .tv-related-links{
     padding:48px 18px 52px!important;
@@ -573,7 +561,7 @@ body{font-size:18px;line-height:1.68}
   }
   .tv-related-links .feature{
     min-height:0;
-    padding:22px 22px 48px!important;
+    padding:22px!important;
   }
   .tv-related-links .feature h3{
     font-size:24px!important;
@@ -583,10 +571,5 @@ body{font-size:18px;line-height:1.68}
   .tv-related-links .feature p{
     font-size:15px!important;
     line-height:1.6!important;
-  }
-  .tv-related-links .feature:after{
-    left:22px;
-    bottom:17px;
-    font-size:9px;
   }
 }
