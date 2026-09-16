@@ -584,3 +584,72 @@ body{font-size:18px;line-height:1.68}
   -webkit-text-fill-color:#fff!important;
   font-weight:600!important;
 }
+
+
+/* === MOBILE FORM CONTAINMENT ===
+   Prevent enquiry fields and grid children from overflowing narrow screens. */
+.quote-wrap,
+.journey-form-wrap{
+  overflow-x:hidden;
+}
+.quote-wrap .section,
+.journey-form-wrap>.section,
+.quote-form,
+.quote-form>div,
+.journey-form-wrap form,
+.journey-form-wrap form>div{
+  min-width:0;
+  max-width:100%;
+}
+.quote-form input,
+.quote-form select,
+.quote-form textarea,
+.journey-form-wrap input,
+.journey-form-wrap select,
+.journey-form-wrap textarea{
+  display:block;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  box-sizing:border-box;
+}
+
+@media(max-width:700px){
+  .quote-wrap .section,
+  .journey-form-wrap>.section{
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:30px!important;
+    width:100%!important;
+    max-width:100%!important;
+    padding-left:20px!important;
+    padding-right:20px!important;
+  }
+  .quote-form,
+  .journey-form-wrap form{
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    overflow:visible!important;
+  }
+  .quote-form .full,
+  .journey-form-wrap form .full{
+    grid-column:1!important;
+  }
+  .quote-form input,
+  .quote-form select,
+  .quote-form textarea,
+  .journey-form-wrap input:not([type="checkbox"]):not([type="radio"]),
+  .journey-form-wrap select,
+  .journey-form-wrap textarea{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    font-size:16px!important;
+  }
+  .quote-form button,
+  .journey-form-wrap form button[type="submit"]{
+    width:100%!important;
+    max-width:100%!important;
+  }
+}
