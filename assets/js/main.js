@@ -132,7 +132,7 @@
   }
 
   function isAboutPage() {
-    return currentPath() === '/about-us';
+    return currentPath() === '/about-us' || currentPath() === '/about-tour-varanasi';
   }
 
   function bindMenu(root = document) {
@@ -442,7 +442,7 @@
         <div>
           <h4>Tour Varanasi</h4>
 
-          <a href="/about-us/">About Us</a>
+          <a href="/about-tour-varanasi/">About Us</a>
           <a href="${PMJ}">Contact Us</a>
           <a href="/legal/">Legal</a>
           <a href="/privacy-policy/">Privacy Policy</a>
