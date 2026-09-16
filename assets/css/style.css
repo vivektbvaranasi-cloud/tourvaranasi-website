@@ -573,3 +573,14 @@ body{font-size:18px;line-height:1.68}
     line-height:1.6!important;
   }
 }
+
+/* Footer heading contrast — keep section labels readable on green */
+.footer h4,
+.footer-grid h4,
+.tv-footer h4,
+.tv-footer-grid h4{
+  color:#fff!important;
+  opacity:1!important;
+  -webkit-text-fill-color:#fff!important;
+  font-weight:600!important;
+}
