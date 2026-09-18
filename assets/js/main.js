@@ -60,6 +60,23 @@
         background:#194d3d;
       }
       .tv-whatsapp-float svg{width:18px;height:18px;display:block;fill:currentColor}
+      .tv-language-switcher{position:relative;display:inline-flex;align-items:center}
+      .tv-language-switcher summary{cursor:pointer;list-style:none;font-size:12px;font-weight:700;letter-spacing:.04em;color:#3f433f;padding:8px 3px}
+      .tv-language-switcher summary::-webkit-details-marker{display:none}
+      .tv-language-switcher summary:after{content:"▾";font-size:9px;margin-left:5px;color:#777}
+      .tv-language-menu{position:absolute;right:0;top:100%;z-index:120;min-width:170px;background:#fffdf9;border:1px solid #ddd8cf;box-shadow:0 12px 30px rgba(30,30,30,.12);padding:8px}
+      .tv-language-menu a{display:block!important;margin:0!important;padding:8px 10px!important;font-size:12px!important;color:#303430!important;white-space:nowrap}
+      .tv-language-menu a:hover{background:#f3eee6;color:#8d4f3d!important}
+      .tv-language-menu a[aria-current="page"]{font-weight:700;background:#edf1ec}
+      .tv-language-footer{max-width:1180px;margin:32px auto 0;padding:18px 28px 0;border-top:1px solid rgba(255,255,255,.14);display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:11px;color:rgba(255,255,255,.7)}
+      .tv-language-footer strong{font-weight:600;color:#fff}
+      .tv-language-footer a{color:rgba(255,255,255,.78);text-decoration:none}
+      .tv-language-footer a:hover,.tv-language-footer a[aria-current="page"]{color:#fff}
+      @media(max-width:980px){
+        .tv-language-switcher{width:100%}
+        .tv-language-menu{position:static;box-shadow:none;border:0;background:transparent;padding:4px 0 0;min-width:0}
+        .tv-language-menu a{padding:7px 0!important}
+      }
       @media(max-width:680px){
         .tv-whatsapp-float{
           right:14px;
@@ -133,6 +150,60 @@
 
   function isAboutPage() {
     return currentPath() === '/about-us' || currentPath() === '/about-tour-varanasi';
+  }
+
+
+  function isLocalizedLanding() {
+    return /^\/(de|fr|es|it|ja|zh)(\/|$)/.test(currentPath());
+  }
+
+  function currentLanguageCode() {
+    const match = currentPath().match(/^\/(de|fr|es|it|ja|zh)(\/|$)/);
+    return match ? match[1] : 'en';
+  }
+
+  function ensureLanguageSwitcher() {
+    const languages = [
+      ['en', 'EN', '/'],
+      ['de', 'Deutsch', '/de/'],
+      ['fr', 'Français', '/fr/'],
+      ['es', 'Español', '/es/'],
+      ['it', 'Italiano', '/it/'],
+      ['ja', '日本語', '/ja/'],
+      ['zh', '中文', '/zh/']
+    ];
+    const current = currentLanguageCode();
+    const active = languages.find(function (item) { return item[0] === current; }) || languages[0];
+
+    const nav = document.querySelector('.tv-navlinks, .navlinks');
+    if (nav && !nav.querySelector('.tv-language-switcher')) {
+      const switcher = document.createElement('details');
+      switcher.className = 'tv-language-switcher';
+      switcher.innerHTML =
+        '<summary aria-label="Choose language">' + active[1] + '</summary>' +
+        '<div class="tv-language-menu">' +
+        languages.map(function (item) {
+          return '<a href="' + item[2] + '"' + (item[0] === current ? ' aria-current="page"' : '') + '>' + item[1] + '</a>';
+        }).join('') +
+        '</div>';
+      const cta = nav.querySelector('.tv-nav-cta, .nav-cta');
+      if (cta) nav.insertBefore(switcher, cta);
+      else nav.appendChild(switcher);
+    }
+
+    const footer = document.querySelector('footer.tv-footer, footer.footer, footer.site-footer');
+    if (footer && !footer.querySelector('.tv-language-footer')) {
+      const line = document.createElement('div');
+      line.className = 'tv-language-footer';
+      line.innerHTML =
+        '<strong>Languages</strong>' +
+        languages.map(function (item) {
+          return '<a href="' + item[2] + '"' + (item[0] === current ? ' aria-current="page"' : '') + '>' + item[1] + '</a>';
+        }).join('');
+      const bottom = footer.querySelector('.tv-footer-bottom, .footer-bottom, .copyright');
+      if (bottom) footer.insertBefore(line, bottom);
+      else footer.appendChild(line);
+    }
   }
 
   function bindMenu(root = document) {
@@ -488,10 +559,19 @@
     ensureConversionStyles();
     bindConversionTracking(document);
 
+    if (isLocalizedLanding()) {
+      normalizeContactLinks(document);
+      ensureLanguageSwitcher();
+      bindMenu(document);
+      ensureFloatingWhatsApp();
+      return;
+    }
+
     if (isHomepage()) {
       normalizeContactLinks(document);
       tidyHomepageNavigation();
       ensureHomepageFooterContact();
+      ensureLanguageSwitcher();
       bindMenu(document);
       ensureFloatingWhatsApp();
       return;
@@ -512,6 +592,7 @@
     document.body.appendChild(footer);
 
     normalizeContactLinks(document);
+    ensureLanguageSwitcher();
     bindMenu(document);
     ensureFloatingWhatsApp();
   }
