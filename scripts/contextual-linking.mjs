@@ -5,20 +5,24 @@ const root = process.cwd();
 
 const rules = {
   'blogs/post/how-many-days-in-varanasi/index.html': [
+    ['two days', '/tours/varanasi-tour-in-two-days/'],
+    ['three days', '/tours/varanasi-tour-in-three-days/'],
     ['sunrise on the Ganges', '/tours/varanasi-boat-ride/'],
-    ['Sarnath', '/blogs/post/sarnath-from-varanasi/'],
-    ['evening Ganga Aarti', '/blogs/post/ganga-aarti-varanasi-guide/'],
+    ['Sarnath', '/tours/varanasi-sarnath-tour/'],
+    ['evening Ganga Aarti', '/tours/evening-prayer-ceremony/'],
     ['Banarasi weaving', '/experiences/banarasi-silk-weaving/'],
     ['food walk', '/experiences/varanasi-food-walk/'],
   ],
   'blogs/post/ganga-aarti-varanasi-guide/index.html': [
+    ['Sankalp Aarti', '/tours/evening-prayer-ceremony/'],
     ['private guide', '/service-standards/'],
     ['old-city or bazaar walk', '/tours/varanasi-walking-tour/'],
     ['boat viewing', '/tours/varanasi-boat-ride/'],
     ['2-day stay', '/tours/varanasi-tour-in-two-days/'],
   ],
   'blogs/post/sunrise-boat-ride-varanasi-guide/index.html': [
-    ['Ganga Aarti', '/blogs/post/ganga-aarti-varanasi-guide/'],
+    ['private sunrise boat ride', '/tours/varanasi-boat-ride/'],
+    ['Ganga Aarti', '/tours/evening-prayer-ceremony/'],
     ['old city', '/tours/varanasi-walking-tour/'],
     ['two days', '/tours/varanasi-tour-in-two-days/'],
   ],
@@ -29,8 +33,8 @@ const rules = {
   ],
   'blogs/post/top-things-to-do/index.html': [
     ['sunrise boat', '/tours/varanasi-boat-ride/'],
-    ['Ganga Aarti', '/blogs/post/ganga-aarti-varanasi-guide/'],
-    ['Sarnath', '/blogs/post/sarnath-from-varanasi/'],
+    ['Ganga Aarti', '/tours/evening-prayer-ceremony/'],
+    ['Sarnath', '/tours/varanasi-sarnath-tour/'],
     ['food walk', '/experiences/varanasi-food-walk/'],
   ],
   'blogs/post/varanasi-food-guide/index.html': [
@@ -38,8 +42,8 @@ const rules = {
     ['old city', '/tours/varanasi-walking-tour/'],
   ],
   'blogs/post/best-time-to-visit-varanasi/index.html': [
-    ['Ganga Aarti', '/blogs/post/ganga-aarti-varanasi-guide/'],
-    ['boat ride', '/blogs/post/sunrise-boat-ride-varanasi-guide/'],
+    ['Ganga Aarti', '/tours/evening-prayer-ceremony/'],
+    ['boat ride', '/tours/varanasi-boat-ride/'],
     ['Dev Diwali', '/blogs/post/dev-diwali-in-varanasi-in-2025/'],
   ],
   'blogs/post/where-to-stay-in-varanasi/index.html': [
@@ -49,8 +53,8 @@ const rules = {
   ],
   'blogs/post/Varanasi-for-Foreigners/index.html': [
     ['first-time', '/travel-guide/first-time-in-varanasi/'],
-    ['Ganga Aarti', '/blogs/post/ganga-aarti-varanasi-guide/'],
-    ['Sarnath', '/blogs/post/sarnath-from-varanasi/'],
+    ['Ganga Aarti', '/tours/evening-prayer-ceremony/'],
+    ['Sarnath', '/tours/varanasi-sarnath-tour/'],
     ['service standards', '/service-standards/'],
   ],
   'blogs/post/buddhist-circuit-from-varanasi/index.html': [
