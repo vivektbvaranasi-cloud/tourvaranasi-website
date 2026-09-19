@@ -60,3 +60,13 @@ body > footer.footer .tv-language-footer{width:100%!important;max-width:1180px!i
   body > footer.footer .tv-language-footer{padding:16px 20px 0!important;margin-top:18px!important;gap:10px!important}
   body > footer.footer .footer-bottom{width:100%!important;box-sizing:border-box!important;padding-left:20px!important;padding-right:20px!important}
 }
+
+/* Match the current English-site Tour Varanasi logo on all localized pages */
+.lang-brand-logo{display:flex!important;align-items:center!important;min-width:190px!important}
+.lang-brand-logo img{display:block!important;width:190px!important;max-width:190px!important;height:auto!important;max-height:50px!important;object-fit:contain!important}
+body > footer.footer .footer-logo-plate img[src="/tour-varanasi-current-logo.png"]{width:205px!important;max-width:205px!important;height:auto!important;max-height:48px!important;object-fit:contain!important}
+@media(max-width:680px){
+  .lang-brand-logo{min-width:145px!important}
+  .lang-brand-logo img{width:155px!important;max-width:155px!important;max-height:42px!important}
+  body > footer.footer .footer-logo-plate img[src="/tour-varanasi-current-logo.png"]{width:188px!important;max-width:188px!important}
+}
