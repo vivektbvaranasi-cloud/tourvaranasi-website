@@ -125,14 +125,24 @@ function replaceExactNames(html, names, replacement) {
   return html;
 }
 
+function relatedItemLabel(href) {
+  if (href.startsWith('/tours/')) return 'Private itinerary';
+  if (href.startsWith('/experiences/')) return 'Local experience';
+  if (href.startsWith('/blogs/')) return 'Planning guide';
+  return 'Continue planning';
+}
+
 function relatedBlock(config) {
-  if (config.path === 'tours/index.html') {
-    const labels = ['Best first visit', 'More relaxed', 'Planning guide'];
-    const cards = config.relatedItems.map(([href, title, text], index) => `<a class="tours-planning-card" href="${href}"><span class="tours-planning-meta">${labels[index] || 'Continue planning'}</span><h3>${title}</h3><p>${text}</p><span class="tours-planning-link">Explore <span aria-hidden="true">→</span></span></a>`).join('');
-    return `<!-- TV_INTERNAL_LINKS_START -->\n<section class="tours-planning" aria-labelledby="continue-planning"><div class="container"><div class="tours-planning-head"><div class="kicker">Continue planning</div><h2 id="continue-planning">${config.relatedHeading}</h2><p>${config.relatedIntro}</p></div><div class="tours-planning-grid">${cards}</div></div></section>\n<!-- TV_INTERNAL_LINKS_END -->`;
-  }
-  const cards = config.relatedItems.map(([href, title, text]) => `<div class="feature"><h3><a href="${href}">${title}</a></h3><p>${text}</p></div>`).join('');
-  return `<!-- TV_INTERNAL_LINKS_START -->\n<section class="section soft tv-related-links" aria-labelledby="continue-planning"><div class="inner tv-planning-inner"><div class="eyebrow">Continue planning</div><h2 id="continue-planning">${config.relatedHeading}</h2><p class="lede">${config.relatedIntro}</p><div class="grid grid-3">${cards}</div></div></section>\n<!-- TV_INTERNAL_LINKS_END -->`;
+  const cards = config.relatedItems.map(([href, title, text]) =>
+    `<a class="tv-planning-card" href="${href}"><span class="tv-planning-meta">${relatedItemLabel(href)}</span><h3>${title}</h3><p>${text}</p><span class="tv-planning-link">Explore <span aria-hidden="true">→</span></span></a>`
+  ).join('');
+  return `<!-- TV_INTERNAL_LINKS_START -->\n<section class="tv-planning" aria-labelledby="continue-planning"><div class="tv-planning-shell"><div class="tv-planning-head"><div class="tv-planning-kicker">Continue planning</div><h2 id="continue-planning">${config.relatedHeading}</h2><p>${config.relatedIntro}</p></div><div class="tv-planning-grid">${cards}</div></div></section>\n<!-- TV_INTERNAL_LINKS_END -->`;
+}
+
+function ensurePlanningStylesheet(html) {
+  const href = '/assets/css/continue-planning.css';
+  if (html.includes(href)) return html;
+  return html.replace('</head>', `<link rel="stylesheet" href="${href}"/>\n</head>`);
 }
 
 function ensureToursPlanningStyles(html, config) {
@@ -181,7 +191,7 @@ for (const config of pages) {
   html = setMeta(html, 'name', 'twitter:description', config.description);
   html = setH1(html, config.name);
   html = html.replace(/<!-- TV_INTERNAL_LINKS_START -->[\s\S]*?<!-- TV_INTERNAL_LINKS_END -->/i, relatedBlock(config));
-  html = ensureToursPlanningStyles(html, config);
+  html = ensurePlanningStylesheet(html);
   if (html !== before) {
     await writeFile(config.path, html);
     changed++;

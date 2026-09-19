@@ -161,9 +161,25 @@ function choose(rel, html) {
   return { heading, intro, items: dedupe(items, url, 3) };
 }
 
+function planningLabel(type) {
+  if (type === 'tour') return 'Private itinerary';
+  if (type === 'experience') return 'Local experience';
+  if (type === 'trust') return 'Plan with confidence';
+  return 'Planning guide';
+}
+
+function ensurePlanningStylesheet(html) {
+  const href = '/assets/css/continue-planning.css';
+  if (html.includes(href)) return html;
+  return html.replace('</head>', `<link rel="stylesheet" href="${href}"/>\n</head>`);
+}
+
 function render(selection) {
   if (!selection.items.length) return '';
-  return `${MARKER_START}\n<section class="section soft tv-related-links" aria-labelledby="continue-planning"><div class="inner tv-planning-inner"><div class="eyebrow">Continue planning</div><h2 id="continue-planning">${selection.heading}</h2><p class="lede">${selection.intro}</p><div class="grid grid-3">${selection.items.map((item) => `<div class="feature"><h3><a href="${item.href}">${item.title}</a></h3><p>${item.text}</p></div>`).join('')}</div></div></section>\n${MARKER_END}`;
+  const cards = selection.items.map((item) =>
+    `<a class="tv-planning-card" href="${item.href}"><span class="tv-planning-meta">${planningLabel(item.type)}</span><h3>${item.title}</h3><p>${item.text}</p><span class="tv-planning-link">Explore <span aria-hidden="true">→</span></span></a>`
+  ).join('');
+  return `${MARKER_START}\n<section class="tv-planning" aria-labelledby="continue-planning"><div class="tv-planning-shell"><div class="tv-planning-head"><div class="tv-planning-kicker">Continue planning</div><h2 id="continue-planning">${selection.heading}</h2><p>${selection.intro}</p></div><div class="tv-planning-grid">${cards}</div></div></section>\n${MARKER_END}`;
 }
 
 function walk(dir) {
@@ -199,6 +215,7 @@ for (const file of walk(root)) {
   }
   if (!inserted) continue;
 
+  html = ensurePlanningStylesheet(html);
   fs.writeFileSync(file, html);
   changed += 1;
 }
