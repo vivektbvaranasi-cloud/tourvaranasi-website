@@ -4,6 +4,7 @@
   const WA = WA_BASE + '?text=' + encodeURIComponent(WA_MESSAGE);
   const EMAIL = 'mailto:tours@tourvaranasi.com';
   const PMJ = '/plan-my-journey/';
+  const TRIPADVISOR = 'https://www.tripadvisor.in/Attraction_Review-g297685-d10366118-Reviews-Tour_Varanasi-Varanasi_Varanasi_District_Uttar_Pradesh.html';
   const LOGO = '/tour-varanasi-logo.png';
   const ABOUT_LOGO = LOGO;
   const ABOUT_HERO = '/assets/images/guest_joyful_boat.webp';
@@ -570,6 +571,12 @@
             through the sacred city and the cultural and Buddhist
             landscapes around it.
           </p>
+
+          <a class="footer-tripadvisor" href="${TRIPADVISOR}" target="_blank" rel="noopener" aria-label="Read Tour Varanasi reviews on Tripadvisor">
+            <span class="footer-tripadvisor-mark" aria-hidden="true">●</span>
+            <span><strong>Tripadvisor</strong><small>Independent traveller reviews</small></span>
+            <span aria-hidden="true">↗</span>
+          </a>
 
         </div>
 

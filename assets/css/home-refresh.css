@@ -166,3 +166,17 @@ img{max-width:100%;display:block}
  .brand-logo{min-width:145px}.brand-logo img{width:155px;max-height:42px}
  .footer-logo-plate img{width:190px}
 }
+
+
+/* Tripadvisor trust visibility */
+.hero-tripadvisor-trust{display:inline-flex;align-items:center;gap:9px;margin-top:22px;padding:9px 12px;border:1px solid rgba(255,255,255,.34);background:rgba(18,22,20,.24);backdrop-filter:blur(4px);color:#fff;text-decoration:none;font-size:12px;line-height:1.35;letter-spacing:.01em}
+.hero-tripadvisor-trust:hover{background:rgba(18,22,20,.38);border-color:rgba(255,255,255,.58)}
+.hero-tripadvisor-trust strong{font-weight:600;color:#fff}
+.hero-tripadvisor-mark,.footer-tripadvisor-mark{color:#34e0a1;font-size:11px;line-height:1}
+.footer-tripadvisor{display:flex!important;align-items:center;gap:10px;margin-top:18px!important;padding:12px 13px!important;border:1px solid rgba(255,255,255,.18);max-width:280px;color:#fff!important;text-decoration:none!important}
+.footer-tripadvisor:hover{border-color:rgba(255,255,255,.36);background:rgba(255,255,255,.04)}
+.footer-tripadvisor>span:nth-child(2){display:flex;flex-direction:column;gap:2px}
+.footer-tripadvisor strong{font-size:12px;font-weight:600;color:#fff}
+.footer-tripadvisor small{font-size:10px;line-height:1.35;color:rgba(255,255,255,.68)}
+@media(max-width:680px){.hero-tripadvisor-trust{font-size:11px;margin-top:18px}.footer-tripadvisor{max-width:100%}}
+
