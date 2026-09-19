@@ -13,8 +13,12 @@ const targets=[
 
 const badge=`<!-- TV_HERO_TRIPADVISOR_START -->
 <a class="tv-hero-tripadvisor" href="${TA}" target="_blank" rel="noopener" aria-label="Read Tour Varanasi reviews on Tripadvisor">
-  <span class="tv-hero-tripadvisor-logo"><img src="/tripadvisor-logo.png" alt="Tripadvisor" width="104" height="27" loading="eager" decoding="async"/></span>
-  <span class="tv-hero-tripadvisor-copy"><strong>Traveller reviews on Tripadvisor</strong><small>Independent guest feedback ↗</small></span>
+  <span class="tv-hero-tripadvisor-brand">
+    <img src="https://cdn.simpleicons.org/tripadvisor/34E0A1" alt="" width="30" height="30" loading="eager" decoding="async"/>
+    <span class="tv-hero-tripadvisor-word">tripadvisor</span>
+  </span>
+  <span class="tv-hero-tripadvisor-divider" aria-hidden="true"></span>
+  <span class="tv-hero-tripadvisor-copy"><strong>Traveller reviews</strong><small>Read independent guest feedback ↗</small></span>
 </a>
 <!-- TV_HERO_TRIPADVISOR_END -->`;
 
