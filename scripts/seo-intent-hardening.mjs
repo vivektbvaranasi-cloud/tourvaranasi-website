@@ -132,7 +132,7 @@ function relatedBlock(config) {
     return `<!-- TV_INTERNAL_LINKS_START -->\n<section class="tours-planning" aria-labelledby="continue-planning"><div class="container"><div class="tours-planning-head"><div class="kicker">Continue planning</div><h2 id="continue-planning">${config.relatedHeading}</h2><p>${config.relatedIntro}</p></div><div class="tours-planning-grid">${cards}</div></div></section>\n<!-- TV_INTERNAL_LINKS_END -->`;
   }
   const cards = config.relatedItems.map(([href, title, text]) => `<div class="feature"><h3><a href="${href}">${title}</a></h3><p>${text}</p></div>`).join('');
-  return `<!-- TV_INTERNAL_LINKS_START -->\n<section class="section soft tv-related-links" aria-labelledby="continue-planning"><div class="inner"><div class="eyebrow">Continue planning</div><h2 id="continue-planning">${config.relatedHeading}</h2><p class="lede">${config.relatedIntro}</p><div class="grid grid-3">${cards}</div></div></section>\n<!-- TV_INTERNAL_LINKS_END -->`;
+  return `<!-- TV_INTERNAL_LINKS_START -->\n<section class="section soft tv-related-links" aria-labelledby="continue-planning"><div class="inner tv-planning-inner"><div class="eyebrow">Continue planning</div><h2 id="continue-planning">${config.relatedHeading}</h2><p class="lede">${config.relatedIntro}</p><div class="grid grid-3">${cards}</div></div></section>\n<!-- TV_INTERNAL_LINKS_END -->`;
 }
 
 function ensureToursPlanningStyles(html, config) {
@@ -142,7 +142,7 @@ function ensureToursPlanningStyles(html, config) {
 /* TV_TOURS_PLANNING */
 .tours-planning{background:#f3eee6;padding:84px 0 90px;border-top:1px solid rgba(221,216,207,.8)}
 .tours-planning-head{max-width:780px;margin:0 auto 42px;text-align:center}
-.tours-planning-head .kicker{margin-bottom:10px}
+.tours-planning-head .kicker{margin-bottom:12px;font-size:14px;line-height:1.25;font-weight:700;letter-spacing:.11em}
 .tours-planning-head h2{font-family:var(--heading);font-size:40px;line-height:1.12;font-weight:500;letter-spacing:-.02em;color:var(--ink);margin:0 0 14px}
 .tours-planning-head p{max-width:690px;margin:0 auto;font-size:15px;line-height:1.7;color:var(--muted)}
 .tours-planning-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
