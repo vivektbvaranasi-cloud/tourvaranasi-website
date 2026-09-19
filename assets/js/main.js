@@ -27,7 +27,7 @@
 
   function whatsappLocation(link) {
     if (link.closest('.tv-top-contact-bar, .top-contact-bar, .topbar')) return 'top_bar';
-    if (link.closest('.tv-footer, .footer, .site-footer')) return 'footer';
+    if (link.closest('.tvf-footer, .tv-footer, .footer, .site-footer')) return 'footer';
     if (link.closest('.tv-whatsapp-float')) return 'floating_button';
     if (link.closest('.hero, .page-hero, .journey-hero')) return 'hero';
     return 'page_content';
@@ -276,7 +276,7 @@
       else nav.appendChild(switcher);
     }
 
-    const footer = document.querySelector('footer.tv-footer, footer.footer, footer.site-footer');
+    const footer = document.querySelector('footer.tvf-footer, footer.tv-footer, footer.footer, footer.site-footer');
     if (footer && !footer.querySelector('.tv-language-footer')) {
       const line = document.createElement('div');
       line.className = 'tv-language-footer';
@@ -687,11 +687,9 @@
 
     const topBar = buildTopBar();
     const header = buildHeader();
-    const footer = buildFooter();
 
     document.body.insertBefore(header, document.body.firstChild);
     document.body.insertBefore(topBar, header);
-    document.body.appendChild(footer);
 
     normalizeContactLinks(document);
     ensureLanguageSwitcher();
