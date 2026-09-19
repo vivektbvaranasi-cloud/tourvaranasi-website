@@ -82,9 +82,12 @@ function replaceFooter(html){
   html=html.replace(/<!-- TV_FOOTER_TRUST_SOCIAL_START -->[\s\S]*?<!-- TV_FOOTER_TRUST_SOCIAL_END -->/g,'');
   html=html.replace(/<!-- TV_UNIFIED_FOOTER_START -->[\s\S]*?<!-- TV_UNIFIED_FOOTER_END -->/g,'');
   const matches=[...html.matchAll(/<footer\b[^>]*>[\s\S]*?<\/footer>/gi)];
-  if(!matches.length) return html;
-  const last=matches[matches.length-1];
-  return html.slice(0,last.index)+footer+html.slice(last.index+last[0].length);
+  if(matches.length){
+    const last=matches[matches.length-1];
+    return html.slice(0,last.index)+footer+html.slice(last.index+last[0].length);
+  }
+  if(/<\/body>/i.test(html)) return html.replace(/<\/body>/i,footer+'\n</body>');
+  return html+'\n'+footer;
 }
 
 let changed=0;
