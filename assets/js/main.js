@@ -5,6 +5,8 @@
   const EMAIL = 'mailto:tours@tourvaranasi.com';
   const PMJ = '/plan-my-journey/';
   const TRIPADVISOR = 'https://www.tripadvisor.in/Attraction_Review-g297685-d10366118-Reviews-Tour_Varanasi-Varanasi_Varanasi_District_Uttar_Pradesh.html';
+  const FACEBOOK = 'https://www.facebook.com/TourVaranasi';
+  const INSTAGRAM = 'https://www.instagram.com/tourvaranasi_?stkn=d3EwbjMwdmx3NjIx';
   const LOGO = '/tour-varanasi-logo.png';
   const ABOUT_LOGO = LOGO;
   const ABOUT_HERO = '/assets/images/guest_joyful_boat.webp';
@@ -571,12 +573,18 @@
             through the sacred city and the cultural and Buddhist
             landscapes around it.
           </p>
-
-          <a class="footer-tripadvisor" href="${TRIPADVISOR}" target="_blank" rel="noopener" aria-label="Read Tour Varanasi reviews on Tripadvisor">
-            <span class="footer-tripadvisor-mark" aria-hidden="true">●</span>
-            <span><strong>Tripadvisor</strong><small>Independent traveller reviews</small></span>
-            <span aria-hidden="true">↗</span>
-          </a>
+          <div class="tv-footer-social" aria-label="Tour Varanasi reviews and social media">
+            <p class="tv-footer-social-label">Reviews &amp; social</p>
+            <div class="tv-footer-social-links">
+              <a class="tv-ta" href="${TRIPADVISOR}" target="_blank" rel="noopener" aria-label="Read Tour Varanasi reviews on Tripadvisor">
+                <span class="tv-footer-social-dot" aria-hidden="true"></span>
+                <strong>Tripadvisor</strong>
+                <small>Independent traveller reviews ↗</small>
+              </a>
+              <a href="${FACEBOOK}" target="_blank" rel="noopener" aria-label="Tour Varanasi on Facebook">Facebook ↗</a>
+              <a href="${INSTAGRAM}" target="_blank" rel="noopener" aria-label="Tour Varanasi on Instagram">Instagram ↗</a>
+            </div>
+          </div>
 
         </div>
 
