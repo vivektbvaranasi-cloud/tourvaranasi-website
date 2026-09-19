@@ -5,7 +5,7 @@ const CSS='/assets/css/hero-tripadvisor.css';
 
 const targets=[
   ['index.html','home'],
-  ['journeys-beyond-varanasi/index.html','page'],
+  ['journeys-beyond-varanasi/index.html','destination'],
   ['tours/index.html','tours'],
   ['blogs/index.html','page'],
   ['experiences/index.html','experiences']
@@ -39,6 +39,11 @@ function addPageHero(html){
   if(!re.test(html)) throw new Error('page-hero copy not found');
   return html.replace(re,`$1\n${badge}$2`);
 }
+function addDestination(html){
+  const re=/(<section class="destination-index-hero"[^>]*>[\s\S]*?<div class="destination-hero-inner">[\s\S]*?<p>[\s\S]*?<\/p>)(<\/div><\/section>)/i;
+  if(!re.test(html)) throw new Error('Destination hero copy not found');
+  return html.replace(re,`$1\n${badge}$2`);
+}
 function addTours(html){
   const re=/(<section class="tours-hero"[^>]*>[\s\S]*?<div class="tours-hero-copy">[\s\S]*?<p>[\s\S]*?<\/p>)(<\/div><\/section>)/i;
   if(!re.test(html)) throw new Error('Tours hero copy not found');
@@ -58,6 +63,7 @@ for(const [file,type] of targets){
   html=ensureCss(html);
   if(type==='home') html=addHome(html);
   else if(type==='page') html=addPageHero(html);
+  else if(type==='destination') html=addDestination(html);
   else if(type==='tours') html=addTours(html);
   else if(type==='experiences') html=addExperiences(html);
   fs.writeFileSync(file,html);
