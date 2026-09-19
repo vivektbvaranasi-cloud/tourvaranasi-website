@@ -12,6 +12,7 @@
 .lang-hero,
 .tours-hero,
 .experiences-hero,
+.pmj-hero,
 .journey-card .journey-overlay{
   color:#fff!important;
 }
@@ -26,6 +27,7 @@
 .lang-hero h1,.lang-hero h2,.lang-hero h3,.lang-hero p,.lang-hero .eyebrow,.lang-hero .kicker,.lang-hero .lang-kicker,
 .tours-hero h1,.tours-hero h2,.tours-hero h3,.tours-hero p,.tours-hero .eyebrow,.tours-hero .kicker,
 .experiences-hero h1,.experiences-hero h2,.experiences-hero h3,.experiences-hero p,.experiences-hero .eyebrow,.experiences-hero .kicker,
+.pmj-hero h1,.pmj-hero h2,.pmj-hero h3,.pmj-hero p,.pmj-hero .eyebrow,.pmj-hero .kicker,.pmj-hero .pmj-trust,
 .journey-card .journey-overlay h1,.journey-card .journey-overlay h2,.journey-card .journey-overlay h3,.journey-card .journey-overlay p,.journey-card .journey-overlay span{
   color:#fff!important;
   -webkit-text-fill-color:#fff!important;
@@ -41,7 +43,8 @@
 .tour-detail-hero .eyebrow,.tour-detail-hero .kicker,
 .lang-hero .eyebrow,.lang-hero .kicker,.lang-hero .lang-kicker,
 .tours-hero .eyebrow,.tours-hero .kicker,
-.experiences-hero .eyebrow,.experiences-hero .kicker{
+.experiences-hero .eyebrow,.experiences-hero .kicker,
+.pmj-hero .eyebrow,.pmj-hero .kicker{
   color:#fff1e9!important;
   -webkit-text-fill-color:#fff1e9!important;
 }
@@ -63,7 +66,8 @@
              linear-gradient(0deg,rgba(15,20,18,.54),transparent 64%)!important;
 }
 .tours-hero:after,
-.experiences-hero:after{
+.experiences-hero:after,
+.pmj-hero:before{
   background:linear-gradient(90deg,rgba(18,22,20,.80) 0%,rgba(18,22,20,.50) 48%,rgba(18,22,20,.18) 78%,rgba(18,22,20,.07) 100%)!important;
 }
 .hero-shade{
