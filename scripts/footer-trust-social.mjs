@@ -42,19 +42,8 @@ function walk(dir){
 }
 
 function injectTripadvisorIntoNav(html){
-  // Keep a single clickable Tripadvisor brand mark beside the primary navigation on every page.
-  html=html.replace(/<a\b[^>]*class=["'][^"']*tv-nav-tripadvisor[^"']*["'][^>]*>[\s\S]*?<\/a>/gi,'');
-  return html.replace(/(<div\b[^>]*class=["'][^"']*(?:tv-navlinks|navlinks)[^"']*["'][^>]*>)([\s\S]*?)(<\/div>)/i,(all,open,inside,close)=>{
-    const link=`<a class="tv-nav-tripadvisor" href="${TA}" target="_blank" rel="noopener" aria-label="Read Tour Varanasi reviews on Tripadvisor"><img src="${taLogo}" alt="Tripadvisor" width="92" height="27" loading="eager" decoding="async"/></a>`;
-    const ctaMatch=inside.match(/<a\b[^>]*class=["'][^"']*(?:tv-nav-cta|nav-cta)[^"']*["'][^>]*>[\s\S]*?<\/a>/i);
-    if(ctaMatch){
-      const at=inside.indexOf(ctaMatch[0])+ctaMatch[0].length;
-      inside=inside.slice(0,at)+link+inside.slice(at);
-    }else{
-      inside+=link;
-    }
-    return open+inside+close;
-  });
+  // Tripadvisor belongs in selected hero images and the footer, never beside the primary navigation.
+  return html.replace(/<a\b[^>]*class=["'][^"']*tv-nav-tripadvisor[^"']*["'][^>]*>[\s\S]*?<\/a>/gi,'');
 }
 
 function stripExisting(html){

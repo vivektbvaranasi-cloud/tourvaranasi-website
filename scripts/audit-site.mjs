@@ -6,6 +6,7 @@ const SITE='https://www.tourvaranasi.com';
 const SKIP=new Set(['.git','.netlify','node_modules']);
 const errors=[];
 const warnings=[];
+const HERO_TRIPADVISOR_URLS=new Set(['/', '/journeys-beyond-varanasi/', '/tours/', '/blogs/', '/experiences/']);
 const COVERED_PHOTO_HERO_CLASSES=new Set([
   'hero','page-hero','journey-hero','destination-index-hero','destination-detail-hero',
   'tour-detail-hero','lang-hero','tours-hero','experiences-hero','pmj-hero'
@@ -94,8 +95,9 @@ for(const file of htmlFiles){
 
   const hasPhotoHero=/(?:class=["'][^"']*(?:hero|page-hero|journey-hero|destination-index-hero|destination-detail-hero|tour-detail-hero|lang-hero|tours-hero|experiences-hero|pmj-hero)[^"']*["'])/i.test(html);
   if(hasPhotoHero && !html.includes('/assets/css/photo-contrast.css')) errors.push(`${url}: missing photo-contrast stylesheet`);
-  const hasPrimaryNav=/(?:class=["'][^"']*(?:navlinks|tv-navlinks)[^"']*["'])/i.test(html);
-  if(hasPrimaryNav && !html.includes('tv-nav-tripadvisor')) errors.push(`${url}: missing Tripadvisor navigation mark`);
+
+  if(HERO_TRIPADVISOR_URLS.has(url) && !html.includes('tv-hero-tripadvisor')) errors.push(`${url}: missing Tripadvisor hero badge`);
+  if(html.includes('tv-nav-tripadvisor')) errors.push(`${url}: Tripadvisor must not appear beside primary navigation`);
 
   const is404=url==='/404.html';
   const robotsContent=metaValue(html,'name','robots').toLowerCase();
