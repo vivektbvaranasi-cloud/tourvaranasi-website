@@ -6,6 +6,10 @@ const SITE='https://www.tourvaranasi.com';
 const SKIP=new Set(['.git','.netlify','node_modules']);
 const errors=[];
 const warnings=[];
+const COVERED_PHOTO_HERO_CLASSES=new Set([
+  'hero','page-hero','journey-hero','destination-index-hero','destination-detail-hero',
+  'tour-detail-hero','lang-hero','tours-hero','experiences-hero','pmj-hero'
+]);
 
 async function walk(dir='.'){
   const out=[];
@@ -74,6 +78,19 @@ for(const file of htmlFiles){
   const url=pageUrl(file);
   const isVerification=/^\/google[a-z0-9]+\.html$/i.test(url);
   if(isVerification) continue;
+
+  // Any new root *-hero family must be deliberately added to the shared photo-contrast CSS.
+  const heroClasses=new Set();
+  for(const m of html.matchAll(/\bclass=(["'])(.*?)\1/gi)){
+    for(const token of m[2].split(/\s+/)){
+      if(token==='hero' || token.endsWith('-hero')) heroClasses.add(token);
+    }
+  }
+  for(const heroClass of heroClasses){
+    if(!COVERED_PHOTO_HERO_CLASSES.has(heroClass)){
+      errors.push(`${url}: unreviewed hero class "${heroClass}" — add explicit photo-contrast coverage or rename if it is not a photo hero`);
+    }
+  }
 
   const is404=url==='/404.html';
   const robotsContent=metaValue(html,'name','robots').toLowerCase();
