@@ -60,15 +60,24 @@ function injectIntoFooter(html){
   const before=html.slice(0,footerAt);
   let footer=html.slice(footerAt);
 
-  // Keep the footer grid untouched. Insert reviews/social as its own aligned row
-  // immediately before the footer-bottom area.
-  const bottomMatch=footer.match(/<div\b[^>]*class=["'][^"']*footer-bottom[^"']*["'][^>]*>/i);
-  if(bottomMatch){
-    const at=footer.indexOf(bottomMatch[0]);
+  // New footer family: place the social row immediately before footer-bottom.
+  const footerBottom=footer.match(/<div\b[^>]*class=["'][^"']*footer-bottom[^"']*["'][^>]*>/i);
+  if(footerBottom){
+    const at=footer.indexOf(footerBottom[0]);
     footer=footer.slice(0,at)+block+'\n'+footer.slice(at);
     return before+footer;
   }
 
+  // Legacy footer family used by About/Destinations and related pages:
+  // keep the four-column .inner grid untouched and place social links before copyright.
+  const copyright=footer.match(/<div\b[^>]*class=["'][^"']*copyright[^"']*["'][^>]*>/i);
+  if(copyright){
+    const at=footer.indexOf(copyright[0]);
+    footer=footer.slice(0,at)+block+'\n'+footer.slice(at);
+    return before+footer;
+  }
+
+  // Safe fallback for any unusual footer.
   const closeAt=footer.lastIndexOf('</footer>');
   if(closeAt>=0){
     footer=footer.slice(0,closeAt)+block+'\n'+footer.slice(closeAt);
