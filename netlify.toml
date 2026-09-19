@@ -2,7 +2,7 @@
 # Deployment refresh: contextual + related internal linking enabled
 # Homepage continue-planning refinement enabled
 [build]
-  command = "node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/refine-varanasi-content.mjs && node scripts/technical-hardening.mjs && node scripts/cwv-hardening.mjs && node scripts/contextual-linking.mjs && node scripts/internal-linking.mjs && node scripts/seo-intent-hardening.mjs && node scripts/homepage-related-links.mjs && node scripts/footer-trust-social.mjs && node scripts/hero-tripadvisor.mjs && node scripts/inject-nav-state.mjs && node scripts/inject-readability-css.mjs && node scripts/cache-bust-css.mjs && node scripts/audit-site.mjs && node scripts/crawl-index-audit.mjs"
+  command = "node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/refine-varanasi-content.mjs && node scripts/technical-hardening.mjs && node scripts/cwv-hardening.mjs && node scripts/contextual-linking.mjs && node scripts/internal-linking.mjs && node scripts/seo-intent-hardening.mjs && node scripts/homepage-related-links.mjs && node scripts/unified-footer.mjs && node scripts/hero-tripadvisor.mjs && node scripts/inject-nav-state.mjs && node scripts/inject-readability-css.mjs && node scripts/cache-bust-css.mjs && node scripts/audit-site.mjs && node scripts/crawl-index-audit.mjs"
   publish = "."
 
 [images]
