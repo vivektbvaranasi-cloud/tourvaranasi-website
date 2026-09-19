@@ -99,10 +99,9 @@ for(const file of htmlFiles){
   if(HERO_TRIPADVISOR_URLS.has(url) && !html.includes('tv-hero-tripadvisor')) errors.push(`${url}: missing Tripadvisor hero badge`);
   if(html.includes('tv-nav-tripadvisor')) errors.push(`${url}: Tripadvisor must not appear beside primary navigation`);
 
-  const hasFooter=/<footer\b/i.test(html);
-  if(hasFooter && !html.includes('tvf-footer')) errors.push(`${url}: missing canonical unified footer`);
-  if(hasFooter && !html.includes('/assets/css/unified-footer.css')) errors.push(`${url}: missing unified footer stylesheet`);
-  if(hasFooter){
+  if(!html.includes('tvf-footer')) errors.push(`${url}: missing canonical unified footer`);
+  if(!html.includes('/assets/css/unified-footer.css')) errors.push(`${url}: missing unified footer stylesheet`);
+  {
     const footerHtml=html.slice(html.lastIndexOf('<footer'));
     for(const required of ['tvf-grid','tvf-logo-plate','tvf-social-row','tvf-bottom']){
       if(!footerHtml.includes(required)) errors.push(`${url}: canonical footer missing ${required}`);
