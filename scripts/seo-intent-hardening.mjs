@@ -126,8 +126,46 @@ function replaceExactNames(html, names, replacement) {
 }
 
 function relatedBlock(config) {
+  if (config.path === 'tours/index.html') {
+    const labels = ['Best first visit', 'More relaxed', 'Planning guide'];
+    const cards = config.relatedItems.map(([href, title, text], index) => `<a class="tours-planning-card" href="${href}"><span class="tours-planning-meta">${labels[index] || 'Continue planning'}</span><h3>${title}</h3><p>${text}</p><span class="tours-planning-link">Explore <span aria-hidden="true">→</span></span></a>`).join('');
+    return `<!-- TV_INTERNAL_LINKS_START -->\n<section class="tours-planning" aria-labelledby="continue-planning"><div class="container"><div class="tours-planning-head"><div class="kicker">Continue planning</div><h2 id="continue-planning">${config.relatedHeading}</h2><p>${config.relatedIntro}</p></div><div class="tours-planning-grid">${cards}</div></div></section>\n<!-- TV_INTERNAL_LINKS_END -->`;
+  }
   const cards = config.relatedItems.map(([href, title, text]) => `<div class="feature"><h3><a href="${href}">${title}</a></h3><p>${text}</p></div>`).join('');
   return `<!-- TV_INTERNAL_LINKS_START -->\n<section class="section soft tv-related-links" aria-labelledby="continue-planning"><div class="inner"><div class="eyebrow">Continue planning</div><h2 id="continue-planning">${config.relatedHeading}</h2><p class="lede">${config.relatedIntro}</p><div class="grid grid-3">${cards}</div></div></section>\n<!-- TV_INTERNAL_LINKS_END -->`;
+}
+
+function ensureToursPlanningStyles(html, config) {
+  if (config.path !== 'tours/index.html' || html.includes('/* TV_TOURS_PLANNING */')) return html;
+  const css = `
+<style>
+/* TV_TOURS_PLANNING */
+.tours-planning{background:#f3eee6;padding:84px 0 90px;border-top:1px solid rgba(221,216,207,.8)}
+.tours-planning-head{max-width:780px;margin:0 auto 42px;text-align:center}
+.tours-planning-head .kicker{margin-bottom:10px}
+.tours-planning-head h2{font-family:var(--heading);font-size:40px;line-height:1.12;font-weight:500;letter-spacing:-.02em;color:var(--ink);margin:0 0 14px}
+.tours-planning-head p{max-width:690px;margin:0 auto;font-size:15px;line-height:1.7;color:var(--muted)}
+.tours-planning-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.tours-planning-card{display:flex;flex-direction:column;min-height:255px;background:#fffdf9;border:1px solid var(--line);padding:28px 28px 26px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.tours-planning-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(54,49,43,.08);border-color:#cfc6bb}
+.tours-planning-meta{font-size:9px;line-height:1.2;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta-dark);font-weight:600;margin-bottom:24px}
+.tours-planning-card h3{font-family:var(--heading);font-size:27px;line-height:1.16;font-weight:600;color:var(--ink);margin:0 0 12px}
+.tours-planning-card p{font-size:13px;line-height:1.7;color:var(--muted);margin:0 0 24px}
+.tours-planning-link{display:inline-flex;align-items:center;gap:8px;margin-top:auto;font-size:12px;font-weight:600;color:var(--river)}
+.tours-planning-link span{transition:transform .2s ease}
+.tours-planning-card:hover .tours-planning-link span{transform:translateX(4px)}
+@media(max-width:820px){
+  .tours-planning{padding:66px 0 72px}
+  .tours-planning-head{margin-bottom:30px;text-align:left}
+  .tours-planning-head h2{font-size:33px}
+  .tours-planning-head p{margin-left:0}
+  .tours-planning-grid{grid-template-columns:1fr;gap:14px}
+  .tours-planning-card{min-height:0;padding:24px 22px}
+  .tours-planning-meta{margin-bottom:14px}
+  .tours-planning-card h3{font-size:24px}
+}
+</style>`;
+  return html.replace('</head>', css + '\n</head>');
 }
 
 let changed = 0;
@@ -143,6 +181,7 @@ for (const config of pages) {
   html = setMeta(html, 'name', 'twitter:description', config.description);
   html = setH1(html, config.name);
   html = html.replace(/<!-- TV_INTERNAL_LINKS_START -->[\s\S]*?<!-- TV_INTERNAL_LINKS_END -->/i, relatedBlock(config));
+  html = ensureToursPlanningStyles(html, config);
   if (html !== before) {
     await writeFile(config.path, html);
     changed++;
