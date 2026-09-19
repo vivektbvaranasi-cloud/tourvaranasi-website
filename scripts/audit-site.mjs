@@ -102,6 +102,14 @@ for(const file of htmlFiles){
   const hasFooter=/<footer\b/i.test(html);
   if(hasFooter && !html.includes('tv-footer-social')) errors.push(`${url}: missing footer reviews/social block`);
   if(hasFooter && !html.includes('/assets/css/footer-social.css')) errors.push(`${url}: missing footer social stylesheet`);
+  if(hasFooter){
+    const footerHtml=html.slice(html.lastIndexOf('<footer'));
+    const socialAt=footerHtml.indexOf('tv-footer-social-row');
+    const copyrightAt=footerHtml.search(/class=["'][^"']*copyright[^"']*["']/i);
+    const footerBottomAt=footerHtml.search(/class=["'][^"']*footer-bottom[^"']*["']/i);
+    if(copyrightAt>=0 && (socialAt<0 || socialAt>copyrightAt)) errors.push(`${url}: footer social row must appear before legacy copyright`);
+    if(footerBottomAt>=0 && (socialAt<0 || socialAt>footerBottomAt)) errors.push(`${url}: footer social row must appear before footer-bottom`);
+  }
 
   const is404=url==='/404.html';
   const robotsContent=metaValue(html,'name','robots').toLowerCase();
