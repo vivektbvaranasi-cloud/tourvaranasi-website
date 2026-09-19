@@ -37,8 +37,8 @@ const existingArticles = [
   },
   {
     n: 2,
-    path: 'blogs/post/Varanasi-for-Foreigners/index.html',
-    url: '/blogs/post/Varanasi-for-Foreigners/',
+    path: 'blogs/post/varanasi-for-foreigners/index.html',
+    url: '/blogs/post/varanasi-for-foreigners/',
     title: 'Varanasi Etiquette & Practical Tips for International Travellers',
     description: 'Practical advice on walking, clothing, temple etiquette, river experiences, photography and respectful behaviour in Varanasi.',
     group: 'Varanasi essentials',
