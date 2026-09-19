@@ -11,21 +11,23 @@ const FB='https://www.facebook.com/TourVaranasi';
 const IG='https://www.instagram.com/tourvaranasi_?stkn=d3EwbjMwdmx3NjIx';
 
 const block=`<!-- TV_FOOTER_TRUST_SOCIAL_START -->
-<div class="tv-footer-social" aria-label="Tour Varanasi reviews and social media">
-  <p class="tv-footer-social-label">Reviews &amp; social</p>
-  <div class="tv-footer-social-links">
-    <a class="tv-social-link tv-ta" href="${TA}" target="_blank" rel="noopener" aria-label="Read Tour Varanasi reviews on Tripadvisor">
-      <img class="tv-social-logo" src="https://cdn.simpleicons.org/tripadvisor/34E0A1" alt="Tripadvisor" width="28" height="28" loading="lazy" decoding="async"/>
-      <span>Tripadvisor</span>
-    </a>
-    <a class="tv-social-link" href="${IG}" target="_blank" rel="noopener" aria-label="Tour Varanasi on Instagram">
-      <img class="tv-social-logo" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" width="24" height="24" loading="lazy" decoding="async"/>
-      <span>Instagram</span>
-    </a>
-    <a class="tv-social-link" href="${FB}" target="_blank" rel="noopener" aria-label="Tour Varanasi on Facebook">
-      <img class="tv-social-logo" src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" width="24" height="24" loading="lazy" decoding="async"/>
-      <span>Facebook</span>
-    </a>
+<div class="container tv-footer-social-row" aria-label="Tour Varanasi reviews and social media">
+  <div class="tv-footer-social">
+    <p class="tv-footer-social-label">Reviews &amp; social</p>
+    <div class="tv-footer-social-links">
+      <a class="tv-social-link tv-ta" href="${TA}" target="_blank" rel="noopener" aria-label="Read Tour Varanasi reviews on Tripadvisor">
+        <img class="tv-social-logo" src="https://cdn.simpleicons.org/tripadvisor/34E0A1" alt="Tripadvisor" width="24" height="24" loading="lazy" decoding="async"/>
+        <span>Tripadvisor reviews</span>
+      </a>
+      <a class="tv-social-link" href="${IG}" target="_blank" rel="noopener" aria-label="Tour Varanasi on Instagram">
+        <img class="tv-social-logo" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" width="22" height="22" loading="lazy" decoding="async"/>
+        <span>Instagram</span>
+      </a>
+      <a class="tv-social-link" href="${FB}" target="_blank" rel="noopener" aria-label="Tour Varanasi on Facebook">
+        <img class="tv-social-logo" src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" width="22" height="22" loading="lazy" decoding="async"/>
+        <span>Facebook</span>
+      </a>
+    </div>
   </div>
 </div>
 <!-- TV_FOOTER_TRUST_SOCIAL_END -->`;
@@ -58,24 +60,19 @@ function injectIntoFooter(html){
   const before=html.slice(0,footerAt);
   let footer=html.slice(footerAt);
 
-  // Standard and localized footers have a dedicated footer-brand block.
-  const brandStart=footer.search(/<div\b[^>]*class=["'][^"']*footer-brand[^"']*["'][^>]*>/i);
-  if(brandStart>=0){
-    const openEnd=footer.indexOf('>',brandStart)+1;
-    const pStart=footer.indexOf('<p',openEnd);
-    if(pStart>=0){
-      const pEnd=footer.indexOf('</p>',pStart);
-      if(pEnd>=0){
-        const at=pEnd+4;
-        footer=footer.slice(0,at)+'\n'+block+footer.slice(at);
-        return before+footer;
-      }
-    }
+  // Keep the footer grid untouched. Insert reviews/social as its own aligned row
+  // immediately before the footer-bottom area.
+  const bottomMatch=footer.match(/<div\b[^>]*class=["'][^"']*footer-bottom[^"']*["'][^>]*>/i);
+  if(bottomMatch){
+    const at=footer.indexOf(bottomMatch[0]);
+    footer=footer.slice(0,at)+block+'\n'+footer.slice(at);
+    return before+footer;
   }
 
-  // Fallback for alternate footer structures: put the trust block just inside the footer.
-  const firstOpenEnd=footer.indexOf('>')+1;
-  footer=footer.slice(0,firstOpenEnd)+'\n'+block+footer.slice(firstOpenEnd);
+  const closeAt=footer.lastIndexOf('</footer>');
+  if(closeAt>=0){
+    footer=footer.slice(0,closeAt)+block+'\n'+footer.slice(closeAt);
+  }
   return before+footer;
 }
 
