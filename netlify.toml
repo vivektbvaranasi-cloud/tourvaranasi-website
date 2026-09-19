@@ -55,3 +55,4 @@
     Cache-Control = "public, max-age=2592000, stale-while-revalidate=604800"
 
 # deploy-sync: foreigners-blog-canonical
+# deploy-sync: exact-foreigners-route
