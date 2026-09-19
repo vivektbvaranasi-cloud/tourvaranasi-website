@@ -99,6 +99,10 @@ for(const file of htmlFiles){
   if(HERO_TRIPADVISOR_URLS.has(url) && !html.includes('tv-hero-tripadvisor')) errors.push(`${url}: missing Tripadvisor hero badge`);
   if(html.includes('tv-nav-tripadvisor')) errors.push(`${url}: Tripadvisor must not appear beside primary navigation`);
 
+  const hasFooter=/<footer\b/i.test(html);
+  if(hasFooter && !html.includes('tv-footer-social')) errors.push(`${url}: missing footer reviews/social block`);
+  if(hasFooter && !html.includes('/assets/css/footer-social.css')) errors.push(`${url}: missing footer social stylesheet`);
+
   const is404=url==='/404.html';
   const robotsContent=metaValue(html,'name','robots').toLowerCase();
   const isNoindex=robotsContent.includes('noindex');
