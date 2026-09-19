@@ -4,6 +4,7 @@ import path from 'node:path';
 const root=process.cwd();
 const skip=new Set(['.git','.netlify','node_modules']);
 const cssHref='/assets/css/footer-social.css';
+const taLogo='/tripadvisor-logo.png';
 const cssTag=`<link rel="stylesheet" href="${cssHref}">`;
 const TA='https://www.tripadvisor.in/Attraction_Review-g297685-d10366118-Reviews-Tour_Varanasi-Varanasi_Varanasi_District_Uttar_Pradesh.html';
 const FB='https://www.facebook.com/TourVaranasi';
@@ -38,6 +39,22 @@ function walk(dir){
     else if(entry.isFile()&&entry.name.endsWith('.html')) out.push(full);
   }
   return out;
+}
+
+function injectTripadvisorIntoNav(html){
+  // Keep a single clickable Tripadvisor brand mark beside the primary navigation on every page.
+  html=html.replace(/<a\b[^>]*class=["'][^"']*tv-nav-tripadvisor[^"']*["'][^>]*>[\s\S]*?<\/a>/gi,'');
+  return html.replace(/(<div\b[^>]*class=["'][^"']*(?:tv-navlinks|navlinks)[^"']*["'][^>]*>)([\s\S]*?)(<\/div>)/i,(all,open,inside,close)=>{
+    const link=`<a class="tv-nav-tripadvisor" href="${TA}" target="_blank" rel="noopener" aria-label="Read Tour Varanasi reviews on Tripadvisor"><img src="${taLogo}" alt="Tripadvisor" width="92" height="27" loading="eager" decoding="async"/></a>`;
+    const ctaMatch=inside.match(/<a\b[^>]*class=["'][^"']*(?:tv-nav-cta|nav-cta)[^"']*["'][^>]*>[\s\S]*?<\/a>/i);
+    if(ctaMatch){
+      const at=inside.indexOf(ctaMatch[0])+ctaMatch[0].length;
+      inside=inside.slice(0,at)+link+inside.slice(at);
+    }else{
+      inside+=link;
+    }
+    return open+inside+close;
+  });
 }
 
 function stripExisting(html){
@@ -78,6 +95,7 @@ for(const file of walk(root)){
   let html=fs.readFileSync(file,'utf8');
   const original=html;
   html=stripExisting(html);
+  html=injectTripadvisorIntoNav(html);
 
   if(!html.includes(cssHref) && /<\/head>/i.test(html)){
     html=html.replace(/<\/head>/i,`${cssTag}\n</head>`);

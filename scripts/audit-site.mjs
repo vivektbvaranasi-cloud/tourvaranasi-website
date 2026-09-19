@@ -92,6 +92,11 @@ for(const file of htmlFiles){
     }
   }
 
+  const hasPhotoHero=/(?:class=["'][^"']*(?:hero|page-hero|journey-hero|destination-index-hero|destination-detail-hero|tour-detail-hero|lang-hero|tours-hero|experiences-hero|pmj-hero)[^"']*["'])/i.test(html);
+  if(hasPhotoHero && !html.includes('/assets/css/photo-contrast.css')) errors.push(`${url}: missing photo-contrast stylesheet`);
+  const hasPrimaryNav=/(?:class=["'][^"']*(?:navlinks|tv-navlinks)[^"']*["'])/i.test(html);
+  if(hasPrimaryNav && !html.includes('tv-nav-tripadvisor')) errors.push(`${url}: missing Tripadvisor navigation mark`);
+
   const is404=url==='/404.html';
   const robotsContent=metaValue(html,'name','robots').toLowerCase();
   const isNoindex=robotsContent.includes('noindex');
