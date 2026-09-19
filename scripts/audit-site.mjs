@@ -100,15 +100,13 @@ for(const file of htmlFiles){
   if(html.includes('tv-nav-tripadvisor')) errors.push(`${url}: Tripadvisor must not appear beside primary navigation`);
 
   const hasFooter=/<footer\b/i.test(html);
-  if(hasFooter && !html.includes('tv-footer-social')) errors.push(`${url}: missing footer reviews/social block`);
-  if(hasFooter && !html.includes('/assets/css/footer-social.css')) errors.push(`${url}: missing footer social stylesheet`);
+  if(hasFooter && !html.includes('tvf-footer')) errors.push(`${url}: missing canonical unified footer`);
+  if(hasFooter && !html.includes('/assets/css/unified-footer.css')) errors.push(`${url}: missing unified footer stylesheet`);
   if(hasFooter){
     const footerHtml=html.slice(html.lastIndexOf('<footer'));
-    const socialAt=footerHtml.indexOf('tv-footer-social-row');
-    const copyrightAt=footerHtml.search(/class=["'][^"']*copyright[^"']*["']/i);
-    const footerBottomAt=footerHtml.search(/class=["'][^"']*footer-bottom[^"']*["']/i);
-    if(copyrightAt>=0 && (socialAt<0 || socialAt>copyrightAt)) errors.push(`${url}: footer social row must appear before legacy copyright`);
-    if(footerBottomAt>=0 && (socialAt<0 || socialAt>footerBottomAt)) errors.push(`${url}: footer social row must appear before footer-bottom`);
+    for(const required of ['tvf-grid','tvf-logo-plate','tvf-social-row','tvf-bottom']){
+      if(!footerHtml.includes(required)) errors.push(`${url}: canonical footer missing ${required}`);
+    }
   }
 
   const is404=url==='/404.html';
