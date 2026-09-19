@@ -13,13 +13,18 @@ const block=`<!-- TV_FOOTER_TRUST_SOCIAL_START -->
 <div class="tv-footer-social" aria-label="Tour Varanasi reviews and social media">
   <p class="tv-footer-social-label">Reviews &amp; social</p>
   <div class="tv-footer-social-links">
-    <a class="tv-ta" href="${TA}" target="_blank" rel="noopener" aria-label="Read Tour Varanasi reviews on Tripadvisor">
-      <span class="tv-footer-social-dot" aria-hidden="true"></span>
-      <strong>Tripadvisor</strong>
-      <small>Independent traveller reviews ↗</small>
+    <a class="tv-social-link tv-ta" href="${TA}" target="_blank" rel="noopener" aria-label="Read Tour Varanasi reviews on Tripadvisor">
+      <img class="tv-social-logo" src="https://cdn.simpleicons.org/tripadvisor/34E0A1" alt="Tripadvisor" width="28" height="28" loading="lazy" decoding="async"/>
+      <span>Tripadvisor</span>
     </a>
-    <a href="${FB}" target="_blank" rel="noopener" aria-label="Tour Varanasi on Facebook">Facebook ↗</a>
-    <a href="${IG}" target="_blank" rel="noopener" aria-label="Tour Varanasi on Instagram">Instagram ↗</a>
+    <a class="tv-social-link" href="${IG}" target="_blank" rel="noopener" aria-label="Tour Varanasi on Instagram">
+      <img class="tv-social-logo" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" width="24" height="24" loading="lazy" decoding="async"/>
+      <span>Instagram</span>
+    </a>
+    <a class="tv-social-link" href="${FB}" target="_blank" rel="noopener" aria-label="Tour Varanasi on Facebook">
+      <img class="tv-social-logo" src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" width="24" height="24" loading="lazy" decoding="async"/>
+      <span>Facebook</span>
+    </a>
   </div>
 </div>
 <!-- TV_FOOTER_TRUST_SOCIAL_END -->`;
