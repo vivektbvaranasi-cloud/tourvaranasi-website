@@ -163,7 +163,7 @@ function choose(rel, html) {
 
 function render(selection) {
   if (!selection.items.length) return '';
-  return `${MARKER_START}\n<section class="section soft tv-related-links" aria-labelledby="continue-planning"><div class="inner"><div class="eyebrow">Continue planning</div><h2 id="continue-planning">${selection.heading}</h2><p class="lede">${selection.intro}</p><div class="grid grid-3">${selection.items.map((item) => `<div class="feature"><h3><a href="${item.href}">${item.title}</a></h3><p>${item.text}</p></div>`).join('')}</div></div></section>\n${MARKER_END}`;
+  return `${MARKER_START}\n<section class="section soft tv-related-links" aria-labelledby="continue-planning"><div class="inner tv-planning-inner"><div class="eyebrow">Continue planning</div><h2 id="continue-planning">${selection.heading}</h2><p class="lede">${selection.intro}</p><div class="grid grid-3">${selection.items.map((item) => `<div class="feature"><h3><a href="${item.href}">${item.title}</a></h3><p>${item.text}</p></div>`).join('')}</div></div></section>\n${MARKER_END}`;
 }
 
 function walk(dir) {
