@@ -1,67 +1,86 @@
-/* Tripadvisor trust badge shown only inside selected landing-page hero images */
+/* Tripadvisor trust card shown only inside selected landing-page hero images */
 .tv-hero-tripadvisor{
   display:inline-flex!important;
   align-items:center;
-  gap:11px;
+  gap:12px;
   width:max-content;
   max-width:100%;
   margin-top:20px;
-  padding:9px 13px 9px 9px;
-  background:#34e0a1;
-  border:1px solid rgba(255,255,255,.72);
-  border-radius:4px;
-  color:#123b30!important;
+  padding:10px 14px;
+  background:rgba(255,255,255,.95);
+  border:1px solid rgba(255,255,255,.82);
+  border-radius:6px;
+  color:#151515!important;
   text-decoration:none!important;
-  box-shadow:0 7px 22px rgba(0,0,0,.20);
+  box-shadow:0 10px 28px rgba(0,0,0,.22);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
   transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
 }
 .tv-hero-tripadvisor:hover{
   transform:translateY(-1px);
-  box-shadow:0 10px 28px rgba(0,0,0,.25);
-  background:#42e5aa;
-}
-.tv-hero-tripadvisor-logo{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  box-shadow:0 13px 32px rgba(0,0,0,.26);
   background:#fff;
-  border-radius:3px;
-  padding:5px 7px;
+}
+.tv-hero-tripadvisor-brand{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
   flex:0 0 auto;
 }
-.tv-hero-tripadvisor-logo img{
+.tv-hero-tripadvisor-brand img{
   display:block!important;
-  width:104px!important;
-  height:auto!important;
-  max-height:27px!important;
+  width:28px!important;
+  height:28px!important;
   object-fit:contain!important;
+}
+.tv-hero-tripadvisor-word{
+  color:#111!important;
+  -webkit-text-fill-color:#111!important;
+  text-shadow:none!important;
+  font-size:16px!important;
+  line-height:1!important;
+  font-weight:700!important;
+  letter-spacing:-.02em;
+}
+.tv-hero-tripadvisor-divider{
+  width:1px;
+  height:30px;
+  background:rgba(0,0,0,.13);
+  flex:0 0 auto;
 }
 .tv-hero-tripadvisor-copy{
   display:flex;
   flex-direction:column;
-  gap:1px;
+  gap:2px;
   min-width:0;
 }
 .tv-hero-tripadvisor-copy strong{
-  color:#123b30!important;
-  -webkit-text-fill-color:#123b30!important;
+  color:#171717!important;
+  -webkit-text-fill-color:#171717!important;
   text-shadow:none!important;
-  font-size:12px!important;
+  font-size:11px!important;
   line-height:1.25!important;
   font-weight:700!important;
-  letter-spacing:.01em;
-}
-.tv-hero-tripadvisor-copy small{
-  color:#24594a!important;
-  -webkit-text-fill-color:#24594a!important;
-  text-shadow:none!important;
-  font-size:9px!important;
-  line-height:1.3!important;
   letter-spacing:.02em;
 }
+.tv-hero-tripadvisor-copy small{
+  color:#5f625f!important;
+  -webkit-text-fill-color:#5f625f!important;
+  text-shadow:none!important;
+  font-size:9px!important;
+  line-height:1.25!important;
+}
 @media(max-width:620px){
-  .tv-hero-tripadvisor{margin-top:17px;padding:8px 10px 8px 8px;gap:9px}
-  .tv-hero-tripadvisor-logo img{width:90px!important;max-height:24px!important}
-  .tv-hero-tripadvisor-copy strong{font-size:11px!important}
+  .tv-hero-tripadvisor{
+    margin-top:17px;
+    padding:9px 11px;
+    gap:9px;
+  }
+  .tv-hero-tripadvisor-brand{gap:6px}
+  .tv-hero-tripadvisor-brand img{width:24px!important;height:24px!important}
+  .tv-hero-tripadvisor-word{font-size:14px!important}
+  .tv-hero-tripadvisor-divider{height:26px}
+  .tv-hero-tripadvisor-copy strong{font-size:10px!important}
   .tv-hero-tripadvisor-copy small{font-size:8px!important}
 }
