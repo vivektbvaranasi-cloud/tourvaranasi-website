@@ -5,7 +5,7 @@ import { buddhistDestinations } from './destination-data-buddhist.mjs';
 import { westDestinations, destinationMediaOverrides } from './destination-data-west.mjs';
 
 const SITE = 'https://www.tourvaranasi.com';
-const TODAY = '2026-09-09';
+const TODAY = '2026-09-23';
 const BLOG_CSS = '/assets/css/blog-enhancements.css';
 
 const bySlug = new Map(
