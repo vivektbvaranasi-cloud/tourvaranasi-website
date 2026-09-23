@@ -40,6 +40,7 @@ const footer=`<!-- TV_UNIFIED_FOOTER_START -->
         <a href="/about-us/">About Us</a>
         <a href="/tour-varanasi-contact/">Contact</a>
         <a href="/legal/">Legal</a>
+        <a href="/editorial-policy/">Editorial &amp; Verification</a>
         <a href="/privacy-policy/">Privacy Policy</a>
         <a href="/sitemap.xml">Sitemap</a>
         <div class="tvf-contact">
@@ -48,6 +49,7 @@ const footer=`<!-- TV_UNIFIED_FOOTER_START -->
         </div>
       </div>
     </div>
+    <nav class="tvf-language-row" aria-label="Language versions"><span>Languages</span><a href="/">English</a><a href="/de/">Deutsch</a><a href="/fr/">Français</a><a href="/es/">Español</a><a href="/it/">Italiano</a><a href="/ja/">日本語</a><a href="/zh/">中文</a></nav>
     <div class="tvf-social-row">
       <p class="tvf-social-label">Reviews &amp; social</p>
       <div class="tvf-social-links">
