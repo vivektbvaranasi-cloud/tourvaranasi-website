@@ -133,7 +133,7 @@ function choose(rel, html) {
   if (rel === 'travel-guide/first-time-in-varanasi/index.html') {
     heading = 'Practical details for a first Varanasi visit';
     intro = 'Go deeper on the two questions that cause the most uncertainty before arrival: Kashi Vishwanath access and how transfers work around the ghats.';
-    items = [L.kashiGuide, L.airportGuide, L.twoDay];
+    items = [L.twoDay, L.aartiGuide, L.sunriseGuide];
   } else if (rel === 'blogs/post/where-to-stay-in-varanasi/index.html') {
     heading = 'Plan hotel access before arrival';
     intro = 'Riverfront atmosphere and easy vehicle access are not always the same thing in Varanasi, so understand the arrival logistics before choosing a hotel.';
