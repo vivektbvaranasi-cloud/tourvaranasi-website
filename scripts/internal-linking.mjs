@@ -29,6 +29,8 @@ const L = {
   foreignGuide: link('/blogs/post/Varanasi-for-Foreigners/', 'Varanasi for International Travellers', 'Practical advice on local customs, movement, temples, river experiences and private touring.', 'guide'),
   stayGuide: link('/blogs/post/where-to-stay-in-varanasi/', 'Where to Stay in Varanasi', 'Compare riverfront, old-city and more accessible hotel locations before choosing a base.', 'guide'),
   bestTimeGuide: link('/blogs/post/best-time-to-visit-varanasi/', 'Best Time to Visit Varanasi', 'Understand weather, festivals, river conditions and seasonal trade-offs before fixing dates.', 'guide'),
+  kashiGuide: link('/blogs/post/kashi-vishwanath-temple-darshan-guide/', 'Kashi Vishwanath Temple Guide', 'Current practical guidance on temple access, walking, visitor procedure, darshan and the old-city approach.', 'guide'),
+  airportGuide: link('/blogs/post/varanasi-airport-to-ghats-hotels-guide/', 'Varanasi Airport to Ghats & Hotels', 'Understand realistic transfer time, vehicle access and how riverfront hotel arrivals differ from road-access hotels.', 'guide'),
 
   food: link('/experiences/varanasi-food-walk/', 'Varanasi Food Walk', 'Explore selected local flavours on a guided route through the old-city food lanes.', 'experience'),
   weaving: link('/experiences/banarasi-silk-weaving/', 'Banarasi Silk Weaving', 'Meet the craft tradition behind one of Varanasi’s best-known cultural legacies.', 'experience'),
@@ -120,15 +122,23 @@ function choose(rel, html) {
   } else {
     heading = 'Choose the right Varanasi itinerary';
     intro = 'Start with the amount of time you have, then add the river, old city and cultural experiences that fit naturally.';
-    if (rel === 'tours/varanasi-tour-in-one-day/index.html') items = [L.daysGuide, L.twoDay, L.aartiGuide, L.standards];
-    else if (rel === 'tours/varanasi-tour-in-two-days/index.html') items = [L.daysGuide, L.threeDay, L.aartiGuide, L.food];
+    if (rel === 'tours/varanasi-tour-in-one-day/index.html') items = [L.kashiGuide, L.daysGuide, L.aartiGuide, L.standards];
+    else if (rel === 'tours/varanasi-tour-in-two-days/index.html') items = [L.kashiGuide, L.daysGuide, L.aartiGuide, L.food];
     else if (rel === 'tours/varanasi-tour-in-three-days/index.html' || rel === 'tours/4-days-varanasi-tour/index.html') items = [L.daysGuide, L.food, L.weaving, L.standards];
     else if (isBlog) items = [L.twoDay, L.aartiGuide, L.food, L.standards];
     else if (isExperience) items = [L.threeDay, L.daysGuide, L.standards, L.reviews];
     else items = [L.twoDay, L.daysGuide, L.aartiGuide, L.standards];
   }
 
-  if (rel === 'about-us/index.html') {
+  if (rel === 'travel-guide/first-time-in-varanasi/index.html') {
+    heading = 'Practical details for a first Varanasi visit';
+    intro = 'Go deeper on the two questions that cause the most uncertainty before arrival: Kashi Vishwanath access and how transfers work around the ghats.';
+    items = [L.kashiGuide, L.airportGuide, L.twoDay];
+  } else if (rel === 'blogs/post/where-to-stay-in-varanasi/index.html') {
+    heading = 'Plan hotel access before arrival';
+    intro = 'Riverfront atmosphere and easy vehicle access are not always the same thing in Varanasi, so understand the arrival logistics before choosing a hotel.';
+    items = [L.airportGuide, L.twoDay, L.daysGuide];
+  } else if (rel === 'about-us/index.html') {
     heading = 'Plan with confidence';
     intro = 'See how we work, what guests say and which first-time itinerary is most useful as a starting point.';
     items = [L.reviews, L.standards, L.twoDay];
@@ -147,7 +157,7 @@ function choose(rel, html) {
   } else if (rel === 'blogs/index.html') {
     heading = 'Turn the guides into a practical trip';
     intro = 'Use our planning guides alongside a realistic first-time itinerary and the key river experience.';
-    items = [L.twoDay, L.aartiGuide, L.sunriseGuide];
+    items = [L.kashiGuide, L.airportGuide, L.twoDay];
   } else if (rel === 'experiences/index.html') {
     heading = 'Build experiences into the itinerary';
     intro = 'Local experiences work best when the core Varanasi programme has enough time and the right pacing.';
@@ -179,7 +189,7 @@ function render(selection) {
   const cards = selection.items.map((item) =>
     `<a class="tv-planning-card" href="${item.href}"><span class="tv-planning-meta">${planningLabel(item.type)}</span><h3>${item.title}</h3><p>${item.text}</p><span class="tv-planning-link">Explore <span aria-hidden="true">→</span></span></a>`
   ).join('');
-  return `${MARKER_START}\n<section class="tv-planning" aria-labelledby="continue-planning"><div class="tv-planning-shell"><div class="tv-planning-head"><div class="tv-planning-kicker">Continue planning</div><h2 id="continue-planning">${selection.heading}</h2><p>${selection.intro}</p></div><div class="tv-planning-grid">${cards}</div></div></section>\n${MARKER_END}`;
+  return `${MARKER_START}\n<section class="tv-planning" aria-labelledby="tv-continue-planning"><div class="tv-planning-shell"><div class="tv-planning-head"><div class="tv-planning-kicker">Continue planning</div><h2 id="tv-continue-planning">${selection.heading}</h2><p>${selection.intro}</p></div><div class="tv-planning-grid">${cards}</div></div></section>\n${MARKER_END}`;
 }
 
 function walk(dir) {
