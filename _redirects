@@ -46,3 +46,9 @@
 /plan-my-journey/ /plan-my-journey/index.html 200!
 /service-standards/ /service-standards/index.html 200!
 /* /404.html 404
+
+/tours/4-days-delhi-agra-mathura-vrindavan-tour/ /tours/5-days-delhi-agra-mathura-vrindavan-tour/ 301!
+/tours/6-days-delhi-agra-mathura-vrindavan-ayodhya-tour/ /tours/7-days-delhi-agra-mathura-vrindavan-ayodhya-tour/ 301!
+/tours/7-days-delhi-mathura-vrindavan-ayodhya-prayagraj-varanasi-tour/ /tours/8-days-delhi-mathura-vrindavan-ayodhya-prayagraj-varanasi-tour/ 301!
+/tours/8-days-delhi-mathura-vrindavan-agra-ayodhya-prayagraj-varanasi-tour/ /tours/9-days-delhi-mathura-vrindavan-agra-ayodhya-prayagraj-varanasi-tour/ 301!
+/tours/8-days-varanasi-prayagraj-ayodhya-agra-vrindavan-mathura-delhi-tour/ /tours/9-days-varanasi-prayagraj-ayodhya-agra-vrindavan-mathura-delhi-tour/ 301!
