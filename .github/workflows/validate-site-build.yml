@@ -29,7 +29,7 @@ jobs:
       - name: Verify travel guide and performance output
         shell: bash
         run: |
-          set -euo pipefail
+          set -euxo pipefail
           grep -q "24 practical guides" blogs/index.html
           test -f blogs/post/first-time-in-ayodhya/index.html
           test -f blogs/post/prayagraj-one-day-guide/index.html
