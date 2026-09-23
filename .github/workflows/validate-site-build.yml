@@ -24,12 +24,12 @@ jobs:
           node-version: '22'
 
       - name: Run production build and technical audits
-        run: node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/refine-varanasi-content.mjs && node scripts/technical-hardening.mjs && node scripts/cwv-hardening.mjs && node scripts/contextual-linking.mjs && node scripts/internal-linking.mjs && node scripts/seo-intent-hardening.mjs && node scripts/homepage-related-links.mjs && node scripts/unified-footer.mjs && node scripts/hero-tripadvisor.mjs && node scripts/inject-nav-state.mjs && node scripts/inject-readability-css.mjs && node scripts/cache-bust-css.mjs && node scripts/audit-blog-routes.mjs && node scripts/audit-site.mjs && node scripts/crawl-index-audit.mjs
+        run: node scripts/fetch-pmj-images.mjs && node scripts/fetch-destination-images.mjs && node scripts/build-destinations.mjs && node scripts/build-new-sacred-tours.mjs && node scripts/prepare-blog-data.mjs && node scripts/build-blogs.mjs && node scripts/refine-varanasi-content.mjs && node scripts/technical-hardening.mjs && node scripts/cwv-hardening.mjs && node scripts/contextual-linking.mjs && node scripts/internal-linking.mjs && node scripts/seo-intent-hardening.mjs && node scripts/homepage-related-links.mjs && node scripts/unified-footer.mjs && node scripts/hero-tripadvisor.mjs && node scripts/inject-nav-state.mjs && node scripts/inject-readability-css.mjs && node scripts/eeat-search-2026.mjs && node scripts/schema-trust-2026.mjs && node scripts/cache-bust-css.mjs && node scripts/audit-blog-routes.mjs && node scripts/audit-site.mjs && node scripts/crawl-index-audit.mjs
 
       - name: Verify travel guide and performance output
         shell: bash
         run: |
-          set -euo pipefail
+          set -euxo pipefail
           grep -q "24 practical guides" blogs/index.html
           test -f blogs/post/first-time-in-ayodhya/index.html
           test -f blogs/post/prayagraj-one-day-guide/index.html
@@ -43,6 +43,14 @@ jobs:
           test -f blogs/post/kushinagar-lumbini-guide/index.html
           grep -q "first-time-in-ayodhya" sitemap.xml
           grep -q "kushinagar-lumbini-guide" sitemap.xml
+          test -f editorial-policy/index.html
+          grep -q "From our Varanasi operations team" blogs/post/kashi-vishwanath-temple-darshan-guide/index.html
+          grep -q "From our Ayodhya operations team" tours/ayodhya-tour-in-one-day/index.html
+          grep -q "From our Lucknow operations team" tours/lucknow-tour-in-one-day/index.html
+          grep -q "From our Buddhist Circuit operations team" blogs/post/buddhist-circuit-from-varanasi/index.html
+          grep -q "Tour Varanasi Operations Team" blogs/post/bodh-gaya-travel-guide/index.html
+          test -f tours/8-days-delhi-mathura-vrindavan-ayodhya-prayagraj-varanasi-tour/index.html
+          grep -q "editorial-policy" sitemap.xml
           test "$(wc -c < index.html)" -lt 100000
           ! grep -q "data:image/" index.html
           grep -q "/.netlify/images?url=" plan-my-journey/index.html
