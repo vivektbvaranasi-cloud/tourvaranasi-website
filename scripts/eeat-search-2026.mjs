@@ -111,8 +111,14 @@ function socialRel(html) {
 }
 
 function detectTopic(rel, html) {
-  const s=(rel+' '+html.slice(0,16000)).toLowerCase();
-  if (/bodh\s*gaya|bodhgaya|rajgir|nalanda|kushinagar|lumbini|shravasti|vaishali|buddhist circuit|sarnath/.test(s)) return 'buddhist';
+  const r=rel.toLowerCase();
+  if (/buddhist|bodh.?gaya|rajgir|nalanda|kushinagar|lumbini|shravasti|vaishali|sarnath/.test(r)) return 'buddhist';
+  if (/lucknow|naimish/.test(r)) return 'lucknow';
+  if (/ayodhya|ram-mandir|ram-janmabhoomi/.test(r)) return 'ayodhya';
+  if (/prayagraj|allahabad|chitrakoot|chhapaiya/.test(r)) return 'sacred';
+  if (/varanasi|kashi|ganga|ganges|boat|banarasi|ghat/.test(r)) return 'varanasi';
+  const s=html.slice(0,12000).toLowerCase();
+  if (/bodh\s*gaya|rajgir|nalanda|kushinagar|lumbini|buddhist circuit/.test(s)) return 'buddhist';
   if (/lucknow|bara imambara|chhota imambara|naimish/.test(s)) return 'lucknow';
   if (/ayodhya|ram janmabhoomi|ram mandir|hanuman garhi|sarayu/.test(s)) return 'ayodhya';
   if (/prayagraj|allahabad|triveni sangam|chitrakoot|chhapaiya/.test(s)) return 'sacred';
