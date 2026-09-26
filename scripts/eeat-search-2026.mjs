@@ -170,6 +170,7 @@ function localizedFooter(lang) {
       <div class="tvf-col"><h4>${t.tours}</h4><a href="/experiences/">${t.experiences}</a><a href="/reviews/">${t.reviews}</a><a href="/blogs/">${t.guide}</a><a href="/about-us/">${t.about}</a></div>
       <div class="tvf-col"><h4>${t.contact}</h4><a href="/service-standards/">${t.standards}</a><a href="/editorial-policy/">Editorial</a><a href="/privacy-policy/">${t.privacy}</a><a href="/sitemap.xml">${t.sitemap}</a><div class="tvf-contact"><a href="https://wa.me/917457905011" target="_blank" rel="noopener">+91 74579 05011 · WhatsApp</a><a href="mailto:tours@tourvaranasi.com">tours@tourvaranasi.com</a></div></div>
     </div>
+    <nav class="tvf-language-row" aria-label="Language versions"><span>Languages</span><a href="/">English</a><a href="/de/">Deutsch</a><a href="/fr/">Français</a><a href="/es/">Español</a><a href="/it/">Italiano</a><a href="/ja/">日本語</a><a href="/zh/">中文</a></nav>
     <div class="tvf-social-row"><p class="tvf-social-label">Reviews &amp; social</p><div class="tvf-social-links"><a class="tvf-tripadvisor" href="https://www.tripadvisor.in/Attraction_Review-g297685-d10366118-Reviews-Tour_Varanasi-Varanasi_Varanasi_District_Uttar_Pradesh.html" target="_blank" rel="noopener"><span>Tripadvisor</span></a><a href="https://www.instagram.com/tourvaranasi_/" target="_blank" rel="noopener"><span>Instagram</span></a><a href="https://www.facebook.com/TourVaranasi" target="_blank" rel="noopener"><span>Facebook</span></a></div></div>
   </div>
   <div class="tvf-bottom">© 2026 Tour Varanasi.</div>
