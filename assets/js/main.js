@@ -11,28 +11,6 @@
   const ABOUT_LOGO = LOGO;
   const ABOUT_HERO = '/assets/images/guest_joyful_boat.webp';
 
-  function trackEvent(name, params) {
-    const payload = Object.assign({
-      page_path: window.location.pathname || '/',
-      page_title: document.title || ''
-    }, params || {});
-
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', name, payload);
-    } else {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push(Object.assign({ event: name }, payload));
-    }
-  }
-
-  function whatsappLocation(link) {
-    if (link.closest('.tv-top-contact-bar, .top-contact-bar, .topbar')) return 'top_bar';
-    if (link.closest('.tvf-footer, .tv-footer, .footer, .site-footer')) return 'footer';
-    if (link.closest('.tv-whatsapp-float')) return 'floating_button';
-    if (link.closest('.hero, .page-hero, .journey-hero')) return 'hero';
-    return 'page_content';
-  }
-
   function ensureConversionStyles() {
     if (document.getElementById('tv-conversion-styles')) return;
     const style = document.createElement('style');
@@ -188,40 +166,6 @@
       <span>Chat on WhatsApp</span>
     `;
     document.body.appendChild(link);
-  }
-
-  function bindConversionTracking(root = document) {
-    if (root.documentElement && root.documentElement.dataset.tvTrackingBound === '1') return;
-    if (root.documentElement) root.documentElement.dataset.tvTrackingBound = '1';
-
-    root.addEventListener('click', function (event) {
-      const link = event.target.closest('a');
-      if (!link) return;
-      const href = link.getAttribute('href') || '';
-
-      if (href.includes('wa.me/917457905011')) {
-        trackEvent('whatsapp_click', {
-          link_location: whatsappLocation(link),
-          link_text: (link.textContent || '').trim().slice(0, 120)
-        });
-      }
-
-      if (href === '/plan-my-journey/' || href === '/plan-my-journey') {
-        trackEvent('plan_my_journey_click', {
-          link_location: whatsappLocation(link),
-          link_text: (link.textContent || '').trim().slice(0, 120)
-        });
-      }
-    });
-
-    root.addEventListener('submit', function (event) {
-      const form = event.target;
-      if (!(form instanceof HTMLFormElement)) return;
-      const name = form.getAttribute('name') || form.id || 'form';
-      if (name === 'journey-enquiry' || form.closest('.quote-wrap, .journey-form-wrap')) {
-        trackEvent('journey_enquiry_submit', { form_name: name });
-      }
-    });
   }
 
   function currentPath() {
@@ -659,7 +603,6 @@
   function applySharedShell() {
     ensureConversionStyles();
     ensurePhotoContrastStyles();
-    bindConversionTracking(document);
 
     if (isLocalizedLanding()) {
       normalizeContactLinks(document);
