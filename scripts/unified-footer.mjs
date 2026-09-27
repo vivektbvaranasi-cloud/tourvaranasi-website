@@ -9,6 +9,7 @@ const cssTag=`<link rel="stylesheet" href="${CSS}">`;
 const TA='https://www.tripadvisor.in/Attraction_Review-g297685-d10366118-Reviews-Tour_Varanasi-Varanasi_Varanasi_District_Uttar_Pradesh.html';
 const IG='https://www.instagram.com/tourvaranasi_?stkn=d3EwbjMwdmx3NjIx';
 const FB='https://www.facebook.com/TourVaranasi';
+const YT='https://www.youtube.com/channel/UCMQiSb-02IaDk-HN0mPzu-g';
 
 const footer=`<!-- TV_UNIFIED_FOOTER_START -->
 <footer class="tvf-footer" id="site-footer">
@@ -59,6 +60,9 @@ const footer=`<!-- TV_UNIFIED_FOOTER_START -->
         </a>
         <a href="${FB}" target="_blank" rel="noopener" aria-label="Tour Varanasi on Facebook">
           <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="" width="20" height="20" loading="lazy" decoding="async"><span>Facebook</span>
+        </a>
+        <a href="${YT}" target="_blank" rel="noopener" aria-label="Tour Varanasi on YouTube">
+          <img src="https://cdn.simpleicons.org/youtube/FF0000" alt="" width="20" height="20" loading="lazy" decoding="async"><span>YouTube</span>
         </a>
       </div>
     </div>
