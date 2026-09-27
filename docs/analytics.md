@@ -2,7 +2,7 @@
 
 Production web stream: **Tour Varanasi Website**, Measurement ID `G-NFN4DYHCEL`, configured 26 September 2026. Enhanced measurement is disabled; this script sends the intended page views and enquiry actions.
 
-The shared script captures source information in Netlify form records even when optional analytics is declined or no GA4 property is configured. WhatsApp links add the current page to their editable suggested message. Neither action proves that a WhatsApp message was sent or a booking was made.
+The shared script captures source information in Netlify form records even when optional analytics is declined or no GA4 property is configured. WhatsApp links add the current page to their editable suggested message. Neither action proves that a WhatsApp message was sent or a booking was made. The analytics choice is available from the footer without an automatic visitor prompt. New visitors are not tracked in GA4 unless they choose Allow analytics there.
 
 ## Activate GA4
 

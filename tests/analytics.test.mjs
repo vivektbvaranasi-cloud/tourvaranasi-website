@@ -73,6 +73,16 @@ test('missing ID, denied consent and blocked storage do not load Google; forms s
     assert.equal(x.events().length,0); assert.deepEqual(x.redirects,['/thank-you/']);
   }
 });
+test('new visitors see no analytics prompt or Google request until they open preferences',()=>{
+  const x=setup({consent:''});
+  assert.equal(x.document.head.children.length,0);
+  const panel=x.document.body.children.find(e=>e.attrs['aria-label']==='Analytics preferences');
+  assert.equal(panel.hidden,true);
+  const settings=x.document.body.children.find(e=>e.textContent==='Analytics preferences');
+  settings.listeners.click();
+  assert.equal(panel.hidden,false);
+  assert.equal(x.document.head.children.length,0);
+});
 test('landing and previous content page survive navigation to enquiry page',async()=>{
   const session=storage(); setup({session,pathname:'/blogs/guide/',search:'?utm_source=partner&utm_medium=referral'});
   setup({session,pathname:'/tours/varanasi/'});

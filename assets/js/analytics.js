@@ -92,7 +92,9 @@
     choice('Allow analytics', 'granted'); choice('Decline analytics', 'denied');
     const privacy = document.createElement('a'); privacy.href = '/privacy-policy/'; privacy.textContent = 'Privacy policy';
     privacy.style.cssText = 'display:block;margin-top:10px;'; panel.appendChild(privacy);
-    panel.hidden = !!consent;
+    // Keep the choice available in the footer without interrupting a visit.
+    // Until a visitor chooses Allow, Google Analytics remains inactive.
+    panel.hidden = true;
     document.body.appendChild(panel);
     const settings = document.createElement('button');
     settings.type = 'button'; settings.textContent = 'Analytics preferences';
