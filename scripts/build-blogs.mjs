@@ -1,3 +1,4 @@
+import { commercialArticles } from './varanasi-commercial-articles.mjs';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
 import { coreDestinations } from './destination-data-core.mjs';
@@ -309,7 +310,11 @@ const newArticles = [
   }
 ];
 
-const allArticles = [...existingArticles, ...newArticles].sort((a, b) => a.n - b.n);
+const additionalGuides = [
+  {n: 27, url:'/blogs/post/kashi-vishwanath-temple-darshan-guide/', title:'Kashi Vishwanath Temple Guide', description:'Practical advice on darshan, lockers, the final approach and temple planning.', hero:'/assets/images/user/kashi-vishwanath-corridor-aerial.webp', group:'Varanasi essentials'},
+  {n: 28, url:'/blogs/post/varanasi-airport-to-ghats-hotels-guide/', title:'Varanasi Airport to Ghats & Hotels', description:'Plan your airport transfer with realistic hotel access, porterage and riverfront arrangements.', hero:'/assets/images/user/varanasi-airport-terminal.webp', group:'Varanasi essentials'}
+];
+const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || a.n - b.n);
 
 function esc(value = '') {
   return String(value)
@@ -407,7 +412,7 @@ function comboSections(article) {
 }
 
 function renderNewArticle(article, header, footer) {
-  const { dests, sections } = article.kind === 'combo' ? comboSections(article) : singleSections(article);
+  const { dests, sections } = article.kind === 'custom' ? {dests: [], sections: []} : article.kind === 'combo' ? comboSections(article) : singleSections(article);
   const related = relatedLinks(article, dests);
   const canonical = `${SITE}${article.url}`;
   const photos = article.photos || [];
@@ -431,12 +436,18 @@ function renderNewArticle(article, header, footer) {
   }
   body += `<div class="pillar-cta"><h2>Plan this journey privately</h2><p>Share your dates, interests and preferred pace. We will suggest a practical private programme rather than a generic sightseeing checklist.</p><p><a class="btn primary" href="/plan-my-journey/">Plan My Journey</a></p></div></section>`;
 
+  if (article.kind === 'custom') {
+    const start = body.indexOf('<section class="section narrow prose">');
+    body = body.slice(0, start) + `<section class="section narrow prose"><p class="article-date">Published <time datetime="${article.published}">${publicationLabel(article.published)}</time> · Tour Varanasi Operations Team</p>${article.content}<div class="pillar-cta"><h2>Plan your private Varanasi visit</h2><p>Share your dates, interests and preferred pace for a personalised programme and itemised quotation.</p><p><a class="btn primary" href="/plan-my-journey/">Plan My Journey</a></p></div></section>`;
+    body = body.replace(`aria-label="${esc(article.title)}"`, `aria-label="${esc(article.heroAlt)}"`);
+  }
   const schema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: article.title,
     description: article.description,
-    dateModified: TODAY,
+    dateModified: article.published || TODAY,
+    ...(article.published ? {datePublished: article.published} : {}),
     author: { '@type': 'Organization', name: 'Tour Varanasi' },
     publisher: { '@type': 'Organization', name: 'Tour Varanasi', url: SITE },
     image: absoluteImage(article.hero),
@@ -457,18 +468,17 @@ function renderNewArticle(article, header, footer) {
   return `${head}<body>${header}${body}${footer}`;
 }
 
+function publicationLabel(date) {
+  return new Date(`${date}T00:00:00Z`).toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric', timeZone:'UTC'});
+}
 function card(article) {
-  return `<article class="blog-hub-card"><a class="blog-hub-image" href="${article.url}"><img src="${article.hero}" alt="${esc(article.title)}" loading="lazy" decoding="async"/></a><div class="blog-hub-body"><div class="eyebrow">Guide ${String(article.n).padStart(2, '0')}</div><h3><a href="${article.url}">${esc(article.title)}</a></h3><p>${esc(article.description)}</p><a class="blog-read" href="${article.url}">Read guide →</a></div></article>`;
+  return `<article class="blog-hub-card"><a class="blog-hub-image" href="${article.url}"><img src="${article.hero}" alt="${esc(article.heroAlt || article.title)}" loading="lazy" decoding="async"/></a><div class="blog-hub-body"><div class="eyebrow">${article.published ? `Published ${publicationLabel(article.published)}` : esc(article.group)}</div><h3><a href="${article.url}">${esc(article.title)}</a></h3><p>${esc(article.description)}</p><a class="blog-read" href="${article.url}">Read guide →</a></div></article>`;
 }
 
 function renderBlogIndexSection() {
-  const groups = ['Varanasi essentials', 'Varanasi experiences', 'Sacred North India', 'Buddhist circuit'];
-  let html = '<section class="section blog-hub"><div class="eyebrow">Tour Varanasi Travel Guide</div><h2>24 practical guides built from on-ground experience.</h2><p class="lede">Useful planning advice for Varanasi and the journeys around it — access, walking, realistic timings, river conditions, temple logistics, road sectors and what we would actually prioritise for a private traveller.</p>';
-  for (const group of groups) {
-    const items = allArticles.filter((a) => a.group === group);
-    html += `<div class="blog-cluster"><div class="blog-cluster-heading"><div class="eyebrow">${esc(group)}</div><h2>${group === 'Buddhist circuit' ? 'Buddhist India & Nepal' : esc(group)}</h2></div><div class="blog-hub-grid">${items.map(card).join('')}</div></div>`;
-  }
-  html += '</section>';
+  let html = '<section class="section blog-hub"><div class="eyebrow">Tour Varanasi Travel Guide</div><h2>Local insight for a better journey.</h2><p class="lede">Our newest articles appear first, followed by practical guides to Varanasi and the journeys around it.</p><div class="blog-hub-grid">';
+  html += allArticles.map(card).join('');
+  html += '</div></section>';
   return html;
 }
 
@@ -479,10 +489,22 @@ async function updateIndex() {
   html = html.replace(/<meta content="[^"]+" property="og:image"\/>/, `<meta content="${SITE}/assets/images/user/sunrise-ganges.jpg" property="og:image"/>`);
   html = html.replace(/<meta content="[^"]+" name="twitter:image"\/>/, `<meta content="${SITE}/assets/images/user/sunrise-ganges.jpg" name="twitter:image"/>`);
   html = html.replace(/<link as="image" href="[^"]+" rel="preload"\/>/, '<link as="image" href="/assets/images/user/sunrise-ganges.jpg" rel="preload"/>');
-  const start = html.indexOf('<section class="section narrow">');
+  const start = html.search(/<section class="section (?:narrow|blog-hub)">/);
   const quote = html.indexOf('<section class="quote-wrap"', start);
   if (start < 0 || quote < 0) throw new Error('Could not locate blog index content section');
   html = `${html.slice(0, start)}${renderBlogIndexSection()}${html.slice(quote)}`;
+  html = html.replace(/<script([^>]*application\/ld\+json[^>]*)>([\s\S]*?)<\/script>/gi, (full, attrs, json) => {
+    try {
+      const data = JSON.parse(json);
+      const update = obj => {
+        if (!obj || typeof obj !== 'object') return;
+        if (obj['@type'] === 'ItemList') obj.itemListElement = allArticles.map((a, i) => ({'@type':'ListItem', position:i+1, name:a.title, item:SITE+a.url}));
+        if (Array.isArray(obj)) obj.forEach(update); else Object.values(obj).forEach(update);
+      };
+      update(data);
+      return `<script${attrs}>${JSON.stringify(data)}</script>`;
+    } catch { return full; }
+  });
   await writeFile('blogs/index.html', html);
 }
 
@@ -491,7 +513,7 @@ async function updateSitemap() {
   for (const article of allArticles) {
     const loc = `${SITE}${article.url}`;
     if (xml.includes(`<loc>${loc}</loc>`)) continue;
-    const entry = `  <url><loc>${loc}</loc><lastmod>${TODAY}</lastmod></url>\n`;
+    const entry = `  <url><loc>${loc}</loc><lastmod>${article.published || TODAY}</lastmod></url>\n`;
     xml = xml.replace('</urlset>', `${entry}</urlset>`);
   }
   await writeFile('sitemap.xml', xml);
@@ -511,7 +533,7 @@ for (const article of existingArticles) {
   results.push([article.n, words, 'enhanced']);
 }
 
-for (const article of newArticles) {
+for (const article of [...newArticles, ...commercialArticles]) {
   const html = renderNewArticle(article, sharedHeader, sharedFooter);
   const words = proseWordCount(html);
   if (words < 500) throw new Error(`${article.path} generated only ${words} prose words`);
