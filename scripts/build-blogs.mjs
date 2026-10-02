@@ -1,3 +1,4 @@
+import { ayodhyaWheelchairArticle } from './ayodhya-wheelchair-article.mjs';
 import { commercialArticles } from './varanasi-commercial-articles.mjs';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
@@ -314,7 +315,7 @@ const additionalGuides = [
   {n: 27, url:'/blogs/post/kashi-vishwanath-temple-darshan-guide/', title:'Kashi Vishwanath Temple Guide', description:'Practical advice on darshan, lockers, the final approach and temple planning.', hero:'/assets/images/user/kashi-vishwanath-corridor-aerial.webp', group:'Varanasi essentials'},
   {n: 28, url:'/blogs/post/varanasi-airport-to-ghats-hotels-guide/', title:'Varanasi Airport to Ghats & Hotels', description:'Plan your airport transfer with realistic hotel access, porterage and riverfront arrangements.', hero:'/assets/images/user/varanasi-airport-terminal.webp', group:'Varanasi essentials'}
 ];
-const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || a.n - b.n);
+const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ayodhyaWheelchairArticle, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
 
 function esc(value = '') {
   return String(value)
@@ -438,7 +439,7 @@ function renderNewArticle(article, header, footer) {
 
   if (article.kind === 'custom') {
     const start = body.indexOf('<section class="section narrow prose">');
-    body = body.slice(0, start) + `<section class="section narrow prose"><p class="article-date">Published <time datetime="${article.published}">${publicationLabel(article.published)}</time> · Tour Varanasi Operations Team</p>${article.content}<div class="pillar-cta"><h2>Plan your private Varanasi visit</h2><p>Share your dates, interests and preferred pace for a personalised programme and itemised quotation.</p><p><a class="btn primary" href="/plan-my-journey/">Plan My Journey</a></p></div></section>`;
+    body = body.slice(0, start) + `<section class="section narrow prose"><p class="article-date">Published <time datetime="${article.published}">${publicationLabel(article.published)}</time> · Tour Varanasi Operations Team</p>${article.content}<div class="pillar-cta"><h2>${esc(article.ctaTitle || 'Plan your private Varanasi visit')}</h2><p>Share your dates, interests and preferred pace for a personalised programme and itemised quotation.</p><p><a class="btn primary" href="/plan-my-journey/">Plan My Journey</a></p></div></section>`;
     body = body.replace(`aria-label="${esc(article.title)}"`, `aria-label="${esc(article.heroAlt)}"`);
   }
   const schema = JSON.stringify({
@@ -533,7 +534,7 @@ for (const article of existingArticles) {
   results.push([article.n, words, 'enhanced']);
 }
 
-for (const article of [...newArticles, ...commercialArticles]) {
+for (const article of [...newArticles, ...commercialArticles, ayodhyaWheelchairArticle]) {
   const html = renderNewArticle(article, sharedHeader, sharedFooter);
   const words = proseWordCount(html);
   if (words < 500) throw new Error(`${article.path} generated only ${words} prose words`);
