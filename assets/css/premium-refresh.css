@@ -60,3 +60,7 @@ body[data-tour-page="true"] .itinerary-day{border-top-color:#d9cfdf!important}
 
 .verified-review-link{display:inline-block;margin-top:14px;color:var(--tv-purple-dark)!important;font-size:14px;line-height:1.6;text-decoration:underline;text-underline-offset:3px}
 .review cite,.pmj-review-inner>p,.review-name{font-style:normal!important}
+
+/* Plan My Journey: a light closing section with fine purple dividers. */
+.pmj-closing{background:var(--tv-white)!important;color:#171717!important;border-top:1px solid #d9cfdf;border-bottom:1px solid #d9cfdf}
+.pmj-closing h2,.pmj-closing .eyebrow{color:#171717!important}
