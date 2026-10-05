@@ -1,0 +1,14 @@
+/* Compact enquiry section shared by the three one-day city tours. */
+.one-day-enquiry .section{align-items:start;gap:36px;padding-top:40px;padding-bottom:40px}
+.one-day-enquiry h2{font-size:28px;line-height:1.25;margin:8px 0 14px}
+.one-day-enquiry .one-day-enquiry-form{gap:12px}
+.one-day-enquiry-form>div{min-width:0}
+.one-day-enquiry-form label{font-size:14px;line-height:1.4;letter-spacing:0;text-transform:none}
+.one-day-enquiry-form label span{font-weight:400}
+.one-day-enquiry .one-day-enquiry-form input,.one-day-enquiry .one-day-enquiry-form textarea{box-sizing:border-box;width:100%;min-width:0;font-size:16px;padding:10px 12px;min-height:44px;background:#fff}
+.one-day-enquiry .one-day-enquiry-form textarea{min-height:78px;resize:vertical}
+.one-day-enquiry .one-day-enquiry-form button{font-size:16px;min-height:44px;padding:11px 22px}
+.one-day-enquiry .enquiry-privacy{font-size:13px;line-height:1.5;margin:9px 0 0}
+.enquiry-privacy a{text-decoration:underline}
+@media(max-width:900px){.one-day-enquiry .section{grid-template-columns:1fr;gap:22px}}
+@media(max-width:620px){.one-day-enquiry h2{font-size:25px}.one-day-enquiry .section{padding-top:30px;padding-bottom:30px}.one-day-enquiry .one-day-enquiry-form{grid-template-columns:1fr}.one-day-enquiry-form .full{grid-column:1/-1}}
