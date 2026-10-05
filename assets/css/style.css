@@ -764,3 +764,11 @@ body{font-size:18px;line-height:1.68}
     font-size:23px!important;
   }
 }
+
+/* White background only behind day-by-day itinerary content. */
+.section.itinerary-section,.section.one-day-itinerary{
+  background-color:#fff;
+  box-shadow:0 0 0 100vmax #fff;
+  clip-path:inset(0 -100vmax);
+}
+.itinerary-section .note,.one-day-itinerary .note{background-color:#fff}

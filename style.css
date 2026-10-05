@@ -201,3 +201,11 @@ body{font-size:18px;line-height:1.68}
 .hero p,.hero .eyebrow,.page-hero p,.page-hero .eyebrow,.journey-hero p,.journey-hero .eyebrow{
   text-shadow:0 2px 10px rgba(0,0,0,.48) !important;
 }
+
+/* White background only behind day-by-day itinerary content. */
+.section.itinerary-section,.section.one-day-itinerary{
+  background-color:#fff;
+  box-shadow:0 0 0 100vmax #fff;
+  clip-path:inset(0 -100vmax);
+}
+.itinerary-section .note,.one-day-itinerary .note{background-color:#fff}
