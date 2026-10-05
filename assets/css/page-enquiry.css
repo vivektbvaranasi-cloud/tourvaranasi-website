@@ -1,0 +1,15 @@
+form.page-enquiry-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px;align-items:start;min-width:0}
+.page-enquiry-form .full{grid-column:1/-1}.page-enquiry-form .hp{display:none!important}
+.page-enquiry-form label{display:block!important;margin:0 0 7px!important;font-size:13px!important;line-height:1.5;letter-spacing:0!important;text-transform:none!important;color:#302d33!important;font-weight:600}
+.page-enquiry-form label span{font-weight:400;color:#665d6b}
+.page-enquiry-form input:not([type=hidden]),.page-enquiry-form textarea{display:block;box-sizing:border-box;width:100%;min-width:0;min-height:46px;padding:12px 14px!important;border:1px solid #d7cfdd!important;border-radius:4px;background:#fff!important;color:#302d33!important;font:inherit!important;font-size:16px!important;line-height:1.5!important}
+.page-enquiry-form textarea{min-height:100px;resize:vertical}.page-enquiry-form ::placeholder{color:#746c79;opacity:1}
+.page-enquiry-form .page-enquiry-context{padding:18px;background:#f3eff6;border:1px solid #e1d8e7;border-radius:5px}
+.page-enquiry-form .page-enquiry-context input{font-weight:600!important}
+.page-enquiry-form .page-enquiry-duration{display:inline-block;margin-left:6px;font-size:12px;white-space:nowrap;color:#604d6b}
+.page-enquiry-form .page-enquiry-hint{display:block;margin:7px 0 0!important;color:#665d6b!important;font-size:12px!important;line-height:1.6!important}
+.page-enquiry-form .page-enquiry-hint a{color:#604d6b;text-decoration:underline;text-underline-offset:3px}
+.page-enquiry-form button[type=submit]{min-height:48px;padding:13px 24px!important;background:#756080!important;border:1px solid #756080!important;border-radius:4px;color:#fff!important;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.page-enquiry-form button[type=submit]:hover{background:#604d6b!important}.page-enquiry-form button:disabled{opacity:.65;cursor:wait}
+.page-enquiry-form input:focus-visible,.page-enquiry-form textarea:focus-visible,.page-enquiry-form button:focus-visible{outline:2px solid #756080;outline-offset:3px}
+@media(max-width:680px){form.page-enquiry-form{grid-template-columns:1fr;gap:16px}.page-enquiry-form button[type=submit]{width:100%}.page-enquiry-form .page-enquiry-context{padding:15px}}

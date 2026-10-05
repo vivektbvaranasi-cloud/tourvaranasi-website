@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const measurementId = process.env.GA4_MEASUREMENT_ID || '';
 if (measurementId && !/^G-[A-Z0-9]+$/.test(measurementId)) throw new Error('Invalid GA4_MEASUREMENT_ID');
-const names = ['journey-enquiry','plan-my-journey','destination-enquiry','sacred-tour-enquiry','service-standards-enquiry'];
+const names = ['one-day-tour-enquiry','journey-enquiry','plan-my-journey','destination-enquiry','sacred-tour-enquiry','service-standards-enquiry'];
 const sourceFields = ['source_page','landing_page','enquiry_origin_page','referring_domain','utm_source','utm_medium','utm_campaign'];
 const files = [];
 function walk(dir) {

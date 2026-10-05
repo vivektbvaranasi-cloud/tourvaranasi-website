@@ -393,7 +393,7 @@
     if (!isAboutPage()) return;
 
     const form = document.querySelector('form[name="journey-enquiry"]');
-    if (!form || form.dataset.agreedForm === '1') return;
+    if (!form || form.dataset.pageEnquiry === 'true' || form.dataset.agreedForm === '1') return;
 
     form.dataset.agreedForm = '1';
     form.classList.add('about-form');

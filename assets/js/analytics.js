@@ -5,7 +5,7 @@
   const measurementId = /^G-[A-Z0-9]+$/.test(config.measurementId || '') ? config.measurementId : '';
   const CONSENT_KEY = 'tv.analytics-consent.v1';
   const SESSION_KEY = 'tv.enquiry-source.v1';
-  const FORM_NAMES = new Set(['journey-enquiry', 'plan-my-journey', 'destination-enquiry', 'sacred-tour-enquiry', 'service-standards-enquiry']);
+  const FORM_NAMES = new Set(['one-day-tour-enquiry', 'journey-enquiry', 'plan-my-journey', 'destination-enquiry', 'sacred-tour-enquiry', 'service-standards-enquiry']);
   let enabled = false;
   let consent = '';
   let context;
@@ -128,10 +128,26 @@
   }
   const pending = new WeakSet();
   const completed = new WeakSet();
+  // A single contact field keeps quick enquiries short; retain the delivery fields.
+  function prepareQuickContact(form) {
+    if (form.dataset.pageEnquiry !== 'true') return true;
+    const input = form.elements.namedItem('contact');
+    const value = input.value.trim();
+    const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    const phone = /^[+\d\s().-]+$/.test(value) && value.replace(/\D/g, '').length >= 7 && value.replace(/\D/g, '').length <= 15;
+    input.setCustomValidity(email || phone ? '' : 'Please enter an email address or a WhatsApp number with country code.');
+    form.elements.namedItem('email').value = email ? value : '';
+    form.elements.namedItem('phone').value = phone ? value : '';
+    return email || phone;
+  }
+  document.addEventListener('input', function (event) {
+    if (event.target.name === 'contact' && event.target.form?.dataset.pageEnquiry === 'true') prepareQuickContact(event.target.form);
+  });
   async function submit(event) {
     const form = event.target;
     if (!(form instanceof HTMLFormElement) || !FORM_NAMES.has(form.getAttribute('name')) || event.defaultPrevented) return;
     event.preventDefault();
+    prepareQuickContact(form);
     if (pending.has(form) || completed.has(form) || !form.reportValidity()) return;
     const honeypot = form.querySelector('[name="company-website"]');
     if (honeypot && honeypot.value) return;
