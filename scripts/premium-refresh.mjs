@@ -1,3 +1,4 @@
+import { refreshHomeIntroduction } from './home-introduction.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 const data=JSON.parse(fs.readFileSync('scripts/refresh-content.json','utf8'));
@@ -14,6 +15,7 @@ for(const file of files()) {
  html=html.replace(/<link\b[^>]*href=["']\/assets\/css\/premium-refresh\.css[^"']*["'][^>]*>\s*/g,'');
  html=html.replace('</head>',`<link rel="stylesheet" href="${css}">\n</head>`);
  if(file==='index.html') html=html.replace(/<!-- TV_INTERNAL_LINKS_START -->[\s\S]*?<!-- TV_INTERNAL_LINKS_END -->/g,'').replace(/<section\b[^>]*class="home-explore-next"[\s\S]*?<\/section>/g,'');
+ if(file==='index.html') html=refreshHomeIntroduction(html);
  if(file==='experiences/index.html') { const hero=html.match(/<section class="experiences-hero"[\s\S]*?<\/section>/)?.[0]||''; html=html.replace(/<main\b[^>]*>[\s\S]*?<\/main>/,`<main>${hero}${data.catalogue}</main>`); }
  if(file==='tours/index.html') {
   html=html.replace(/<style id="tv-tours-hero">[\s\S]*?<\/style>/g,'');
