@@ -31,7 +31,7 @@ img{max-width:100%;display:block}
 .nav-cta{padding:11px 16px;border:1px solid var(--terracotta)!important;color:var(--terracotta-dark)!important}
 .nav-cta:hover{background:var(--terracotta);color:white!important}
 .menu-btn{display:none;border:0;background:transparent;font-size:24px;color:var(--ink)}
-.hero{min-height:72vh;position:relative;background-image:url('/assets/images/user/sunrise-ganges.jpg');background-size:cover;background-position:center 54%;display:flex;align-items:flex-end}
+.hero{min-height:72vh;position:relative;background-image:url('/assets/images/user/varanasi-sunrise-boat-homepage.jpg');background-size:cover;background-position:center 54%;display:flex;align-items:flex-end}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(31,34,31,.54) 0%,rgba(31,34,31,.28) 45%,rgba(31,34,31,.08) 73%,rgba(31,34,31,.02) 100%)}
 .hero-copy{position:relative;z-index:2;width:min(680px,calc(100% - 48px));margin-left:max(28px,calc((100vw - 1180px)/2 + 28px));padding:0 0 72px}
 .kicker{text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:600;color:var(--terracotta-dark);margin-bottom:14px}

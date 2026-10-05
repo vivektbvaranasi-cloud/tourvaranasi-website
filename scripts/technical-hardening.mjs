@@ -145,7 +145,7 @@ function hardenHomepage(html) {
   } else {
     html = html.replace(/<style>[\s\S]*?<\/style>/i, '');
   }
-  html = ensureLink(html, 'preload', '/assets/images/user/sunrise-ganges.jpg', ' as="image" fetchpriority="high"');
+  html = ensureLink(html, 'preload', '/assets/images/user/varanasi-sunrise-boat-homepage.jpg', ' as="image" fetchpriority="high"');
   return html;
 }
 
