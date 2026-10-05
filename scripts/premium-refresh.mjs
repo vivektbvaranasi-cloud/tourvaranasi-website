@@ -1,3 +1,4 @@
+import { refreshVerifiedReviews } from './verified-reviews.mjs';
 import { refreshHomeIntroduction } from './home-introduction.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -11,6 +12,7 @@ function files(dir='.') {return fs.readdirSync(dir,{withFileTypes:true}).flatMap
 let count=0;
 for(const file of files()) {
  let html=fs.readFileSync(file,'utf8');
+ if(file.startsWith('tours/') && !html.includes('data-tour-page="true"')) html=html.replace('<body','<body data-tour-page="true"');
  // Final shared stylesheet follows all generated styles and stays idempotent.
  html=html.replace(/<link\b[^>]*href=["']\/assets\/css\/premium-refresh\.css[^"']*["'][^>]*>\s*/g,'');
  html=html.replace('</head>',`<link rel="stylesheet" href="${css}">\n</head>`);
@@ -65,6 +67,9 @@ for(const file of files()) {
   html=html.replace(/<section\b[^>]*>[\s\S]*?<\/section>/g,section=>section.includes('experiences-hero')?section:section.replace(/<img\b[^>]*>/g,''));
   if(!html.includes('experience-price-note'))html=html.replace(/(<section\b[^>]*class="[^"]*quote-wrap[^"]*")/,'<section class="section experience-price-note"><h2>Plan your private experience</h2><p>Enquire for pricing. Share your dates and group size for a tailored quotation.</p></section>$1');
  }
+ html=html.replaceAll('/assets/images/user/dawn-4.jpg','/assets/images/guest_sunrise_diya_couple.webp').replaceAll('%2Fassets%2Fimages%2Fuser%2Fdawn-4.jpg','%2Fassets%2Fimages%2Fguest_sunrise_diya_couple.webp');
+ html=html.replaceAll('/assets/images/user/sarnath-1.jpg','/assets/images/user/sarnath-dhamek.jpg').replaceAll('%2Fassets%2Fimages%2Fuser%2Fsarnath-1.jpg','%2Fassets%2Fimages%2Fuser%2Fsarnath-dhamek.jpg');
+ html=refreshVerifiedReviews(html,file);
  fs.writeFileSync(file,html);count++;
 }
 console.log(`Premium refresh: ${count} pages, 18 experiences and 9 city tour prices.`);
