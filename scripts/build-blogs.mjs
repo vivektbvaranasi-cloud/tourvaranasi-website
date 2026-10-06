@@ -200,8 +200,9 @@ const newArticles = [
     n: 16,
     url: '/blogs/post/mathura-vrindavan-two-days/',
     path: 'blogs/post/mathura-vrindavan-two-days/index.html',
-    title: 'Mathura & Vrindavan in 2 Days: A Practical First-Time Itinerary',
-    description: 'How to divide two days between Mathura and Vrindavan without racing through temples, with practical advice on crowds, walking and evening visits.',
+    title: 'Mathura Vrindavan Itinerary: 2 Days, Temples & Travel Tips',
+    seoTitle: 'Mathura Vrindavan Itinerary: 2 Days, Temples & Travel Tips',
+    description: 'Plan two days in Mathura and Vrindavan with a practical temple itinerary, advice on crowds, walking and evening visits, plus options for a private journey.',
     group: 'Sacred North India',
     kind: 'combo', dests: ['mathura', 'vrindavan'],
     hero: '/assets/images/destinations/vrindavan-prem-mandir.jpg',
@@ -464,7 +465,7 @@ function renderNewArticle(article, header, footer) {
     ]
   });
 
-  const head = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>${esc(article.title)} | Tour Varanasi Travel Guide</title><meta content="${esc(article.description)}" name="description"/><meta content="index,follow" name="robots"/><link href="${canonical}" rel="canonical"/><meta content="article" property="og:type"/><meta content="${esc(article.title)}" property="og:title"/><meta content="${esc(article.description)}" property="og:description"/><meta content="${canonical}" property="og:url"/><meta content="${absoluteImage(article.hero)}" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="${esc(article.title)}" name="twitter:title"/><meta content="${esc(article.description)}" name="twitter:description"/><meta content="${absoluteImage(article.hero)}" name="twitter:image"/><link as="image" href="${article.hero}" rel="preload"/><link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/assets/css/style.css" rel="stylesheet"/><link href="${BLOG_CSS}" rel="stylesheet"/><script type="application/ld+json">${schema}</script><script type="application/ld+json">${breadcrumbs}</script></head>`;
+  const head = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>${esc(article.seoTitle || article.title + " | Tour Varanasi Travel Guide")}</title><meta content="${esc(article.description)}" name="description"/><meta content="index,follow" name="robots"/><link href="${canonical}" rel="canonical"/><meta content="article" property="og:type"/><meta content="${esc(article.title)}" property="og:title"/><meta content="${esc(article.description)}" property="og:description"/><meta content="${canonical}" property="og:url"/><meta content="${absoluteImage(article.hero)}" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="${esc(article.title)}" name="twitter:title"/><meta content="${esc(article.description)}" name="twitter:description"/><meta content="${absoluteImage(article.hero)}" name="twitter:image"/><link as="image" href="${article.hero}" rel="preload"/><link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/assets/css/style.css" rel="stylesheet"/><link href="${BLOG_CSS}" rel="stylesheet"/><script type="application/ld+json">${schema}</script><script type="application/ld+json">${breadcrumbs}</script></head>`;
 
   return `${head}<body>${header}${body}${footer}`;
 }

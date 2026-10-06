@@ -5,7 +5,7 @@ import fs from 'node:fs';
 
 const source = fs.readFileSync(new URL('../assets/js/analytics.js', import.meta.url), 'utf8');
 class Element {
-  constructor(tag) { this.tag = tag; this.children = []; this.attrs = {}; this.style = {}; this.listeners = {}; this.value = ''; }
+  constructor(tag) { this.tag = tag; this.children = []; this.attrs = {}; this.dataset = {}; this.style = {}; this.listeners = {}; this.value = ''; }
   setAttribute(k,v) { this.attrs[k] = v; }
   getAttribute(k) { return this.attrs[k]; }
   appendChild(e) { this.children.push(e); return e; }

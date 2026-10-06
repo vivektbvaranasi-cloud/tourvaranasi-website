@@ -21,12 +21,12 @@ const pages = [
     title: 'Varanasi One Day Tour | Private Full-Day Itinerary',
     name: 'Varanasi One Day Tour',
     description: 'A private one-day Varanasi tour covering the sunrise Ganges boat ride, old city and Kashi Vishwanath area, Sarnath and evening Ganga Aarti in one practical full-day plan.',
-    relatedHeading: 'Only one day in Varanasi? Keep the plan focused.',
-    relatedIntro: 'This page is the compact full-day option. If you have more time, compare the longer itineraries rather than stretching this one-day programme.',
+    relatedHeading: 'Compare Varanasi tours: 1, 2 or 3 days',
+    relatedIntro: 'You are viewing the one-day tour: a full day covering the essentials. Choose two days for more breathing space, or three for extra cultural experiences.',
     relatedItems: [
       ['/blogs/post/how-many-days-in-varanasi/', 'How Many Days in Varanasi?', 'Compare one, two and three-day stays before choosing the right pace.'],
       ['/tours/varanasi-tour-in-two-days/', '2 Days Varanasi Tour', 'Choose the two-day plan when you want the same essentials with more breathing space.'],
-      ['/tours/evening-prayer-ceremony/', 'Ganga Aarti in Varanasi', 'Compare premium Sankalp, balcony and reserved-chair options for the evening ceremony.']
+      ['/tours/varanasi-tour-in-three-days/', '3 Days Varanasi Tour', 'Allow more time for the ghats, craft, food and cultural experiences.']
     ]
   },
   {
@@ -35,12 +35,12 @@ const pages = [
     title: '2 Days Varanasi Tour | Private Varanasi Itinerary',
     name: '2 Days Varanasi Tour',
     description: 'A private 2 days Varanasi tour with Ganga Aarti, sunrise boat ride, Kashi Vishwanath, old-city walk and Sarnath, planned at a comfortable pace.',
-    relatedHeading: 'Two days is our practical first-visit itinerary.',
-    relatedIntro: 'Use this page when you have two days in Varanasi. The one-day tour is deliberately more compact, while the three-day itinerary adds time for culture and local experiences.',
+    relatedHeading: 'Compare Varanasi tours: 1, 2 or 3 days',
+    relatedIntro: 'You are viewing the two-day tour: our practical first-visit itinerary. Compare the compact one-day option or allow a third day for culture and a slower pace.',
     relatedItems: [
       ['/blogs/post/how-many-days-in-varanasi/', 'How Many Days in Varanasi?', 'Compare the trade-offs between one, two, three and longer stays.'],
       ['/tours/varanasi-tour-in-three-days/', '3 Days Varanasi Tour', 'Add a third day when you want a slower pace and more cultural depth.'],
-      ['/tours/varanasi-sarnath-tour/', 'Sarnath Tour from Varanasi', 'See how to plan Sarnath as a private half-day excursion from Varanasi.']
+      ['/tours/varanasi-tour-in-one-day/', 'Varanasi One Day Tour', 'Fit the main sights into one full day when your time in Varanasi is limited.']
     ]
   },
   {
@@ -49,12 +49,12 @@ const pages = [
     title: '3 Days Varanasi Tour | Private Varanasi Itinerary',
     name: '3 Days Varanasi Tour',
     description: 'A relaxed 3 days Varanasi tour with the Ganges, Kashi Vishwanath, Sarnath, old-city walks, food, craft and cultural experiences.',
-    relatedHeading: 'Use the third day to go deeper into Varanasi.',
-    relatedIntro: 'This three-day itinerary is for travellers who want more than the headline sights, with room for culture, craft and neighbourhood experiences at a slower pace.',
+    relatedHeading: 'Compare Varanasi tours: 1, 2 or 3 days',
+    relatedIntro: 'You are viewing the three-day tour, with extra time for culture, craft and neighbourhood experiences. Compare the shorter options if your stay is limited.',
     relatedItems: [
       ['/blogs/post/how-many-days-in-varanasi/', 'How Many Days in Varanasi?', 'Compare stay lengths and decide how much time suits your travel style.'],
-      ['/experiences/varanasi-food-walk/', 'Varanasi Food Walk', 'Use the extra time for a guided introduction to selected old-city flavours.'],
-      ['/experiences/banarasi-silk-weaving/', 'Banarasi Silk Weaving', 'Add a craft-focused experience around Varanasi’s weaving traditions.']
+      ['/tours/varanasi-tour-in-one-day/', 'Varanasi One Day Tour', 'A compact full day covering the river, old city, Sarnath and evening Aarti.'],
+      ['/tours/varanasi-tour-in-two-days/', '2 Days Varanasi Tour', 'Cover the main sights over two days, with time to rest between outings.']
     ]
   },
   {
