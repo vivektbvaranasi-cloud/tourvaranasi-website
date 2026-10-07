@@ -1,6 +1,6 @@
 /* Shared Continue Planning component */
 .tv-planning{
-  background:#f3eee6;
+  background:#ffffff;
   padding:82px 0 88px;
   border-top:1px solid rgba(221,216,207,.82);
 }
@@ -22,7 +22,7 @@
   font-weight:700;
   letter-spacing:.09em;
   text-transform:uppercase;
-  color:#8d4f3d;
+  color:#7a654f;
 }
 .tv-planning-head h2{
   margin:0 0 14px;
@@ -50,7 +50,7 @@
   flex-direction:column;
   min-height:250px;
   padding:28px 28px 26px;
-  background:#fffdf9;
+  background:#ffffff;
   border:1px solid var(--line,#ddd8cf);
   color:inherit;
   text-decoration:none;
@@ -69,7 +69,7 @@
   font-weight:700;
   letter-spacing:.14em;
   text-transform:uppercase;
-  color:#8d4f3d;
+  color:#7a654f;
 }
 .tv-planning-card h3{
   margin:0 0 12px;
