@@ -154,7 +154,7 @@ const existingArticles = [
     title: 'How to Combine Varanasi, Prayagraj & Ayodhya',
     description: 'A practical private route through Varanasi, Prayagraj and Ayodhya with sensible nights, road sectors, temple access and river experiences.',
     group: 'Sacred North India',
-    hero: '/assets/images/user/prayagraj-sangam.jpg',
+    hero: '/assets/images/user/ayodhya-family-temple-courtyard.webp',
     photos: [['/assets/images/user/ayodhya-ram-mandir.jpg', 'Shri Ram Janmabhoomi Mandir in Ayodhya', 'The route works best when Prayagraj is used as a proper stop rather than a hurried roadside detour.']]
   },
   {
@@ -164,7 +164,7 @@ const existingArticles = [
     title: 'Buddhist Circuit from Varanasi: The Practical India–Nepal Route',
     description: 'How to plan the Buddhist circuit from Varanasi through Sarnath, Bodh Gaya, Rajgir, Nalanda, Kushinagar and Lumbini at a realistic overland pace.',
     group: 'Buddhist circuit',
-    hero: '/assets/images/user/circuit-w09.jpeg',
+    hero: '/assets/images/user/sarnath-dhamek.jpg',
     photos: [['/assets/images/user/circuit-w11.jpeg', 'Buddhist pilgrimage landscape in Bihar', 'The strongest circuit is built around realistic driving days and meaningful time at the principal sacred sites.']]
   }
 ];
@@ -273,8 +273,8 @@ const newArticles = [
     description: 'How to plan Bodh Gaya around the Mahabodhi Temple, Bodhi Tree, monasteries, Sujata and Dungeshwari without turning pilgrimage into a rushed checklist.',
     group: 'Buddhist circuit',
     kind: 'single', dests: ['bodh-gaya'],
-    hero: '/assets/images/user/circuit-w09.jpeg',
-    photos: [['/assets/images/user/circuit-w08.jpeg', 'Buddhist pilgrimage visit in Bodh Gaya', 'Bodh Gaya becomes more meaningful when there is time to return to the Mahabodhi complex rather than seeing it only once.']],
+    hero: '/assets/images/user/circuit-w06.jpeg',
+    photos: [['/assets/images/user/circuit-w07.jpeg', 'Great Buddha statue in Bodh Gaya', 'Bodh Gaya becomes more meaningful when there is time to return to the Mahabodhi complex rather than seeing it only once.']],
     quick: 'Two nights is our preferred minimum for Bodh Gaya. It allows an arrival evening, one full day for the Mahabodhi complex and wider sacred landscape, and a quieter morning before continuing to Rajgir and Nalanda.',
     intro: 'Bodh Gaya is the spiritual centre of the Buddhist circuit, and its value is not measured by how many monasteries can be photographed in one afternoon. A meaningful visit needs time at the Mahabodhi Temple and Bodhi Tree, plus a small number of wider sites that explain the Buddha’s journey toward enlightenment.'
   },
