@@ -64,3 +64,34 @@ body[data-tour-page="true"] .itinerary-day{border-top-color:#d9cfdf!important}
 /* Plan My Journey: a light closing section with fine purple dividers. */
 .pmj-closing{background:var(--tv-white)!important;color:#171717!important;border-top:1px solid #d9cfdf;border-bottom:1px solid #d9cfdf}
 .pmj-closing h2,.pmj-closing .eyebrow{color:#171717!important}
+
+
+/* SITE-WIDE TOP CONTACT STRIP — unified across homepage and inner pages */
+.topbar,
+.top-contact-bar,
+.tv-top-contact-bar{
+  background:#fffefa!important;
+  color:#302d33!important;
+  border-bottom:1px solid #e6e1e8!important;
+}
+.topbar .inner,
+.top-contact-inner,
+.tv-top-contact-inner{
+  background:transparent!important;
+}
+.topbar a,
+.top-contact-links a,
+.tv-top-contact-links a{
+  color:#604d6b!important;
+  -webkit-text-fill-color:#604d6b!important;
+}
+.topbar a:hover,
+.top-contact-links a:hover,
+.tv-top-contact-links a:hover{
+  color:#302d33!important;
+  -webkit-text-fill-color:#302d33!important;
+}
+.top-contact-note,
+.tv-top-contact-note{
+  color:#6a646d!important;
+}
