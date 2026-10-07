@@ -1,13 +1,13 @@
 /* Shared visual system: natural white, restrained type, muted purple accents. */
 :root{--tv-purple:#8a765c;--tv-purple-dark:#675742;--tv-white:#ffffff;--ivory:#ffffff;--paper:#fff;--sand:#ffffff;--sage:#ffffff;--white:#ffffff;--line:#e6e1e8;--heading:Georgia,'Times New Roman',serif;--serif:Georgia,'Times New Roman',serif;--body:Inter,Arial,sans-serif}
-body{background:#ffffff!important;color:#302d33;font-family:var(--body)!important;font-size:16px;line-height:1.7}
+body{background:#ffffff!important;color:#3e3934;font-family:var(--body)!important;font-size:16px;line-height:1.7}
 h1,h2,h3,h4,.section-title{font-family:var(--heading)!important;font-style:normal!important;letter-spacing:-.018em!important;line-height:1.25!important}
 h1{font-size:clamp(34px,4vw,52px)!important}h2,.section-title{font-size:clamp(26px,2.6vw,34px)!important}h3{font-size:24px!important}h4{font-size:19px!important}
 h1 em,h2 em,h3 em{font-style:normal!important}
 .section.soft,.dayparts,.deeper,.signature,.intro,.local,.tour-why,.tour-practical aside,.tv-planning,.tv-planning-shell,.featured-city-tours,.home-experiences,.journeys,.tours-intro,.tours-section{background:#ffffff!important}
 .section.itinerary-section,.section.one-day-itinerary{background:#fff!important}
-.quote-wrap,.tour-price-panel,.experience-enquiry{background:#f7f5f8!important;color:#302d33!important}
-.quote-wrap h2,.quote-wrap p{color:#302d33!important}.quote-wrap h2{font-size:28px!important}
+.quote-wrap,.tour-price-panel,.experience-enquiry{background:#f7f5f8!important;color:#3e3934!important}
+.quote-wrap h2,.quote-wrap p{color:#3e3934!important}.quote-wrap h2{font-size:28px!important}
 .tvf-footer,footer.footer,.footer{background:var(--tv-purple)!important;color:#fff!important}
 .tvf-footer p,.tvf-footer a,.tvf-footer h4,.tvf-footer span,.tvf-footer small,.tvf-footer div,footer.footer p,footer.footer a,.footer-bottom{color:#fff!important}
 .btn,.button,.nav-cta,.cta-button,.one-day-enquiry button,.quote-wrap button[type=submit],input[type=submit],.experience-link{background:var(--tv-purple)!important;border-color:var(--tv-purple)!important;color:#fff!important;font-family:var(--body)!important;font-style:normal!important;border-radius:3px}
@@ -41,7 +41,7 @@ h1 em,h2 em,h3 em{font-style:normal!important}
 :root body .home-reviews-strip h2{font-family:var(--body)!important;font-size:11px!important;font-weight:600;letter-spacing:.13em!important;text-transform:uppercase;text-align:center;color:#625b67;margin:0 0 22px}
 .home-review-brands{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .home-review-brands a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:64px;padding:8px 10px;text-decoration:none;border-radius:3px}
-.review-brand-name{font-family:var(--body);font-size:24px;line-height:1.2;font-weight:600;letter-spacing:-.045em;color:#302d33;white-space:nowrap}
+.review-brand-name{font-family:var(--body);font-size:24px;line-height:1.2;font-weight:600;letter-spacing:-.045em;color:#3e3934;white-space:nowrap}
 .review-brand-caption{font-size:11px;line-height:1.4;color:#625b67}
 .home-review-brands a:hover{background:#f7f5f8}.home-review-brands a:hover .review-brand-name{color:var(--tv-purple-dark)}
 @media(max-width:680px){.home-welcome{padding:42px 20px 32px}.home-welcome h2{font-size:27px!important;text-align:left;margin-bottom:22px}.home-welcome p{font-size:15px;line-height:1.8}.home-reviews-strip{padding:24px 20px}.home-review-brands{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 8px}.review-brand-name{font-size:22px}}
@@ -53,8 +53,8 @@ body[data-tour-page="true"] .section:not(.tour-price-panel),body[data-tour-page=
 body[data-tour-page="true"] .section.itinerary-section{background:#fff!important}
 body[data-tour-page="true"] .itinerary-day{border-top-color:#d9cfdf!important}
 /* Soft enquiry panels keep the colour transition gentle and the copy readable. */
-.mini-enquiry,.cta,.final-cta{background:#f3eff6!important;color:#302d33!important}
-.mini-enquiry h2,.mini-enquiry p,.mini-enquiry label,.mini-enquiry .eyebrow,.cta h2,.cta p,.final-cta h2,.final-cta p,.final-cta .kicker{color:#302d33!important}
+.mini-enquiry,.cta,.final-cta{background:#f3eff6!important;color:#3e3934!important}
+.mini-enquiry h2,.mini-enquiry p,.mini-enquiry label,.mini-enquiry .eyebrow,.cta h2,.cta p,.final-cta h2,.final-cta p,.final-cta .kicker{color:#3e3934!important}
 .experience-enquiry a.btn{display:inline-flex!important;align-items:center;justify-content:center;min-height:48px;padding:13px 22px!important;text-decoration:none!important;font-size:14px;font-weight:600;line-height:1.4}
 .mini-enquiry button[type=submit],.mini-enquiry .btn{background:var(--tv-purple)!important;color:#fff!important;border:1px solid var(--tv-purple)!important}
 
@@ -71,7 +71,7 @@ body[data-tour-page="true"] .itinerary-day{border-top-color:#d9cfdf!important}
 .top-contact-bar,
 .tv-top-contact-bar{
   background:#ffffff!important;
-  color:#302d33!important;
+  color:#3e3934!important;
   border-bottom:1px solid #e6e1e8!important;
 }
 .topbar .inner,
@@ -88,8 +88,8 @@ body[data-tour-page="true"] .itinerary-day{border-top-color:#d9cfdf!important}
 .topbar a:hover,
 .top-contact-links a:hover,
 .tv-top-contact-links a:hover{
-  color:#302d33!important;
-  -webkit-text-fill-color:#302d33!important;
+  color:#3e3934!important;
+  -webkit-text-fill-color:#3e3934!important;
 }
 .top-contact-note,
 .tv-top-contact-note{
@@ -102,7 +102,7 @@ body[data-tour-page="true"] .itinerary-day{border-top-color:#d9cfdf!important}
 :root{
   --tv-white:#ffffff;
   --tv-paper:#ffffff;
-  --tv-ink:#302d33;
+  --tv-ink:#3e3934;
   --tv-copy:#5b565f;
   --tv-muted:#777179;
   --tv-line:#e7e2e8;
@@ -406,7 +406,7 @@ body:before,body:after{display:none!important}
 
 /* Dark closing anchor only; content above remains white. */
 .tvf-footer,footer.footer,.footer{
-  background:#302d33!important;
+  background:#3e3934!important;
   color:#fff!important;
 }
 .tvf-footer p,.tvf-footer a,.tvf-footer h4,.tvf-footer span,.tvf-footer small,
