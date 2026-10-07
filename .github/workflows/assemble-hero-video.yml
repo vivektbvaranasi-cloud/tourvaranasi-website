@@ -1,0 +1,48 @@
+name: Assemble homepage hero video
+
+on:
+  push:
+    branches:
+      - hero-video-20261007
+    paths:
+      - '.hero-video/READY'
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: hero-video-20261007
+          fetch-depth: 0
+
+      - name: Assemble MP4
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/videos
+          cat .hero-video/chunk-*.b64 | tr -d '\r\n' | base64 --decode > assets/videos/tour-varanasi-hero.mp4
+          python - <<'PY'
+          from pathlib import Path
+          p=Path("assets/videos/tour-varanasi-hero.mp4")
+          data=p.read_bytes()
+          assert len(data) > 400000, f"Video unexpectedly small: {len(data)}"
+          assert data[4:8] == b"ftyp", "MP4 signature check failed"
+          print(f"Hero video assembled: {len(data)} bytes")
+          PY
+
+      - name: Commit assembled video and clean temporary files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .hero-video
+          rm -f .github/workflows/assemble-hero-video.yml
+          git config user.name "Tour Varanasi Site Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Add approved homepage hero video"
+          git push origin HEAD:hero-video-20261007
