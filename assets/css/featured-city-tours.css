@@ -1,6 +1,6 @@
 /* Premium featured city journeys — image-led choice cards on a natural-white surface. */
 .featured-city-tours{
-  background:#fffefa;
+  background:#ffffff;
   padding:78px 0 54px;
   color:#302d33;
   border-top:1px solid #e7e2e8;
@@ -97,7 +97,7 @@
   left:16px;
   bottom:15px;
   padding:5px 9px;
-  background:rgba(255,254,250,.94);
+  background:rgba(255,255,255,.94);
   color:#604d6b;
   border:1px solid rgba(255,255,255,.82);
   border-radius:0;
