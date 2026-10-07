@@ -95,3 +95,358 @@ body[data-tour-page="true"] .itinerary-day{border-top-color:#d9cfdf!important}
 .tv-top-contact-note{
   color:#6a646d!important;
 }
+
+
+/* TV_CLEAN_PREMIUM_SYSTEM_2026 */
+/* One restrained visual language across homepage, tours, destinations, experiences and editorial pages. */
+:root{
+  --tv-white:#fffefa;
+  --tv-paper:#ffffff;
+  --tv-ink:#302d33;
+  --tv-copy:#57535b;
+  --tv-muted:#746f78;
+  --tv-line:#e7e2e8;
+  --tv-purple:#756080;
+  --tv-purple-dark:#604d6b;
+}
+
+html,body{
+  background:var(--tv-white)!important;
+}
+body{
+  color:var(--tv-ink)!important;
+}
+
+/* Shared header: light, quiet and consistent instead of legacy beige/dark treatments. */
+.header,
+.site-header,
+.tv-site-header{
+  background:rgba(255,254,250,.97)!important;
+  border-bottom:1px solid var(--tv-line)!important;
+  box-shadow:none!important;
+  backdrop-filter:blur(12px);
+}
+.nav,
+.nav-wrap,
+.tv-nav-wrap{
+  max-width:1240px!important;
+}
+.header .brand,
+.site-header .brand,
+.tv-site-header .brand{
+  color:var(--tv-ink)!important;
+}
+.header .brand span,
+.site-header .brand small,
+.tv-site-header .brand span{
+  color:var(--tv-muted)!important;
+}
+.navlinks a{
+  color:#49454c!important;
+}
+.navlinks a:hover,
+.navlinks a[aria-current="page"]{
+  color:var(--tv-purple-dark)!important;
+}
+
+/* Inner-page hero system: large photography, full width, less boxed-in. */
+.breadcrumbs{
+  width:min(1180px,calc(100% - 56px))!important;
+  max-width:1180px!important;
+  padding:18px 0 16px!important;
+  color:var(--tv-muted)!important;
+  font-size:11px!important;
+  letter-spacing:.02em;
+}
+.page-hero{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+}
+.page-hero .frame{
+  min-height:60vh!important;
+  border-radius:0!important;
+  background-position:center!important;
+}
+.page-hero .frame:before{
+  background:
+    linear-gradient(0deg,rgba(24,22,27,.68) 0%,rgba(24,22,27,.18) 62%,rgba(24,22,27,.05) 100%)!important;
+}
+.page-hero .copy{
+  width:min(760px,calc(100% - 56px))!important;
+  max-width:760px!important;
+  margin-left:max(28px,calc((100vw - 1180px)/2 + 28px))!important;
+  padding:0 0 62px!important;
+}
+.page-hero h1{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  text-shadow:0 2px 16px rgba(0,0,0,.28)!important;
+}
+.page-hero p,
+.page-hero .eyebrow{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+
+/* Natural white is the default surface. Fine rules create rhythm instead of coloured slabs. */
+.section,
+.section.soft,
+.section-sand,
+.section-sage,
+.section-white,
+.days,
+.varanasi,
+.sacred,
+.buddhist,
+.all-journeys,
+.sightseeing-section,
+.tour-why,
+.tour-practical aside,
+.new-tour-form,
+.tv-planning,
+.tv-planning-shell,
+.home-welcome,
+.home-reviews-strip,
+.featured-city-tours,
+.experience-catalogue{
+  background:var(--tv-white)!important;
+}
+.section.soft,
+.sightseeing-section,
+.tour-why,
+.new-tour-form,
+.tv-planning,
+.home-reviews-strip{
+  border-top:1px solid var(--tv-line)!important;
+}
+.section{
+  padding-top:84px!important;
+  padding-bottom:84px!important;
+}
+.section p,
+.prose p,
+.prose li,
+.editorial .copy p{
+  color:var(--tv-copy)!important;
+}
+
+/* Remove old card-heavy visual language. */
+.card,
+.team-card,
+.destination-card,
+.destination-tour-card,
+.tour-why-card,
+.tv-planning-card,
+.city-tour-card,
+.experience-card{
+  background:transparent!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+.card,
+.destination-card,
+.destination-tour-card,
+.city-tour-card,
+.tv-planning-card{
+  border-color:var(--tv-line)!important;
+}
+.card:hover,
+.destination-card:hover,
+.city-tour-card:hover,
+.tv-planning-card:hover{
+  box-shadow:none!important;
+}
+.feature,
+.tour-why-card{
+  border-top:1px solid var(--tv-line)!important;
+}
+.editorial{
+  background:var(--tv-white)!important;
+  border-top:1px solid var(--tv-line);
+  border-bottom:1px solid var(--tv-line);
+}
+.editorial .copy{
+  background:var(--tv-white)!important;
+}
+
+/* Facts and supporting information: line-based rather than coloured panels. */
+.glance,
+.trust-grid,
+.destination-practical-strip,
+.tour-facts,
+.comfort-grid,
+.since-strip{
+  background:transparent!important;
+  border-color:var(--tv-line)!important;
+}
+.glance>div,
+.trust-grid>div,
+.destination-practical-strip>div,
+.tour-facts>div,
+.comfort-grid>div{
+  border-color:var(--tv-line)!important;
+  background:transparent!important;
+}
+
+/* Notes stay white with a restrained accent line. */
+.note,
+.policy-highlight,
+.sacred-circuit-note,
+.comfort-block,
+.tour-practical aside{
+  background:var(--tv-white)!important;
+  border:1px solid var(--tv-line)!important;
+  border-left:3px solid var(--tv-purple)!important;
+  box-shadow:none!important;
+}
+.comfort-block{
+  padding:28px!important;
+}
+
+/* Reviews: editorial, not boxed cards. */
+.reviews{
+  gap:0!important;
+  border-top:1px solid var(--tv-line);
+  border-bottom:1px solid var(--tv-line);
+}
+.review{
+  background:transparent!important;
+  border-top:0!important;
+  border-right:1px solid var(--tv-line);
+  padding:30px 28px!important;
+}
+.review:last-child{
+  border-right:0;
+}
+
+/* Enquiry areas remain light; purple is an action accent, not a wall of colour. */
+.quote-wrap,
+.tour-price-panel,
+.experience-enquiry,
+.mini-enquiry,
+.cta,
+.final-cta{
+  background:#fbfafc!important;
+  color:var(--tv-ink)!important;
+  border-top:1px solid #ddd4e2!important;
+  border-bottom:1px solid #ddd4e2!important;
+}
+.quote-wrap h2,
+.quote-wrap p,
+.quote-wrap label,
+.mini-enquiry h2,
+.mini-enquiry p,
+.mini-enquiry label,
+.cta h2,
+.cta p,
+.final-cta h2,
+.final-cta p{
+  color:var(--tv-ink)!important;
+}
+.quote-form input,
+.quote-form select,
+.quote-form textarea,
+.mini-enquiry-form input,
+.mini-enquiry-form textarea{
+  background:#fff!important;
+  border:1px solid #d8d2da!important;
+  border-radius:2px!important;
+}
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus,
+.mini-enquiry-form input:focus,
+.mini-enquiry-form textarea:focus{
+  border-color:var(--tv-purple)!important;
+  box-shadow:0 0 0 2px rgba(117,96,128,.10)!important;
+}
+
+/* Homepage signature experiences: one continuous four-part strip. */
+body > main > section.experiences{
+  background:var(--tv-white)!important;
+  border-top:1px solid var(--tv-line)!important;
+}
+body > main > section.experiences .experience-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:0!important;
+  border-top:1px solid var(--tv-line)!important;
+  border-bottom:1px solid var(--tv-line)!important;
+}
+body > main > section.experiences .experience-card{
+  border:0!important;
+  border-right:1px solid var(--tv-line)!important;
+  background:transparent!important;
+}
+body > main > section.experiences .experience-card:last-child{
+  border-right:0!important;
+}
+body > main > section.experiences .experience-card:hover{
+  transform:none!important;
+  box-shadow:none!important;
+}
+
+/* Blog/article cards become editorial rows, not floating boxes. */
+.blog-card{
+  border-top:1px solid var(--tv-line)!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.blog-hub-card{
+  border:1px solid var(--tv-line)!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+
+/* Keep the footer as the deliberate closing anchor; everything above it stays light. */
+.tvf-footer{
+  border-top:0!important;
+}
+
+@media(max-width:900px){
+  .section{padding-top:66px!important;padding-bottom:66px!important}
+  .page-hero .frame{min-height:54vh!important}
+  .page-hero .copy{
+    width:calc(100% - 40px)!important;
+    margin-left:20px!important;
+    padding-bottom:44px!important;
+  }
+  body > main > section.experiences .experience-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  body > main > section.experiences .experience-card:nth-child(2){
+    border-right:0!important;
+  }
+  body > main > section.experiences .experience-card:nth-child(-n+2){
+    border-bottom:1px solid var(--tv-line)!important;
+  }
+  .reviews{
+    grid-template-columns:1fr!important;
+  }
+  .review{
+    border-right:0!important;
+    border-bottom:1px solid var(--tv-line);
+  }
+  .review:last-child{border-bottom:0}
+}
+@media(max-width:620px){
+  .breadcrumbs{
+    width:calc(100% - 40px)!important;
+    padding:13px 0!important;
+  }
+  .page-hero .frame{min-height:500px!important}
+  .page-hero .copy{padding-bottom:34px!important}
+  .page-hero h1{font-size:42px!important}
+  body > main > section.experiences .experience-grid{
+    grid-template-columns:1fr!important;
+  }
+  body > main > section.experiences .experience-card{
+    border-right:0!important;
+    border-bottom:1px solid var(--tv-line)!important;
+  }
+  body > main > section.experiences .experience-card:last-child{
+    border-bottom:0!important;
+  }
+}
