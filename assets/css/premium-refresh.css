@@ -406,7 +406,7 @@ body:before,body:after{display:none!important}
 
 /* Dark closing anchor only; content above remains white. */
 .tvf-footer,footer.footer,.footer{
-  background:#3e3934!important;
+  background:#6b625a!important;
   color:#fff!important;
 }
 .tvf-footer p,.tvf-footer a,.tvf-footer h4,.tvf-footer span,.tvf-footer small,
