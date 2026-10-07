@@ -23,6 +23,6 @@
 .all-city-tours{text-align:center;border-top:1px solid #ddd8cf;padding:28px 0 8px}
 .all-city-tours a{font-size:17px;font-weight:600;color:#435852;border-bottom:1px solid #435852;padding-bottom:5px}
 .city-photo-credits{font-size:12px;color:#63675f;margin:26px 0 0}.city-photo-credits summary{cursor:pointer}.city-photo-credits a{text-decoration:underline}
-@media(max-width:800px){.featured-tour-intro,.city-tour-heading{display:block}.featured-tour-intro p,.city-tour-heading p{margin-top:8px}.city-tour-grid{gap:16px}.city-tour-copy{padding:18px 16px}.city-tour-copy h3{font-size:23px}}
+@media(max-width:900px){.featured-tour-intro,.city-tour-heading{display:block}.featured-tour-intro p,.city-tour-heading p{margin-top:8px}.city-tour-grid{grid-template-columns:1fr;gap:22px}.city-tour-copy{padding:20px}.city-tour-copy h3{font-size:24px}}
 @media(max-width:680px){.featured-city-tours{padding-top:32px}.city-tour-row{padding-top:26px;margin-bottom:34px}.city-tour-heading h2{font-size:32px}.city-tour-grid{grid-template-columns:1fr;gap:22px}.city-tour-copy h3{font-size:26px}.city-tour-photo{aspect-ratio:4/3}.city-tour-copy{padding:22px}.featured-tour-intro p{font-size:15px}}
 @media(prefers-reduced-motion:reduce){.city-tour-card,.city-tour-photo img{transition:none}.city-tour-card:hover,.city-tour-card:hover img{transform:none}}
