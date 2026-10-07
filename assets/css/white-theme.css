@@ -155,7 +155,7 @@ h1,h2,h3,h4,h5,h6,
 .destination-detail-hero,
 .journey-hero,
 .tour-detail-hero{
-  background-color:#514a43!important;
+  background-color:#6b625a!important;
 }
 .hero h1,
 .hero p,
@@ -346,7 +346,7 @@ h1,h2,h3,h4,h5,h6,
 .quote-wrap button[type=submit],
 input[type=submit],
 .experience-link{
-  background:#3e3934!important;
+  background:#6b625a!important;
   border-color:#3e3934!important;
   color:#ffffff!important;
   -webkit-text-fill-color:#ffffff!important;
@@ -373,7 +373,7 @@ a:not(.btn):not(.button):not(.nav-cta):not(.tv-whatsapp-float):not(.whatsapp){
 .tvf-footer,
 footer.footer,
 .footer{
-  background:#3e3934!important;
+  background:#6b625a!important;
   color:#ffffff!important;
 }
 .tvf-footer p,
@@ -418,7 +418,7 @@ a.whatsapp:hover{
 .journey-hero,
 .tour-detail-hero,
 .page-hero .frame{
-  background-color:#514a43!important;
+  background-color:#6b625a!important;
 }
 
 /* Explicitly preserve the intended desktop catalogue grids. */
@@ -506,7 +506,7 @@ input[type=submit]:hover,
 footer.footer,
 .footer,
 .tv-footer{
-  background:#5f574f!important;
+  background:#6b625a!important;
   color:#ffffff!important;
 }
 .tvf-footer p,
@@ -522,4 +522,58 @@ footer.footer a,
 .tv-footer h4{
   color:#ffffff!important;
   -webkit-text-fill-color:#ffffff!important;
+}
+
+
+/* NO BLACK SURFACES — black/dark reserved for text only */
+:root{
+  --tv-footer:#6b625a!important;
+  --tv-action:#9a8265!important;
+  --tv-action-hover:#7a654f!important;
+}
+
+/* No black/dark UI surfaces. */
+.tvf-footer,
+footer.footer,
+.footer,
+.tv-footer{
+  background:#6b625a!important;
+}
+.btn,
+.button,
+.nav-cta,
+.cta-button,
+.one-day-enquiry button,
+.quote-wrap button[type=submit],
+.page-enquiry-form button[type=submit],
+input[type=submit],
+.experience-link,
+.lang-btn{
+  background:#9a8265!important;
+  border-color:#9a8265!important;
+}
+.btn:hover,
+.button:hover,
+.nav-cta:hover,
+.cta-button:hover,
+.one-day-enquiry button:hover,
+.quote-wrap button[type=submit]:hover,
+.page-enquiry-form button[type=submit]:hover,
+input[type=submit]:hover,
+.experience-link:hover,
+.lang-btn:hover{
+  background:#7a654f!important;
+  border-color:#7a654f!important;
+}
+
+/* Hero fallbacks use warm stone rather than charcoal/black. */
+.hero,
+.page-hero .frame,
+.tours-hero,
+.experiences-hero,
+.destination-index-hero,
+.destination-detail-hero,
+.journey-hero,
+.tour-detail-hero{
+  background-color:#6b625a!important;
 }
