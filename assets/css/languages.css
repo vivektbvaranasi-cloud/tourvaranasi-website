@@ -32,7 +32,7 @@
 .lang-faq summary:after{content:"+";position:absolute;right:0;top:0;color:#9a8265}
 .lang-faq[open] summary:after{content:"–"}
 .lang-faq p{padding-top:12px;margin-bottom:0}
-.lang-cta{background:#5f574f;color:#fff;padding:70px 0}
+.lang-cta{background:#6b625a;color:#fff;padding:70px 0}
 .lang-cta .lang-wrap{display:flex;align-items:center;justify-content:space-between;gap:40px}
 .lang-cta h2{color:#fff;margin:0 0 10px;font-family:'Ysabeau','Trebuchet MS',sans-serif;font-size:38px;font-weight:500}
 .lang-cta p{color:rgba(255,255,255,.82);max-width:680px;margin:0}
@@ -44,7 +44,7 @@
 @media(max-width:560px){.lang-wrap{padding:0 20px}.lang-hero-copy{width:calc(100% - 40px);padding:70px 0 50px}.lang-hero p{font-size:15px}.lang-section h2,.lang-cta h2{font-size:31px}}
 
 /* Multilingual footer mobile hardening */
-body > footer.footer{display:block!important;width:100%!important;max-width:none!important;clear:both!important;margin:0!important;background:#5f574f!important;overflow:hidden!important}
+body > footer.footer{display:block!important;width:100%!important;max-width:none!important;clear:both!important;margin:0!important;background:#6b625a!important;overflow:hidden!important}
 body > footer.footer > .inner.footer-grid{width:100%!important;max-width:1180px!important;margin:0 auto!important;padding-left:28px!important;padding-right:28px!important;box-sizing:border-box!important}
 body > footer.footer .footer-logo-link{display:inline-flex!important;width:auto!important;max-width:230px!important;margin:0 0 16px!important}
 body > footer.footer .footer-logo-plate{display:inline-flex!important;align-items:center!important;background:#fff!important;padding:7px 10px!important;width:auto!important;max-width:230px!important;overflow:hidden!important}
