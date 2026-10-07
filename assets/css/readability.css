@@ -1,9 +1,9 @@
 /* Tour Varanasi — softer, high-contrast reading palette */
 :root{
-  --tv-text:#464a46;
-  --tv-heading:#252a27;
-  --tv-secondary:#696d68;
-  --tv-link:#735446;
+  --tv-text:#5e5954;
+  --tv-heading:#3e3934;
+  --tv-secondary:#7c7771;
+  --tv-link:#7a654f;
 }
 
 body{color:var(--tv-text)}
@@ -52,11 +52,11 @@ h1,h2,h3,h4,h5,h6,
 .blog-card a:hover,
 .more-link a,.guide-pillar-link a,.small-guide-link a,
 .tv-related-links a{color:var(--tv-link);text-decoration-color:rgba(115,84,70,.42);text-underline-offset:3px}
-.prose a:not(.btn):hover,.feature a:hover,.tv-related-links a:hover{color:#563d33}
+.prose a:not(.btn):hover,.feature a:hover,.tv-related-links a:hover{color:#6f5c49}
 
 /* Lead copy stays premium and softer than headings */
-.lede{color:#3f443f}
-.note{color:#4d514d}
+.lede{color:#5e5954}
+.note{color:#5e5954}
 
 /* Do not soften text placed over photography or dark surfaces */
 .hero,.hero h1,.hero p,
