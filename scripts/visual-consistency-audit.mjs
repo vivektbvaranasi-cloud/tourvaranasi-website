@@ -65,6 +65,19 @@ for(const file of htmlFiles){
   }
 }
 
+
+// No black or near-black solid UI backgrounds anywhere in CSS.
+// Dark tones are allowed for text and transparent photo overlays only.
+const cssFiles=files.filter(f=>f.endsWith('.css'));
+for(const file of cssFiles){
+  const css=await readFile(file,'utf8');
+  const darkBg=/background(?:-color)?\s*:\s*#(?:000(?:000)?|111(?:111)?|181b19|1d211f|22211f|252a27|292c29|302d33|3e3934)\b/ig;
+  const matches=[...css.matchAll(darkBg)];
+  if(matches.length){
+    errors.push(posix(file)+': black/near-black solid background detected ('+matches[0][0]+')');
+  }
+}
+
 const theme=await readFile('assets/css/white-theme.css','utf8');
 
 for(const required of [
