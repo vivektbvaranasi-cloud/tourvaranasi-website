@@ -244,66 +244,86 @@ img{max-width:100%;display:block}
 
 
 
-/* TV_HOME_EXPERIENCE_STRIP_2026 */
+/* TV_HOME_EXPERIENCE_CARDS_2026 */
 .experiences{
   background:#fffefa!important;
-  padding:84px 0 92px!important;
-  border-top:1px solid #e8e3e9;
+  padding:92px 0 104px!important;
+  border-top:1px solid #ebe7ec;
 }
-.experiences .section-heading{
-  margin-bottom:30px;
-}
+.experiences .section-heading{margin-bottom:34px}
 .experiences .experience-grid{
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:0!important;
-  border-top:1px solid #e3dee5;
-  border-bottom:1px solid #e3dee5;
+  gap:22px!important;
+  border:0!important;
 }
 .experiences .experience-card{
-  background:transparent!important;
-  border:0!important;
-  border-right:1px solid #e3dee5!important;
-  box-shadow:none!important;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  overflow:hidden;
+  background:#fff!important;
+  border:1px solid #e6e1e8!important;
   border-radius:0!important;
+  box-shadow:none!important;
   transform:none!important;
-}
-.experiences .experience-card:last-child{
-  border-right:0!important;
+  transition:border-color .2s ease,transform .2s ease;
 }
 .experiences .experience-card:hover{
-  transform:none!important;
+  transform:translateY(-3px)!important;
   box-shadow:none!important;
+  border-color:#cfc6d3!important;
 }
 .experiences .image-wrap{
   aspect-ratio:4/3;
+  overflow:hidden;
   background:#eeeae5;
 }
+.experiences .image-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .45s ease;
+}
+.experiences .experience-card:hover .image-wrap img{transform:scale(1.025)}
 .experiences .experience-copy{
-  padding:22px 20px 26px!important;
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  padding:24px 22px 25px!important;
+}
+.experiences .micro{
+  margin-bottom:10px;
+  color:#756080;
+  font-size:9px;
+  letter-spacing:.15em;
 }
 .experiences .experience-copy h3{
-  font-size:23px;
-  margin-bottom:9px;
+  margin:0 0 10px;
+  font-size:24px;
+  line-height:1.18;
 }
 .experiences .experience-copy p{
+  margin:0 0 18px;
+  color:#656068;
   font-size:13px;
-  line-height:1.62;
+  line-height:1.65;
 }
-@media(max-width:900px){
-  .experiences{padding:66px 0 72px!important}
+.experiences .price,
+.experiences .quiet-price{
+  margin-top:auto;
+  padding-top:14px;
+  border-top:1px solid #eee9ef;
+  color:#604d6b;
+  font-size:11px;
+  font-weight:600;
+}
+@media(max-width:980px){
   .experiences .experience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .experiences .experience-card:nth-child(2){border-right:0!important}
-  .experiences .experience-card:nth-child(-n+2){border-bottom:1px solid #e3dee5!important}
 }
 @media(max-width:560px){
-  .experiences .experience-grid{grid-template-columns:1fr}
-  .experiences .experience-card,
-  .experiences .experience-card:nth-child(2){
-    border-right:0!important;
-    border-bottom:1px solid #e3dee5!important;
-  }
-  .experiences .experience-card:last-child{border-bottom:0!important}
-  .experiences .experience-copy{padding:20px 2px 24px!important}
+  .experiences{padding:68px 0 76px!important}
+  .experiences .experience-grid{grid-template-columns:1fr;gap:20px!important}
   .experiences .image-wrap{aspect-ratio:16/10}
+  .experiences .experience-copy{padding:22px 20px 23px!important}
 }
