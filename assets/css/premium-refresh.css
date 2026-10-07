@@ -97,66 +97,79 @@ body[data-tour-page="true"] .itinerary-day{border-top-color:#d9cfdf!important}
 }
 
 
-/* TV_CLEAN_PREMIUM_SYSTEM_2026 */
-/* One restrained visual language across homepage, tours, destinations, experiences and editorial pages. */
+/* TV_WHITE_PREMIUM_SYSTEM_2026 */
+/* Natural-white editorial system. Cards are reserved for genuine traveller choices. */
 :root{
   --tv-white:#fffefa;
   --tv-paper:#ffffff;
   --tv-ink:#302d33;
-  --tv-copy:#57535b;
-  --tv-muted:#746f78;
+  --tv-copy:#5b565f;
+  --tv-muted:#777179;
   --tv-line:#e7e2e8;
+  --tv-line-strong:#d8d1da;
   --tv-purple:#756080;
   --tv-purple-dark:#604d6b;
+  --ivory:#fffefa!important;
+  --paper:#ffffff!important;
+  --sand:#fffefa!important;
+  --sage:#fffefa!important;
+  --white:#fffefa!important;
+  --line:#e7e2e8!important;
 }
 
 html,body{
   background:var(--tv-white)!important;
-}
-body{
   color:var(--tv-ink)!important;
 }
+body{
+  font-family:Inter,Arial,sans-serif!important;
+  line-height:1.72!important;
+}
+body:before,body:after{display:none!important}
 
-/* Shared header: light, quiet and consistent instead of legacy beige/dark treatments. */
-.header,
-.site-header,
-.tv-site-header{
-  background:rgba(255,254,250,.97)!important;
+/* Quiet, consistent white header everywhere. */
+.header,.site-header,.tv-site-header{
+  background:rgba(255,254,250,.98)!important;
   border-bottom:1px solid var(--tv-line)!important;
   box-shadow:none!important;
   backdrop-filter:blur(12px);
 }
-.nav,
-.nav-wrap,
-.tv-nav-wrap{
+.nav,.nav-wrap,.tv-nav-wrap{
+  width:min(1240px,100%)!important;
   max-width:1240px!important;
 }
-.header .brand,
-.site-header .brand,
-.tv-site-header .brand{
-  color:var(--tv-ink)!important;
+.header .brand{
+  width:190px!important;
+  min-width:190px!important;
+  height:50px!important;
+  background:url('/tour-varanasi-logo.png') left center/contain no-repeat!important;
 }
-.header .brand span,
-.site-header .brand small,
-.tv-site-header .brand span{
-  color:var(--tv-muted)!important;
+.header .brand strong,.header .brand span{display:none!important}
+.header .navlinks a,.site-header .navlinks a,.tv-site-header .navlinks a{
+  color:#48434b!important;
 }
-.navlinks a{
-  color:#49454c!important;
-}
-.navlinks a:hover,
+.header .navlinks a:hover,.site-header .navlinks a:hover,.tv-site-header .navlinks a:hover,
 .navlinks a[aria-current="page"]{
   color:var(--tv-purple-dark)!important;
 }
+.topbar,.top-contact-bar,.tv-top-contact-bar{
+  display:block!important;
+  background:var(--tv-white)!important;
+  color:var(--tv-ink)!important;
+  border-bottom:1px solid var(--tv-line)!important;
+}
+.topbar a,.top-contact-links a,.tv-top-contact-links a{
+  color:var(--tv-purple-dark)!important;
+}
 
-/* Inner-page hero system: large photography, full width, less boxed-in. */
+/* Large photographic page introductions instead of boxed old-template heroes. */
 .breadcrumbs{
   width:min(1180px,calc(100% - 56px))!important;
   max-width:1180px!important;
-  padding:18px 0 16px!important;
+  margin:0 auto!important;
+  padding:17px 0 15px!important;
   color:var(--tv-muted)!important;
   font-size:11px!important;
-  letter-spacing:.02em;
 }
 .page-hero{
   width:100%!important;
@@ -165,288 +178,286 @@ body{
   padding:0!important;
 }
 .page-hero .frame{
-  min-height:60vh!important;
+  min-height:62vh!important;
   border-radius:0!important;
   background-position:center!important;
 }
 .page-hero .frame:before{
   background:
-    linear-gradient(0deg,rgba(24,22,27,.68) 0%,rgba(24,22,27,.18) 62%,rgba(24,22,27,.05) 100%)!important;
+    linear-gradient(0deg,rgba(24,22,27,.72) 0%,rgba(24,22,27,.20) 61%,rgba(24,22,27,.05) 100%)!important;
 }
 .page-hero .copy{
   width:min(760px,calc(100% - 56px))!important;
   max-width:760px!important;
   margin-left:max(28px,calc((100vw - 1180px)/2 + 28px))!important;
-  padding:0 0 62px!important;
+  padding:0 0 64px!important;
 }
-.page-hero h1{
+.page-hero h1,.page-hero p,.page-hero .eyebrow{
   color:#fff!important;
   -webkit-text-fill-color:#fff!important;
-  text-shadow:0 2px 16px rgba(0,0,0,.28)!important;
 }
-.page-hero p,
-.page-hero .eyebrow{
-  color:#fff!important;
-  -webkit-text-fill-color:#fff!important;
+.page-hero h1{text-shadow:0 2px 18px rgba(0,0,0,.34)!important}
+.page-hero p{text-shadow:0 1px 10px rgba(0,0,0,.28)!important}
+
+/* The same photographic rhythm for catalogue/landing heroes. */
+.tours-hero,.experiences-hero,.destination-index-hero,.destination-detail-hero,.journey-hero,.tour-detail-hero{
+  border-radius:0!important;
+}
+.tours-hero-copy,.destination-hero-inner,.journey-hero-copy{
+  max-width:1180px!important;
 }
 
-/* Natural white is the default surface. Fine rules create rhythm instead of coloured slabs. */
-.section,
-.section.soft,
-.section-sand,
-.section-sage,
-.section-white,
-.days,
-.varanasi,
-.sacred,
-.buddhist,
-.all-journeys,
-.sightseeing-section,
-.tour-why,
-.tour-practical aside,
-.new-tour-form,
-.tv-planning,
-.tv-planning-shell,
-.home-welcome,
-.home-reviews-strip,
-.featured-city-tours,
-.experience-catalogue{
+/* White is the default content surface. */
+.section,.section.soft,.section-sand,.section-sage,.section-white,
+.days,.varanasi,.sacred,.buddhist,.all-journeys,.sightseeing-section,
+.tour-why,.new-tour-form,.tv-planning,.tv-planning-shell,
+.home-welcome,.home-reviews-strip,.featured-city-tours,
+.experience-catalogue,.journeys,.tours-intro,.tours-section,
+.dayparts,.deeper,.signature,.intro,.local{
   background:var(--tv-white)!important;
 }
-.section.soft,
-.sightseeing-section,
-.tour-why,
-.new-tour-form,
-.tv-planning,
-.home-reviews-strip{
+.section.soft,.sightseeing-section,.tour-why,.new-tour-form,
+.tv-planning,.home-reviews-strip,.featured-city-tours,
+.experience-catalogue{
   border-top:1px solid var(--tv-line)!important;
 }
 .section{
-  padding-top:84px!important;
-  padding-bottom:84px!important;
+  padding-top:86px!important;
+  padding-bottom:86px!important;
 }
-.section p,
-.prose p,
-.prose li,
-.editorial .copy p{
+.section p,.prose p,.prose li,.editorial .copy p,.tour-day-copy p{
   color:var(--tv-copy)!important;
 }
 
-/* Remove old card-heavy visual language. */
-.card,
-.team-card,
-.destination-card,
-.destination-tour-card,
-.tour-why-card,
-.tv-planning-card,
-.city-tour-card,
-.experience-card{
-  background:transparent!important;
-  box-shadow:none!important;
-  border-radius:0!important;
-}
-.card,
-.destination-card,
-.destination-tour-card,
-.city-tour-card,
-.tv-planning-card{
-  border-color:var(--tv-line)!important;
-}
-.card:hover,
-.destination-card:hover,
-.city-tour-card:hover,
-.tv-planning-card:hover{
-  box-shadow:none!important;
-}
-.feature,
-.tour-why-card{
+/* Editorial content stays open and unboxed. */
+.editorial,.editorial.reverse{
+  background:var(--tv-white)!important;
   border-top:1px solid var(--tv-line)!important;
+  border-bottom:1px solid var(--tv-line)!important;
 }
-.editorial{
-  background:var(--tv-white)!important;
-  border-top:1px solid var(--tv-line);
-  border-bottom:1px solid var(--tv-line);
-}
-.editorial .copy{
-  background:var(--tv-white)!important;
-}
-
-/* Facts and supporting information: line-based rather than coloured panels. */
-.glance,
-.trust-grid,
-.destination-practical-strip,
-.tour-facts,
-.comfort-grid,
-.since-strip{
+.editorial .copy{background:var(--tv-white)!important}
+.team-card{
   background:transparent!important;
-  border-color:var(--tv-line)!important;
+  border:0!important;
+  box-shadow:none!important;
 }
-.glance>div,
-.trust-grid>div,
-.destination-practical-strip>div,
-.tour-facts>div,
-.comfort-grid>div{
-  border-color:var(--tv-line)!important;
+.feature,.tour-why-card{
   background:transparent!important;
+  border:0!important;
+  border-top:1px solid var(--tv-line)!important;
+  box-shadow:none!important;
 }
-
-/* Notes stay white with a restrained accent line. */
-.note,
-.policy-highlight,
-.sacred-circuit-note,
-.comfort-block,
-.tour-practical aside{
-  background:var(--tv-white)!important;
+.note,.policy-highlight,.sacred-circuit-note,.comfort-block,.tour-practical aside{
+  background:transparent!important;
   border:1px solid var(--tv-line)!important;
   border-left:3px solid var(--tv-purple)!important;
   box-shadow:none!important;
 }
-.comfort-block{
+.comfort-block{padding:28px!important}
+
+/* Day-by-day itineraries: open editorial rows with fine separators. */
+.itinerary-section,.one-day-itinerary{
+  background:var(--tv-white)!important;
+}
+.itinerary-day,.itinerary-day:nth-child(even){
+  background:transparent!important;
+  border:0!important;
+  border-top:1px solid var(--tv-line)!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:34px 0!important;
+}
+.itinerary-day:last-child{border-bottom:1px solid var(--tv-line)!important}
+.itinerary-day>.itinerary-image{
+  border-radius:0!important;
+  background:#eee!important;
+}
+.itinerary-copy{background:transparent!important}
+.itinerary-copy h3{color:var(--tv-ink)!important}
+.daylabel{color:var(--tv-purple-dark)!important}
+
+/* Facts and key planning information use lines, not tinted panels. */
+.glance,.trust-grid,.destination-practical-strip,.tour-facts,
+.comfort-grid,.since-strip,.route-list{
+  background:transparent!important;
+  border-color:var(--tv-line)!important;
+}
+.glance>div,.trust-grid>div,.destination-practical-strip>div,
+.tour-facts>div,.comfort-grid>div,.route-list a{
+  background:transparent!important;
+  border-color:var(--tv-line)!important;
+}
+
+/* Premium choice cards: imagery + white paper + very restrained border. */
+.city-tour-card,
+.experience-catalogue .experience-card,
+.destination-card,
+.destination-tour-card,
+.tv-planning-card,
+.blog-hub-card,
+.card{
+  background:var(--tv-paper)!important;
+  border:1px solid var(--tv-line)!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  overflow:hidden!important;
+}
+.city-tour-card:hover,
+.experience-catalogue .experience-card:hover,
+.destination-card:hover,
+.destination-tour-card:hover,
+.tv-planning-card:hover,
+.blog-hub-card:hover,
+.card:hover{
+  border-color:#cfc6d3!important;
+  box-shadow:none!important;
+  transform:translateY(-2px)!important;
+}
+.city-tour-card img,
+.experience-catalogue .experience-card img,
+.destination-card img,
+.blog-hub-card img,
+.card img{
+  transition:transform .45s ease!important;
+}
+.city-tour-card:hover img,
+.experience-catalogue .experience-card:hover img,
+.destination-card:hover img,
+.blog-hub-card:hover img,
+.card:hover img{
+  transform:scale(1.02)!important;
+}
+.tv-planning-card{
+  min-height:230px!important;
   padding:28px!important;
 }
+.tv-planning-meta,.experience-duration,.card .meta,.featured-label{
+  color:var(--tv-purple-dark)!important;
+}
 
-/* Reviews: editorial, not boxed cards. */
+/* Reviews remain editorial rather than card-heavy. */
 .reviews{
-  gap:0!important;
-  border-top:1px solid var(--tv-line);
-  border-bottom:1px solid var(--tv-line);
-}
-.review{
-  background:transparent!important;
-  border-top:0!important;
-  border-right:1px solid var(--tv-line);
-  padding:30px 28px!important;
-}
-.review:last-child{
-  border-right:0;
-}
-
-/* Enquiry areas remain light; purple is an action accent, not a wall of colour. */
-.quote-wrap,
-.tour-price-panel,
-.experience-enquiry,
-.mini-enquiry,
-.cta,
-.final-cta{
-  background:#fbfafc!important;
-  color:var(--tv-ink)!important;
-  border-top:1px solid #ddd4e2!important;
-  border-bottom:1px solid #ddd4e2!important;
-}
-.quote-wrap h2,
-.quote-wrap p,
-.quote-wrap label,
-.mini-enquiry h2,
-.mini-enquiry p,
-.mini-enquiry label,
-.cta h2,
-.cta p,
-.final-cta h2,
-.final-cta p{
-  color:var(--tv-ink)!important;
-}
-.quote-form input,
-.quote-form select,
-.quote-form textarea,
-.mini-enquiry-form input,
-.mini-enquiry-form textarea{
-  background:#fff!important;
-  border:1px solid #d8d2da!important;
-  border-radius:2px!important;
-}
-.quote-form input:focus,
-.quote-form select:focus,
-.quote-form textarea:focus,
-.mini-enquiry-form input:focus,
-.mini-enquiry-form textarea:focus{
-  border-color:var(--tv-purple)!important;
-  box-shadow:0 0 0 2px rgba(117,96,128,.10)!important;
-}
-
-/* Homepage signature experiences: one continuous four-part strip. */
-body > main > section.experiences{
-  background:var(--tv-white)!important;
-  border-top:1px solid var(--tv-line)!important;
-}
-body > main > section.experiences .experience-grid{
-  display:grid!important;
-  grid-template-columns:repeat(4,minmax(0,1fr))!important;
   gap:0!important;
   border-top:1px solid var(--tv-line)!important;
   border-bottom:1px solid var(--tv-line)!important;
 }
-body > main > section.experiences .experience-card{
+.review{
+  background:transparent!important;
   border:0!important;
   border-right:1px solid var(--tv-line)!important;
-  background:transparent!important;
+  padding:30px 28px!important;
 }
-body > main > section.experiences .experience-card:last-child{
-  border-right:0!important;
-}
-body > main > section.experiences .experience-card:hover{
-  transform:none!important;
+.review:last-child{border-right:0!important}
+
+/* Light enquiry surfaces; colour is reserved for action. */
+.quote-wrap,.tour-price-panel,.experience-enquiry,.mini-enquiry,.cta,.final-cta{
+  background:#fbfafc!important;
+  color:var(--tv-ink)!important;
+  border-top:1px solid #ddd6e1!important;
+  border-bottom:1px solid #ddd6e1!important;
   box-shadow:none!important;
+}
+.quote-wrap h2,.quote-wrap p,.quote-wrap label,
+.mini-enquiry h2,.mini-enquiry p,.mini-enquiry label,
+.cta h2,.cta p,.final-cta h2,.final-cta p{
+  color:var(--tv-ink)!important;
+}
+.quote-form input,.quote-form select,.quote-form textarea,
+.mini-enquiry-form input,.mini-enquiry-form textarea{
+  background:#fff!important;
+  border:1px solid #d8d2da!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus,
+.mini-enquiry-form input:focus,.mini-enquiry-form textarea:focus{
+  border-color:var(--tv-purple)!important;
+  box-shadow:0 0 0 2px rgba(117,96,128,.10)!important;
 }
 
-/* Blog/article cards become editorial rows, not floating boxes. */
+/* Purple stays an accent, not a surface. */
+.btn,.button,.nav-cta,.cta-button,.one-day-enquiry button,
+.quote-wrap button[type=submit],input[type=submit],.experience-link{
+  background:var(--tv-purple)!important;
+  border-color:var(--tv-purple)!important;
+  color:#fff!important;
+  border-radius:2px!important;
+}
+.btn:hover,.button:hover,.nav-cta:hover,.cta-button:hover,
+.experience-card:hover .experience-link{
+  background:var(--tv-purple-dark)!important;
+  border-color:var(--tv-purple-dark)!important;
+}
+
+/* White-space-first article/blog styling. */
 .blog-card{
-  border-top:1px solid var(--tv-line)!important;
   background:transparent!important;
+  border:0!important;
+  border-top:1px solid var(--tv-line)!important;
   box-shadow:none!important;
 }
-.blog-hub-card{
+.blog-hub-card{border-color:var(--tv-line)!important}
+.prose .related-links,.prose .quick-answer,.pillar-cta{
+  background:#fbfafc!important;
   border:1px solid var(--tv-line)!important;
   border-radius:0!important;
   box-shadow:none!important;
 }
 
-/* Keep the footer as the deliberate closing anchor; everything above it stays light. */
-.tvf-footer{
-  border-top:0!important;
+/* Dark closing anchor only; content above remains white. */
+.tvf-footer,footer.footer,.footer{
+  background:#302d33!important;
+  color:#fff!important;
+}
+.tvf-footer p,.tvf-footer a,.tvf-footer h4,.tvf-footer span,.tvf-footer small,
+footer.footer p,footer.footer a,.footer-bottom{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+
+/* WhatsApp remains recognisable. */
+a.tv-whatsapp-float,a.whatsapp{
+  background:#25D366!important;
+  border-color:#25D366!important;
+  color:#fff!important;
+}
+a.tv-whatsapp-float:hover,a.whatsapp:hover{
+  background:#1faa52!important;
+  border-color:#1faa52!important;
 }
 
 @media(max-width:900px){
-  .section{padding-top:66px!important;padding-bottom:66px!important}
-  .page-hero .frame{min-height:54vh!important}
+  .section{padding-top:68px!important;padding-bottom:68px!important}
+  .header .brand{
+    width:155px!important;
+    min-width:155px!important;
+    height:42px!important;
+  }
+  .topbar{display:block!important}
+  .page-hero .frame{min-height:55vh!important}
   .page-hero .copy{
     width:calc(100% - 40px)!important;
     margin-left:20px!important;
     padding-bottom:44px!important;
   }
-  body > main > section.experiences .experience-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
-  }
-  body > main > section.experiences .experience-card:nth-child(2){
-    border-right:0!important;
-  }
-  body > main > section.experiences .experience-card:nth-child(-n+2){
-    border-bottom:1px solid var(--tv-line)!important;
-  }
-  .reviews{
-    grid-template-columns:1fr!important;
-  }
+  .reviews{grid-template-columns:1fr!important}
   .review{
     border-right:0!important;
-    border-bottom:1px solid var(--tv-line);
+    border-bottom:1px solid var(--tv-line)!important;
   }
-  .review:last-child{border-bottom:0}
+  .review:last-child{border-bottom:0!important}
 }
 @media(max-width:620px){
   .breadcrumbs{
     width:calc(100% - 40px)!important;
-    padding:13px 0!important;
+    padding:12px 0!important;
   }
   .page-hero .frame{min-height:500px!important}
   .page-hero .copy{padding-bottom:34px!important}
   .page-hero h1{font-size:42px!important}
-  body > main > section.experiences .experience-grid{
-    grid-template-columns:1fr!important;
-  }
-  body > main > section.experiences .experience-card{
-    border-right:0!important;
-    border-bottom:1px solid var(--tv-line)!important;
-  }
-  body > main > section.experiences .experience-card:last-child{
-    border-bottom:0!important;
+  .topbar .inner{
+    justify-content:center!important;
+    flex-wrap:wrap!important;
+    gap:8px 14px!important;
   }
 }
