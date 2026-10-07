@@ -2,11 +2,11 @@
   --white:#ffffff;
   --sand:#f3eee6;
   --sage:#edf1ec;
-  --terracotta:#a65f49;
-  --terracotta-dark:#8d4f3d;
+  --terracotta:#8a765c;
+  --terracotta-dark:#675742;
   --ink:#292c29;
   --muted:#666a65;
-  --river:#526d68;
+  --river:#5f5d58;
   --line:#ddd8cf;
   --max:1180px;
   --heading:'Ysabeau','Cabin','Trebuchet MS',sans-serif;
@@ -198,7 +198,7 @@ img{max-width:100%;display:block}
  .hero-actions{align-items:flex-start;flex-direction:column}
  .hero-actions .button{width:100%}
 }
-:focus-visible{outline:3px solid #be806a;outline-offset:3px}
+:focus-visible{outline:3px solid #9a866d;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
 /* Homepage review + Tripadvisor trust panel */
@@ -214,12 +214,12 @@ img{max-width:100%;display:block}
 @media(max-width:820px){.review-grid{grid-template-columns:1fr;gap:34px}.tripadvisor-panel{padding:28px}.review-quote blockquote{font-size:27px}}
 
 /* Final homepage contact strip + supplied Tour Varanasi logo */
-.top-contact-bar{background:#ffffff;color:#302d33;border-bottom:1px solid #e6e1e8}
+.top-contact-bar{background:#ffffff;color:#22211f;border-bottom:1px solid #e6e1e8}
 .top-contact-inner{max-width:1240px;min-height:34px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}
 .top-contact-note{font-size:10px;letter-spacing:.06em;color:#6a646d}
 .top-contact-links{margin-left:auto;display:flex;align-items:center;gap:20px;white-space:nowrap}
-.top-contact-links a{font-size:11px;color:#604d6b;transition:color .2s ease}
-.top-contact-links a:hover{color:#302d33}
+.top-contact-links a{font-size:11px;color:#675742;transition:color .2s ease}
+.top-contact-links a:hover{color:#22211f}
 .brand-logo{min-width:190px}
 .brand-logo img{width:190px;height:auto;max-height:50px;object-fit:contain}
 .footer-logo-link{display:inline-flex!important;margin:0!important}
@@ -294,7 +294,7 @@ img{max-width:100%;display:block}
 }
 .experiences .micro{
   margin-bottom:10px;
-  color:#756080;
+  color:#8a765c;
   font-size:9px;
   letter-spacing:.15em;
 }
@@ -314,7 +314,7 @@ img{max-width:100%;display:block}
   margin-top:auto;
   padding-top:14px;
   border-top:1px solid #eee9ef;
-  color:#604d6b;
+  color:#675742;
   font-size:11px;
   font-weight:600;
 }
