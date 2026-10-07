@@ -42,7 +42,6 @@ body{
 }
 
 /* All major content surfaces are pure white. */
-section,
 .section,
 .section.soft,
 .section-white,
@@ -405,4 +404,70 @@ a.whatsapp:hover{
 
 @media(max-width:900px){
   html,body,main{background:#ffffff!important}
+}
+
+
+/* DESKTOP STRUCTURE SAFETY — preserve layout while keeping white theme */
+/* Never use a blanket background shorthand on all <section> elements.
+   Photo heroes and component layouts must retain their own backgrounds/images. */
+.hero,
+.tours-hero,
+.experiences-hero,
+.destination-index-hero,
+.destination-detail-hero,
+.journey-hero,
+.tour-detail-hero,
+.page-hero .frame{
+  background-color:#262521!important;
+}
+
+/* Explicitly preserve the intended desktop catalogue grids. */
+@media(min-width:901px){
+  .container,
+  .section,
+  .tv-planning-shell{
+    width:auto;
+  }
+
+  .experience-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+
+  .city-tour-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+
+  .journey-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .destination-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .destination-tour-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .experience-catalogue .experience-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .grid-3{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .grid-4{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+
+  .itinerary-day,
+  .itinerary-day:nth-child(even){
+    grid-template-columns:minmax(260px,340px) minmax(0,1fr)!important;
+    gap:38px!important;
+  }
+
+  .page-hero .copy{
+    max-width:760px!important;
+  }
 }
