@@ -577,3 +577,40 @@ input[type=submit]:hover,
 .tour-detail-hero{
   background-color:#6b625a!important;
 }
+
+
+/* PMJ WHITE PANEL + CONSISTENT ACTIVE NAV */
+.pmj-nohotel,
+.pmj-nohotel-inner{
+  background:#ffffff!important;
+  color:#3e3934!important;
+}
+.pmj-nohotel{
+  border-top:1px solid #e7e5e0!important;
+  border-bottom:1px solid #e7e5e0!important;
+}
+.pmj-nohotel h2{
+  color:#3e3934!important;
+}
+.pmj-nohotel p{
+  color:#5e5954!important;
+}
+.pmj-nohotel .eyebrow{
+  color:#9a8265!important;
+}
+.pmj-nohotel-services span{
+  background:#ffffff!important;
+  color:#5e5954!important;
+  border-color:#d9d5ce!important;
+}
+
+/* Active primary-navigation item is always the same dark green + white. */
+.navlinks a.is-active,
+.tv-navlinks a.is-active,
+.navlinks a.nav-cta.is-active,
+.tv-navlinks a.tv-nav-cta.is-active{
+  background:#435852!important;
+  border-color:#435852!important;
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+}
