@@ -2,7 +2,7 @@
 .featured-city-tours{
   background:#ffffff;
   padding:78px 0 54px;
-  color:#302d33;
+  color:#22211f;
   border-top:1px solid #e7e2e8;
 }
 .featured-tour-intro{
@@ -17,12 +17,12 @@
   font-size:10px;
   letter-spacing:.16em;
   font-weight:700;
-  color:#604d6b;
+  color:#675742;
 }
 .featured-tour-intro p{
   max-width:520px;
   margin:0;
-  color:#6d6770;
+  color:#77746f;
   font-size:14px;
   line-height:1.65;
 }
@@ -39,7 +39,7 @@
 }
 .city-tour-heading h2{
   margin:0;
-  color:#302d33;
+  color:#22211f;
   font-family:var(--heading,'Ysabeau',sans-serif);
   font-size:34px;
   font-weight:600;
@@ -48,7 +48,7 @@
 .city-tour-heading p{
   max-width:520px;
   margin:0;
-  color:#777179;
+  color:#77746f;
   font-size:13px;
   line-height:1.6;
 }
@@ -65,7 +65,7 @@
   background:#fff;
   border:1px solid #e7e2e8;
   border-radius:0;
-  color:#302d33;
+  color:#22211f;
   text-decoration:none;
   box-shadow:none;
   transition:transform .22s ease,border-color .22s ease;
@@ -76,7 +76,7 @@
   box-shadow:none;
 }
 .city-tour-card:focus-visible{
-  outline:3px solid #8b6f9a;
+  outline:3px solid #9a866d;
   outline-offset:4px;
 }
 .city-tour-photo{
@@ -98,7 +98,7 @@
   bottom:15px;
   padding:5px 9px;
   background:rgba(255,255,255,.94);
-  color:#604d6b;
+  color:#675742;
   border:1px solid rgba(255,255,255,.82);
   border-radius:0;
   font-size:9px;
@@ -113,7 +113,7 @@
 }
 .city-tour-copy h3{
   margin:0 0 10px;
-  color:#302d33;
+  color:#22211f;
   font-family:var(--heading,'Ysabeau',sans-serif);
   font-size:24px;
   font-weight:600;
@@ -121,7 +121,7 @@
 }
 .city-tour-copy p{
   margin:0 0 20px;
-  color:#625d65;
+  color:#575550;
   font-size:13px;
   line-height:1.65;
 }
@@ -133,7 +133,7 @@
   margin-top:auto;
   padding-top:14px;
   border-top:1px solid #eee9ef;
-  color:#604d6b;
+  color:#675742;
   font-size:11px;
   font-weight:700;
   letter-spacing:.02em;
@@ -149,14 +149,14 @@
 }
 .all-city-tours a{
   padding-bottom:4px;
-  border-bottom:1px solid #756080;
-  color:#604d6b;
+  border-bottom:1px solid #8a765c;
+  color:#675742;
   font-size:14px;
   font-weight:600;
 }
 .city-photo-credits{
   margin:26px 0 0;
-  color:#777179;
+  color:#77746f;
   font-size:11px;
 }
 .city-photo-credits summary{cursor:pointer}
