@@ -10,13 +10,15 @@
         background:#435852!important;
         border:1px solid #435852!important;
         color:#fff!important;
+        -webkit-text-fill-color:#fff!important;
         padding:9px 12px!important;
-        box-shadow:0 2px 0 rgba(0,0,0,.08);
+        box-shadow:none!important;
       }
       .navlinks a.nav-cta.is-active,.tv-navlinks a.tv-nav-cta.is-active{
-        background:#8d4f3d!important;
-        border-color:#8d4f3d!important;
+        background:#435852!important;
+        border-color:#435852!important;
         color:#fff!important;
+        -webkit-text-fill-color:#fff!important;
       }
       @media(max-width:980px){
         .navlinks a.is-active,.tv-navlinks a.is-active{width:100%;padding:10px 12px!important}
