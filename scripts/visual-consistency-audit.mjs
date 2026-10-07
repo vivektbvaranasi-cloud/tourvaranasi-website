@@ -84,7 +84,7 @@ for(const required of [
   '--tv-white:#ffffff',
   '--tv-ink:#3e3934',
   '--tv-accent:#9a8265',
-  'background:#5f574f!important',
+  'background:#6b625a!important',
   'background:#25D366!important'
 ]){
   if(!theme.includes(required)) errors.push('white-theme.css missing required token/rule: '+required);
