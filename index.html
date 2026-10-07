@@ -146,16 +146,84 @@ img{max-width:100%;display:block}
  .menu-btn{display:block}.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:var(--white);padding:18px 28px 26px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line);gap:14px}.navlinks.open{display:flex}.navlinks a{font-size:15px}.nav-cta{margin-top:4px}
  .experience-grid{grid-template-columns:repeat(2,1fr)}.journey-grid{grid-template-columns:1fr 1fr}.journey-card:last-child{grid-column:1/-1;min-height:400px}.local-grid{gap:50px}.footer-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:680px){
- body{font-size:15px}.container{padding-left:20px;padding-right:20px}.nav-wrap{height:68px;padding:0 20px}.navlinks{top:68px}.brand strong{font-size:18px}.brand img{width:32px;height:32px}
- .hero{min-height:72vh;background-position:58% center}.hero-video{display:none}.hero-copy{width:calc(100% - 40px);margin-left:20px;padding-bottom:52px}.hero h1{font-size:42px}.hero p{font-size:15px;max-width:460px}.hero-actions{gap:16px}
- .intro{padding:68px 0 72px}.intro-grid{grid-template-columns:1fr;gap:28px}.intro h2,.section-heading h2{font-size:32px}.intro-copy{padding-top:0}
- .experiences{padding:66px 0 72px}.split-heading{align-items:flex-start;flex-direction:column}.experience-grid{grid-template-columns:1fr}.experience-copy h3{font-size:23px}
- .journeys{padding:70px 0 76px}.journey-grid{grid-template-columns:1fr}.journey-card,.journey-card:last-child{grid-column:auto;min-height:420px}.centered-heading{text-align:left;margin-bottom:30px}.centered-heading p{margin-left:0}
- .local{padding:72px 0}.local-grid{grid-template-columns:1fr;gap:34px}.local-image{height:360px}.local h2{font-size:31px}.local-points>div{grid-template-columns:1fr;gap:4px}
- .review{padding:72px 0}.review blockquote{font-size:25px;text-align:left}.review-wrap{text-align:left}.review .text-link{margin:0}
- .final-cta{padding:58px 0}.cta-inner{align-items:flex-start;flex-direction:column;gap:24px}.final-cta h2{font-size:31px}
- .footer{padding-top:50px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{text-align:left;padding-left:20px;padding-right:20px}
+@media(max-width:900px){
+ html,body{width:100%;max-width:100%;overflow-x:hidden}
+ body{font-size:15px}
+ .container{width:100%;max-width:100%;padding-left:20px;padding-right:20px}
+ .nav-wrap{width:100%;max-width:100%;height:68px;padding:0 20px}
+ .navlinks{top:68px}
+ .brand strong{font-size:18px}
+ .brand img{width:auto;height:auto;max-width:155px;max-height:42px}
+ .hero{
+   width:100%;
+   max-width:100%;
+   min-height:520px;
+   height:min(72svh,620px);
+   background-size:cover;
+   background-position:center center;
+   background-repeat:no-repeat;
+   align-items:flex-end;
+ }
+ .hero-video{display:none!important}
+ .hero-shade{
+   background:
+     linear-gradient(180deg,rgba(18,21,19,.08) 0%,rgba(18,21,19,.20) 36%,rgba(18,21,19,.82) 100%)!important
+ }
+ .hero-copy{
+   width:auto;
+   max-width:none;
+   margin:0;
+   padding:0 20px 42px;
+ }
+ .hero h1{
+   max-width:520px;
+   font-size:clamp(36px,10vw,46px);
+   line-height:1.02;
+   margin-bottom:16px;
+ }
+ .hero p{
+   max-width:560px;
+   font-size:15px;
+   line-height:1.55;
+   margin-bottom:22px;
+ }
+ .hero-actions{gap:14px}
+ .button{min-height:44px}
+ .intro{padding:68px 0 72px}
+ .intro-grid{grid-template-columns:1fr;gap:28px}
+ .intro h2,.section-heading h2{font-size:32px}
+ .intro-copy{padding-top:0}
+ .experiences{padding:66px 0 72px}
+ .split-heading{align-items:flex-start;flex-direction:column}
+ .experience-grid{grid-template-columns:1fr}
+ .experience-copy h3{font-size:23px}
+ .journeys{padding:70px 0 76px}
+ .journey-grid{grid-template-columns:1fr}
+ .journey-card,.journey-card:last-child{grid-column:auto;min-height:420px}
+ .centered-heading{text-align:left;margin-bottom:30px}
+ .centered-heading p{margin-left:0}
+ .local{padding:72px 0}
+ .local-grid{grid-template-columns:1fr;gap:34px}
+ .local-image{height:360px}
+ .local h2{font-size:31px}
+ .local-points>div{grid-template-columns:1fr;gap:4px}
+ .review{padding:72px 0}
+ .review blockquote{font-size:25px;text-align:left}
+ .review-wrap{text-align:left}
+ .review .text-link{margin:0}
+ .final-cta{padding:58px 0}
+ .cta-inner{align-items:flex-start;flex-direction:column;gap:24px}
+ .final-cta h2{font-size:31px}
+ .footer{padding-top:50px}
+ .footer-grid{grid-template-columns:1fr;gap:32px}
+ .footer-bottom{text-align:left;padding-left:20px;padding-right:20px}
+}
+@media(max-width:480px){
+ .hero{min-height:500px;height:68svh;background-position:55% center}
+ .hero-copy{padding:0 18px 34px}
+ .hero h1{font-size:38px}
+ .hero-actions{align-items:flex-start;flex-direction:column}
+ .hero-actions .button{width:100%}
 }
 :focus-visible{outline:3px solid #be806a;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
@@ -189,10 +257,14 @@ img{max-width:100%;display:block}
 .footer-contact-links a:hover{color:#fff}
 .ta-logo-link{display:inline-flex!important;margin:0 0 16px!important}
 .ta-logo{width:170px;height:auto}
-@media(max-width:680px){
- .top-contact-inner{min-height:32px;padding:0 20px}.top-contact-note{display:none}.top-contact-links{width:100%;justify-content:flex-end;gap:12px}.top-contact-links a{font-size:9.5px}
- .brand-logo{min-width:145px}.brand-logo img{width:155px;max-height:42px}
- .footer-logo-plate img{width:190px}
+@media(max-width:900px){
+ .top-contact-inner{width:100%;max-width:100%;min-height:32px;padding:0 14px;overflow:hidden}
+ .top-contact-note{display:none}
+ .top-contact-links{width:100%;min-width:0;justify-content:center;gap:10px;white-space:normal;flex-wrap:wrap;padding:5px 0}
+ .top-contact-links a{font-size:9.5px;overflow-wrap:anywhere}
+ .brand-logo{min-width:0;max-width:170px}
+ .brand-logo img{width:155px;max-width:100%;max-height:42px}
+ .footer-logo-plate img{width:190px;max-width:100%}
 }
 
 
@@ -533,7 +605,7 @@ img{max-width:100%;display:block}
   <div class="footer-bottom">© 2026 Tour Varanasi. All rights reserved.</div>
 </footer>
 <script>
-(()=>{const video=document.querySelector('.hero-video');if(!video)return;const desktop=window.matchMedia('(min-width:681px)');const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');const sync=()=>{if(desktop.matches&&!reduced.matches){if(!video.getAttribute('src')){video.src=video.dataset.src;video.load();}const play=video.play();if(play&&typeof play.catch==='function')play.catch(()=>{});}else{video.pause();video.removeAttribute('src');video.load();}};sync();if(desktop.addEventListener)desktop.addEventListener('change',sync);if(reduced.addEventListener)reduced.addEventListener('change',sync);})();
+(()=>{const video=document.querySelector('.hero-video');if(!video)return;const desktop=window.matchMedia('(min-width:901px)');const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');const sync=()=>{if(desktop.matches&&!reduced.matches){if(!video.getAttribute('src')){video.src=video.dataset.src;video.load();}const play=video.play();if(play&&typeof play.catch==='function')play.catch(()=>{});}else{video.pause();video.removeAttribute('src');video.load();}};sync();if(desktop.addEventListener)desktop.addEventListener('change',sync);if(reduced.addEventListener)reduced.addEventListener('change',sync);})();
 </script>
 <script src="/assets/js/main.js" defer></script>
 </body>
