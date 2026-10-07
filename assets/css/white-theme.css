@@ -1,0 +1,227 @@
+/* FINAL WHITE THEME — loaded last on every page.
+   Purpose: remove legacy cream/gold surfaces and keep the site visibly white. */
+:root{
+  --tv-white:#ffffff!important;
+  --tv-paper:#ffffff!important;
+  --tv-ink:#2f2b31!important;
+  --tv-copy:#5b565f!important;
+  --tv-muted:#777179!important;
+  --tv-line:#e8e5e9!important;
+  --tv-purple:#756080!important;
+  --tv-purple-dark:#604d6b!important;
+  --ivory:#ffffff!important;
+  --paper:#ffffff!important;
+  --sand:#ffffff!important;
+  --sage:#ffffff!important;
+  --white:#ffffff!important;
+  --line:#e8e5e9!important;
+}
+
+html,body,main{
+  background:#ffffff!important;
+  color:var(--tv-ink)!important;
+}
+
+/* All primary page surfaces are true white. */
+section,
+.section,
+.section.soft,
+.section-white,
+.section-sand,
+.section-sage,
+.days,
+.varanasi,
+.sacred,
+.buddhist,
+.all-journeys,
+.sightseeing-section,
+.tour-why,
+.tours-intro,
+.tours-section,
+.journeys,
+.intro,
+.local,
+.dayparts,
+.deeper,
+.signature,
+.itinerary-section,
+.one-day-itinerary,
+.itinerary-day,
+.itinerary-copy,
+.editorial,
+.editorial .copy,
+.home-welcome,
+.home-reviews-strip,
+.featured-city-tours,
+.experience-catalogue,
+.tv-planning,
+.tv-planning-shell{
+  background:#ffffff!important;
+}
+
+/* Header and contact strip are also white. */
+.topbar,
+.top-contact-bar,
+.tv-top-contact-bar,
+.header,
+.site-header,
+.tv-site-header,
+.nav,
+.nav-wrap,
+.tv-nav-wrap{
+  background:#ffffff!important;
+}
+
+/* White choice cards with only a fine neutral edge. */
+.city-tour-card,
+.experience-card,
+.destination-card,
+.destination-tour-card,
+.tv-planning-card,
+.blog-hub-card,
+.card,
+.team-card{
+  background:#ffffff!important;
+  box-shadow:none!important;
+}
+.city-tour-card,
+.experience-card,
+.destination-card,
+.destination-tour-card,
+.tv-planning-card,
+.blog-hub-card,
+.card{
+  border-color:#e8e5e9!important;
+}
+
+/* Remove legacy cream/gold utility surfaces. */
+.note,
+.policy-highlight,
+.sacred-circuit-note,
+.comfort-block,
+.tour-practical aside,
+.prose .related-links,
+.prose .quick-answer,
+.pillar-cta{
+  background:#ffffff!important;
+  box-shadow:none!important;
+}
+.note,
+.policy-highlight,
+.sacred-circuit-note,
+.comfort-block,
+.tour-practical aside{
+  border-color:#e8e5e9!important;
+  border-left-color:#756080!important;
+}
+
+/* Facts and itinerary structure stay editorial and white. */
+.glance,
+.trust-grid,
+.destination-practical-strip,
+.tour-facts,
+.comfort-grid,
+.since-strip,
+.route-list,
+.timeline,
+.time-stop{
+  background:#ffffff!important;
+  border-color:#e8e5e9!important;
+}
+.glance>div,
+.trust-grid>div,
+.destination-practical-strip>div,
+.tour-facts>div,
+.comfort-grid>div,
+.route-list a,
+.time-stop{
+  background:#ffffff!important;
+  border-color:#e8e5e9!important;
+}
+.itinerary-day{
+  border-color:#e8e5e9!important;
+}
+
+/* Secondary form / enquiry areas use neutral grey, never cream or gold. */
+.quote-wrap,
+.tour-price-panel,
+.experience-enquiry,
+.mini-enquiry,
+.cta,
+.final-cta,
+.one-day-enquiry{
+  background:#fafafa!important;
+  color:var(--tv-ink)!important;
+  border-color:#e4e0e6!important;
+}
+.quote-form input,
+.quote-form select,
+.quote-form textarea,
+.mini-enquiry-form input,
+.mini-enquiry-form textarea{
+  background:#ffffff!important;
+  border-color:#d9d5db!important;
+}
+
+/* Reviews and information panels remain white. */
+.review,
+.tripadvisor-panel,
+.policy-card,
+.standard-block,
+.service-vehicle-list div{
+  background:#ffffff!important;
+  box-shadow:none!important;
+}
+
+/* Purple is an accent/action only. */
+.btn,
+.button,
+.nav-cta,
+.cta-button,
+.quote-wrap button[type=submit],
+input[type=submit],
+.experience-link{
+  background:#756080!important;
+  border-color:#756080!important;
+  color:#ffffff!important;
+}
+.btn:hover,
+.button:hover,
+.nav-cta:hover,
+.cta-button:hover,
+.experience-link:hover{
+  background:#604d6b!important;
+  border-color:#604d6b!important;
+}
+
+/* Keep photo heroes photographic; never wash them with page background. */
+.hero,
+.page-hero .frame,
+.tours-hero,
+.experiences-hero,
+.destination-index-hero,
+.destination-detail-hero,
+.journey-hero,
+.tour-detail-hero{
+  background-color:#2f2b31!important;
+}
+
+/* Footer is the one intentional dark closing block. */
+.tvf-footer,
+footer.footer,
+.footer{
+  background:#302d33!important;
+  color:#ffffff!important;
+}
+
+/* WhatsApp retains its brand colour. */
+a.tv-whatsapp-float,
+a.whatsapp{
+  background:#25D366!important;
+  border-color:#25D366!important;
+  color:#ffffff!important;
+}
+
+@media(max-width:900px){
+  html,body{background:#ffffff!important}
+}
