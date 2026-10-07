@@ -6,13 +6,13 @@
   --tv-white:#ffffff!important;
   --tv-paper:#ffffff!important;
   --tv-soft:#f7f6f3!important;
-  --tv-ink:#22211f!important;
-  --tv-copy:#575550!important;
-  --tv-muted:#77746f!important;
+  --tv-ink:#3e3934!important;
+  --tv-copy:#5e5954!important;
+  --tv-muted:#7c7771!important;
   --tv-line:#e7e5e0!important;
   --tv-line-strong:#d7d3cc!important;
-  --tv-accent:#8a765c!important;
-  --tv-accent-dark:#675742!important;
+  --tv-accent:#9a8265!important;
+  --tv-accent-dark:#7a654f!important;
 
   --ivory:#ffffff!important;
   --paper:#ffffff!important;
@@ -22,11 +22,11 @@
   --line:#e7e5e0!important;
 
   /* Legacy variables remapped so old templates inherit the new palette. */
-  --tv-purple:#8a765c!important;
-  --tv-purple-dark:#675742!important;
-  --brass:#8a765c!important;
-  --terracotta:#8a765c!important;
-  --terracotta-dark:#675742!important;
+  --tv-purple:#9a8265!important;
+  --tv-purple-dark:#7a654f!important;
+  --brass:#9a8265!important;
+  --terracotta:#9a8265!important;
+  --terracotta-dark:#7a654f!important;
   --river:#5f5d58!important;
 }
 
@@ -35,7 +35,7 @@ html,
 body,
 main{
   background:#ffffff!important;
-  color:#22211f!important;
+  color:#3e3934!important;
 }
 body{
   font-family:Inter,Arial,sans-serif!important;
@@ -90,7 +90,7 @@ body{
 .nav-wrap,
 .tv-nav-wrap{
   background:#ffffff!important;
-  color:#22211f!important;
+  color:#3e3934!important;
 }
 .topbar,
 .top-contact-bar,
@@ -105,27 +105,27 @@ body{
 .top-contact-links a,
 .tv-top-contact-links a,
 .navlinks a{
-  color:#373531!important;
-  -webkit-text-fill-color:#373531!important;
+  color:#4e4842!important;
+  -webkit-text-fill-color:#4e4842!important;
 }
 .topbar a:hover,
 .top-contact-links a:hover,
 .tv-top-contact-links a:hover,
 .navlinks a:hover,
 .navlinks a[aria-current="page"]{
-  color:#675742!important;
-  -webkit-text-fill-color:#675742!important;
+  color:#7a654f!important;
+  -webkit-text-fill-color:#7a654f!important;
 }
 .top-contact-note,
 .tv-top-contact-note{
-  color:#77746f!important;
+  color:#7c7771!important;
 }
 
 /* TYPOGRAPHY */
 body,
 p,
 li{
-  color:#575550!important;
+  color:#5e5954!important;
 }
 h1,h2,h3,h4,h5,h6,
 .section-title,
@@ -133,7 +133,7 @@ h1,h2,h3,h4,h5,h6,
 .card h3,
 .city-tour-copy h3,
 .experience-card h3{
-  color:#22211f!important;
+  color:#3e3934!important;
 }
 .kicker:not(.light),
 .eyebrow:not(.light),
@@ -143,7 +143,7 @@ h1,h2,h3,h4,h5,h6,
 .card .meta,
 .experience-duration,
 .tv-planning-meta{
-  color:#8a765c!important;
+  color:#9a8265!important;
 }
 
 /* HEROES stay photographic and dark enough for white text. */
@@ -155,7 +155,7 @@ h1,h2,h3,h4,h5,h6,
 .destination-detail-hero,
 .journey-hero,
 .tour-detail-hero{
-  background-color:#262521!important;
+  background-color:#514a43!important;
 }
 .hero h1,
 .hero p,
@@ -203,7 +203,7 @@ h1,h2,h3,h4,h5,h6,
 }
 .city-tour-duration{
   background:rgba(255,255,255,.95)!important;
-  color:#675742!important;
+  color:#7a654f!important;
   border-color:rgba(255,255,255,.92)!important;
 }
 .city-tour-link,
@@ -213,7 +213,7 @@ h1,h2,h3,h4,h5,h6,
 .experience-link,
 .tour-card-price,
 .compact-tour-price{
-  color:#675742!important;
+  color:#7a654f!important;
   border-color:#b7aa99!important;
 }
 
@@ -234,7 +234,7 @@ h1,h2,h3,h4,h5,h6,
   border-radius:0!important;
 }
 .daylabel{
-  color:#8a765c!important;
+  color:#9a8265!important;
 }
 
 /* FACTS / PLANNING BANDS */
@@ -276,7 +276,7 @@ h1,h2,h3,h4,h5,h6,
 .sacred-circuit-note,
 .comfort-block,
 .tour-practical aside{
-  border-left:3px solid #8a765c!important;
+  border-left:3px solid #9a8265!important;
 }
 
 /* REVIEWS */
@@ -302,7 +302,7 @@ h1,h2,h3,h4,h5,h6,
 .final-cta,
 .one-day-enquiry{
   background:#f7f6f3!important;
-  color:#22211f!important;
+  color:#3e3934!important;
   border-color:#e1ded8!important;
   box-shadow:none!important;
 }
@@ -316,7 +316,7 @@ h1,h2,h3,h4,h5,h6,
 .cta p,
 .final-cta h2,
 .final-cta p{
-  color:#22211f!important;
+  color:#3e3934!important;
 }
 .quote-form input,
 .quote-form select,
@@ -324,7 +324,7 @@ h1,h2,h3,h4,h5,h6,
 .mini-enquiry-form input,
 .mini-enquiry-form textarea{
   background:#ffffff!important;
-  color:#22211f!important;
+  color:#3e3934!important;
   border:1px solid #d9d5ce!important;
   border-radius:0!important;
 }
@@ -333,7 +333,7 @@ h1,h2,h3,h4,h5,h6,
 .quote-form textarea:focus,
 .mini-enquiry-form input:focus,
 .mini-enquiry-form textarea:focus{
-  border-color:#8a765c!important;
+  border-color:#9a8265!important;
   box-shadow:0 0 0 2px rgba(138,118,92,.10)!important;
 }
 
@@ -346,8 +346,8 @@ h1,h2,h3,h4,h5,h6,
 .quote-wrap button[type=submit],
 input[type=submit],
 .experience-link{
-  background:#22211f!important;
-  border-color:#22211f!important;
+  background:#3e3934!important;
+  border-color:#3e3934!important;
   color:#ffffff!important;
   -webkit-text-fill-color:#ffffff!important;
   border-radius:0!important;
@@ -360,8 +360,8 @@ input[type=submit],
 .quote-wrap button[type=submit]:hover,
 input[type=submit]:hover,
 .experience-link:hover{
-  background:#000000!important;
-  border-color:#000000!important;
+  background:#6f5c49!important;
+  border-color:#6f5c49!important;
 }
 
 /* SECONDARY LINKS: warm taupe only. */
@@ -373,7 +373,7 @@ a:not(.btn):not(.button):not(.nav-cta):not(.tv-whatsapp-float):not(.whatsapp){
 .tvf-footer,
 footer.footer,
 .footer{
-  background:#22211f!important;
+  background:#3e3934!important;
   color:#ffffff!important;
 }
 .tvf-footer p,
@@ -418,7 +418,7 @@ a.whatsapp:hover{
 .journey-hero,
 .tour-detail-hero,
 .page-hero .frame{
-  background-color:#262521!important;
+  background-color:#514a43!important;
 }
 
 /* Explicitly preserve the intended desktop catalogue grids. */
@@ -470,4 +470,56 @@ a.whatsapp:hover{
   .page-hero .copy{
     max-width:760px!important;
   }
+}
+
+
+/* WARM STONE ACTIONS + FOOTER */
+.btn,
+.button,
+.nav-cta,
+.cta-button,
+.one-day-enquiry button,
+.quote-wrap button[type=submit],
+.page-enquiry-form button[type=submit],
+input[type=submit],
+.experience-link,
+.lang-btn{
+  background:#9a8265!important;
+  border-color:#9a8265!important;
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+}
+.btn:hover,
+.button:hover,
+.nav-cta:hover,
+.cta-button:hover,
+.one-day-enquiry button:hover,
+.quote-wrap button[type=submit]:hover,
+.page-enquiry-form button[type=submit]:hover,
+input[type=submit]:hover,
+.experience-link:hover,
+.lang-btn:hover{
+  background:#7a654f!important;
+  border-color:#7a654f!important;
+}
+.tvf-footer,
+footer.footer,
+.footer,
+.tv-footer{
+  background:#5f574f!important;
+  color:#ffffff!important;
+}
+.tvf-footer p,
+.tvf-footer a,
+.tvf-footer h4,
+.tvf-footer span,
+.tvf-footer small,
+footer.footer p,
+footer.footer a,
+.footer-bottom,
+.tv-footer p,
+.tv-footer a,
+.tv-footer h4{
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
 }
