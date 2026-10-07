@@ -443,6 +443,10 @@ function renderNewArticle(article, header, footer) {
     body = body.slice(0, start) + `<section class="section narrow prose"><p class="article-date">Published <time datetime="${article.published}">${publicationLabel(article.published)}</time> · Tour Varanasi Operations Team</p>${article.content}<div class="pillar-cta"><h2>${esc(article.ctaTitle || 'Plan your private Varanasi visit')}</h2><p>Share your dates, interests and preferred pace for a personalised programme and itemised quotation.</p><p><a class="btn primary" href="/plan-my-journey/">Plan My Journey</a></p></div></section>`;
     body = body.replace(`aria-label="${esc(article.title)}"`, `aria-label="${esc(article.heroAlt)}"`);
   }
+  if (article.editorial) {
+    body = body.replace(/<div class="page-hero">[\s\S]*?<section class="section narrow prose">/, `<div class="editorial-heading"><img src="${article.hero}" alt="${esc(article.heroAlt || article.title)}" fetchpriority="high" decoding="async"><h1>${esc(article.title)}</h1><p>${esc(article.description)}</p></div><section class="section narrow prose">`);
+    body = body.replace(/<div class="pillar-cta">[\s\S]*?<\/div><\/section>$/, '</section>');
+  }
   const schema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -467,7 +471,8 @@ function renderNewArticle(article, header, footer) {
 
   const head = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>${esc(article.seoTitle || article.title + " | Tour Varanasi Travel Guide")}</title><meta content="${esc(article.description)}" name="description"/><meta content="index,follow" name="robots"/><link href="${canonical}" rel="canonical"/><meta content="article" property="og:type"/><meta content="${esc(article.title)}" property="og:title"/><meta content="${esc(article.description)}" property="og:description"/><meta content="${canonical}" property="og:url"/><meta content="${absoluteImage(article.hero)}" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="${esc(article.title)}" name="twitter:title"/><meta content="${esc(article.description)}" name="twitter:description"/><meta content="${absoluteImage(article.hero)}" name="twitter:image"/><link as="image" href="${article.hero}" rel="preload"/><link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/assets/css/style.css" rel="stylesheet"/><link href="${BLOG_CSS}" rel="stylesheet"/><script type="application/ld+json">${schema}</script><script type="application/ld+json">${breadcrumbs}</script></head>`;
 
-  return `${head}<body>${header}${body}${footer}`;
+  const finalHead = article.editorial ? head.replace('</head>', '<link rel="stylesheet" href="/assets/css/editorial-articles.css"></head>') : head;
+  return `${finalHead}<body>${header}${body}${footer}`;
 }
 
 function publicationLabel(date) {

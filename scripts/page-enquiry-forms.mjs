@@ -27,6 +27,7 @@ for(const file of walk()) {
  const duration=experience?.duration||title.match(/\b\d+\s+Days?\b/i)?.[0]||(/\bone day\b|same.day/i.test(title)?'1 day':'');
  html=html.replace(/<form\b([^>]*)>[\s\S]*?<\/form>/gi,(whole,attrs)=>{
   if(!/\b(?:data-)?netlify(?:=|\s)/i.test(attrs))return whole;
+  if(/data-compact-enquiry="true"/.test(attrs))return whole;
   const name=attrs.match(/\bname=["']([^"']+)["']/i)?.[1];if(!name||name==='plan-my-journey')return whole;
   const id=`page-enquiry-${++index}`;total++;
   return `<form class="quote-form page-enquiry-form" name="${esc(name)}" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="company-website" data-page-enquiry="true">
