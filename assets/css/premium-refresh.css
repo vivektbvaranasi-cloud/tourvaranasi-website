@@ -45,9 +45,9 @@ h1 em,h2 em,h3 em{font-style:normal!important}
 .review-brand-caption{font-size:11px;line-height:1.4;color:#625b67}
 .home-review-brands a:hover{background:#f7f5f8}.home-review-brands a:hover .review-brand-name{color:var(--tv-purple-dark)}
 @media(max-width:680px){.home-welcome{padding:42px 20px 32px}.home-welcome h2{font-size:27px!important;text-align:left;margin-bottom:22px}.home-welcome p{font-size:15px;line-height:1.8}.home-reviews-strip{padding:24px 20px}.home-review-brands{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 8px}.review-brand-name{font-size:22px}}
-/* Keep WhatsApp consistent with the site buttons, including on mobile. */
-a.tv-whatsapp-float,a.whatsapp{background:var(--tv-purple)!important;border-color:var(--tv-purple)!important;color:#fff!important}
-a.tv-whatsapp-float:hover,a.whatsapp:hover{background:var(--tv-purple-dark)!important}
+/* WhatsApp keeps its recognizable brand treatment on desktop and mobile. */
+a.tv-whatsapp-float,a.whatsapp{background:#25D366!important;border-color:#25D366!important;color:#fff!important}
+a.tv-whatsapp-float:hover,a.whatsapp:hover{background:#1faa52!important;border-color:#1faa52!important}
 /* Fine purple rules separate the light content sections on tour pages. */
 body[data-tour-page="true"] .section:not(.tour-price-panel),body[data-tour-page="true"] main>section:not([class*="hero"]):not(.cta){background:var(--tv-white)!important;border-top:1px solid #d9cfdf}
 body[data-tour-page="true"] .section.itinerary-section{background:#fff!important}
