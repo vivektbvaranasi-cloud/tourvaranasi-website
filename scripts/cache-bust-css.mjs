@@ -29,6 +29,13 @@ function walk(dir) {
     let html = fs.readFileSync(p, "utf8");
     const before = html;
 
+    // The final white theme must be the last stylesheet on every page so
+    // legacy cream/beige template rules cannot override the current design.
+    html = html.replace(/<link\b[^>]*href=["']\/assets\/css\/white-theme\.css(?:\?v=[^"']*)?["'][^>]*>\s*/gi, "");
+    const whiteVersion = versions.get("/assets/css/white-theme.css");
+    const whiteHref = "/assets/css/white-theme.css" + (whiteVersion ? "?v=" + whiteVersion : "");
+    html = html.replace(/<\/head>/i, '<link rel="stylesheet" href="' + whiteHref + '">\n</head>');
+
     html = html.replace(/\/assets\/(?:css|js)\/[^"'?]+\.(?:css|js)(?:\?v=[^"']*)?/g, (full) => {
       const clean = full.replace(/\?v=.*/, "");
       const v = versions.get(clean);
