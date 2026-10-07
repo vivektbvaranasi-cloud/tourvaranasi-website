@@ -1,0 +1,71 @@
+name: One-time Netlify production deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/deploy-once-netlify.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NETLIFY_SITE_ID: 99115e31-f902-424f-843b-f6f40e453143
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN || secrets.NETLIFY_TOKEN || secrets.NETLIFY_ACCESS_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify Netlify token
+        shell: bash
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "No Netlify auth token is configured in GitHub Actions secrets."
+            exit 2
+          fi
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build production files
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/fetch-pmj-images.mjs
+          node scripts/fetch-destination-images.mjs
+          node scripts/build-destinations.mjs
+          node scripts/build-new-sacred-tours.mjs
+          node scripts/prepare-blog-data.mjs
+          node scripts/build-blogs.mjs
+          node scripts/refine-varanasi-content.mjs
+          node scripts/technical-hardening.mjs
+          node scripts/cwv-hardening.mjs
+          node scripts/contextual-linking.mjs
+          node scripts/internal-linking.mjs
+          node scripts/seo-intent-hardening.mjs
+          node scripts/homepage-related-links.mjs
+          node scripts/unified-footer.mjs
+          node scripts/hero-tripadvisor.mjs
+          node scripts/inject-nav-state.mjs
+          node scripts/inject-readability-css.mjs
+          node scripts/eeat-search-2026.mjs
+          node scripts/schema-trust-2026.mjs
+          node scripts/premium-refresh.mjs
+          node scripts/page-enquiry-forms.mjs
+          node scripts/enquiry-tracking.mjs
+          node scripts/cache-bust-css.mjs
+          node scripts/audit-blog-routes.mjs
+          node scripts/audit-site.mjs
+          node scripts/crawl-index-audit.mjs
+          test -s assets/videos/tour-varanasi-hero.mp4
+          grep -q 'class="hero-video"' index.html
+
+      - name: Deploy production
+        shell: bash
+        run: npx --yes netlify-cli@latest deploy --prod --dir=. --site="$NETLIFY_SITE_ID" --message="Approved Tour Varanasi homepage hero video"
