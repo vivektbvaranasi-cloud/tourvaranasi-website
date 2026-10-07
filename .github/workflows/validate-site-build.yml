@@ -41,8 +41,12 @@ jobs:
           test -f blogs/post/bodh-gaya-travel-guide/index.html
           test -f blogs/post/rajgir-nalanda-guide/index.html
           test -f blogs/post/kushinagar-lumbini-guide/index.html
+          test -f blogs/post/varanasi-tour-cost-2026/index.html
+          test -f blogs/post/luxury-varanasi-tour/index.html
           grep -q "first-time-in-ayodhya" sitemap.xml
           grep -q "kushinagar-lumbini-guide" sitemap.xml
+          grep -q "varanasi-tour-cost-2026" sitemap.xml
+          grep -q "luxury-varanasi-tour" sitemap.xml
           test -f editorial-policy/index.html
           grep -q "From our Varanasi operations team" blogs/post/kashi-vishwanath-temple-darshan-guide/index.html
           grep -q "From our Ayodhya operations team" tours/ayodhya-tour-in-one-day/index.html
