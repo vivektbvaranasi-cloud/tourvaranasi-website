@@ -1,5 +1,6 @@
 import { ayodhyaWheelchairArticle } from './ayodhya-wheelchair-article.mjs';
 import { commercialArticles } from './varanasi-commercial-articles.mjs';
+import { seasonalArticles } from './seasonal-varanasi-articles.mjs';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
 import { coreDestinations } from './destination-data-core.mjs';
@@ -126,16 +127,6 @@ const existingArticles = [
     group: 'Varanasi experiences',
     hero: '/assets/images/guest_market_blessing.webp',
     photos: [['/assets/images/user/banarasi-silk.jpg', 'Banarasi silk weaving and craft tradition', 'Leaving room for one craft, food or music experience often adds more than another rushed monument.']]
-  },
-  {
-    n: 11,
-    path: 'blogs/post/dev-diwali-in-varanasi-in-2025/index.html',
-    url: '/blogs/post/dev-diwali-in-varanasi-in-2025/',
-    title: 'Dev Deepawali in Varanasi: Practical Travel Guide',
-    description: 'How to plan Dev Deepawali in Varanasi when crowd controls, road closures, river rules and viewing arrangements operate differently from a normal day.',
-    group: 'Varanasi experiences',
-    hero: '/assets/images/user/aarti-1.JPG',
-    photos: [['/assets/images/user/aarti-3.jpg', 'Aarti lamps and festival atmosphere on the Varanasi ghats', 'Festival evenings need earlier starts, lighter daytime sightseeing and a clear return plan.']]
   },
   {
     n: 12,
@@ -316,7 +307,7 @@ const additionalGuides = [
   {n: 27, url:'/blogs/post/kashi-vishwanath-temple-darshan-guide/', title:'Kashi Vishwanath Temple Guide', description:'Practical advice on darshan, lockers, the final approach and temple planning.', hero:'/assets/images/user/kashi-vishwanath-corridor-aerial.webp', group:'Varanasi essentials'},
   {n: 28, url:'/blogs/post/varanasi-airport-to-ghats-hotels-guide/', title:'Varanasi Airport to Ghats & Hotels', description:'Plan your airport transfer with realistic hotel access, porterage and riverfront arrangements.', hero:'/assets/images/user/varanasi-airport-terminal.webp', group:'Varanasi essentials'}
 ];
-const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ayodhyaWheelchairArticle, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
+const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...seasonalArticles, ayodhyaWheelchairArticle, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
 
 function esc(value = '') {
   return String(value)
@@ -519,7 +510,12 @@ async function updateSitemap() {
   let xml = await readFile('sitemap.xml', 'utf8');
   for (const article of allArticles) {
     const loc = `${SITE}${article.url}`;
-    if (xml.includes(`<loc>${loc}</loc>`)) continue;
+    if (xml.includes(`<loc>${loc}</loc>`)) {
+      if (seasonalArticles.includes(article)) {
+        xml = xml.replace(/<url>[\s\S]*?<\/url>/g, entry => entry.includes(`<loc>${loc}</loc>`) ? `<url><loc>${loc}</loc><lastmod>${article.published}</lastmod></url>` : entry);
+      }
+      continue;
+    }
     const entry = `  <url><loc>${loc}</loc><lastmod>${article.published || TODAY}</lastmod></url>\n`;
     xml = xml.replace('</urlset>', `${entry}</urlset>`);
   }
@@ -540,7 +536,7 @@ for (const article of existingArticles) {
   results.push([article.n, words, 'enhanced']);
 }
 
-for (const article of [...newArticles, ...commercialArticles, ayodhyaWheelchairArticle]) {
+for (const article of [...newArticles, ...commercialArticles, ...seasonalArticles, ayodhyaWheelchairArticle]) {
   const html = renderNewArticle(article, sharedHeader, sharedFooter);
   const words = proseWordCount(html);
   if (words < 500) throw new Error(`${article.path} generated only ${words} prose words`);
