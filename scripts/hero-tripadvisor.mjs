@@ -39,7 +39,7 @@ function addHome(html){
   return html.replace(re,`$1\n    ${badge}`);
 }
 function addPageHero(html){
-  const re=/(<div class="page-hero">[\s\S]*?<div class="copy">[\s\S]*?<p>[\s\S]*?<\/p>)(<\/div><\/div><\/div>)/i;
+  const re=/(<div class="page-hero">[\s\S]*?<div class="copy">[\s\S]*?<p>[\s\S]*?<\/p>)(\s*<\/div>\s*<\/div>\s*<\/div>)/i;
   if(!re.test(html)) throw new Error('page-hero copy not found');
   return html.replace(re,`$1\n${badge}$2`);
 }

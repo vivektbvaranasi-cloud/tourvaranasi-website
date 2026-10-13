@@ -5,7 +5,7 @@ const hrefs=[...hub.matchAll(/href=["']((?:\/blogs\/post\/|\/travel-guide\/)[^"'
 const urls=[...new Set(hrefs.map(u=>u.endsWith('/')?u:u+'/'))].sort();
 
 const errors=[];
-if(urls.length!==32) errors.push(`Blog hub exposes ${urls.length} unique article routes; expected 32.`);
+if(urls.length!==34) errors.push(`Blog hub exposes ${urls.length} unique article routes; expected 34.`);
 
 async function exists(file){
   try{ const s=await stat(file); return s.isFile(); }catch{return false;}
