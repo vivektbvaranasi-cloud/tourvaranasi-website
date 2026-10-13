@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { applyLuxuryGuideLinks } from './luxury-guide-links.mjs';
 
 const root = process.cwd();
 
@@ -192,3 +193,4 @@ for (const [rel, pageRules] of Object.entries(rules)) {
 }
 
 console.log(`Contextual linking: added ${linksAdded} inline links across ${changedFiles} priority pages.`);
+applyLuxuryGuideLinks();

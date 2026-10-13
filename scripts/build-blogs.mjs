@@ -432,7 +432,7 @@ function renderNewArticle(article, header, footer) {
 
   if (article.kind === 'custom') {
     const start = body.indexOf('<section class="section narrow prose">');
-    body = body.slice(0, start) + `<section class="section narrow prose"><p class="article-date">Published <time datetime="${article.published}">${publicationLabel(article.published)}</time> · Tour Varanasi Operations Team</p>${article.content}<div class="pillar-cta"><h2>${esc(article.ctaTitle || 'Plan your private Varanasi visit')}</h2><p>Share your dates, interests and preferred pace for a personalised programme and itemised quotation.</p><p><a class="btn primary" href="/plan-my-journey/">Plan My Journey</a></p></div></section>`;
+    body = body.slice(0, start) + `<section class="section narrow prose"><p class="article-date">Published <time datetime="${article.published}">${publicationLabel(article.published)}</time>${article.modified ? ` · Updated <time datetime="${article.modified}">${publicationLabel(article.modified)}</time>` : ''} · Tour Varanasi Operations Team</p>${article.content}${article.ctaHtml || `<div class="pillar-cta"><h2>${esc(article.ctaTitle || 'Plan your private Varanasi visit')}</h2><p>Share your dates, interests and preferred pace for a personalised programme and itemised quotation.</p><p><a class="btn primary" href="/plan-my-journey/">Plan My Journey</a></p></div>`}</section>`;
     body = body.replace(`aria-label="${esc(article.title)}"`, `aria-label="${esc(article.heroAlt)}"`);
   }
   if (article.editorial) {
@@ -444,7 +444,7 @@ function renderNewArticle(article, header, footer) {
     '@type': 'BlogPosting',
     headline: article.title,
     description: article.description,
-    dateModified: article.published || TODAY,
+    dateModified: article.modified || article.published || TODAY,
     ...(article.published ? {datePublished: article.published} : {}),
     author: { '@type': 'Organization', name: 'Tour Varanasi' },
     publisher: { '@type': 'Organization', name: 'Tour Varanasi', url: SITE },
@@ -512,8 +512,8 @@ async function updateSitemap() {
   for (const article of allArticles) {
     const loc = `${SITE}${article.url}`;
     if (xml.includes(`<loc>${loc}</loc>`)) {
-      if (seasonalArticles.includes(article)) {
-        xml = xml.replace(/<url>[\s\S]*?<\/url>/g, entry => entry.includes(`<loc>${loc}</loc>`) ? `<url><loc>${loc}</loc><lastmod>${article.published}</lastmod></url>` : entry);
+      if (article.modified || seasonalArticles.includes(article)) {
+        xml = xml.replace(/<url>[\s\S]*?<\/url>/g, entry => entry.includes(`<loc>${loc}</loc>`) ? `<url><loc>${loc}</loc><lastmod>${article.modified || article.published}</lastmod></url>` : entry);
       }
       continue;
     }

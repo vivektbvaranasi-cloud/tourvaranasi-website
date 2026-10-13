@@ -86,12 +86,13 @@ function ensureStylesheet(html) {
 
 function ensureAuthorMeta(html, isArticle) {
   if (!isArticle) return html;
+  const modified = (html.match(/"dateModified"\s*:\s*"([^"]+)"/i)||[])[1] || UPDATED;
   const existingPublished=(html.match(/<meta\b[^>]*property=["']article:published_time["'][^>]*content=["']([^"']+)["']/i)||[])[1] || (html.match(/"datePublished"\s*:\s*"([^"]+)"/i)||[])[1] || '';
   html=html.replace(/\s*<meta\b[^>]*name=["']author["'][^>]*>\s*/gi,'');
   html=html.replace(/\s*<meta\b[^>]*property=["']article:modified_time["'][^>]*>\s*/gi,'');
   html=html.replace(/\s*<meta\b[^>]*property=["']article:published_time["'][^>]*>\s*/gi,'');
   const published=existingPublished ? `<meta property="article:published_time" content="${existingPublished}"/>` : '';
-  const tags=`<meta name="author" content="Tour Varanasi Operations Team"/>${published}<meta property="article:modified_time" content="${UPDATED}"/>`;
+  const tags=`<meta name="author" content="Tour Varanasi Operations Team"/>${published}<meta property="article:modified_time" content="${modified}"/>`;
   return html.replace(/<\/head>/i,tags+'\n</head>');
 }
 
