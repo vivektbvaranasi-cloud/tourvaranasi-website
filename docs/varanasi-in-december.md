@@ -88,7 +88,7 @@ A weaving visit is another useful addition when you have a free afternoon or an 
 
 If you are travelling around Christmas or New Year, confirm your preferred room category and key services early. Ask whether the hotel has a minimum stay, compulsory dinner, special cancellation terms or an event that affects noise and access. These conditions vary by property and date; a quotation for another week should not be treated as valid for your holiday stay.
 
-Do not assume that New Year brings a particular public fireworks display, boat party or riverside celebration. Book a named, confirmed programme if that is important to you. A normal December visit also does not include Dev Diwali’s mass illumination of the ghats. That festival follows the Hindu calendar and requires its own date-specific arrangements; see our [evergreen Dev Diwali guide](/blogs/post/dev-diwali-in-varanasi-in-2025/).
+Do not assume that New Year brings a particular public fireworks display, boat party or riverside celebration. Book a named, confirmed programme if that is important to you. A normal December visit also does not include Dev Diwali’s mass illumination of the ghats. That festival follows the Hindu calendar and requires its own date-specific arrangements; see our [evergreen Dev Diwali guide](/blogs/post/dev-diwali-in-varanasi/).
 
 ## Costs and what to confirm in your quotation
 

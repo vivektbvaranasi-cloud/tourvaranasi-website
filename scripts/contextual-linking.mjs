@@ -44,7 +44,7 @@ const rules = {
   'blogs/post/best-time-to-visit-varanasi/index.html': [
     ['Ganga Aarti', '/tours/evening-prayer-ceremony/'],
     ['boat ride', '/tours/varanasi-boat-ride/'],
-    ['Dev Diwali', '/blogs/post/dev-diwali-in-varanasi-in-2025/'],
+    ['Dev Diwali', '/blogs/post/dev-diwali-in-varanasi/'],
   ],
   'blogs/post/where-to-stay-in-varanasi/index.html': [
     ['BrijRama Palace', '/blogs/post/brijrama-palace-varanasi/'],

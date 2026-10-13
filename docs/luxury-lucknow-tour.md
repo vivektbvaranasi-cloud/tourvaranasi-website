@@ -28,13 +28,15 @@ Move between the agreed stops at a comfortable pace, allowing time to taste, ask
 
 The tasting selection is agreed around your preferences. Tell us in advance whether you would like vegetarian or non-vegetarian options, along with any allergies or dietary restrictions. We confirm the route and included tastings before the visit, with pauses and shorter walking sections where needed.
 
-![A selection of dishes in Lucknow](/assets/images/regional-luxury/lucknow-food.webp)
-
 This evening is part of the main itinerary. Tea or a meal with Nawab Saheb is available as an additional experience, described below.
 
 Return to your hotel after the walk. An arrival early enough to settle in and rest is recommended so you can enjoy the evening comfortably.
 
 Overnight in Lucknow.
+
+![A selection of dishes in Lucknow](/assets/images/regional-luxury/lucknow-food.webp)
+
+![Lucknow heritage illuminated in the evening](/assets/images/regional-luxury/lucknow-evening-heritage.webp)
 
 ## Day 2 — Imambaras Rumi Darwaza art gallery and historic Lucknow
 
@@ -54,8 +56,6 @@ Continue to [Chhota Imambara](https://lucknow.nic.in/tourist-place/chhota-imam-b
 
 Next, visit **Rumi Darwaza**, one of the city’s most recognisable gateways. Take time to appreciate the proportions and decoration, with a stop for photographs where it is safe and permitted.
 
-![Visitors at Rumi Darwaza in Lucknow](/assets/images/regional-luxury/lucknow-rumi-darwaza.webp)
-
 ### Hussainabad Picture Gallery
 
 Continue with an **art gallery visit at Hussainabad Picture Gallery**. Your guide introduces the works on display and relates them to the city’s Nawabi past, adding a visual perspective to the architecture you have explored during the morning.
@@ -74,8 +74,6 @@ In the afternoon, explore the [British Residency](https://lucknow.nic.in/tourist
 
 Walk through selected parts of the complex while your guide explains how the site developed and why it became central to the conflict. The visit allows time to look closely at the remaining structures and understand their relationship to the wider city. The museum may be included when open and time permits.
 
-![Historic ruins and grounds at the Lucknow Residency](/assets/images/regional-luxury/lucknow-residency.webp)
-
 ### Photo stop at Dilkusha Kothi
 
 Continue to [Dilkusha Kothi](https://lucknow.nic.in/tourist-place/dilkusha-palace/) for a **photo stop**. The remains of this former royal retreat and the surrounding greenery provide a different architectural setting from the Imambaras visited earlier.
@@ -86,11 +84,19 @@ The evening is free to relax. If you have chosen an optional dinner with Nawab S
 
 Return to the hotel for your second overnight stay.
 
+![Visitors at Rumi Darwaza in Lucknow](/assets/images/regional-luxury/lucknow-rumi-darwaza.webp)
+
+![Historic ruins and grounds at the Lucknow Residency](/assets/images/regional-luxury/lucknow-residency.webp)
+
 ## Day 3 — Breakfast and private departure transfer
 
 Enjoy breakfast, check out and meet your driver for the transfer to the airport, railway station or your next confirmed destination.
 
 No sightseeing is planned on departure day. This provides time to pack, leave comfortably and allow for city traffic. If you would like to explore more of Lucknow, an additional night gives those visits their own space.
+
+![Memories of a visit to Lucknow’s heritage sites](/assets/images/regional-luxury/lucknow-residency-guest.webp)
+
+![An illuminated gateway in Lucknow](/assets/images/regional-luxury/lucknow-illuminated-gateway.webp)
 
 ## Luxury hotels and our special contracted rates
 
@@ -110,9 +116,11 @@ The occasion gives you time for conversation as well as food. Ask about the prep
 
 We confirm the appointment, venue, menu, dietary requirements and duration in advance. **This experience is optional and quoted separately**, subject to Nawab Saheb’s availability. It can be arranged during a suitable free period, with an additional night if you would prefer a more relaxed programme.
 
+For guests with additional time, a chikankari visit or a longer heritage walk can also be discussed and quoted separately. Departure day remains free of sightseeing commitments.
+
 ![Guests sharing a hosted meal in Lucknow](/assets/images/regional-luxury/lucknow-hosted-meal.webp)
 
-For guests with additional time, a chikankari visit or a longer heritage walk can also be discussed and quoted separately. Departure day remains free of sightseeing commitments.
+![Dishes served during a Lucknow meal](/assets/images/regional-luxury/lucknow-awadhi-meal.webp)
 
 ## Inclusions in the proposed ground arrangement
 

@@ -18,8 +18,6 @@ On arrival at Ayodhya airport or your confirmed railway station, meet your drive
 
 If you are travelling from Lucknow, Varanasi or another city, the road transfer can form part of a customised itinerary. We will allow for that journey when planning the first evening.
 
-![Hotel hospitality during an Ayodhya stay](/assets/images/regional-luxury/ayodhya-hotel-hospitality.webp)
-
 ### Ram Ki Paidi walk via Kaleram and Nageshwar Nath temples
 
 Later, meet your local guide for a walk around Ram Ki Paidi, visiting **Kaleram Temple and Nageshwar Nath Temple en route**. These stops introduce the devotional life of Ayodhya before the evening ceremony beside the Saryu.
@@ -38,6 +36,10 @@ As the lamps are raised and prayers fill the riverfront, settle into the experie
 
 The departure time from your hotel is planned around the evening ceremony. An arrival with sufficient time to check in and rest is recommended, so you can enjoy the complete programme comfortably. Afterwards, return to your hotel. **Overnight in Ayodhya.**
 
+![Hotel hospitality during an Ayodhya stay](/assets/images/regional-luxury/ayodhya-hotel-hospitality.webp)
+
+![Travellers beside the Saryu in Ayodhya](/assets/images/regional-luxury/ayodhya-saryu-river.webp)
+
 ## Day 2 — Ram Mandir at 08 AM followed by Hanuman Garhi and Kanak Bhawan
 
 ### 08 AM Ram Mandir with skip-the-line darshan
@@ -54,11 +56,7 @@ After Ram Mandir, continue to **Hanuman Garhi**, followed by **Kanak Bhawan**. T
 
 Hanuman Garhi involves a substantial flight of steps. Let us know beforehand if anyone in your party needs a gentler approach or wishes to avoid the climb, so the local team can plan their visit appropriately.
 
-![Guests on a temple visit in Ayodhya](/assets/images/regional-luxury/ayodhya-temple-visit.webp)
-
 At [Kanak Bhawan](https://ayodhya.nic.in/tourist-place/kanak-bhawan/), dedicated to Lord Rama and Sita, take time to appreciate the temple setting and its devotional atmosphere. Your guide introduces the traditions associated with the temple, with room for questions and a comfortable pause before returning.
-
-![Guests in a temple courtyard in Ayodhya](/assets/images/regional-luxury/ayodhya-temple-courtyard.webp)
 
 ### Lunch and time to rest
 
@@ -78,17 +76,23 @@ Alternatively, travel to **Guptar Ghat for a boat ride on the Saryu**. Time on t
 
 The local team coordinates the boarding arrangements and checks that the boat and access suit your party. The ride remains subject to river conditions and local boating permissions. If boating is restricted, we discuss the Nandigram visit or another suitable adjustment with you.
 
-![Travellers beside the river in Ayodhya](/assets/images/regional-luxury/ayodhya-saryu-river.webp)
-
 **Choose either Nandigram or the Guptar Ghat boat ride for this afternoon.** We confirm your preference when preparing the itinerary, so the day remains comfortable rather than trying to fit both experiences into the same period.
 
 Return to your hotel. **Overnight in Ayodhya.**
+
+![Guests on a temple visit in Ayodhya](/assets/images/regional-luxury/ayodhya-temple-visit.webp)
+
+![Guests in an Ayodhya temple courtyard](/assets/images/regional-luxury/ayodhya-temple-courtyard.webp)
 
 ## Day 3 — Departure from Ayodhya Airport or Lucknow Airport
 
 Enjoy breakfast and check out according to your flight schedule. Your chauffeur will transfer you privately to **Ayodhya Airport or Lucknow Airport**, whichever you have chosen for your onward journey. For a Lucknow departure, the hotel pickup time allows for the longer road transfer and airport check-in.
 
 No sightseeing is scheduled on the departure day. This leaves time for packing and a comfortable departure. Your quotation specifies the selected airport transfer, so the travel arrangements and cost are clear before you book.
+
+![A detail from an Ayodhya hotel stay](/assets/images/regional-luxury/ayodhya-hotel-detail.webp)
+
+![Guests during their Ayodhya journey](/assets/images/regional-luxury/ayodhya-guests.webp)
 
 ## Luxury hotels and our special contracted rates
 
