@@ -1,3 +1,4 @@
+import { deogharArticles } from './deoghar-articles.mjs';
 import { ayodhyaWheelchairArticle } from './ayodhya-wheelchair-article.mjs';
 import { commercialArticles } from './varanasi-commercial-articles.mjs';
 import { seasonalArticles } from './seasonal-varanasi-articles.mjs';
@@ -310,7 +311,7 @@ const additionalGuides = [
   {n: 27, url:'/blogs/post/kashi-vishwanath-temple-darshan-guide/', title:'Kashi Vishwanath Temple Guide', description:'Practical advice on darshan, lockers, the final approach and temple planning.', hero:'/assets/images/user/kashi-vishwanath-corridor-aerial.webp', group:'Varanasi essentials'},
   {n: 28, url:'/blogs/post/varanasi-airport-to-ghats-hotels-guide/', title:'Varanasi Airport to Ghats & Hotels', description:'Plan your airport transfer with realistic hotel access, porterage and riverfront arrangements.', hero:'/assets/images/user/varanasi-airport-terminal.webp', group:'Varanasi essentials'}
 ];
-const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ayodhyaWheelchairArticle, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
+const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
 
 function esc(value = '') {
   return String(value)
@@ -539,7 +540,7 @@ for (const article of existingArticles) {
   results.push([article.n, words, 'enhanced']);
 }
 
-for (const article of [...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ayodhyaWheelchairArticle]) {
+for (const article of [...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...deogharArticles, ayodhyaWheelchairArticle]) {
   const html = renderNewArticle(article, sharedHeader, sharedFooter);
   const words = proseWordCount(html);
   if (words < 500) throw new Error(`${article.path} generated only ${words} prose words`);

@@ -16,6 +16,7 @@ sights:[
 ['Banarasi Silk, Food & Neighbourhood Life',`Varanasi’s identity is not limited to temples, and a private journey becomes richer when one local craft or neighbourhood experience is included. Banarasi silk weaving can be explored through a carefully chosen workshop where the emphasis is on technique and artisan knowledge rather than a compulsory shopping stop. A food walk can introduce kachori, chaat, sweets, lassi and seasonal specialities while avoiding the pressure to taste everything at once. Bazaar walks show how religious tourism and everyday commerce coexist in the same lanes. These experiences are arranged according to guest interest and comfort, and they are most rewarding when given proper time rather than inserted as ten-minute photo opportunities.`]
 ],
 tours:[
+["Deoghar & Varanasi by Vande Bharat", "/tours/5-days-deoghar-varanasi-vande-bharat-tour/", "Two nights in Deoghar and two in Kashi, with an afternoon rail connection."],
 ['4 Days Varanasi','/tours/4-days-varanasi-tour/','A complete private introduction with river, old city, Sarnath and local experiences.'],
 ['5 Days Varanasi & Ayodhya','/tours/5-days-varanasi-ayodhya-tour-1/','Two of North India’s most important sacred cities in a practical road sequence.'],
 ['5 Days Varanasi & Bodh Gaya','/tours/5-days-varanasi-bodhgaya-tour/','A Hindu-Buddhist journey linking Varanasi, Sarnath and Bodh Gaya.'],
