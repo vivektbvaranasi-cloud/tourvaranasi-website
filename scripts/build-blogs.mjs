@@ -53,8 +53,9 @@ const existingArticles = [
     n: 3,
     path: 'blogs/post/how-many-days-in-varanasi/index.html',
     url: '/blogs/post/how-many-days-in-varanasi/',
-    title: 'How Many Days Do You Need in Varanasi?',
-    description: 'What you can realistically experience in one, two, three or four days in Varanasi without turning the city into a rushed checklist.',
+    title: 'How Many Days in Varanasi? 1, 2, 3 or 4 Days Compared',
+    modified: '2026-10-14',
+    description: 'How many days do you need in Varanasi? Compare 1–4 days, two versus three nights, Sarnath, Ganga Aarti and arrival times to plan a comfortable stay.',
     group: 'Varanasi essentials',
     hero: '/assets/images/guest_sunrise_diya_couple.webp',
     photos: [['/assets/images/user/dawn-1.JPG', 'Early morning on the Varanasi riverfront', 'Keeping sunrise, temples, Sarnath and the evening river ceremony in separate outings makes a short stay much more comfortable.']]
@@ -103,8 +104,9 @@ const existingArticles = [
     n: 8,
     path: 'blogs/post/sarnath-from-varanasi/index.html',
     url: '/blogs/post/sarnath-from-varanasi/',
-    title: 'Sarnath from Varanasi: How to Plan the Visit',
-    description: 'How to visit Sarnath from Varanasi, what to see, how much time to allow and why good interpretation matters more than rushing the monuments.',
+    title: 'Sarnath from Varanasi: Distance, Timings & Visit Guide',
+    modified: '2026-10-14',
+    description: 'Plan Sarnath from Varanasi: distance, half-day itinerary, Dhamek Stupa, museum Friday closure and practical advice for a private guided visit.',
     group: 'Varanasi experiences',
     hero: '/assets/images/user/sarnath-dhamek.jpg',
     photos: [['/assets/images/user/sarnath-1.jpg', 'Dhamek Stupa and the archaeological precinct at Sarnath', 'Sarnath is best given a proper half day rather than squeezed between unrelated city stops.']]
