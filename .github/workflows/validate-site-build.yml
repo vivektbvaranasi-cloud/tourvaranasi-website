@@ -75,5 +75,20 @@ jobs:
           grep -q 'TV_SEO_OCT26_SARNATH_START' blogs/post/sarnath-from-varanasi/index.html
           grep -q 'TV_SEO_OCT26_PRIVATE_GUIDE_START' travel-guide/private-tour-guide-varanasi/index.html
           grep -q 'TV_SEO_OCT26_DAYS_START' blogs/post/how-many-days-in-varanasi/index.html
+          test -f blogs/post/varanasi-in-january/index.html
+          test -f blogs/post/varanasi-to-ayodhya-by-road/index.html
+          grep -q 'Varanasi in January 2027: Weather, Fog' blogs/post/varanasi-in-january/index.html
+          grep -q 'Varanasi to Ayodhya by Road: Distance, Time' blogs/post/varanasi-to-ayodhya-by-road/index.html
+          grep -q 'assets/images/user/dawn-1.JPG' blogs/post/varanasi-in-january/index.html
+          grep -q 'assets/images/user/ayodhya-family-temple-courtyard.webp' blogs/post/varanasi-to-ayodhya-by-road/index.html
+          grep -q '/blogs/post/varanasi-in-january/' blogs/index.html
+          grep -q '/blogs/post/varanasi-to-ayodhya-by-road/' blogs/index.html
+          grep -q '/blogs/post/varanasi-in-january/' sitemap.xml
+          grep -q '/blogs/post/varanasi-to-ayodhya-by-road/' sitemap.xml
+          grep -q '/plan-my-journey/' blogs/post/varanasi-to-ayodhya-by-road/index.html
+          grep -q '/plan-my-journey/' blogs/post/varanasi-in-january/index.html
+          grep -q 'wa.me/917457905011' blogs/post/varanasi-to-ayodhya-by-road/index.html
+          node --check scripts/saturday-articles-2026-10-17.mjs
+          echo "Two Saturday travel guides, own-gallery photos, enquiry CTAs and index/sitemap verified."
           echo "Five-priority SEO metadata and internal-link enhancements verified."
           echo "Travel guide, Varanasi refinements, CWV and crawl verification passed."

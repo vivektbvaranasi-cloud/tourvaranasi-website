@@ -118,7 +118,16 @@ const donors = [
   ['blogs/post/best-time-to-visit-varanasi/index.html', P.days, 'how many days to stay in Varanasi', 'Compare practical one-, two-, three- and four-day stays.'],
   ['blogs/post/where-to-stay-in-varanasi/index.html', P.days, 'how long to stay in Varanasi', 'Match your hotel location to a practical sightseeing schedule.'],
   ['blogs/post/varanasi-in-december/index.html', P.days, 'how many days to spend in Varanasi', 'Compare stay lengths before choosing a winter programme.'],
-  ['tours/4-days-varanasi-tour/index.html', P.days, 'Varanasi stay-length comparison', 'Understand the trade-offs between shorter visits and four relaxed days.']
+  ['tours/4-days-varanasi-tour/index.html', P.days, 'Varanasi stay-length comparison', 'Understand the trade-offs between shorter visits and four relaxed days.'],
+
+  // Saturday 17 October: reinforce the new seasonal and pilgrimage guides.
+  ['blogs/post/varanasi-in-december/index.html', 'blogs/post/varanasi-in-january/index.html', 'Varanasi in January 2027', 'Compare fog, Ganga Aarti and private winter itineraries for the following month.'],
+  ['blogs/post/best-time-to-visit-varanasi/index.html', 'blogs/post/varanasi-in-january/index.html', 'January travel planning in Varanasi', 'Prepare for cold mornings, possible fog and a practical three-day itinerary.'],
+  ['tours/varanasi-tour-in-three-days/index.html', 'blogs/post/varanasi-in-january/index.html', 'Varanasi in January itinerary advice', 'See how a three-day private visit can adapt to winter river and weather conditions.'],
+
+  ['tours/5-days-varanasi-ayodhya-tour-1/index.html', 'blogs/post/varanasi-to-ayodhya-by-road/index.html', 'Varanasi to Ayodhya by road guide', 'Check practical driving time, private car options and the Ram Mandir approach.'],
+  ['blogs/post/varanasi-prayagraj-ayodhya-itinerary/index.html', 'blogs/post/varanasi-to-ayodhya-by-road/index.html', 'Varanasi–Ayodhya road transfer', 'Compare the direct Kashi–Ayodhya journey with a longer route through Prayagraj.'],
+  ['tours/ayodhya-tour-in-two-days/index.html', 'blogs/post/varanasi-to-ayodhya-by-road/index.html', 'drive from Varanasi to Ayodhya', 'Plan realistic travel and temple time before choosing a one- or two-night Ayodhya stay.']
 ];
 
 const hrefFor = path => '/' + path.replace(/index\.html$/,'');
