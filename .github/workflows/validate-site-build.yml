@@ -79,7 +79,7 @@ jobs:
           test -f blogs/post/varanasi-to-ayodhya-by-road/index.html
           grep -q 'Varanasi in January 2027: Weather, Fog' blogs/post/varanasi-in-january/index.html
           grep -q 'Varanasi to Ayodhya by Road: Distance, Time' blogs/post/varanasi-to-ayodhya-by-road/index.html
-          grep -q 'assets/images/user/dawn-4.jpg' blogs/post/varanasi-in-january/index.html
+          grep -q 'assets/images/user/dawn-1.JPG' blogs/post/varanasi-in-january/index.html
           grep -q 'assets/images/user/ayodhya-family-temple-courtyard.webp' blogs/post/varanasi-to-ayodhya-by-road/index.html
           grep -q '/blogs/post/varanasi-in-january/' blogs/index.html
           grep -q '/blogs/post/varanasi-to-ayodhya-by-road/' blogs/index.html
