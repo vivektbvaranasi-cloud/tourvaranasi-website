@@ -273,10 +273,17 @@
 
   function normalizeContactLinks(root = document) {
     root.querySelectorAll('a[href^="tel:+917457905011"], a[href^="tel:917457905011"], a[href*="wa.me/917457905011"]').forEach(function (link) {
-      link.href = WA;
+      // Keep the trip-specific draft supplied by the page. Previously every
+      // WhatsApp link was reset to the same generic Varanasi enquiry.
+      let hasDraft = false;
+      try {
+        const url = new URL(link.href, window.location.origin);
+        hasDraft = url.hostname === 'wa.me' && url.pathname === '/917457905011' && !!url.searchParams.get('text')?.trim();
+      } catch (_) {}
+      if (!hasDraft) link.href = WA;
       link.target = '_blank';
       link.rel = 'noopener';
-      link.setAttribute('aria-label', 'WhatsApp Tour Varanasi at +91 74579 05011');
+      link.setAttribute('aria-label', (link.textContent || '').trim() || 'WhatsApp Tour Varanasi at +91 74579 05011');
     });
 
     root.querySelectorAll('a[href="/tour-varanasi-contact/"], a[href="/tour-varanasi-contact"], a[href="/contact/"], a[href="/contact"], a[href="/contact-us/"], a[href="/contact-us"]').forEach(function (link) {

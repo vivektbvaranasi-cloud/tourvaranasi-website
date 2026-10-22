@@ -1,0 +1,11 @@
+.tv-quote-path{box-sizing:border-box;max-width:1120px;margin:28px auto;padding:28px;border:1px solid #ded5ca;border-radius:12px;background:#faf8f4;color:#302d33;line-height:1.7;scroll-margin-top:100px}
+.tv-quote-path h2{margin:0 0 12px;font-size:clamp(24px,3vw,34px);line-height:1.25;color:#302d33}
+.tv-quote-path p{margin:0 0 12px}.tv-quote-path ul{padding-left:22px;margin:10px 0 16px}
+.tv-quote-path a{color:#624b36;text-underline-offset:3px}.tv-quote-path .tv-quote-actions{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+.tv-quote-path .tv-quote-button,.tv-quote-path summary{display:inline-block;box-sizing:border-box;padding:13px 20px;border:1px solid #624b36;border-radius:5px;background:#624b36;color:#fff!important;font:600 16px/1.5 Arial,sans-serif;text-decoration:none;cursor:pointer;max-width:100%;white-space:normal}
+.tv-quote-path .tv-quote-secondary{background:#fff;color:#624b36!important}.tv-quote-path a:focus-visible,.tv-quote-path summary:focus-visible{outline:3px solid #624b36;outline-offset:4px}
+.tv-quote-path summary{display:list-item;list-style-position:inside;width:fit-content}.tv-quote-path details[open] summary{margin-bottom:22px}
+.tv-quote-path .tv-quote-note{font-size:14px}.tv-quote-path .tv-quote-review{border-top:1px solid #ded5ca;margin-top:22px;padding-top:18px;font-size:14px}
+.tv-quote-path blockquote{margin:0 0 8px;font-size:17px;font-style:italic}.tv-quote-path cite{display:block;font-style:normal}.tv-quote-path .verified-review-link{display:inline-block;margin-top:6px}
+.tv-quote-path .page-enquiry-form{margin-top:12px}.tv-quote-path .page-enquiry-form button[type=submit]{background:#624b36!important;border-color:#624b36!important}
+@media(max-width:700px){.tv-quote-path{margin:20px 16px;padding:22px 18px}.prose .tv-quote-path{margin:20px 0}.tv-quote-actions a{width:100%;text-align:center}.tv-quote-path summary{width:100%}}

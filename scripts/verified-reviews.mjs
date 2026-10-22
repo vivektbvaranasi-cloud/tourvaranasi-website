@@ -8,7 +8,7 @@ const reviews = [
  ['Vago1994','969806583','September 2024','He was able to adapt our itinerary to my needs, weather and crowd.'],
  ['ajnath2021','891631782','May 2023','I had the same guide and driver for the entire trip which gave me much comfort.']
 ];
-function quote(i, tag='cite', cls='') {
+export function quote(i, tag='cite', cls='') {
  const [name,id,date,text]=reviews[i];
  const url=`https://www.tripadvisor.in/ShowUserReviews-g297685-d10366118-r${id}-Tour_Varanasi-Varanasi_Varanasi_District_Uttar_Pradesh.html`;
  return `<blockquote>“${text}”</blockquote><${tag}${cls?` class="${cls}"`:''}>${name} · ${date} · Tripadvisor</${tag}><a class="verified-review-link" href="${url}" target="_blank" rel="noopener noreferrer">Read the original review on Tripadvisor ↗</a>`;
