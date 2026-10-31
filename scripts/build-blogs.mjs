@@ -1,3 +1,4 @@
+import { pricingArticles } from './pricing-articles.mjs';
 import { weeklyArticles } from './saturday-articles-2026-10-17.mjs';
 import { deogharArticles } from './deoghar-articles.mjs';
 import { ayodhyaWheelchairArticle } from './ayodhya-wheelchair-article.mjs';
@@ -312,7 +313,7 @@ const additionalGuides = [
   {n: 27, url:'/blogs/post/kashi-vishwanath-temple-darshan-guide/', title:'Kashi Vishwanath Temple Guide', description:'Practical advice on darshan, lockers, the final approach and temple planning.', hero:'/assets/images/user/kashi-vishwanath-corridor-aerial.webp', group:'Varanasi essentials'},
   {n: 28, url:'/blogs/post/varanasi-airport-to-ghats-hotels-guide/', title:'Varanasi Airport to Ghats & Hotels', description:'Plan your airport transfer with realistic hotel access, porterage and riverfront arrangements.', hero:'/assets/images/user/varanasi-airport-terminal.webp', group:'Varanasi essentials'}
 ];
-const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
+const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
 
 function esc(value = '') {
   return String(value)
@@ -541,13 +542,25 @@ for (const article of existingArticles) {
   results.push([article.n, words, 'enhanced']);
 }
 
-for (const article of [...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles]) {
+for (const article of [...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles]) {
   const html = renderNewArticle(article, sharedHeader, sharedFooter);
   const words = proseWordCount(html);
   if (words < 500) throw new Error(`${article.path} generated only ${words} prose words`);
   await mkdir(dirname(article.path), { recursive: true });
   await writeFile(article.path, html);
   results.push([article.n, words, 'created']);
+}
+
+// Connect the new price guides to the existing planning articles.
+for (const [file, href, label] of [
+  ['blogs/post/varanasi-tour-cost-2026/index.html', pricingArticles[0].url, 'Compare private Varanasi experience prices and inclusions'],
+  ['blogs/post/varanasi-prayagraj-ayodhya-itinerary/index.html', pricingArticles[1].url, 'See Varanasi, Ayodhya and Prayagraj private tour costs']
+]) {
+  let html = await readFile(file, 'utf8');
+  html = html.replace(/<!-- TV_PRICING_GUIDE_START -->[\s\S]*?<!-- TV_PRICING_GUIDE_END -->/g, '');
+  const link = `<!-- TV_PRICING_GUIDE_START --><aside class="related-links"><p><a href="${href}">${label}</a>, including guest minimums, GST and separately quoted services.</p></aside><!-- TV_PRICING_GUIDE_END -->`;
+  html = html.replace(/<h2\b/, link + '<h2');
+  await writeFile(file, html);
 }
 
 await updateIndex();

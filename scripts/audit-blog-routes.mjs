@@ -8,7 +8,7 @@ const errors=[];
 // All published routes are inspected below. Never impose an exact count as
 // the editorial team publishes two new travel guides every Saturday.
 if(urls.length<39) errors.push(`Blog hub exposes ${urls.length} unique article routes; expected at least 39.`);
-for(const required of ['/blogs/post/varanasi-in-january/','/blogs/post/varanasi-to-ayodhya-by-road/']){
+for(const required of ['/blogs/post/varanasi-in-january/','/blogs/post/varanasi-to-ayodhya-by-road/','/blogs/post/varanasi-experience-prices/','/blogs/post/varanasi-ayodhya-prayagraj-tour-cost/']){
   if(!urls.includes(required))errors.push(`New Saturday article not linked in blog hub: ${required}`);
 }
 
