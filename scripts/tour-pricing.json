@@ -1,0 +1,440 @@
+{
+  "reviewed": "2026-10-31",
+  "currency": "INR",
+  "gstIncluded": true,
+  "items": [
+    {
+      "url": "/tours/4-days-varanasi-tour/",
+      "title": "4 Days Varanasi Tour",
+      "price": 13500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private sedan, local guides, sunrise boat ride, Aarti chairs, local rickshaw and Sarnath entrance fees.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/5-days-delhi-agra-mathura-vrindavan-tour/",
+      "title": "5 Days Delhi, Agra, Mathura & Vrindavan",
+      "price": 26000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private Innova Crysta, four local guide services and local transfers for the listed route.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/5-days-deoghar-varanasi-vande-bharat-tour/",
+      "title": "Deoghar & Varanasi by Vande Bharat: 5 Days",
+      "price": null,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "A private Deoghar and Varanasi journey with rail arrangements tailored to your dates and preferred class.",
+      "extras": "Share your travel dates, group size and preferences for a quotation with confirmed inclusions."
+    },
+    {
+      "url": "/tours/5-days-varanasi-ayodhya-tour-1/",
+      "title": "5 Days Varanasi & Ayodhya Tour",
+      "price": 22000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private sedan, four guide services, Varanasi boat, chairs and local rickshaws.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/5-days-varanasi-bodhgaya-tour/",
+      "title": "5 Days Varanasi & Bodhgaya Tour",
+      "price": 22500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private sedan, four guide services, Varanasi boat, chairs and rickshaw.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/6-days-varanasi-bodhgaya-prayagraj-tour-2/",
+      "title": "6 Days Varanasi, Bodhgaya & Prayagraj Tour",
+      "price": 29500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private sedan, five guide services, Varanasi and Sangam boats, Varanasi local movement.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/6-days-varanasi-bodhgaya-rajgir-nalanda-patna-tour-1/",
+      "title": "6 Days Varanasi, Bodhgaya, Rajgir, Nalanda & Patna Tour",
+      "price": 27000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private sedan, five guide services, Varanasi boat and local movement.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/6-days-varanasi-prayagraj-ayodhya-tour-2/",
+      "title": "6 Days Varanasi, Prayagraj & Ayodhya Tour",
+      "price": 26000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private sedan, five guide services, Varanasi and Sangam boats, local rickshaws and chairs.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/7-days-delhi-agra-mathura-vrindavan-ayodhya-tour/",
+      "title": "7 Days Delhi, Agra, Mathura, Vrindavan & Ayodhya",
+      "price": 34000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private Innova Crysta, five local guide services and local transfers for the listed route.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/7-days-varanasi-bodhgaya-rajgir-nalanda-patna-kushinagar-lumbini-tour-1/",
+      "title": "7 Days Varanasi, Bodhgaya, Rajgir, Nalanda, Patna, Kushinagar & Lumbini Tour",
+      "price": null,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "A private Buddhist circuit including the Lumbini cross-border sector, tailored to your dates and arrival and departure points.",
+      "extras": "Share your travel dates, group size and preferences for a quotation with confirmed inclusions."
+    },
+    {
+      "url": "/tours/7-days-varanasi-bodhgaya-rajgir-nalanda-patna-kushinagar-tour-1/",
+      "title": "7 Days Varanasi, Bodhgaya, Rajgir, Nalanda, Patna & Kushinagar Tour",
+      "price": 32000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private sedan, six guide services, Varanasi boat and local movement.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/7-days-varanasi-prayagraj-chitrakoot-ayodhya-chhapaiya-tour/",
+      "title": "7 Days Varanasi, Prayagraj, Chitrakoot, Ayodhya & Chhapaiya Tour",
+      "price": 33500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private sedan, six guide services, two river boats, chairs and local rickshaws.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/7-days-varanasi-prayagraj-chitrakoot-ayodhya-lucknow-tour/",
+      "title": "7 Days Varanasi, Prayagraj, Chitrakoot, Ayodhya & Lucknow Tour",
+      "price": 34000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private sedan, six guide services, two river boats, chairs and local rickshaws.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/7-days-varanasi-prayagraj-chitrakoot-ayodhya-naimisharanay-lucknow-tour/",
+      "title": "7 Days Varanasi, Prayagraj, Chitrakoot, Ayodhya, Naimisharanya & Lucknow Tour",
+      "price": 36000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private sedan, six guide services, two river boats, chairs and local rickshaws.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/8-days-delhi-mathura-vrindavan-ayodhya-prayagraj-varanasi-tour/",
+      "title": "8 Days Delhi, Mathura, Vrindavan, Ayodhya, Prayagraj & Varanasi",
+      "price": 41500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private Crysta, six guide services, Varanasi and Sangam boats and local movement.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/9-days-delhi-mathura-vrindavan-agra-ayodhya-prayagraj-varanasi-tour/",
+      "title": "9 Days Delhi, Mathura, Vrindavan, Agra, Ayodhya, Prayagraj & Varanasi",
+      "price": 46000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private Crysta, seven guide services, two boats and local movement.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/9-days-varanasi-prayagraj-ayodhya-agra-vrindavan-mathura-delhi-tour/",
+      "title": "9 Days Varanasi, Prayagraj, Ayodhya, Agra, Vrindavan, Mathura & Delhi",
+      "price": 46000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private Crysta, seven guide services, two boats and local movement.",
+      "extras": "Hotels, meals, entrance fees, personal expenses, tips, flights, rail tickets and optional upgrades are additional unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/ayodhya-tour-in-one-day/",
+      "title": "Ayodhya Tour in One Day",
+      "price": 6500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private transport, local guide and the listed local transport, entrance and darshan arrangements. Special access is subject to temple procedures.",
+      "extras": "Hotels, meals, personal expenses, tips and optional upgrades are additional. Flights and rail tickets are excluded unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/ayodhya-tour-in-three-days/",
+      "title": "Ayodhya Tour in Three Days",
+      "price": 10500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private transport, local guide and the listed local transport, entrance and darshan arrangements. Special access is subject to temple procedures.",
+      "extras": "Hotels, meals, personal expenses, tips and optional upgrades are additional. Flights and rail tickets are excluded unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/ayodhya-tour-in-two-days/",
+      "title": "Ayodhya Tour in Two Days",
+      "price": 8500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private transport, local guide and the listed local transport, entrance and darshan arrangements. Special access is subject to temple procedures.",
+      "extras": "Hotels, meals, personal expenses, tips and optional upgrades are additional. Flights and rail tickets are excluded unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/deoghar-tour-in-two-days/",
+      "title": "Deoghar Tour in 2 Days: Baidyanath & Basukinath",
+      "price": null,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "A two-day private Deoghar, Baidyanath and Basukinath ground programme.",
+      "extras": "Share your travel dates, group size and preferences for a quotation with confirmed inclusions."
+    },
+    {
+      "url": "/tours/evening-prayer-ceremony/",
+      "title": "Ganga Aarti in Varanasi",
+      "price": 2000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Guide, reserved Aarti chairs and local cycle rickshaw. Meet in the old city.",
+      "extras": "Hotel transfers, boat rides and personal Sankalp rituals are additional."
+    },
+    {
+      "url": "/tours/lucknow-tour-in-one-day/",
+      "title": "Lucknow Tour in One Day",
+      "price": 6500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private car, local guide and entrance fees for the listed sightseeing.",
+      "extras": "Hotels, meals, personal expenses, tips and optional upgrades are additional. Flights and rail tickets are excluded unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/lucknow-tour-in-three-days/",
+      "title": "Lucknow Tour in Three Days",
+      "price": 10500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private car, local guide and entrance fees for the listed sightseeing.",
+      "extras": "Hotels, meals, personal expenses, tips and optional upgrades are additional. Flights and rail tickets are excluded unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/lucknow-tour-in-two-days/",
+      "title": "Lucknow Tour in Two Days",
+      "price": 8500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private car, local guide and entrance fees for the listed sightseeing.",
+      "extras": "Hotels, meals, personal expenses, tips and optional upgrades are additional. Flights and rail tickets are excluded unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/same-day-bodhgaya-tour-from-varanasi/",
+      "title": "Same-Day Bodh Gaya Tour from Varanasi",
+      "price": 8000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Same-day return by private sedan from Varanasi, with a local guide in Bodh Gaya.",
+      "extras": "Entrance fees and meals are additional. Departure time and travel duration are confirmed for your date."
+    },
+    {
+      "url": "/tours/solo-tour-for-women-1/",
+      "title": "Solo Tour for Women",
+      "price": 17000,
+      "unit": "per solo guest",
+      "minimumGuests": 1,
+      "includes": "A two-day private Varanasi programme for one guest, including private car, local guide, boat ride, entrance fees and Aarti seating for the agreed programme.",
+      "extras": "Hotels, meals, personal expenses, tips and optional upgrades are additional. Flights and rail tickets are excluded unless specified in your confirmed quotation.",
+      "duration": "Two-day programme"
+    },
+    {
+      "url": "/tours/varanasi-allahabad-tour/",
+      "title": "Varanasi to Prayagraj Private Day Tour",
+      "price": 8000,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Return sedan, Prayagraj guide and private Sangam boat.",
+      "extras": "Entrance fees and meals are additional. Boat operation depends on river conditions."
+    },
+    {
+      "url": "/tours/varanasi-boat-ride/",
+      "title": "Sunrise Boat Ride in Varanasi",
+      "price": 3250,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private motorboat and English-speaking guide. Meet at the confirmed ghat.",
+      "extras": "Hotel transfers and a flute musician are additional. Boat operation depends on river conditions."
+    },
+    {
+      "url": "/tours/varanasi-city-tour-package/",
+      "title": "Sacred Varanasi & Temple Tour",
+      "price": 2750,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Half-day sedan and guide for selected temples.",
+      "extras": "Special darshan, puja, donations and paid admissions are additional."
+    },
+    {
+      "url": "/tours/varanasi-sarnath-tour/",
+      "title": "Private Sarnath Tour from Varanasi",
+      "price": 3250,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Half-day private sedan, local guide and entrance fees for the listed Sarnath sightseeing.",
+      "extras": "Meals and additional visits are extra. Entrance arrangements are confirmed for each guest’s nationality."
+    },
+    {
+      "url": "/tours/varanasi-tour-in-one-day/",
+      "title": "Varanasi One Day Tour",
+      "price": 6500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private car, local guide, boat ride, entrance fees and Aarti seating for the listed programme. Boat operation depends on river conditions.",
+      "extras": "Hotels, meals, personal expenses, tips and optional upgrades are additional. Flights and rail tickets are excluded unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/varanasi-tour-in-three-days/",
+      "title": "3 Days Varanasi Tour",
+      "price": 10500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private car, local guide, boat ride, entrance fees and Aarti seating for the listed programme. Boat operation depends on river conditions.",
+      "extras": "Hotels, meals, personal expenses, tips and optional upgrades are additional. Flights and rail tickets are excluded unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/varanasi-tour-in-two-days/",
+      "title": "2 Days Varanasi Tour",
+      "price": 8500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private car, local guide, boat ride, entrance fees and Aarti seating for the listed programme. Boat operation depends on river conditions.",
+      "extras": "Hotels, meals, personal expenses, tips and optional upgrades are additional. Flights and rail tickets are excluded unless specified in your confirmed quotation."
+    },
+    {
+      "url": "/tours/varanasi-village-tour/",
+      "title": "Varanasi Village Experience",
+      "price": 3500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Half-day private sedan, local guide and village host coordination.",
+      "extras": "Village meals and personal purchases are additional. Visits depend on host availability."
+    },
+    {
+      "url": "/tours/varanasi-walking-tour/",
+      "title": "Varanasi Old City & Northern Bazaar Walk",
+      "price": 1500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private English-speaking guide for a 2–3 hour old-city walk.",
+      "extras": "Meet at the confirmed starting point. Hotel transfers and paid admissions are additional."
+    },
+    {
+      "url": "/experiences/banaras-artisan-trail/",
+      "title": "Banaras Artisan Trail",
+      "price": 2250,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private guide, artisan visits and arranged workshop access.",
+      "extras": "Hotel transfers and personal purchases are additional. Visits depend on workshop availability."
+    },
+    {
+      "url": "/experiences/banarasi-home-cooking/",
+      "title": "Banarasi Home Cooking & Local Family Experience",
+      "price": 4500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "A hosted vegetarian cooking session and meal with a local family. Meet at the confirmed venue.",
+      "extras": "Hotel transfers are additional. Menu, session duration and hosting arrangements are confirmed for your date."
+    },
+    {
+      "url": "/experiences/banarasi-silk-weaving/",
+      "title": "Banarasi Silk & Weaving Experience",
+      "price": 1750,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private guide and handloom visit, meeting at the weaving district.",
+      "extras": "Hotel transfers and shopping are additional. Visits depend on loom and host availability."
+    },
+    {
+      "url": "/experiences/bengali-tola-riverside-lanes/",
+      "title": "Bengali Tola & Riverside Lanes Walk",
+      "price": 1500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private guided Bengali Tola and riverside walk.",
+      "extras": "Meet at the confirmed starting point. Hotel transfers and paid admissions are additional."
+    },
+    {
+      "url": "/experiences/classical-music-varanasi/",
+      "title": "Classical Music & Cultural Experience",
+      "price": 13500,
+      "unit": "per private session",
+      "minimumGuests": null,
+      "includes": "A privately arranged classical music performance. Artists, venue, format and duration are confirmed in your quotation.",
+      "extras": "Hotel transfers, extra musicians and venue upgrades are additional. Final quotation depends on group size and the confirmed performance."
+    },
+    {
+      "url": "/experiences/death-rebirth-walk/",
+      "title": "Death & Rebirth Walk — Varanasi",
+      "price": 1500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private guided cultural walk focused on life, death and ritual.",
+      "extras": "Meet at the confirmed starting point. Hotel transfers are additional. Photography restrictions and local customs must be respected."
+    },
+    {
+      "url": "/experiences/kushti-akhara-experience/",
+      "title": "Kushti Akhara: Morning with Banaras Wrestlers",
+      "price": 2250,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private guide and an observational akhara visit, subject to host permission and the training schedule.",
+      "extras": "Hotel transfers are additional. This is an observational visit; training and access depend on the akhara."
+    },
+    {
+      "url": "/experiences/private-kathak-experience/",
+      "title": "Private Kathak & Banaras Performing Arts Experience",
+      "price": 13500,
+      "unit": "per private session",
+      "minimumGuests": null,
+      "includes": "A privately arranged Kathak demonstration or performance. Artist, venue, format and duration are confirmed in your quotation.",
+      "extras": "Hotel transfers and upgrades are additional. Workshop participation is included only when specified in your quotation."
+    },
+    {
+      "url": "/experiences/southern-kashi-walk/",
+      "title": "Southern Kashi Walk: Temples, Sacred Ponds & Assi",
+      "price": 1500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Private guided Southern Kashi walk.",
+      "extras": "Meet at the confirmed starting point. Hotel transfers and paid admissions are additional."
+    },
+    {
+      "url": "/experiences/subah-e-banaras-yoga-breakfast/",
+      "title": "Subah-e-Banaras, Yoga & Local Breakfast",
+      "price": 2750,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Guided morning, a yoga session and simple local breakfast.",
+      "extras": "Boat rides and hotel transfers are additional. The public morning programme and yoga arrangements are subject to availability."
+    },
+    {
+      "url": "/experiences/varanasi-food-walk/",
+      "title": "Varanasi Food Walk",
+      "price": 2750,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "Specialist culinary guide and selected vegetarian tastings.",
+      "extras": "Meet at the confirmed starting point. Hotel transfers are additional. Tastings and dietary arrangements are confirmed before the walk."
+    },
+    {
+      "url": "/experiences/varanasi-photography-walk/",
+      "title": "Varanasi Photography Walk",
+      "price": 2500,
+      "unit": "per person",
+      "minimumGuests": 2,
+      "includes": "A private guided photography walk through selected ghats and lanes.",
+      "extras": "Boat rides, hotel transfers and photography equipment are additional. Please tell us your photography interests when enquiring."
+    }
+  ]
+}

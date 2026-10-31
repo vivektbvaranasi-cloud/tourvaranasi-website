@@ -1,0 +1,19 @@
+.tv-price-summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;width:fit-content;max-width:100%;margin:18px 0;padding:12px 16px;border:1px solid #ded4e6;border-radius:10px;background:#fff;color:#33253c;font-size:14px;line-height:1.5;text-shadow:none}
+.tv-price-summary strong{font-size:20px;color:#51256b}
+.tv-price-summary span{color:#514859}
+.tv-price-summary a{color:#51256b!important;font-size:13px;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.tv-price-panel{box-sizing:border-box;max-width:1124px;margin:32px auto;padding:30px;border:1px solid #ded4e6;border-radius:14px;background:#fff;color:#33253c;scroll-margin-top:100px}
+.tv-price-panel h2{margin:10px 0;font-size:clamp(26px,4vw,36px);line-height:1.2;color:#51256b}
+.tv-price-panel p{max-width:850px;line-height:1.65}
+.tv-price-panel .tv-price-basis{font-weight:600;color:#51256b;margin-top:0}
+.tv-price-panel .tv-price-terms{font-size:14px;color:#625b68}
+.tv-price-panel .btn{margin-top:6px}
+.tv-card-price{display:block;margin-top:16px;padding-top:12px;border-top:1px solid #e5ddea;line-height:1.5;text-align:left;white-space:normal}
+.tv-card-price strong{display:block;color:#51256b;font-size:18px;font-weight:700}
+.tv-card-price small{display:block;margin-top:3px;color:#625b68;font-size:12px;font-weight:400;line-height:1.5}
+a.card>.tv-card-price,a.experience-card>.tv-card-price{margin:0 24px 24px}
+.route-list .tv-card-price,.sacred-list .tv-card-price,.compact-grid .tv-card-price{grid-column:1/-1;width:100%;margin-top:8px;white-space:normal;text-transform:none;letter-spacing:normal}
+.route-list .tv-card-price strong,.sacred-list .tv-card-price strong,.compact-grid .tv-card-price strong{font-family:inherit;font-size:18px;font-weight:700;color:#51256b}
+.route-list .tv-card-price small,.sacred-list .tv-card-price small,.compact-grid .tv-card-price small{font-size:12px;line-height:1.5;white-space:normal}
+.day-item .tv-card-price{margin-bottom:14px}
+@media(max-width:640px){.tv-price-summary{padding:10px 12px;gap:4px 10px}.tv-price-summary span{flex-basis:100%;font-size:12px}.tv-price-panel{margin:24px 16px;padding:22px}.tv-card-price strong{font-size:17px}}
