@@ -2,7 +2,7 @@ import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, relative, sep } from 'node:path';
 
 const SITE = 'https://www.tourvaranasi.com';
-const LOCAL_CHECK = 'September 2026';
+const LOCAL_CHECK = 'October 2026';
 const UPDATED = '2026-09-23';
 const SKIP_DIRS = new Set(['.git', '.netlify', 'node_modules']);
 const START = '<!-- TV_EEAT_START -->';
