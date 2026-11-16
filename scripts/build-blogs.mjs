@@ -1,4 +1,5 @@
 import { pricingArticles } from './pricing-articles.mjs';
+import { priceIntentArticles } from './price-intent-articles.mjs';
 import { weeklyArticles } from './saturday-articles-2026-10-17.mjs';
 import { deogharArticles } from './deoghar-articles.mjs';
 import { ayodhyaWheelchairArticle } from './ayodhya-wheelchair-article.mjs';
@@ -313,7 +314,7 @@ const additionalGuides = [
   {n: 27, url:'/blogs/post/kashi-vishwanath-temple-darshan-guide/', title:'Kashi Vishwanath Temple Guide', description:'Practical advice on darshan, lockers, the final approach and temple planning.', hero:'/assets/images/user/kashi-vishwanath-corridor-aerial.webp', group:'Varanasi essentials'},
   {n: 28, url:'/blogs/post/varanasi-airport-to-ghats-hotels-guide/', title:'Varanasi Airport to Ghats & Hotels', description:'Plan your airport transfer with realistic hotel access, porterage and riverfront arrangements.', hero:'/assets/images/user/varanasi-airport-terminal.webp', group:'Varanasi essentials'}
 ];
-const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
+const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...priceIntentArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
 
 function esc(value = '') {
   return String(value)
@@ -531,7 +532,8 @@ async function updateSitemap() {
 const template = await readFile('blogs/post/ganga-aarti-varanasi-guide/index.html', 'utf8');
 const bodyStart = template.indexOf('<body>') + 6;
 const headerEnd = template.indexOf('</header>', bodyStart) + 9;
-const footerStart = template.indexOf('<footer class="footer"');
+const legacyFooterStart = template.indexOf('<footer class="footer"');
+const footerStart = legacyFooterStart >= 0 ? legacyFooterStart : template.indexOf('<!-- TV_UNIFIED_FOOTER_START -->');
 if (bodyStart < 6 || headerEnd < 9 || footerStart < 0) throw new Error('Could not extract blog template shell');
 const sharedHeader = template.slice(bodyStart, headerEnd);
 const sharedFooter = template.slice(footerStart);
@@ -542,7 +544,7 @@ for (const article of existingArticles) {
   results.push([article.n, words, 'enhanced']);
 }
 
-for (const article of [...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles]) {
+for (const article of [...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...priceIntentArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles]) {
   const html = renderNewArticle(article, sharedHeader, sharedFooter);
   const words = proseWordCount(html);
   if (words < 500) throw new Error(`${article.path} generated only ${words} prose words`);

@@ -24,7 +24,9 @@ for(const file of walk()) {
  const isDestination=file.startsWith('destinations/');
  const interest=generic[file]?.[0]||(isDestination?`${title} private visit`:title);
  const draft=generic[file]?.[1]||(isDestination?`Please help me plan a private visit to ${title} and share a quotation.`:`Please share availability and a quotation for this ${experience?'experience':'tour'}.`);
- const duration=experience?.duration||title.match(/\b\d+\s+Days?\b/i)?.[0]||(/\bone day\b|same.day/i.test(title)?'1 day':'');
+ // A 1/2/3-day comparison article is not a three-day tour booking.
+ const comparesDurations=/\b\d+\s*,\s*\d+\s*(?:&|and)\s*\d+\s+days?\b/i.test(title);
+ const duration=comparesDurations?'':experience?.duration||title.match(/\b\d+\s+Days?\b/i)?.[0]||(/\bone day\b|same.day/i.test(title)?'1 day':'');
  html=html.replace(/<form\b([^>]*)>[\s\S]*?<\/form>/gi,(whole,attrs)=>{
   if(!/\b(?:data-)?netlify(?:=|\s)/i.test(attrs))return whole;
   if(/data-compact-enquiry="true"/.test(attrs))return whole;
