@@ -103,6 +103,8 @@ const donors = [
 
   ['blogs/post/best-time-to-visit-varanasi/index.html', P.december, 'Varanasi in December travel guide', 'See winter fog, sunrise and private itinerary planning before booking.'],
   ['blogs/post/where-to-stay-in-varanasi/index.html', P.december, 'Varanasi in December planning guide', 'Use practical winter advice when choosing riverfront or road-access hotels.'],
+  ['tours/varanasi-tour-in-two-days/index.html', P.december, 'Visiting Varanasi in December', 'Check winter clothing, fog and boat timing before choosing your tour dates.'],
+  ['tours/varanasi-tour-in-three-days/index.html', P.december, 'December weather and three-day itinerary', 'See how to plan the river, temples and Sarnath around winter mornings.'],
   ['blogs/post/sunrise-boat-ride-varanasi-guide/index.html', P.december, 'December boat and weather planning', 'In winter, morning visibility can affect the best start time and river plan.'],
 
   ['tours/5-days-varanasi-bodhgaya-tour/index.html', P.sarnath, 'Sarnath from Varanasi visit guide', 'Give the place of the Buddha’s first sermon time before travelling to Bodh Gaya.'],

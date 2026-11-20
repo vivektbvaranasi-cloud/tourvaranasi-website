@@ -101,6 +101,57 @@ const pages = [
   }
 ];
 
+// These pages share the existing related-card layout. Select their links from
+// the actual destination, independently of place names in navigation and footers.
+const cityGuides = [
+  {
+    city: 'ayodhya',
+    heading: 'Plan your visit to Ayodhya',
+    intro: 'Choose your temple morning, riverside evening and the private tour that fits your arrival.',
+    tour: ['/tours/ayodhya-tour-in-two-days/', 'Private two-day Ayodhya tour', 'See the temple visits, local transport and services included in a one-night stay.'],
+    itinerary: ['/blogs/post/ayodhya-itinerary-two-days/', 'How to spend two days in Ayodhya', 'Fit Ram Mandir and the Saryu around your arrival and departure times.'],
+    activity: ['/blogs/post/saryu-aarti-ayodhya-ram-ki-paidi/', 'Saryu Aarti at Ram ki Paidi', 'Plan your arrival at the ghat, choose a viewing spot and ask about Deep Daan.'],
+    prices: ['/blogs/post/ayodhya-private-tour-cost/', 'Ayodhya tour prices and inclusions', 'Compare what is included in one-, two- and three-day private visits.'],
+    otherGuides: ['/travel-guide/ayodhya-ram-mandir-wheelchair-assistance/']
+  },
+  {
+    city: 'lucknow',
+    heading: 'Plan your visit to Lucknow',
+    intro: 'Choose your heritage visits, a walk through Chowk and the private tour that fits your stay.',
+    tour: ['/tours/lucknow-tour-in-two-days/', 'Private two-day Lucknow tour', 'See the heritage itinerary, car, guide and monument visits.'],
+    itinerary: ['/blogs/post/lucknow-itinerary-2-days/', 'How to spend two days in Lucknow', 'Plan a morning at the Imambaras, an evening in Chowk and time for the Residency.'],
+    activity: ['/blogs/post/lucknow-chowk-food-chikankari-walk/', 'Chowk food and chikankari walk', 'Choose tasting stops and embroidery shops for a guided walk through the old city.'],
+    prices: ['/blogs/post/lucknow-private-tour-cost/', 'Lucknow tour prices and inclusions', 'Compare sightseeing packages and see which food and craft visits are optional.'],
+    otherGuides: []
+  }
+];
+
+const planningPages = cityGuides.flatMap(({city, heading, intro, tour, itinerary, activity, prices, otherGuides}) => {
+  const routes = [
+    `/destinations/${city}/`, `/tours/${city}-tour-in-one-day/`, tour[0], `/tours/${city}-tour-in-three-days/`,
+    itinerary[0], activity[0], prices[0], ...otherGuides
+  ];
+  return routes.map(route => ({
+    path: route.slice(1) + 'index.html',
+    relatedHeading: heading,
+    relatedIntro: intro,
+    relatedItems: [tour, itinerary, activity, prices].filter(([href]) => href !== route).slice(0, 3)
+  }));
+});
+
+for (const month of ['december', 'january']) {
+  planningPages.push({
+    path: `blogs/post/varanasi-in-${month}/index.html`,
+    relatedHeading: 'Private tours for a winter stay in Varanasi',
+    relatedIntro: 'Compare a two-day visit with a slower three-day itinerary, or book a local guide if you already have transport.',
+    relatedItems: [
+      ['/tours/varanasi-tour-in-two-days/', 'Private two-day Varanasi tour', 'Plan the old city, evening Aarti and Sarnath across two days.'],
+      ['/tours/varanasi-tour-in-three-days/', 'Private three-day Varanasi tour', 'Leave time for a later river outing when morning fog delays boats.'],
+      ['/travel-guide/private-tour-guide-varanasi/', 'Book a private Varanasi guide', 'Compare guide-only arrangements with a tour including transport.']
+    ]
+  });
+}
+
 function escapeHtml(value) {
   return value.replaceAll('&', '&amp;').replaceAll('"', '&quot;');
 }
@@ -128,7 +179,7 @@ function replaceExactNames(html, names, replacement) {
 function relatedItemLabel(href) {
   if (href.startsWith('/tours/')) return 'Private itinerary';
   if (href.startsWith('/experiences/')) return 'Local experience';
-  if (href.startsWith('/blogs/')) return 'Planning guide';
+  if (href.startsWith('/blogs/') || href.startsWith('/travel-guide/')) return 'Planning guide';
   return 'Continue planning';
 }
 
@@ -179,17 +230,19 @@ function ensureToursPlanningStyles(html, config) {
 }
 
 let changed = 0;
-for (const config of pages) {
+for (const config of [...pages, ...planningPages]) {
   const before = await readFile(config.path, 'utf8');
   let html = before;
-  html = replaceExactNames(html, config.oldNames, config.name);
-  html = setTitle(html, config.title);
-  html = setMeta(html, 'name', 'description', config.description);
-  html = setMeta(html, 'property', 'og:title', config.title);
-  html = setMeta(html, 'property', 'og:description', config.description);
-  html = setMeta(html, 'name', 'twitter:title', config.title);
-  html = setMeta(html, 'name', 'twitter:description', config.description);
-  html = setH1(html, config.name);
+  if (config.title) {
+    html = replaceExactNames(html, config.oldNames, config.name);
+    html = setTitle(html, config.title);
+    html = setMeta(html, 'name', 'description', config.description);
+    html = setMeta(html, 'property', 'og:title', config.title);
+    html = setMeta(html, 'property', 'og:description', config.description);
+    html = setMeta(html, 'name', 'twitter:title', config.title);
+    html = setMeta(html, 'name', 'twitter:description', config.description);
+    html = setH1(html, config.name);
+  }
   html = html.replace(/<!-- TV_INTERNAL_LINKS_START -->[\s\S]*?<!-- TV_INTERNAL_LINKS_END -->/i, relatedBlock(config));
   html = ensurePlanningStylesheet(html);
   if (html !== before) {
@@ -198,4 +251,4 @@ for (const config of pages) {
   }
 }
 
-console.log(`SEO intent hardening applied to ${changed} itinerary pages.`);
+console.log(`SEO intent hardening applied to ${changed} pages.`);
