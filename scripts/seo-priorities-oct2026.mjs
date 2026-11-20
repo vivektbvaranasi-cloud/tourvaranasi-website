@@ -64,7 +64,7 @@ const priority = [
   {
     path:P.wheelchair, key:'WHEELCHAIR',
     title:'Ram Mandir Wheelchair Assistance: Booking & Fees | Tour Varanasi',
-    description:'Visiting Ayodhya Ram Mandir with elderly parents? Learn about offline wheelchair assistance, ID requirements, temple access and private mobility support.',
+    description:'Book wheelchair assistance in person at Ayodhya Ram Mandir. See the locally reported attendant charge, ID requirements and options for senior travellers.',
     body:box('Plan wheelchair-friendly Ayodhya sightseeing',
       '<p><strong>Travelling with parents or a guest who has difficulty walking?</strong> Compare our <a href="/tours/ayodhya-tour-in-two-days/">private two-day Ayodhya itinerary</a> and <a href="/plan-my-journey/">ask for a mobility-aware plan</a>. Temple wheelchairs are allocated through the temple counter, subject to its assessment and arrangements; they cannot be guaranteed in advance.</p>')
   },

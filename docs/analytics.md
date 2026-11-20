@@ -22,6 +22,8 @@ Register event-scoped custom dimensions for `source_page`, `landing_page`, `enqu
 
 Form answers, contact details and full URL queries are never deliberately included in event payloads. Keep campaign labels free of personal information. Source fields contain page paths, a referring domain and campaign labels, not arbitrary query strings. Analytics preferences can be changed in the footer when GA4 is configured.
 
+For the December itinerary button, filter GA4 to event `whatsapp_click`, source page `/blogs/post/varanasi-in-december/` and link location `december_itinerary`. For the Sarnath title change, filter the Search Console Web performance report to the exact page `/blogs/post/sarnath-from-varanasi/` and compare clicks, impressions, CTR and average position across equal periods before and after deployment.
+
 ## Verification
 
 Run `node --test tests/analytics.test.mjs`. These tests mock form delivery and never create a live enquiry. The production build runs `scripts/enquiry-tracking.mjs` after page generation and before cache busting. It registers a union of each named form's fields so Netlify recognizes attribution and dynamically enhanced About form fields.

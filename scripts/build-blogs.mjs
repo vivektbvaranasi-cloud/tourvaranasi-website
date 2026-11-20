@@ -1,4 +1,6 @@
 import { pricingArticles } from './pricing-articles.mjs';
+import { ayodhyaPlanningArticles } from './ayodhya-planning-articles.mjs';
+import { lucknowPlanningArticles } from './lucknow-planning-articles.mjs';
 import { priceIntentArticles } from './price-intent-articles.mjs';
 import { weeklyArticles } from './saturday-articles-2026-10-17.mjs';
 import { deogharArticles } from './deoghar-articles.mjs';
@@ -108,9 +110,9 @@ const existingArticles = [
     n: 8,
     path: 'blogs/post/sarnath-from-varanasi/index.html',
     url: '/blogs/post/sarnath-from-varanasi/',
-    title: 'Sarnath from Varanasi: Distance, Timings & Visit Guide',
-    modified: '2026-10-14',
-    description: 'Plan Sarnath from Varanasi: distance, half-day itinerary, Dhamek Stupa, museum Friday closure and practical advice for a private guided visit.',
+    title: 'Varanasi to Sarnath: Distance, Travel Time and Half-Day Itinerary',
+    modified: '2026-11-20',
+    description: 'Sarnath is about 10 km from Varanasi. Plan your drive, time at Dhamek Stupa and the museum, and a half-day route that also works on Fridays.',
     group: 'Varanasi experiences',
     hero: '/assets/images/user/sarnath-dhamek.jpg',
     photos: [['/assets/images/user/sarnath-1.jpg', 'Dhamek Stupa and the archaeological precinct at Sarnath', 'Sarnath is best given a proper half day rather than squeezed between unrelated city stops.']]
@@ -314,7 +316,7 @@ const additionalGuides = [
   {n: 27, url:'/blogs/post/kashi-vishwanath-temple-darshan-guide/', title:'Kashi Vishwanath Temple Guide', description:'Practical advice on darshan, lockers, the final approach and temple planning.', hero:'/assets/images/user/kashi-vishwanath-corridor-aerial.webp', group:'Varanasi essentials'},
   {n: 28, url:'/blogs/post/varanasi-airport-to-ghats-hotels-guide/', title:'Varanasi Airport to Ghats & Hotels', description:'Plan your airport transfer with realistic hotel access, porterage and riverfront arrangements.', hero:'/assets/images/user/varanasi-airport-terminal.webp', group:'Varanasi essentials'}
 ];
-const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...priceIntentArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
+const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...priceIntentArticles, ...ayodhyaPlanningArticles, ...lucknowPlanningArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
 
 function esc(value = '') {
   return String(value)
@@ -544,7 +546,7 @@ for (const article of existingArticles) {
   results.push([article.n, words, 'enhanced']);
 }
 
-for (const article of [...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...priceIntentArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles]) {
+for (const article of [...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...priceIntentArticles, ...ayodhyaPlanningArticles, ...lucknowPlanningArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles]) {
   const html = renderNewArticle(article, sharedHeader, sharedFooter);
   const words = proseWordCount(html);
   if (words < 500) throw new Error(`${article.path} generated only ${words} prose words`);

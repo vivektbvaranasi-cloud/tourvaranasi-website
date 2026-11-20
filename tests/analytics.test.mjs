@@ -64,6 +64,16 @@ test('WhatsApp is a click only and carries a query-free source',()=>{
   assert.equal(x.events().filter(e=>e.name==='generate_lead').length,0);
   const message=new URL(link.href).searchParams.get('text'); assert.equal(message.split('Page:').length,2); assert.ok(!message.includes('email='));
 });
+test('the December itinerary link records its placement and source page',()=>{
+  const pathname='/blogs/post/varanasi-in-december/';
+  const x=setup({pathname});
+  const link={href:'https://wa.me/917457905011',closest:s=>s==='a'||s==='[data-enquiry-location="december-itinerary"]'?link:null};
+  x.listeners.click({target:link});
+  const clicks=x.events().filter(e=>e.name==='whatsapp_click');
+  assert.equal(clicks.length,1);
+  assert.equal(clicks[0].data.source_page,pathname);
+  assert.equal(clicks[0].data.link_location,'december_itinerary');
+});
 test('thank-you visits cannot produce leads',()=>{
   const x=setup({pathname:'/thank-you/'}); assert.deepEqual(Array.from(x.events(),e=>e.name),['page_view']);
 });

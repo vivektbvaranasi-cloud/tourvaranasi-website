@@ -111,6 +111,7 @@
     });
   }
   function locationOf(link) {
+    if (link.closest('[data-enquiry-location="december-itinerary"]')) return 'december_itinerary';
     if (link.closest('.tv-whatsapp-float')) return 'floating_button';
     if (link.closest('footer, .tv-footer, .tvf-footer')) return 'footer';
     if (link.closest('.tv-top-contact-bar, .topbar')) return 'top_bar';

@@ -50,9 +50,11 @@ The following plan works best with **arrival before Day 1 and three nights in Va
 | Day 2 | River outing when permitted, breakfast, then Sarnath | Reorder the morning around visibility and confirm museum opening. |
 | Day 3 | Breakfast, packing and departure transfer | Keep this day free of sightseeing and fixed river bookings. |
 
+[Plan my December Varanasi tour on WhatsApp](https://wa.me/917457905011?text=Hello%20Tour%20Varanasi%2C%20please%20help%20me%20plan%20my%20December%20Varanasi%20tour.%20My%20dates%20and%20group%20size%20are%3A%20).
+
 ### Day 1 Old city temples and evening Aarti
 
-After breakfast, explore a manageable section of the old city with your guide. The interest lies in its small details: flower sellers, neighbourhood shrines, courtyards and the movement of people going about their day. Agree the walking distance in advance, especially if your party includes older guests or children.
+After breakfast, explore a manageable section of the old city. If you have already arranged transport, you can [book a private Varanasi guide](/travel-guide/private-tour-guide-varanasi/) to meet you for the walk. The interest lies in its small details: flower sellers, neighbourhood shrines, courtyards and the movement of people going about their day. Agree the walking distance in advance, especially if your party includes older guests or children.
 
 Place Kashi Vishwanath darshan around the arrangement confirmed for your visit. Temple entry, security, belongings and queue procedures must follow the administration’s current requirements. Avoid assuming that a guided tour or a hotel booking automatically provides priority access. Our [Kashi Vishwanath planning guide](/blogs/post/kashi-vishwanath-temple-darshan-guide/) is a useful starting point for these questions.
 
