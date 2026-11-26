@@ -1,3 +1,4 @@
+import { pilgrimageFoodArticles } from './pilgrimage-food-articles.mjs';
 import { pricingArticles } from './pricing-articles.mjs';
 import { ayodhyaPlanningArticles } from './ayodhya-planning-articles.mjs';
 import { lucknowPlanningArticles } from './lucknow-planning-articles.mjs';
@@ -316,7 +317,7 @@ const additionalGuides = [
   {n: 27, url:'/blogs/post/kashi-vishwanath-temple-darshan-guide/', title:'Kashi Vishwanath Temple Guide', description:'Practical advice on darshan, lockers, the final approach and temple planning.', hero:'/assets/images/user/kashi-vishwanath-corridor-aerial.webp', group:'Varanasi essentials'},
   {n: 28, url:'/blogs/post/varanasi-airport-to-ghats-hotels-guide/', title:'Varanasi Airport to Ghats & Hotels', description:'Plan your airport transfer with realistic hotel access, porterage and riverfront arrangements.', hero:'/assets/images/user/varanasi-airport-terminal.webp', group:'Varanasi essentials'}
 ];
-const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...priceIntentArticles, ...ayodhyaPlanningArticles, ...lucknowPlanningArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
+const allArticles = [...existingArticles, ...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...priceIntentArticles, ...ayodhyaPlanningArticles, ...lucknowPlanningArticles, ...pilgrimageFoodArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles, ...additionalGuides].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.publicationOrder || 0) - (a.publicationOrder || 0) || a.n - b.n);
 
 function esc(value = '') {
   return String(value)
@@ -546,7 +547,7 @@ for (const article of existingArticles) {
   results.push([article.n, words, 'enhanced']);
 }
 
-for (const article of [...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...priceIntentArticles, ...ayodhyaPlanningArticles, ...lucknowPlanningArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles]) {
+for (const article of [...newArticles, ...commercialArticles, ...seasonalArticles, ...regionalLuxuryArticles, ...pricingArticles, ...priceIntentArticles, ...ayodhyaPlanningArticles, ...lucknowPlanningArticles, ...pilgrimageFoodArticles, ...deogharArticles, ayodhyaWheelchairArticle, ...weeklyArticles]) {
   const html = renderNewArticle(article, sharedHeader, sharedFooter);
   const words = proseWordCount(html);
   if (words < 500) throw new Error(`${article.path} generated only ${words} prose words`);
