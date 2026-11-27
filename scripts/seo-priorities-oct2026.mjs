@@ -63,8 +63,8 @@ function addNearArticleStart(html, slug, block) {
 const priority = [
   {
     path:P.wheelchair, key:'WHEELCHAIR',
-    title:'Ram Mandir Wheelchair Assistance: Booking & Fees | Tour Varanasi',
-    description:'Book wheelchair assistance in person at Ayodhya Ram Mandir. See the locally reported attendant charge, ID requirements and options for senior travellers.',
+    title:'Ayodhya Ram Mandir Wheelchair Booking, Counter and Charges',
+    description:'Request a wheelchair at the Ayodhya Ram Mandir counter. See which ID to carry, how attendant charges work and how to arrange assistance from your vehicle.',
     body:box('Plan wheelchair-friendly Ayodhya sightseeing',
       '<p><strong>Travelling with parents or a guest who has difficulty walking?</strong> Compare our <a href="/tours/ayodhya-tour-in-two-days/">private two-day Ayodhya itinerary</a> and <a href="/plan-my-journey/">ask for a mobility-aware plan</a>. Temple wheelchairs are allocated through the temple counter, subject to its assessment and arrangements; they cannot be guaranteed in advance.</p>')
   },
@@ -76,7 +76,7 @@ const priority = [
   {
     path:P.sarnath,key:'SARNATH',
     body:box('Private Sarnath visit options',
-      '<p><strong>Want to visit Sarnath with a knowledgeable local guide?</strong> Explore our <a href="/tours/varanasi-sarnath-tour/">private Sarnath half-day experience</a>, or include Sarnath in a <a href="/tours/varanasi-tour-in-two-days/">two-day Varanasi itinerary</a>. Museum visits remain subject to opening days and hours.</p>')
+      '<p>Leaving from a Cantonment hotel, Assi Ghat or the old city? <a href="#sarnath-pickup">Compare pickup points and return times</a> for your half-day visit.</p>')
   },
   {
     path:P.guide,key:'PRIVATE_GUIDE',
