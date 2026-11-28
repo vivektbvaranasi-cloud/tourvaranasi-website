@@ -1,0 +1,170 @@
+/* Shared by the inner pages. Keep photographs and reading surfaces on white. */
+:root {
+  --journey-ink: #142220;
+  --journey-copy: #263531;
+  --journey-teal: #124e4d;
+  --journey-mint: #e1f2ed;
+  --journey-rose: #f7e7e5;
+  --journey-blue: #e5eef9;
+  --journey-line: #b5c6c0;
+}
+body {
+  --brass: var(--journey-teal);
+  --terracotta-dark: var(--journey-teal);
+  --tv-purple: var(--journey-teal);
+  --tv-purple-dark: #0e403e;
+}
+body :is(.day-item, .journey-grid > .card, .destination-card, .destination-tour-card,
+         .experience-grid > .experience-card, .tv-planning-card, .lang-card, .pmj-service) {
+  --panel: var(--journey-mint);
+  background: var(--panel) !important;
+  border-color: var(--journey-line) !important;
+  color: var(--journey-ink);
+}
+body :is(.day-item, .journey-grid > .card, .destination-card, .destination-tour-card,
+         .experience-grid > .experience-card, .tv-planning-card, .lang-card, .pmj-service):nth-child(3n + 2) {
+  --panel: var(--journey-rose);
+}
+body :is(.day-item, .journey-grid > .card, .destination-card, .destination-tour-card,
+         .experience-grid > .experience-card, .tv-planning-card, .lang-card, .pmj-service):nth-child(3n) {
+  --panel: var(--journey-blue);
+}
+body :is(.day-grid > .day-item, .pmj-services > .pmj-service) {
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+body :is(.card-body, .destination-card-copy, .experience-card-copy) { background-color: transparent; }
+body :is(.editorial .copy, .lang-section, .tv-planning-shell, .experience-catalogue, .tour-price-panel,
+         .tv-price-panel, .destination-grid, .pmj-form-wrap, .days, .all-journeys, .prose)
+     :is(p, li) { color: var(--journey-copy) !important; }
+body :is(.itinerary-copy, .day-item, .card-body, .destination-card-copy, .destination-tour-card,
+         .experience-card-copy, .tv-planning-card, .pmj-service, .pmj-step, .lang-card) p {
+  color: var(--journey-copy) !important;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+body :is(.card-body, .itinerary-copy, .day-item, .destination-card-copy, .destination-tour-card,
+         .experience-card-copy, .tv-planning-card, .lang-card, .pmj-service, .prose) :is(h2, h3) {
+  color: var(--journey-ink) !important;
+}
+body :is(.tv-planning-card .tv-planning-meta, .tv-planning-link, .tv-card-price small,
+         .daylabel, .experience-card-copy .experience-duration, .destination-tour-card > small,
+         .lang-section .lang-kicker, .lang-program strong, .lang-photo-note) {
+  color: var(--journey-teal) !important;
+  font-size: .9375rem;
+  line-height: 1.5;
+}
+body .tv-card-price strong { color: var(--journey-ink); font-size: 1.25rem; }
+body :is(.tv-price-panel, .pmj-mini-note, .page-enquiry-form .page-enquiry-context, .lang-note) {
+  background: var(--journey-mint) !important;
+  border-color: var(--journey-line) !important;
+}
+body :is(.pmj-service, .pmj-contact-card, .pmj-practical-card) { border-color: var(--journey-line); }
+body .pmj-contact-card {
+  padding: 1rem 1.25rem;
+  background: var(--journey-blue);
+}
+body :is(.day-details, .lang-faq) summary,
+body .prose a:not(.btn):not(.button),
+body .pmj-contact-card a,
+body .lang-faq summary::after { color: var(--journey-teal) !important; }
+body .prose a:not(.btn):not(.button) { text-decoration: underline; text-underline-offset: .15em; }
+/* Tour templates apply a stronger white section rule. Keep their price panel legible. */
+body[data-tour-page="true"] main > section.tv-price-panel:not(.cta):not([class*="hero"]) {
+  background: var(--journey-mint) !important;
+}
+body .tv-price-summary { background: white !important; }
+body .tv-price-summary :is(strong, span, a),
+body :is(.tv-planning-head .tv-planning-kicker, .days .kicker, .journey-grid .meta, .pmj-step span) {
+  color: var(--journey-teal) !important;
+  -webkit-text-fill-color: var(--journey-teal) !important;
+}
+body .tv-price-summary span, body .tv-price-panel .tv-price-terms { font-size: .9375rem; }
+body .quote-form :is(label, legend),
+body .page-enquiry-form .page-enquiry-hint {
+  color: var(--journey-copy) !important;
+  font-size: .9375rem !important;
+}
+body .quote-form :is(input:not([type=checkbox]):not([type=radio]):not([type=submit]), textarea, select) {
+  color: var(--journey-ink) !important;
+  border-color: #738781 !important;
+  font-size: 1rem !important;
+}
+body .quote-form input:is([type=radio], [type=checkbox]) { accent-color: var(--journey-teal); }
+body :is(.btn, .button, .navlinks .nav-cta, .cta-button, .experience-link, .lang-btn,
+         .quote-form button[type=submit], input[type=submit]) {
+  background: var(--journey-teal) !important;
+  border-color: var(--journey-teal) !important;
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+}
+body :is(.btn, .button, .navlinks .nav-cta, .cta-button, .experience-link, .lang-btn,
+         .quote-form button[type=submit], input[type=submit]):hover {
+  background: #0e403e !important;
+  border-color: #0e403e !important;
+}
+body a:is(.tv-whatsapp-float, .whatsapp) {
+  background: #14533f !important;
+  border-color: #14533f !important;
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+}
+body :focus-visible { outline: 3px solid var(--journey-teal) !important; outline-offset: 3px; }
+body :is(.lang-cta, .tvf-footer, footer.footer) { background: #294841 !important; }
+body .lang-cta :is(h2, p, a) { color: white !important; }
+body :is(.tvf-footer, .lang-cta, .page-hero, .pmj-hero) :focus-visible { outline-color: white !important; }
+
+/* Editorial pages keep long passages on white. Summaries, references and
+   table headings use colour to mark different kinds of planning information. */
+.prose .quick-answer,
+.prose .price-intent-note {
+  background: #e1f2ed !important;
+  border-color: #a5c6ba !important;
+  border-inline-start: 4px solid #24705c !important;
+}
+.prose .related-links {
+  background: #e5eef9 !important;
+  border-color: #afc6dd !important;
+}
+.prose .pillar-cta {
+  background: #f7e7e5 !important;
+  border-color: #dac0bd !important;
+}
+.prose :is(.article-price-table, .ayodhya-table-wrap) table {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #263531;
+}
+.prose :is(.article-price-table, .ayodhya-table-wrap) thead th {
+  background: #e5eef9 !important;
+  color: #142220 !important;
+}
+.prose :is(.article-photo, .price-intent-photos) figcaption,
+.prose .article-date {
+  font-size: .9375rem;
+  line-height: 1.55;
+  color: #34423e !important;
+  opacity: 1;
+}
+.blog-hub .blog-hub-card {
+  background: #eff7f4 !important;
+  border-color: #bdcfc8 !important;
+}
+.blog-hub .blog-hub-card:nth-child(even) {
+  background: #eef4fa !important;
+  border-color: #c1cfdd !important;
+}
+.blog-hub-body .eyebrow {
+  color: #2a5049 !important;
+  font-size: .875rem;
+}
+.blog-hub .blog-hub-body p {
+  color: #263531 !important;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.blog-hub .blog-read {
+  color: #124e4d !important;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}

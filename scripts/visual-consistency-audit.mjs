@@ -45,8 +45,11 @@ for(const file of htmlFiles){
   const css=hrefs(html);
   const white=css.filter(x=>x.startsWith('/assets/css/white-theme.css'));
   if(white.length!==1) errors.push(url+': expected exactly one final white-theme stylesheet, found '+white.length);
-  if(css.length && !css.at(-1)?.startsWith('/assets/css/white-theme.css')){
-    errors.push(url+': white-theme.css is not the final stylesheet');
+  const expectedEnd = url === '/' ? ['/assets/css/white-theme.css'] : ['/assets/css/white-theme.css', '/assets/css/inner-pages.css'];
+  const styles = css.map(href => href.split('?')[0]);
+  if (styles.slice(-expectedEnd.length).join() !== expectedEnd.join() ||
+      styles.filter(href => href === '/assets/css/inner-pages.css').length !== expectedEnd.length - 1) {
+    errors.push(url + ': unexpected reading palette or stylesheet order');
   }
 
   // Catch accidental fixed-width inline desktop canvases.

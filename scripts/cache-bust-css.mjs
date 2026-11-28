@@ -29,12 +29,18 @@ function walk(dir) {
     let html = fs.readFileSync(p, "utf8");
     const before = html;
 
-    // The final white theme must be the last stylesheet on every page so
+    // Load the white base after the generated template styles so
     // legacy cream/beige template rules cannot override the current design.
     html = html.replace(/<link\b[^>]*href=["']\/assets\/css\/white-theme\.css(?:\?v=[^"']*)?["'][^>]*>\s*/gi, "");
     const whiteVersion = versions.get("/assets/css/white-theme.css");
     const whiteHref = "/assets/css/white-theme.css" + (whiteVersion ? "?v=" + whiteVersion : "");
     html = html.replace(/<\/head>/i, '<link rel="stylesheet" href="' + whiteHref + '">\n</head>');
+
+    // Only inner pages opt into the reading palette; the homepage has its own stylesheet.
+    html = html.replace(/<link\b[^>]*href=["']\/assets\/css\/inner-pages\.css(?:\?v=[^"']*)?["'][^>]*>\s*/gi, "");
+    if (p !== path.join(root, "index.html") && !/^google[a-z0-9]+\.html$/i.test(path.basename(p))) {
+      html = html.replace(/<\/head>/i, '<link rel="stylesheet" href="/assets/css/inner-pages.css">\n</head>');
+    }
 
     html = html.replace(/\/assets\/(?:css|js)\/[^"'?]+\.(?:css|js)(?:\?v=[^"']*)?/g, (full) => {
       const clean = full.replace(/\?v=.*/, "");
