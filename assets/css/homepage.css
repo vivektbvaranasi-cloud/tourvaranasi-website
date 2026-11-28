@@ -1,7 +1,8 @@
 /* Homepage-only palette, including components styled by the generated site theme. */
 .tour-home {
   --home-teal: #124e4d;
-  --home-ink: #182826;
+  --home-ink: #142220;
+  --home-copy: #263531;
   --home-line: #d9e2df;
   --home-width: min(90%, 1320px);
   --heading: Georgia, "Times New Roman", serif;
@@ -41,7 +42,7 @@
   margin: 0 0 23px;
   font-size: 1.05rem;
   line-height: 1.55;
-  color: #42514f !important;
+  color: var(--home-copy) !important;
 }
 .home-river-photo { margin: 0; }
 .home-river-photo img {
@@ -52,9 +53,9 @@
 }
 .home-river-photo figcaption {
   margin-top: 6px;
-  color: #52605c;
+  color: var(--home-copy);
   text-align: right;
-  font: italic .8125rem/1.5 Georgia, serif;
+  font: normal .9375rem/1.5 Inter, Arial, sans-serif;
 }
 .home-trust {
   display: flex;
@@ -64,7 +65,7 @@
   gap: 8px 20px;
   padding-block: 14px;
   border-block: 1px solid var(--home-line);
-  color: #344843;
+  color: var(--home-copy);
   font-size: .875rem;
 }
 .home-trust a { color: var(--home-teal); text-decoration: underline; text-underline-offset: 3px; }
@@ -76,7 +77,7 @@
   color: var(--home-ink) !important;
   scroll-margin-top: 95px;
 }
-.tour-home .city-tour-heading p { font-size: .875rem; }
+
 .tour-home .city-tour-photo { aspect-ratio: 2.1; }
 .tour-home :is(.button, .lang-btn, .page-enquiry-form button[type=submit]),
 .tour-home .site-header .navlinks .nav-cta {
@@ -99,6 +100,46 @@
 .tour-home .final-cta { background: white !important; border-block: 1px solid var(--home-line); }
 .tour-home .tvf-footer, .tour-home footer.footer { background: #294841 !important; }
 
+/* The repeated one-, two- and three-day offers share a colour across cities. */
+.tour-home .city-tour-grid > a,
+.tour-home .experience-grid > a {
+  --card-surface: #e1f2ed;
+  background: var(--card-surface) !important;
+  border-color: #afc1ba !important;
+}
+.tour-home :is(.city-tour-grid, .experience-grid) > a:nth-child(3n + 2) { --card-surface: #f7e7e5; }
+.tour-home :is(.city-tour-grid, .experience-grid) > a:nth-child(3n) { --card-surface: #e5eef9; }
+.tour-home :is(.city-tour-grid, .experience-grid) > a:is(:hover, :focus-visible) {
+  border-color: var(--home-teal) !important;
+}
+.tour-home .city-tour-card > .tv-card-price { margin: 0 22px 22px; }
+.tour-home main :is(h2, h3, blockquote, .review-brand-name, .tv-card-price strong) {
+  color: var(--home-ink) !important;
+}
+.tour-home main :is(p, .tv-card-price small, .review-brand-caption, .local-points span, .city-photo-credits) {
+  color: var(--home-copy) !important;
+}
+.tour-home main :is(.city-tour-copy, .experience-copy, .city-tour-heading, .local-copy, .final-cta) p,
+.tour-home .local-points span {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.tour-home main :is(.city-tour-duration, .city-tour-link, .tv-card-price small, .micro,
+  .review-brand-caption, .kicker, .city-photo-credits, .review-name) {
+  font-size: .9375rem;
+}
+.tour-home .home-opening-label { font-size: .875rem; }
+.tour-home .hero-actions a,
+.tour-home .home-trust { font-size: 1rem; }
+.tour-home .site-header .navlinks a { font-size: .9375rem; }
+.tour-home .tv-card-price strong { font-size: 1.25rem; }
+.tour-home .top-contact-bar .top-contact-note { color: var(--home-copy) !important; }
+.tour-home a.tv-whatsapp-float {
+  background: #14533f !important;
+  border-color: #14533f !important;
+}
+.tour-home a.tv-whatsapp-float:hover { background: #0d4232 !important; }
+
 @media (max-width: 760px) {
   .tour-home { --home-width: calc(100% - 40px); }
   .home-opening { display: block; padding-block: 22px 14px; }
@@ -108,7 +149,7 @@
   .home-opening .hero-actions { gap: 8px 15px; }
   .home-river-photo { margin-top: 20px; }
   .home-river-photo img { height: clamp(172px, 49vw, 300px); }
-  .home-trust { font-size: .8rem; }
+
   .home-trust > span:nth-child(2) { display: none; }
   .tour-home .city-tour-row { padding-top: 23px; }
 }
