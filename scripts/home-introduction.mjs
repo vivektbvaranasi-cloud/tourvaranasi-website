@@ -23,7 +23,7 @@ const introduction = `<!-- TV_HOME_INTRO_START -->
 export function refreshHomeIntroduction(html) {
   html=html.replace(/<!-- TV_HOME_INTRO_START -->[\s\S]*?<!-- TV_HOME_INTRO_END -->\s*/g,'');
   html=html.replace(/<section\b[^>]*class="intro section-white"[^>]*>[\s\S]*?<\/section>\s*/g,'');
-  const hero=/<section\b[^>]*class="hero"[^>]*>[\s\S]*?<\/section>/;
-  if(!hero.test(html))throw new Error('Homepage hero missing: cannot place introduction.');
-  return html.replace(hero,match=>match+'\n'+introduction+'\n');
+  const experiences = '<section class="experiences section-sand">';
+  if (!html.includes(experiences)) throw new Error('Homepage experiences section missing.');
+  return html.replace(experiences, introduction + '\n' + experiences);
 }

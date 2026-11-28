@@ -1,0 +1,114 @@
+/* Homepage-only palette, including components styled by the generated site theme. */
+.tour-home {
+  --home-teal: #124e4d;
+  --home-ink: #182826;
+  --home-line: #d9e2df;
+  --home-width: min(90%, 1320px);
+  --heading: Georgia, "Times New Roman", serif;
+  --tv-purple-dark: var(--home-teal);
+}
+.tour-home .home-opening,
+.tour-home .home-trust,
+.tour-home .featured-city-tours > .container {
+  width: var(--home-width);
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+.home-opening {
+  display: grid;
+  grid-template-columns: minmax(0, 43fr) minmax(0, 57fr);
+  align-items: center;
+  padding-block: 34px 24px;
+}
+.home-opening-copy { padding-right: 9%; }
+.tour-home .home-opening-label {
+  margin: 0 0 14px;
+  font: 600 0.75rem/1.4 Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--home-teal) !important;
+}
+:root .tour-home .home-opening h1 {
+  margin: 0 0 18px;
+  font: 400 clamp(3.5rem, 5.3vw, 5.25rem)/1.01 Georgia, serif !important;
+  letter-spacing: -.055em !important;
+  color: var(--home-ink) !important;
+}
+.tour-home .home-opening h1 em { font-style: italic !important; }
+.home-opening-copy > p:not(.home-opening-label) {
+  max-width: 425px;
+  margin: 0 0 23px;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #42514f !important;
+}
+.home-river-photo { margin: 0; }
+.home-river-photo img {
+  width: 100%;
+  height: clamp(385px, 32vw, 510px);
+  object-fit: cover;
+  object-position: 59% center;
+}
+.home-river-photo figcaption {
+  margin-top: 6px;
+  color: #52605c;
+  text-align: right;
+  font: italic .8125rem/1.5 Georgia, serif;
+}
+.home-trust {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding-block: 14px;
+  border-block: 1px solid var(--home-line);
+  color: #344843;
+  font-size: .875rem;
+}
+.home-trust a { color: var(--home-teal); text-decoration: underline; text-underline-offset: 3px; }
+.tour-home .featured-city-tours { padding-top: 0; border-top: 0; }
+.tour-home .city-tour-row { padding-top: 32px; }
+:root .tour-home .city-tour-heading h2 {
+  font: 400 clamp(1.875rem, 3vw, 2.9rem)/1.12 Georgia, serif !important;
+  letter-spacing: -.04em !important;
+  color: var(--home-ink) !important;
+  scroll-margin-top: 95px;
+}
+.tour-home .city-tour-heading p { font-size: .875rem; }
+.tour-home .city-tour-photo { aspect-ratio: 2.1; }
+.tour-home :is(.button, .lang-btn, .page-enquiry-form button[type=submit]),
+.tour-home .site-header .navlinks .nav-cta {
+  background: var(--home-teal) !important;
+  border-color: var(--home-teal) !important;
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+  border-radius: 4px !important;
+}
+.tour-home :is(.button, .lang-btn, .page-enquiry-form button[type=submit]):hover,
+.tour-home .site-header .navlinks .nav-cta:hover {
+  background: #0e403e !important;
+  border-color: #0e403e !important;
+}
+.tour-home :is(.text-link, .city-tour-link, .city-tour-duration, .micro, .kicker, .all-city-tours a, .verified-review-link) {
+  color: var(--home-teal) !important;
+  border-color: var(--home-line) !important;
+}
+.tour-home :focus-visible { outline-color: var(--home-teal) !important; }
+.tour-home .final-cta { background: white !important; border-block: 1px solid var(--home-line); }
+.tour-home .tvf-footer, .tour-home footer.footer { background: #294841 !important; }
+
+@media (max-width: 760px) {
+  .tour-home { --home-width: calc(100% - 40px); }
+  .home-opening { display: block; padding-block: 22px 14px; }
+  .home-opening-copy { padding: 0; }
+  :root .tour-home .home-opening h1 { font-size: clamp(2.65rem, 12vw, 3.4rem) !important; }
+  .home-opening-copy > p:not(.home-opening-label) { margin-bottom: 15px; font-size: 1rem; }
+  .home-opening .hero-actions { gap: 8px 15px; }
+  .home-river-photo { margin-top: 20px; }
+  .home-river-photo img { height: clamp(172px, 49vw, 300px); }
+  .home-trust { font-size: .8rem; }
+  .home-trust > span:nth-child(2) { display: none; }
+  .tour-home .city-tour-row { padding-top: 23px; }
+}

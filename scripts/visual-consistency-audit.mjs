@@ -60,8 +60,10 @@ for(const file of htmlFiles){
   }
 
   if(url==='/'){
-    if(!html.includes('class="hero-video"')) errors.push('/: homepage hero video missing');
-    if(!html.includes("matchMedia('(min-width:901px)')")) warnings.push('/: desktop-only hero video breakpoint not found');
+    const photo = html.match(/<figure class="home-river-photo">\s*(<img\b[^>]+>)/)?.[1];
+    if (!photo || !photo.includes('fetchpriority="high"') || !/alt="[^"]+"/.test(photo)) {
+      errors.push('/: expected an accessible, high-priority riverfront photograph in the homepage hero');
+    }
   }
 }
 
